@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -38,6 +39,11 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
@@ -89,15 +95,168 @@ table {
   display: none;
 }
 
+body {
+  background-color: #fff;
+}
+
+main {
+  background-color: #fff;
+}
+
 .img-container {
-  width: 50%;
-  height: 200px;
+  width: 100%;
+  height: 490px;
   overflow: hidden;
 }
 
 .img-container img {
-  max-width: 100%;
-  height: auto;
+  height: 100%;
+  display: inline-block;
+}
+
+body {
+  text-align: center;
+}
+
+html {
+  font-size: 16px;
+}
+
+h2, button {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 26px;
+}
+
+body {
+  color: #1E0C00;
+}
+
+h1 {
+  font-family: "Bad Script", cursive;
+  font-size: 5rem;
+  line-height: 110px;
+}
+
+em {
+  font-style: italic;
+}
+
+button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F9BE00), to(#F29E00));
+  background: linear-gradient(#F9BE00, #F29E00);
+  border: 1px solid #1E0C00;
+  border-radius: 1.2em;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: .5em 1em;
+}
+
+button em {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+a {
+  cursor: pointer;
+}
+
+header h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+nav ul img {
+  height: 30px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 1.2em;
+  margin: 0 8px;
+}
+
+.nav-mobile {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
+          box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
+  padding: .7em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+main * {
+  margin-top: 1.7rem;
+}
+
+main section {
+  margin: 0;
+}
+
+main #intro {
+  margin-top: 0;
+  padding-top: 3rem;
+}
+
+iframe {
   display: block;
+  width: 100%;
+}
+
+.instrument-list {
+  margin-top: .8em;
+}
+
+.instrument-list li {
+  margin-top: 0;
+}
+
+.instrument-list li h4 {
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.instrument-list li h4:after {
+  content: "▼";
+  font-size: .5em;
+  padding: .8em;
+  vertical-align: top;
+}
+
+.instrument-list li ul {
+  display: none;
+}
+
+.divider-img-container {
+  background-color: #120904;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.divider-img-container .left {
+  width: 110%;
+  display: block;
+  position: absolute;
+  bottom: 50%;
+  z-index: 99;
+}
+
+#title {
+  height: 100vh;
+}
+
+#hero-img {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
 }
 /*# sourceMappingURL=main.css.map */

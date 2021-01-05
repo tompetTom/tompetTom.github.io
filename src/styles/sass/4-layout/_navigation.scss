@@ -1,0 +1,19 @@
+nav {
+    ul {
+        img {
+            height: 30px;
+        }
+        li {
+            display: inline-block;
+            line-height: 1.2em;
+            margin: 0 8px;
+        }
+    }
+}
+
+.nav-mobile {
+    background-color: $white;
+    box-shadow: 0 0 30px fade-out($soft-black, .5);
+    padding: .7em;
+    @include sticky;
+}

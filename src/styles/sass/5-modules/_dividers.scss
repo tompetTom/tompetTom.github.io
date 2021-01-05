@@ -1,0 +1,24 @@
+// .divider-container {
+//     position: relative;
+// }
+
+// .divider-img-left {
+//     position: absolute;
+//     bottom: 0px;
+// }
+
+.divider-img-container {
+    background-color: $soft-black;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+
+    .left {
+        width: 110%;
+        display: block;
+        position: absolute;
+        bottom: 50%;
+        z-index: 99;
+    }
+}
