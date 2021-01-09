@@ -6,11 +6,5 @@ $(document).ready(() => {
             $('.instrument-details').slideUp().addClass('hide');
             $(event.currentTarget).siblings().slideDown().removeClass('hide');
         };
-
-        // $('.instrument-details').each(() => {
-        //     if ($(this) !== $(event.currentTarget).siblings()) {
-        //         $(this).addClass('hide');
-        //     };
-        // });
     });
 });

@@ -5,7 +5,8 @@
     // // position: relative;
 
     img {
-        width: 90%;
+        // height: 3rem;
+        max-width: 90%;
         display: block;
         position: absolute;
         z-index: 2;
@@ -29,21 +30,26 @@
 }
 
 .flute-divider {
+    height: 3rem;
     top: -7rem;
 }
 
 .clarinet-divider {
+    height: 5rem;
     top: -2rem;
 }
 
 .saxophone-divider {
+    height: 8rem;
     top: -5.6rem;
 }
 
 .ellis-flute-divider {
+    height: 3.4rem;
     top: -5rem;
 }
 
 .recorder-divider {
+    height: 5.3rem;
     top: -2rem;
 }

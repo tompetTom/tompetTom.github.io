@@ -2,6 +2,10 @@
     @extend section;
     @include make-space(top, 1rem);
 
+    iframe {
+        height: 400px;
+    }
+
     .soundcloud-link {
         display: none;
         font-size: .6rem;
