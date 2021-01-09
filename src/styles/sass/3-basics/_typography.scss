@@ -5,12 +5,12 @@ html {
 %sans-font {
     font-family: $sans;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: $bold;
 }
 
 %serif-font {
     font-family: $serif;
-    line-height: 26px;
+    line-height: 1.7em;
 }
 
 body {
@@ -21,11 +21,21 @@ body {
 h1 {
     font-family: $handwriting;
     font-size: 5rem;
-    line-height: 110px;
+    line-height: 1.3em;
 }
 
 h2 {
     @extend %sans-font;
+}
+
+blockquote {
+    color: $white;
+    font-family: $sans;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: $bold;
+    letter-spacing: .03em;
+    line-height: 1.5em;
 }
 
 em {

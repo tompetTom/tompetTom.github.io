@@ -1,96 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./src/styles/sass/main.css" type="text/css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com"> 
-        <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <title>Sophie Creaner | Home</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/sass/main.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Sophie Creaner | Home</title>
+</head>
 
-    <body>
-        <header id="title">
-            <h1>Sophie <span>Creaner</span></h1>
-            <h2>Woodwind multi-instrumentalist<br/>Recording, theatre and early music</h2>
-        </header>
+<body>
+    <header>
+        <h1>Sophie <span>Creaner</span></h1>
+        <h2>Woodwind multi-instrumentalist<br />Recording, theatre and early music</h2>
         <div id="hero-img" class="img-container">
-            <img src="./images/instruments/recorder-medium.png" alt="Sophie's recorder by Ralph Ehlert">
+            <img src="./images/instruments/recorder-medium.png" alt="Sophie's recorder by Ralf Ehlert">
             <img src="./images/instruments/ellis-flute-medium.png" alt="Sophie's ebonite flute by Geoffrey Ellis">
             <img src="./images/instruments/flute-medium.png" alt="Sophie's flute by Juan Arista">
             <img src="./images/instruments/clarinet-medium.png" alt="Sophie's clarinet by Peter Eaton">
             <img src="./images/instruments/saxophone-medium.png" alt="Sophie's saxophone by Yanigasawa">
         </div>
-        <nav class="nav-mobile">
-            <ul>
-                <li><a href="#"><img src="images/icons/recording.png" alt="recording"><p>Recording</p></a></li>
-                <li><a href="#"><img src="images/icons/media.png" alt="media"><p>Media</p></a></li>
-                <li><a href="#"><img src="images/icons/lessons.png" alt="lessons"><p>Lessons</p></a></li>
-                <li><a href="#"><img src="images/icons/about.png" alt="about"><p>About</p></a></li>
-                <li><a href="#"><img src="images/icons/contact.png" alt="contact"><p>Contact</p></a></li>
+    </header>
+    <nav class="nav-mobile">
+        <ul>
+            <li><a href="#"><img src="images/icons/recording.png" alt="recording">
+                    <p>Recording</p>
+                </a></li>
+            <li><a href="#"><img src="images/icons/media.png" alt="media">
+                    <p>Media</p>
+                </a></li>
+            <li><a href="#"><img src="images/icons/lessons.png" alt="lessons">
+                    <p>Lessons</p>
+                </a></li>
+            <li><a href="#"><img src="images/icons/about.png" alt="about">
+                    <p>About</p>
+                </a></li>
+            <li><a href="#"><img src="images/icons/contact.png" alt="contact">
+                    <p>Contact</p>
+                </a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="recording">
+            <h3 id="intro">Sophie is a woodwind multi-instrumentalist based in London, originally from Cork, Ireland.
+                She records sessions, performs in theatre shows and plays early music.</h3>
+            <h2>Woodwind remote recording</h2>
+            <p>Do you need woodwind tracks recorded for your project? Click below to see how Sophie could work with you.
+            </p>
+            <button><a href="#">Find a match</a></button>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-dU4MBIRKbg" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <p>Sophie records existing lines or can help to compose woodwind parts. There are boundless possibilities
+                for new sounds with woodwind instruments, especially when layering different lines together to create
+                unique and exciting textures.</p>
+            <h3>She can record any of these instruments:</h3>
+            <ul class="instrument-list">
+                <li>
+                    <h4 class="instrument-category">Clarinets</h4>
+                    <ul class="instrument-details hide">
+                        <li>Clarinet</li>
+                        <li>Bass clarinet</li>
+                        <li>Eb clarinet</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4 class="instrument-category">Flutes</h4>
+                    <ul class="instrument-details hide">
+                        <li>Flute</li>
+                        <li>Alto flute</li>
+                        <li>Piccolo</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4 class="instrument-category">Recorders</h4>
+                    <ul class="instrument-details hide">
+                        <li>Contrabass to sopranino</li>
+                        <li>Renaissance, Medieval, Baroque, Modern</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4 class="instrument-category">World Flutes</h4>
+                    <ul class="instrument-details hide">
+                        <li>Irish flute</li>
+                        <li>Bansuri (Indian)</li>
+                        <li>Sáo trúc (Vietnamese)</li>
+                        <li>Dizi (Chinese)</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4 class="instrument-category">Saxophones</h4>
+                    <ul class="instrument-details hide">
+                        <li>Soprano saxophone</li>
+                        <li>Alto saxophone</li>
+                        <li>Tenor saxophone</li>
+                        <li>Baritone saxophone</li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        <main>
-            <section>
-                <h3 id="intro">Sophie is a woodwind multi-instrumentalist based in London, originally from Cork, Ireland. She records sessions, performs in theatre shows and plays early music.</h3>
-                <h2>Woodwind remote recording</h2>
-                <p>Do you need woodwind tracks recorded for your project? Click below to see how Sophie could work with you.</p>
-                <button><a href="#">Find a match</a></button>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-dU4MBIRKbg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Sophie records existing lines or can help to compose woodwind parts. There are boundless possibilities for new sounds with woodwind instruments, especially when layering different lines together to create unique and exciting textures.</p>
-                <h3>She can record any of these instruments:</h3>
-                <ul class="instrument-list">
-                    <li>
-                        <h4>Clarinets</h4>
-                        <ul>
-                            <li>Clarinet</li>
-                            <li>Bass clarinet</li>
-                            <li>Eb clarinet</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Flutes</h4>
-                        <ul>
-                            <li>Flute</li>
-                            <li>Alto flute</li>
-                            <li>Piccolo</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Recorders</h4>
-                        <ul>
-                            <li>Contrabass to sopranino</li>
-                            <li>Renaissance, Medieval, Baroque, Modern</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>World Flutes</h4>
-                        <ul>
-                            <li>Irish flute</li>
-                            <li>Bansuri (Indian)</li>
-                            <li>Sáo trúc (Vietnamese)</li>
-                            <li>Dizi (Chinese)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Saxophones</h4>
-                        <ul>
-                            <li>Soprano saxophone</li>
-                            <li>Alto saxophone</li>
-                            <li>Tenor saxophone</li>
-                            <li>Baritone saxophone</li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>She can also offer <em>any</em> combination of instruments by bringing in colleagues from the industry to collaborate with on a project. This negates any disparities when recording musicians separately.</p>
-                <button><a href="#">Get a <em>free</em> consultation</a></button>
-                <div class="divider-img-container">
-                    <img class="left" src="images/instruments/dividers/flute-divider.png" alt="Sophie's ebonite flute by Geoffrey Ellis">
-                </div>
-            </section>
-        </main>
-        <footer></footer>
-    </body>
+            <p>She can also offer <em>any</em> combination of instruments by bringing in colleagues from the industry to
+                collaborate with on a project. This negates any disparities when recording musicians separately.</p>
+            <button><a href="#">Get a <em>free</em> consultation</a></button>
+            <!-- <div class="divider-left">
+                <img class="flute-divider" src="images/instruments/dividers/flute-divider.png" alt="Sophie's flute by Juan Arista">
+            </div> -->
+        </section>
+        <section class="testimonial recording-testimonials">
+            <div class="divider-left">
+                <img class="flute-divider" src="images/instruments/dividers/flute-divider.png" alt="Sophie's flute by Juan Arista">
+            </div>
+            <blockquote>"Working with Sophie is a real pleasure – she masters her instruments absolutely, she is very
+                versatile and extremely fast. I got exactly what I was looking for and in top quality. I highly
+                recommend her and will soon work with her again."</blockquote>
+            <div class="divider-right">
+                <img class="clarinet-divider" src="images/instruments/dividers/clarinet-divider.png" alt="Sophie's clarinet by Peter Eaton">
+            </div>
+        </section>
+        <div class="soundcloud">
+            <iframe height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1153531681&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe><div class="soundcloud-link"><a href="https://soundcloud.com/ophiereaner" title="Sophie Creaner" target="_blank">Sophie Creaner</a> · <a href="https://soundcloud.com/ophiereaner/sets/recorded-in-my-home-studio" title="Recorded in my home studio" target="_blank">Recorded in my home studio</a></div>
+        </div>
+        <section class="career">
+            <h2>Sophie's Career</h2>
+            <p>Sophie performs primarily as a musician for West End shows, alongside being very active in the UK and European early music scenes. The best thing about West End shows is the variety of instruments and styles that she has to play on a daily basis, all to the highest professional standard. Sometimes, her musical theatre and early music branches colide, as with upcoming musical Treason, which has its first taste of performance in the Cadogan Hall this year, streamed online on 12-14 February.</p>
+            <button class="btn-dark-background"><a href="#">Read more</a></button>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZidQd-4wyDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="divider-right">
+                <img class="saxophone-divider" src="images/instruments/dividers/saxophone-divider.png" alt="Sophie's saxophone by Yanigasawa">
+            </div>
+        </section>
+        <section class="lux">
+            <h2>Lux Musicae</h2>
+            <p>Sophie is a founding member of the mixed consort <a href="https://www.luxmusicaelondon.com" target="_blank">Lux Musicae London</a>, formed to musically explore the transition from the Renaissance to the Early Baroque.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CKg9BSG6OV0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="divider-left">
+                <img class="ellis-flute-divider" src="images/instruments/dividers/ellis-flute-divider.png" alt="Sophie's ebonite flute by Geoffrey Ellis">
+            </div>
+        </section>
+        <section class="lessons">
+            <h2>Learn with Sophie</h2>
+            <p>Sophie's lessons are 100% online, giving you the flexibiility to learn whenever suits you, as regular or irregular as you like. She teaches clarinet, flute, saxohone and recorder, at all ages and abilities.</p>
+            <p>Fancy a go? Try out a lesson with Sophie for free by clicking the button below.</p>
+            <button><a>Get a <em>free</em> video lesson</a></button>
+        </section>
+        <section class="testimonial teaching-testimonials">
+            <blockquote>"Sophie is really kind, the lessons are fun and she's so encouraging and patient. I love my clarinet lessons."<br/>~Jonas, 11-year-old clarinet student</blockquote>
+            <div class="divider-right">
+                <img class="recorder-divider" src="images/instruments/dividers/recorder-divider.png" alt="Sophie's recorder by Ralf Ehlert">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Follow me</p>
+        <div class="social-icons"></div>
+        <a>Contact</a>
+        <p>Copyright &copy; Sophie Creaner 2021</p>
+        <a>Sitemap</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="src/scripts/main.js"></script>
+</body>
 
 </html>

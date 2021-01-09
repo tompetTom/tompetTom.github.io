@@ -1,12 +1,48 @@
 main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     * {
         margin-top: 1.7rem;
     }
+    // img {
+    //     margin: 0;
+    // }
     section {
+        @include grid-column(fill);
+        @include side-padding($gutter);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         margin: 0;
+        position: relative;
     }
     #intro {
         margin-top: 0;
         padding-top: 3rem;
     }
+    .recording {
+        padding-bottom: 3rem;
+    }
+    .recording-testimonials {
+        background-color: $dark-green;
+        padding: 2.2em;
+    }
+    .career {
+        padding-top: 1.5rem;
+        //padding-bottom: 0;
+        background-color: $warm-black;
+        color: $white;
+    }
+    .lux {
+        padding-top: 3rem;
+    }
+    .teaching-testimonials {
+        background-color: $warm-black;
+        margin-top: 1.7rem;
+    }
+}
+
+%no-gutter {
+    width: 100vw;
+    position: relative;
+    left: -$gutter;
 }

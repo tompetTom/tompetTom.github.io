@@ -1,0 +1,21 @@
+.soundcloud {
+    @extend section;
+    @include make-space(top, 1rem);
+
+    .soundcloud-link {
+        display: none;
+        font-size: .6rem;
+        color: $warm-black;
+        line-break: anywhere;
+        word-break: normal;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+        font-weight: 100;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}

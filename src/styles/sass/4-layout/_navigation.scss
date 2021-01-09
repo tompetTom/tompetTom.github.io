@@ -15,5 +15,6 @@ nav {
     background-color: $white;
     box-shadow: 0 0 30px fade-out($soft-black, .5);
     padding: .7em;
+    z-index: 5;
     @include sticky;
 }

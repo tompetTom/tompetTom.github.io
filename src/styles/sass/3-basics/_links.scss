@@ -1,3 +1,9 @@
 a {
     cursor: pointer;
 }
+
+p {
+    a {
+        text-decoration: underline;
+    }
+}

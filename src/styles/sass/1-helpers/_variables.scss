@@ -1,15 +1,23 @@
-// FONTS
+// TYPOGRAPHY
 $handwriting: 'Bad Script', cursive;
 $sans: 'Lato', sans-serif;
 $serif: 'Raleway', sans-serif;
 
+$normal: 400;
+$bold: 700;
+
 // COLOURS
 $soft-black: #120904;
 $warm-black: #1E0C00;
-$dull-green: #4D5952;
+$dark-green: #4D5952;
 $chartreuse: #B1A14D;
 $brass: #F9BE00;
 $orange: #F29E00;
-$pale-grey: #fff;
-$warm-grey: #fff;
-$white: #fff;
+$pale-grey: #DFDFDB;
+$warm-grey: #B8B3A1;
+$white: lighten($chartreuse, 45%);
+
+// LAYOUT
+$gutter: 1.7rem;
+
+$full-width: 1 / -1;

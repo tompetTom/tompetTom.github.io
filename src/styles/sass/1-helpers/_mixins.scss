@@ -3,3 +3,33 @@
     position: sticky;
     top: $top;
 }
+
+@mixin grid-column($side) {
+    @if $side == left {
+        grid-column: 1 / span 1;
+    } @else if $side == right {
+        grid-column: -1 / span 1;
+    } @else if $side == fill {
+        grid-column: 1 / -1;
+    }
+}
+
+@mixin side-padding($amount) {
+    padding-left: $amount;
+    padding-right: $amount;
+}
+
+@mixin make-space($side, $amount) {
+    @if $side == top {
+        padding-top: $amount;
+    }
+    @if $side == right {
+        padding-right: $amount;
+    }
+    @if $side == bottom {
+        padding-bottom: $amount;
+    }
+    @if $side == left {
+        padding-left: $amount;
+    }
+}
