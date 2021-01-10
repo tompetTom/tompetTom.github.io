@@ -3,7 +3,9 @@ $handwriting: 'Bad Script', cursive;
 $sans: 'Lato', sans-serif;
 $serif: 'Raleway', sans-serif;
 
+$light: 200;
 $normal: 400;
+$semi-bold: 500;
 $bold: 700;
 
 // COLOURS
@@ -15,7 +17,7 @@ $brass: #F9BE00;
 $orange: #F29E00;
 $pale-grey: #DFDFDB;
 $warm-grey: #B8B3A1;
-$white: lighten($chartreuse, 45%);
+$white: lighten($chartreuse, 50%);
 
 // LAYOUT
 $gutter: 1.7rem;

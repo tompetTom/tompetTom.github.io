@@ -4,19 +4,23 @@
     // height: 0;
     // // position: relative;
 
-    img {
+    div {
         // height: 3rem;
         max-width: 90%;
         display: block;
         position: absolute;
         z-index: 2;
+
+        img {
+            width: 100%;
+        }
     }
 }
 
 .divider-left {
     @extend %divider;
     left: -$gutter - .5rem;
-    img {
+    div {
         float: left;
     }
 }
@@ -24,32 +28,51 @@
 .divider-right {
     @extend %divider;
     right: -$gutter;
-    img {
+    div {
         right: .9rem;
     }
 }
 
 .flute-divider {
-    height: 3rem;
-    top: -7rem;
+    // height: 3rem;
+    // top: -7rem;
+    top: calc(-2vw - 8rem);
+    img {
+        max-width: 40rem;
+    }
 }
 
 .clarinet-divider {
-    height: 5rem;
-    top: -2rem;
+    //height: 5rem;
+    top: calc(-2vw - 3.3rem);
+    img {
+        max-width: 40rem;
+    }
 }
 
 .saxophone-divider {
-    height: 8rem;
-    top: -5.6rem;
+    // height: 8rem;
+    // top: -5.6rem;
+    top: calc(-2.5rem - 15vw);
+    img {
+        max-width: 40rem;
+    }
 }
 
 .ellis-flute-divider {
-    height: 3.4rem;
-    top: -5rem;
+    // height: 3.4rem;
+    // top: -5rem;
+    top: calc(-2vw - 5rem);
+    img {
+        max-width: 40rem;
+    }
 }
 
 .recorder-divider {
-    height: 5.3rem;
-    top: -2rem;
+    // height: 5.3rem;
+    // top: -2rem;
+    top: calc(-2vw - 3.2rem);
+    img {
+        max-width: 40rem;
+    }
 }

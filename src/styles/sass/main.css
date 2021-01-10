@@ -95,19 +95,13 @@ table {
   display: none;
 }
 
+html {
+  font-size: calc(15.5px + .2vw);
+}
+
 body {
-  background-color: #f7f5ed;
-}
-
-.img-container {
-  width: 100%;
-  height: 490px;
-  overflow: hidden;
-}
-
-.img-container img {
-  height: 100%;
-  display: inline-block;
+  background-color: #fffffe;
+  max-width: 100vw;
 }
 
 body {
@@ -116,10 +110,6 @@ body {
 
 .hide {
   display: none;
-}
-
-html {
-  font-size: 16px;
 }
 
 h2, button {
@@ -144,7 +134,7 @@ h1 {
 }
 
 blockquote {
-  color: #f7f5ed;
+  color: #fffffe;
   font-family: "Lato", sans-serif;
   font-size: 1.5rem;
   font-style: italic;
@@ -193,6 +183,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -208,25 +201,71 @@ header h2 {
   font-weight: 400;
 }
 
+#hero-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#hero-img div {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#hero-img div img {
+  height: 80vw;
+  max-height: 50vh;
+}
+
+#hero-img #recorder {
+  padding-left: 10%;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 nav ul img {
-  height: 30px;
+  height: 8vw;
+  max-height: 25px;
 }
 
 nav ul li {
   display: inline-block;
   line-height: 1.2em;
-  margin: 0 8px;
 }
 
 .nav-mobile {
-  background-color: #f7f5ed;
+  background-color: rgba(223, 223, 219, 0.96);
   -webkit-box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
           box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
-  padding: .7em;
+  font-size: .7rem;
   z-index: 5;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+}
+
+.nav-mobile ul {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: .7em;
 }
 
 main {
@@ -267,7 +306,7 @@ main .recording-testimonials {
 main .career {
   padding-top: 1.5rem;
   background-color: #1E0C00;
-  color: #f7f5ed;
+  color: #fffffe;
 }
 
 main .lux {
@@ -291,9 +330,9 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: column-reverse;
+          flex-flow: column-reverse;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
@@ -313,6 +352,8 @@ iframe {
 
 .instrument-list li {
   margin-top: 0;
+  position: relative;
+  left: .5em;
 }
 
 .instrument-list li h4 {
@@ -321,28 +362,51 @@ iframe {
 }
 
 .instrument-list li h4:after {
-  content: "▼";
-  font-size: .5em;
-  padding: .8em;
+  content: "▽";
+  display: inline-block;
+  font-size: .6em;
+  padding: 0 .5em;
+  -webkit-transition: .4s;
+  transition: .4s;
   vertical-align: top;
 }
 
 .instrument-list li ul {
+  display: none;
+  font-weight: 200;
   margin: .5rem 0 .5rem 0;
 }
 
-.divider-left img, .divider-right img {
+.instrument-list li ul li {
+  position: relative;
+  left: -.5em;
+}
+
+.instrument-list li.active h4:after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.instrument-list li.active ul {
+  display: block;
+}
+
+.divider-left div, .divider-right div {
   max-width: 90%;
   display: block;
   position: absolute;
   z-index: 2;
 }
 
+.divider-left div img, .divider-right div img {
+  width: 100%;
+}
+
 .divider-left {
   left: -2.2rem;
 }
 
-.divider-left img {
+.divider-left div {
   float: left;
 }
 
@@ -350,33 +414,48 @@ iframe {
   right: -1.7rem;
 }
 
-.divider-right img {
+.divider-right div {
   right: .9rem;
 }
 
 .flute-divider {
-  height: 3rem;
-  top: -7rem;
+  top: calc(-2vw - 8rem);
+}
+
+.flute-divider img {
+  max-width: 40rem;
 }
 
 .clarinet-divider {
-  height: 5rem;
-  top: -2rem;
+  top: calc(-2vw - 3.3rem);
+}
+
+.clarinet-divider img {
+  max-width: 40rem;
 }
 
 .saxophone-divider {
-  height: 8rem;
-  top: -5.6rem;
+  top: calc(-2.5rem - 15vw);
+}
+
+.saxophone-divider img {
+  max-width: 40rem;
 }
 
 .ellis-flute-divider {
-  height: 3.4rem;
-  top: -5rem;
+  top: calc(-2vw - 5rem);
+}
+
+.ellis-flute-divider img {
+  max-width: 40rem;
 }
 
 .recorder-divider {
-  height: 5.3rem;
-  top: -2rem;
+  top: calc(-2vw - 3.2rem);
+}
+
+.recorder-divider img {
+  max-width: 40rem;
 }
 
 .soundcloud {
@@ -384,7 +463,7 @@ iframe {
 }
 
 .soundcloud iframe {
-  height: 400px;
+  height: 130px;
 }
 
 .soundcloud .soundcloud-link {

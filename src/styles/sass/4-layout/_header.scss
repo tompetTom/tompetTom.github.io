@@ -2,6 +2,7 @@ header {
     height: 100vh;
     display: flex;
     flex-flow: column;
+    align-items: center;
     justify-content: space-between;
     
     h1 {
@@ -12,5 +13,27 @@ header {
         font-family: $serif;
         font-size: 1rem;
         font-weight: $normal;
+    }
+}
+
+#hero-img {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+
+    div {
+        align-items: flex-start;
+        display: flex;
+
+        img {
+            height: 80vw;
+            max-height: 50vh;
+        }
+    }
+
+    #recorder {
+        padding-left: 10%;
     }
 }

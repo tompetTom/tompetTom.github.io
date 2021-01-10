@@ -1,20 +1,50 @@
 .instrument-list {
     margin-top: .8em;
+
     li {
         margin-top: 0;
+        position: relative;
+        left: .5em;
+
         h4 {
             cursor: pointer;
             margin-top: 0;
-            // text-decoration: underline;
+
             &:after {
-                content: "▼";
-                font-size: .5em;
-                padding: .8em;
+                content: "▽";
+                display: inline-block;
+                font-size: .6em;
+                padding: 0 .5em;
+                transition: .4s;
                 vertical-align: top;
             }
         }
+
         ul {
+            display: none;
+            font-weight: $light;
             margin: .5rem 0 .5rem 0;
+
+            li {
+                position: relative;
+                left: -.5em;
+            
+                // &:before {
+                //     content: "⚬";
+                //     padding: .4em;
+                // }
+            }
+        }
+
+        &.active {
+
+            h4:after {
+                transform: rotate(-180deg);
+            }
+
+            ul {
+                display: block;
+            }
         }
     }
 }
