@@ -29,18 +29,21 @@ big-desktop-up
 }
 
 @mixin grid-column($side) {
-    @if $side == left {
+    @if $side == "always-left" {
         grid-column: 1 / span 1;
-    } @else if $side == right {
+    } @else if $side == "always-right" {
         grid-column: -1 / span 1;
     } @else if $side == fill {
         grid-column: 1 / -1;
-    } @else if $side == right-responsive {
-        @include media-query(mobile) {
-            grid-column: 1 / -1;
-        };
+    } @else if $side == right {
+        grid-column: 1 / -1;
         @include media-query(tablet-portrait-up) {
             grid-column: -1 / span 1;
+        };
+    } @else if $side == left {
+        grid-column: 1 / -1;
+        @include media-query(tablet-portrait-up) {
+            grid-column: 1 / span 1;
         };
     }
 }

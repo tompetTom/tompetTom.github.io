@@ -16,6 +16,11 @@ nav {
 
 .nav-desktop {
     border: 1px solid red;
+    display: none;
+    @include media-query(tablet-portrait-up) {
+        display: block;
+        width: 100%;
+    }
 }
 
 .nav-mobile {

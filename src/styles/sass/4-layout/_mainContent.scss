@@ -4,73 +4,91 @@
     left: -$gutter;
 }
 
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
+// display: grid;
+// grid-template-columns: 1fr 1fr;
+* {
+    margin-top: 1.7rem;
+}
+
+section {
+    // display: flex;
+    // flex-flow: column;
+    padding: 1rem $gutter;
+    margin: 0;
+    position: relative;
+
     * {
         margin-top: 1.7rem;
     }
+}
 
-    section {
-        // @include grid-column(fill);
-        // @include side-padding($gutter);
-        padding: 1rem $gutter;
-        margin: 0;
-        position: relative;
-
-        * {
-            margin-top: 1.7rem;
-        }
-    }
-
-    .testimonial {
-        @extend %full-width;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        padding: 3em;
-
-        * {
-            margin: 0;
-            max-width: 30em;
-        }
-
-        blockquote {
-            span {
-                display: block;
-                margin-top: .7em;
-            }
-        }
-    }
+.recording {
+    padding-bottom: 3rem;
+    @include primary-bg-gradient(180deg);
+    // @extend %grid-right;
+    // grid-column: 1 / 2;
 
     #intro {
         margin-top: 0;
         padding-top: 1rem;
     }
-    .recording {
-        padding-bottom: 3rem;
-        @include primary-bg-gradient(180deg);
-        // @include grid-column(right-responsive);
+}
+
+.testimonial {
+    // @extend %full-width;
+    // @include grid-column(fill);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 3em;
+
+    * {
+        margin: 0;
+        max-width: 30em;
     }
-    .recording-testimonials {
-        // @include grid-column(fill);
-        background-color: $dark-green;
-        // padding: 2.2em;
-    }
-    .career {
-        padding-top: 1.5rem;
-        //padding-bottom: 0;
-        background-color: $warm-black;
-        color: $white;
-        button {
-            color: $warm-black;
+
+    blockquote {
+        span {
+            display: block;
+            margin-top: .7em;
         }
     }
-    .lux {
-        padding-top: 2rem;
-        @include primary-bg-gradient(0deg);
+}
+
+.recording-testimonials {
+    @extend %grid-full-width;
+    background-color: $dark-green;
+    // padding: 2.2em;
+}
+
+// .soundcloud {
+//     // @extend %grid-right;
+// }
+
+.career {
+    @extend %grid-left;
+    padding-top: 1.5rem;
+    //padding-bottom: 0;
+    background-color: $warm-black;
+    color: $white;
+    button {
+        color: $warm-black;
     }
-    .teaching-testimonials {
-        background-color: $warm-black;
-        // margin-top: 1.7rem;
-    }
+}
+
+.lux {
+    // @extend %grid-right;
+    padding-top: 2rem;
+    @include primary-bg-gradient(0deg);
+}
+
+.lessons {
+    @extend %grid-left;
+}
+
+.teaching-testimonials {
+    // @extend %grid-right;
+    background-color: $warm-black;
+    // margin-top: 1.7rem;
+}

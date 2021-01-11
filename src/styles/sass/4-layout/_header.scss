@@ -1,9 +1,9 @@
 header {
-    @extend %full-width;
+    @extend %grid-full-width;
     border: 1px solid red;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: stretch;
     padding: 0 $gutter;
 
     @include media-query(mobile) {
@@ -12,10 +12,19 @@ header {
 
     div {
         border: 1px solid red;
+
+        @include media-query(tablet-portrait-up) {
+            width: 50vw;
+            // min-width: 400px;
+        }
     }
     
     h1 {
         padding-top: 7vh;
+
+        @include media-query(tablet-landscape-up) {
+            padding-top: 0;
+        }
 
         span {
             @include media-query(mobile-landscape-only) {
@@ -39,6 +48,11 @@ header {
 }
 
 #hero-img {
+    @extend %grid-left;
+    // grid-column: 1 / -1;
+    // @include media-query(tablet-portrait-up) {
+    //     grid-column: -1 / span 1;
+    // };
     align-self: end;
     display: flex;
     justify-content: space-between;

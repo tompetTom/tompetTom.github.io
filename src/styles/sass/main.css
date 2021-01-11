@@ -177,19 +177,31 @@ p a {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 30vh 70vh;
-      grid-template-rows: 30vh 70vh;
+  -ms-grid-rows: 30vh 70vh auto;
+      grid-template-rows: 30vh 70vh auto;
 }
 
 @media (min-width: 900px) {
   .grid-container {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
   }
 }
 
-header, .testimonial, footer {
+header, .recording-testimonials, footer {
   grid-column: 1 / -1;
+}
+
+#hero-img, .career, .lessons {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 600px) {
+  #hero-img, .career, .lessons {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+  }
 }
 
 header {
@@ -200,9 +212,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
   padding: 0 1.7rem;
 }
 
@@ -218,8 +230,20 @@ header div {
   border: 1px solid red;
 }
 
+@media (min-width: 600px) {
+  header div {
+    width: 50vw;
+  }
+}
+
 header h1 {
   padding-top: 7vh;
+}
+
+@media (min-width: 900px) {
+  header h1 {
+    padding-top: 0;
+  }
 }
 
 @media (min-width: 900px) {
@@ -291,6 +315,14 @@ nav ul li {
 
 .nav-desktop {
   border: 1px solid red;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .nav-desktop {
+    display: block;
+    width: 100%;
+  }
 }
 
 .nav-mobile {
@@ -330,6 +362,17 @@ section *, .soundcloud * {
   margin-top: 1.7rem;
 }
 
+.recording {
+  padding-bottom: 3rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f7f5ed), to(#DFDFDB));
+  background: linear-gradient(180deg, #f7f5ed, #DFDFDB);
+}
+
+.recording #intro {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
 .testimonial {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -352,17 +395,6 @@ section *, .soundcloud * {
 .testimonial blockquote span {
   display: block;
   margin-top: .7em;
-}
-
-#intro {
-  margin-top: 0;
-  padding-top: 1rem;
-}
-
-.recording {
-  padding-bottom: 3rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f7f5ed), to(#DFDFDB));
-  background: linear-gradient(180deg, #f7f5ed, #DFDFDB);
 }
 
 .recording-testimonials {
@@ -407,7 +439,8 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 5rem 10rem 1em 10rem;
+  padding: 1em;
+  padding-top: 5rem;
 }
 
 @media (min-width: 900px) {
@@ -416,6 +449,7 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-flow: row;
             flex-flow: row;
+    padding: 5rem 20vw 1em 20vw;
   }
 }
 
@@ -511,20 +545,38 @@ iframe {
   bottom: -40px;
 }
 
+@media (min-width: 900px) {
+  .flute-divider {
+    right: -50vw;
+  }
+}
+
 .clarinet-divider {
-  bottom: -60px;
+  bottom: -40px;
 }
 
 .saxophone-divider {
-  bottom: -75px;
+  bottom: -60px;
+}
+
+@media (min-width: 900px) {
+  .saxophone-divider {
+    display: none;
+  }
 }
 
 .ellis-flute-divider {
   bottom: -40px;
 }
 
+@media (min-width: 900px) {
+  .ellis-flute-divider {
+    left: -50vw;
+  }
+}
+
 .recorder-divider {
-  bottom: -100px;
+  bottom: -65px;
 }
 
 .soundcloud {

@@ -1,5 +1,5 @@
 footer {
-    @extend %full-width;
+    @extend %grid-full-width;
     align-items: center;
     background-color: $pale-grey;
     display: flex;
@@ -7,10 +7,12 @@ footer {
     flex-wrap: wrap;
     font-size: .7rem;
     justify-content: space-between;
-    padding: 5rem 10rem 1em 10rem;
+    padding: 1em;
+    padding-top: 5rem;
 
     @include media-query(tablet-landscape-up) {
         flex-flow: row;
+        padding: 5rem 20vw 1em 20vw;
     }
 
     .social-icons {

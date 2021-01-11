@@ -31,24 +31,36 @@
 .flute-divider {
     @extend %divider-right;
     bottom: -40px;
+
+    @include media-query(tablet-landscape-up) {
+        right: -50vw;
+    }
 }
 
 .clarinet-divider {
     @extend %divider-left;
-    bottom: -60px;
+    bottom: -40px;
 }
 
 .saxophone-divider {
     @extend %divider-right;
-    bottom: -75px;
+    bottom: -60px;
+
+    @include media-query(tablet-landscape-up) {
+        display: none;
+    }
 }
 
 .ellis-flute-divider {
     @extend %divider-left;
     bottom: -40px;
+
+    @include media-query(tablet-landscape-up) {
+        left: -50vw;
+    }
 }
 
 .recorder-divider {
     @extend %divider-right;
-    bottom: -100px;
+    bottom: -65px;
 }
