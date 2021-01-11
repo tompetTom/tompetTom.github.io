@@ -1,78 +1,54 @@
 %divider {
-    @extend %no-gutter;
-    // // width: 100%;
-    // height: 0;
-    // // position: relative;
+    margin: 0;
+    position: absolute;
+    z-index: 2;
 
-    div {
-        // height: 3rem;
-        max-width: 90%;
-        display: block;
-        position: absolute;
-        z-index: 2;
-
-        img {
-            width: 100%;
-        }
+    img {
+        margin: 0;
+        width: 90%;
+        max-width: 40rem;
     }
 }
 
-.divider-left {
+%divider-left {
     @extend %divider;
-    left: -$gutter - .5rem;
-    div {
+    left: 0;
+
+    img {
         float: left;
     }
 }
 
-.divider-right {
+%divider-right {
     @extend %divider;
-    right: -$gutter;
-    div {
-        right: .9rem;
+    right: 0;
+    
+    img {
+        float: right;
     }
 }
 
 .flute-divider {
-    // height: 3rem;
-    // top: -7rem;
-    top: calc(-2vw - 8rem);
-    img {
-        max-width: 40rem;
-    }
+    @extend %divider-right;
+    bottom: -40px;
 }
 
 .clarinet-divider {
-    //height: 5rem;
-    top: calc(-2vw - 3.3rem);
-    img {
-        max-width: 40rem;
-    }
+    @extend %divider-left;
+    bottom: -60px;
 }
 
 .saxophone-divider {
-    // height: 8rem;
-    // top: -5.6rem;
-    top: calc(-2.5rem - 15vw);
-    img {
-        max-width: 40rem;
-    }
+    @extend %divider-right;
+    bottom: -75px;
 }
 
 .ellis-flute-divider {
-    // height: 3.4rem;
-    // top: -5rem;
-    top: calc(-2vw - 5rem);
-    img {
-        max-width: 40rem;
-    }
+    @extend %divider-left;
+    bottom: -40px;
 }
 
 .recorder-divider {
-    // height: 5.3rem;
-    // top: -2rem;
-    top: calc(-2vw - 3.2rem);
-    img {
-        max-width: 40rem;
-    }
+    @extend %divider-right;
+    bottom: -100px;
 }

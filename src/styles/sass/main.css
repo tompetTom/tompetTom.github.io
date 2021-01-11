@@ -97,7 +97,6 @@ html {
 
 body {
   background-color: #fffffe;
-  max-width: 100vw;
 }
 
 body {
@@ -171,25 +170,42 @@ p a {
   text-decoration: underline;
 }
 
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 20vh 80vh;
+      grid-template-rows: 20vh 80vh;
+}
+
 header {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
+@media (max-width: 599px) {
+  header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 header h1 {
   padding-top: 7vh;
+}
+
+@media (min-width: 900px) {
+  header h1 span {
+    position: relative;
+    top: 1.1em;
+    right: 1.8em;
+  }
 }
 
 header h2 {
@@ -199,12 +215,15 @@ header h2 {
 }
 
 #hero-img {
+  -ms-flex-item-align: end;
+      align-self: end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 auto;
   max-width: 600px;
   width: 100vmin;
   overflow: hidden;
@@ -265,65 +284,55 @@ nav ul li {
   padding: .7em;
 }
 
-main {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-}
-
-main * {
+* {
   margin-top: 1.7rem;
 }
 
-main section, main .soundcloud {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+section, .soundcloud {
+  padding: 1rem 1.7rem;
   margin: 0;
   position: relative;
 }
 
-main #intro {
+section *, .soundcloud * {
+  margin-top: 1.7rem;
+}
+
+#intro {
   margin-top: 0;
   padding-top: 1rem;
 }
 
-main .recording {
+.recording {
   padding-bottom: 3rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#fffffe), to(#DFDFDB));
   background: linear-gradient(180deg, #fffffe, #DFDFDB);
 }
 
-main .recording-testimonials {
+.recording-testimonials {
   background-color: #4D5952;
   padding: 2.2em;
 }
 
-main .career {
+.career {
   padding-top: 1.5rem;
   background-color: #1E0C00;
   color: #fffffe;
 }
 
-main .career button {
+.career button {
   color: #1E0C00;
 }
 
-main .lux {
+.lux {
   padding-top: 2rem;
   background: -webkit-gradient(linear, left bottom, left top, from(#fffffe), to(#DFDFDB));
   background: linear-gradient(0deg, #fffffe, #DFDFDB);
 }
 
-main .teaching-testimonials {
+.teaching-testimonials {
   background-color: #1E0C00;
   margin-top: 1.7rem;
-}
-
-.divider-left, .divider-right {
-  width: 100vw;
-  position: relative;
-  left: -1.7rem;
 }
 
 footer {
@@ -347,14 +356,6 @@ iframe {
   display: block;
   height: calc(900vw / 16);
   width: 100%;
-}
-
-@media only screen and (max-width: 480px) {
-  iframe {
-    width: 100vw;
-    position: relative;
-    left: -1.7rem;
-  }
 }
 
 .instrument-list {
@@ -402,71 +403,52 @@ iframe {
   display: block;
 }
 
-.divider-left div, .divider-right div {
-  max-width: 90%;
-  display: block;
+.clarinet-divider, .ellis-flute-divider, .flute-divider, .saxophone-divider, .recorder-divider {
+  margin: 0;
   position: absolute;
   z-index: 2;
 }
 
-.divider-left div img, .divider-right div img {
-  width: 100%;
+.clarinet-divider img, .ellis-flute-divider img, .flute-divider img, .saxophone-divider img, .recorder-divider img {
+  margin: 0;
+  width: 90%;
+  max-width: 40rem;
 }
 
-.divider-left {
-  left: -2.2rem;
+.clarinet-divider, .ellis-flute-divider {
+  left: 0;
 }
 
-.divider-left div {
+.clarinet-divider img, .ellis-flute-divider img {
   float: left;
 }
 
-.divider-right {
-  right: -1.7rem;
+.flute-divider, .saxophone-divider, .recorder-divider {
+  right: 0;
 }
 
-.divider-right div {
-  right: .9rem;
+.flute-divider img, .saxophone-divider img, .recorder-divider img {
+  float: right;
 }
 
 .flute-divider {
-  top: calc(-2vw - 8rem);
-}
-
-.flute-divider img {
-  max-width: 40rem;
+  bottom: -40px;
 }
 
 .clarinet-divider {
-  top: calc(-2vw - 3.3rem);
-}
-
-.clarinet-divider img {
-  max-width: 40rem;
+  bottom: -60px;
 }
 
 .saxophone-divider {
-  top: calc(-2.5rem - 15vw);
-}
-
-.saxophone-divider img {
-  max-width: 40rem;
+  bottom: -75px;
 }
 
 .ellis-flute-divider {
-  top: calc(-2vw - 5rem);
-}
-
-.ellis-flute-divider img {
-  max-width: 40rem;
+  bottom: -40px;
 }
 
 .recorder-divider {
-  top: calc(-2vw - 3.2rem);
-}
-
-.recorder-divider img {
-  max-width: 40rem;
+  bottom: -100px;
 }
 
 .soundcloud {
@@ -475,22 +457,5 @@ iframe {
 
 .soundcloud iframe {
   height: 160px;
-}
-
-.soundcloud .soundcloud-link {
-  display: none;
-  font-size: .6rem;
-  color: #1E0C00;
-  line-break: anywhere;
-  word-break: normal;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
-  font-weight: 100;
-}
-
-.soundcloud .soundcloud-link a {
-  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */
