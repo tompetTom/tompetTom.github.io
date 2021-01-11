@@ -1,6 +1,11 @@
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+%no-gutter {
+    width: 100vw;
+    position: relative;
+    left: -$gutter;
+}
+
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
     * {
         margin-top: 1.7rem;
     }
@@ -12,6 +17,10 @@ main {
         padding-bottom: 1rem;
         margin: 0;
         position: relative;
+
+        * {
+            margin-top: 1.7rem;
+        }
     }
     #intro {
         margin-top: 0;
@@ -44,10 +53,3 @@ main {
         background-color: $warm-black;
         margin-top: 1.7rem;
     }
-}
-
-%no-gutter {
-    width: 100vw;
-    position: relative;
-    left: -$gutter;
-}

@@ -1,5 +1,7 @@
 body {
-    text-align: center;
+    @include media-query(mobile) {
+        text-align: center;
+    }
 }
 
 .hide {
