@@ -21,6 +21,28 @@
             margin-top: 1.7rem;
         }
     }
+
+    .testimonial {
+        @extend %full-width;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 3em;
+
+        * {
+            margin: 0;
+            max-width: 30em;
+        }
+
+        blockquote {
+            span {
+                display: block;
+                margin-top: .7em;
+            }
+        }
+    }
+
     #intro {
         margin-top: 0;
         padding-top: 1rem;
@@ -33,7 +55,7 @@
     .recording-testimonials {
         // @include grid-column(fill);
         background-color: $dark-green;
-        padding: 2.2em;
+        // padding: 2.2em;
     }
     .career {
         padding-top: 1.5rem;
@@ -50,5 +72,5 @@
     }
     .teaching-testimonials {
         background-color: $warm-black;
-        margin-top: 1.7rem;
+        // margin-top: 1.7rem;
     }

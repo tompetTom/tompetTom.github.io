@@ -1,5 +1,13 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20vh 80vh;
+    grid-template-rows: 30vh 70vh;
+
+    @include media-query(tablet-landscape-up) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+%full-width {
+    grid-column: 1 / -1;
 }

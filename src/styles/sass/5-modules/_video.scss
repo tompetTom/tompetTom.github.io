@@ -1,7 +1,9 @@
 iframe {
     // @extend %no-gutter;
     display: block;
-    height: calc(900vw / 16);
+    // height: calc((100vw - ($gutter * 2)) * (9 / 16));
+    // height: calc(900vw / 16);
+    height: 80%;
     width: 100%;
 
     // @include media-query(mobile) {

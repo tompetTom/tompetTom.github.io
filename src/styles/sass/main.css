@@ -96,11 +96,13 @@ html {
 }
 
 body {
-  background-color: #fffffe;
+  background-color: #f7f5ed;
 }
 
-body {
-  text-align: center;
+@media (max-width: 599px) {
+  body {
+    text-align: center;
+  }
 }
 
 .hide {
@@ -129,7 +131,7 @@ h1 {
 }
 
 blockquote {
-  color: #fffffe;
+  color: #f7f5ed;
   font-family: "Lato", sans-serif;
   font-size: 1.5rem;
   font-style: italic;
@@ -175,17 +177,33 @@ p a {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 20vh 80vh;
-      grid-template-rows: 20vh 80vh;
+  -ms-grid-rows: 30vh 70vh;
+      grid-template-rows: 30vh 70vh;
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+header, .testimonial, footer {
+  grid-column: 1 / -1;
 }
 
 header {
+  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0 1.7rem;
 }
 
 @media (max-width: 599px) {
@@ -194,6 +212,10 @@ header {
         -ms-flex-pack: center;
             justify-content: center;
   }
+}
+
+header div {
+  border: 1px solid red;
 }
 
 header h1 {
@@ -267,6 +289,10 @@ nav ul li {
   line-height: 1.2em;
 }
 
+.nav-desktop {
+  border: 1px solid red;
+}
+
 .nav-mobile {
   background-color: rgba(223, 223, 219, 0.96);
   -webkit-box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
@@ -276,6 +302,12 @@ nav ul li {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+}
+
+@media (min-width: 600px) {
+  .nav-mobile {
+    display: none;
+  }
 }
 
 .nav-mobile ul {
@@ -298,6 +330,30 @@ section *, .soundcloud * {
   margin-top: 1.7rem;
 }
 
+.testimonial {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 3em;
+}
+
+.testimonial * {
+  margin: 0;
+  max-width: 30em;
+}
+
+.testimonial blockquote span {
+  display: block;
+  margin-top: .7em;
+}
+
 #intro {
   margin-top: 0;
   padding-top: 1rem;
@@ -305,19 +361,18 @@ section *, .soundcloud * {
 
 .recording {
   padding-bottom: 3rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fffffe), to(#DFDFDB));
-  background: linear-gradient(180deg, #fffffe, #DFDFDB);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f7f5ed), to(#DFDFDB));
+  background: linear-gradient(180deg, #f7f5ed, #DFDFDB);
 }
 
 .recording-testimonials {
   background-color: #4D5952;
-  padding: 2.2em;
 }
 
 .career {
   padding-top: 1.5rem;
   background-color: #1E0C00;
-  color: #fffffe;
+  color: #f7f5ed;
 }
 
 .career button {
@@ -326,16 +381,18 @@ section *, .soundcloud * {
 
 .lux {
   padding-top: 2rem;
-  background: -webkit-gradient(linear, left bottom, left top, from(#fffffe), to(#DFDFDB));
-  background: linear-gradient(0deg, #fffffe, #DFDFDB);
+  background: -webkit-gradient(linear, left bottom, left top, from(#f7f5ed), to(#DFDFDB));
+  background: linear-gradient(0deg, #f7f5ed, #DFDFDB);
 }
 
 .teaching-testimonials {
   background-color: #1E0C00;
-  margin-top: 1.7rem;
 }
 
 footer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #DFDFDB;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,15 +403,34 @@ footer {
           flex-flow: column-reverse;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  font-size: .7rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 5rem 1.7rem 1rem 1.7rem;
+  padding: 5rem 10rem 1em 10rem;
+}
+
+@media (min-width: 900px) {
+  footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
+}
+
+footer .social-icons a {
+  display: inline-block;
+  padding: 0 .5em;
+}
+
+footer .social-icons a img {
+  height: 1rem;
 }
 
 iframe {
   display: block;
-  height: calc(900vw / 16);
+  height: 80%;
   width: 100%;
 }
 
@@ -458,4 +534,3 @@ iframe {
 .soundcloud iframe {
   height: 160px;
 }
-/*# sourceMappingURL=main.css.map */

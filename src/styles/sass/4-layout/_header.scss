@@ -1,12 +1,17 @@
 header {
-    // height: 100vh;
+    @extend %full-width;
+    border: 1px solid red;
     display: flex;
-    // flex-flow: column;
-    // align-items: center;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 $gutter;
 
     @include media-query(mobile) {
         justify-content: center;
+    }
+
+    div {
+        border: 1px solid red;
     }
     
     h1 {

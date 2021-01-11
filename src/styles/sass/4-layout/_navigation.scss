@@ -14,6 +14,10 @@ nav {
     }
 }
 
+.nav-desktop {
+    border: 1px solid red;
+}
+
 .nav-mobile {
     background-color: fade-out($pale-grey, .04);
     box-shadow: 0 0 30px fade-out($soft-black, .5);
@@ -21,6 +25,9 @@ nav {
     //width: 100vw;
     z-index: 5;
     @include sticky;
+    @include media-query(tablet-portrait-up) {
+        display: none;
+    }
 
     ul {
         margin: 0 auto;
