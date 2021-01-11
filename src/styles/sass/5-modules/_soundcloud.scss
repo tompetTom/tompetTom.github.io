@@ -1,9 +1,10 @@
 .soundcloud {
     @extend section;
-    @include make-space(top, 1rem);
+    padding-top: 1rem;
 
     iframe {
-        height: 130px;
+        height: 160px;
+        // padding-left: 2.5rem;
     }
 
     .soundcloud-link {

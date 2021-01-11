@@ -1,3 +1,27 @@
+/* MEDIA QUERIES - accepts:
+mobile,
+mobile-landscape-only,
+tablet-portrait-up,
+tablet-landscape-up,
+desktop-up,
+big-desktop-up
+*/
+@mixin media-query($size) {
+    @if $size == mobile {
+        @media (max-width: 599px) { @content; }
+    } @else if $size == mobile-lanscape-only {
+        @media (max-width: 599px) and (orientation: landscape) { @content; }
+    } @else if $size == tablet-portrait-up {
+        @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+        @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+        @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+        @media (min-width: 1800px) { @content; }
+    }
+}
+
 @mixin sticky($top: 0px) {
     position: -webkit-sticky;
     position: sticky;
@@ -11,7 +35,18 @@
         grid-column: -1 / span 1;
     } @else if $side == fill {
         grid-column: 1 / -1;
+    } @else if $side == right-responsive {
+        @include media-query(mobile) {
+            grid-column: 1 / -1;
+        };
+        @include media-query(tablet-portrait-up) {
+            grid-column: -1 / span 1;
+        };
     }
+}
+
+@mixin primary-bg-gradient($direction) {
+    background: linear-gradient($direction, $white, $pale-grey);
 }
 
 @mixin side-padding($amount) {

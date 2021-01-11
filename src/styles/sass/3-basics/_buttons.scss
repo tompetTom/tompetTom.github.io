@@ -13,6 +13,8 @@ button {
     }
 }
 
-.btn-dark-background {
-    color: $warm-black;
+.btn-secondary {
+    background: $bright-chartreuse;
+    border-radius: .5em;
+    // color: $warm-black;
 }

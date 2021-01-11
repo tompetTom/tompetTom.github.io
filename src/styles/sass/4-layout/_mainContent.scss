@@ -4,12 +4,10 @@ main {
     * {
         margin-top: 1.7rem;
     }
-    // img {
-    //     margin: 0;
-    // }
+
     section {
-        @include grid-column(fill);
-        @include side-padding($gutter);
+        // @include grid-column(fill);
+        // @include side-padding($gutter);
         padding-top: 1rem;
         padding-bottom: 1rem;
         margin: 0;
@@ -17,12 +15,15 @@ main {
     }
     #intro {
         margin-top: 0;
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
     .recording {
         padding-bottom: 3rem;
+        @include primary-bg-gradient(180deg);
+        // @include grid-column(right-responsive);
     }
     .recording-testimonials {
+        // @include grid-column(fill);
         background-color: $dark-green;
         padding: 2.2em;
     }
@@ -31,9 +32,13 @@ main {
         //padding-bottom: 0;
         background-color: $warm-black;
         color: $white;
+        button {
+            color: $warm-black;
+        }
     }
     .lux {
-        padding-top: 3rem;
+        padding-top: 2rem;
+        @include primary-bg-gradient(0deg);
     }
     .teaching-testimonials {
         background-color: $warm-black;
