@@ -99,10 +99,8 @@ body {
   background-color: #fffffe;
 }
 
-@media (max-width: 599px) {
-  body {
-    text-align: center;
-  }
+body {
+  text-align: center;
 }
 
 .hide {
@@ -291,8 +289,7 @@ nav ul li {
 }
 
 section, .soundcloud {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 1.7rem;
   margin: 0;
   position: relative;
 }
@@ -361,14 +358,6 @@ iframe {
   width: 100%;
 }
 
-@media (max-width: 599px) {
-  iframe {
-    width: 100vw;
-    position: relative;
-    left: -1.7rem;
-  }
-}
-
 .instrument-list {
   margin-top: .8em;
 }
@@ -414,71 +403,52 @@ iframe {
   display: block;
 }
 
-.divider-left div, .divider-right div {
-  max-width: 90%;
-  display: block;
+.clarinet-divider, .ellis-flute-divider, .flute-divider, .saxophone-divider, .recorder-divider {
+  margin: 0;
   position: absolute;
   z-index: 2;
 }
 
-.divider-left div img, .divider-right div img {
-  width: 100%;
+.clarinet-divider img, .ellis-flute-divider img, .flute-divider img, .saxophone-divider img, .recorder-divider img {
+  margin: 0;
+  width: 90%;
+  max-width: 40rem;
 }
 
-.divider-left {
-  left: -2.2rem;
+.clarinet-divider, .ellis-flute-divider {
+  left: 0;
 }
 
-.divider-left div {
+.clarinet-divider img, .ellis-flute-divider img {
   float: left;
 }
 
-.divider-right {
-  right: -1.7rem;
+.flute-divider, .saxophone-divider, .recorder-divider {
+  right: 0;
 }
 
-.divider-right div {
-  right: .9rem;
+.flute-divider img, .saxophone-divider img, .recorder-divider img {
+  float: right;
 }
 
 .flute-divider {
-  top: calc(-2vw - 8rem);
-}
-
-.flute-divider img {
-  max-width: 40rem;
+  bottom: -40px;
 }
 
 .clarinet-divider {
-  top: calc(-2vw - 3.3rem);
-}
-
-.clarinet-divider img {
-  max-width: 40rem;
+  bottom: -60px;
 }
 
 .saxophone-divider {
-  top: calc(-2.5rem - 15vw);
-}
-
-.saxophone-divider img {
-  max-width: 40rem;
+  bottom: -75px;
 }
 
 .ellis-flute-divider {
-  top: calc(-2vw - 5rem);
-}
-
-.ellis-flute-divider img {
-  max-width: 40rem;
+  bottom: -40px;
 }
 
 .recorder-divider {
-  top: calc(-2vw - 3.2rem);
-}
-
-.recorder-divider img {
-  max-width: 40rem;
+  bottom: -100px;
 }
 
 .soundcloud {
@@ -487,22 +457,5 @@ iframe {
 
 .soundcloud iframe {
   height: 160px;
-}
-
-.soundcloud .soundcloud-link {
-  display: none;
-  font-size: .6rem;
-  color: #1E0C00;
-  line-break: anywhere;
-  word-break: normal;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
-  font-weight: 100;
-}
-
-.soundcloud .soundcloud-link a {
-  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */

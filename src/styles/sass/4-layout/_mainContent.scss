@@ -13,8 +13,7 @@
     section {
         // @include grid-column(fill);
         // @include side-padding($gutter);
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: 1rem $gutter;
         margin: 0;
         position: relative;
 
