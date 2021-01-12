@@ -8,6 +8,8 @@ $normal: 400;
 $semi-bold: 500;
 $bold: 700;
 
+$title-size: 4rem;
+
 // COLOURS
 $soft-black: #120904;
 $warm-black: #1E0C00;
@@ -21,6 +23,7 @@ $warm-grey: #B8B3A1;
 $white: lighten($chartreuse, 45%);
 
 // LAYOUT
-$gutter: 1.7rem;
+// $gutter: 1.7rem;
+$gutter: 3vw;
 
 $full-width: 1 / -1;

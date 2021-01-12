@@ -5,8 +5,8 @@
 
     img {
         margin: 0;
-        width: 90%;
-        max-width: 40rem;
+        width: 90vw;
+        max-width: 30rem;
     }
 }
 
@@ -32,9 +32,9 @@
     @extend %divider-right;
     bottom: -40px;
 
-    @include media-query(tablet-landscape-up) {
-        right: -50vw;
-    }
+    // @include media-query(tablet-landscape-up) {
+    //     right: -50vw;
+    // }
 }
 
 .clarinet-divider {

@@ -1,5 +1,5 @@
 footer {
-    @extend %grid-full-width;
+    @include grid-column(fill);
     align-items: center;
     background-color: $pale-grey;
     display: flex;
@@ -7,19 +7,39 @@ footer {
     flex-wrap: wrap;
     font-size: .7rem;
     justify-content: space-between;
-    padding: 1em;
+    padding: 5rem $gutter 2.5em $gutter;
     padding-top: 5rem;
 
     @include media-query(tablet-landscape-up) {
         flex-flow: row;
-        padding: 5rem 20vw 1em 20vw;
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding: 5rem $gutter 2.5em $gutter;
+
+        p, a, div {
+            margin: 0 1em;
+        }
+    }
+
+    @include media-query(desktop-up) {
+        padding: 2.5em 27rem 2.5em 0;
+    }
+
+    @media only screen and (min-width: 1310px) {
+        justify-content: space-between;
+        padding: 2.5em 30rem 2.5em $gutter;
+    }
+
+    p, a, div {
+        display: inline-block;
+        height: 1rem;
     }
 
     .social-icons {
 
         a {
             display: inline-block;
-            padding: 0 .5em;
+            margin: 0 .5em;
 
             img {
                 height: 1rem;

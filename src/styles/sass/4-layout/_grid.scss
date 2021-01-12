@@ -1,8 +1,13 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30vh 70vh auto;
+    // grid-template-rows: 30vh 70vh auto;
     // grid-auto-rows: auto;
+
+    // @include media-query(tablet-portrait-up) {
+    //     position: relative;
+    //     top: 6rem;
+    // }
 
     @include media-query(tablet-landscape-up) {
         grid-template-columns: 50% 50%
@@ -18,14 +23,14 @@
 }
 
 %grid-always-right {
-    grid-column: -1 / span 1;
+    grid-column: -1 / span -1;
 }
 
 %grid-right {
-    grid-column: 1 / -1;
-    @include media-query(tablet-portrait-up) {
-        grid-column: -1 / span 1;
-    }
+    grid-column: -1 / -2;
+    // @include media-query(tablet-portrait-up) {
+    //     grid-column: -1 / span -1;
+    // }
 }
 
 %grid-left {

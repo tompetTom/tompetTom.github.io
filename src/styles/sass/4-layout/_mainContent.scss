@@ -4,8 +4,6 @@
     left: -$gutter;
 }
 
-// display: grid;
-// grid-template-columns: 1fr 1fr;
 * {
     margin-top: 1.7rem;
 }
@@ -22,21 +20,49 @@ section {
     }
 }
 
+#desktop-landing-content {
+    display: none;
+
+    @include media-query(tablet-landscape-up) {
+        display: block;
+    }
+}
+
 .recording {
+    @include grid-column(fill);
+    align-items: center;
+    box-shadow: 0 0 30px fade-out($soft-black, .5);
+    display: flex;
+    flex-flow: column;
     padding-bottom: 3rem;
     @include primary-bg-gradient(180deg);
-    // @extend %grid-right;
-    // grid-column: 1 / 2;
+
+    @include media-query(tablet-landscape-up) {
+        flex-flow: row;
+        
+        #instruments-section {
+            margin-left: $gutter;
+        }
+    }
+
+    div {
+        margin-top: 0;
+    }
 
     #intro {
         margin-top: 0;
         padding-top: 1rem;
     }
+
+    #mobile-intro-content {
+        // margin-top: 0;
+        @include media-query(tablet-landscape-up) {
+            display: none;
+        }
+    }
 }
 
 .testimonial {
-    // @extend %full-width;
-    // @include grid-column(fill);
     align-items: center;
     display: flex;
     justify-content: center;
@@ -57,17 +83,13 @@ section {
 }
 
 .recording-testimonials {
-    @extend %grid-full-width;
+    @include grid-column(fill);
     background-color: $dark-green;
     // padding: 2.2em;
 }
 
-// .soundcloud {
-//     // @extend %grid-right;
-// }
-
 .career {
-    @extend %grid-left;
+    @include grid-column(left);
     padding-top: 1.5rem;
     //padding-bottom: 0;
     background-color: $warm-black;
@@ -78,17 +100,18 @@ section {
 }
 
 .lux {
-    // @extend %grid-right;
+    @include grid-column(right);
     padding-top: 2rem;
     @include primary-bg-gradient(0deg);
 }
 
 .lessons {
-    @extend %grid-left;
+    @include grid-column(left);
+    @include primary-bg-gradient(180deg);
 }
 
 .teaching-testimonials {
-    // @extend %grid-right;
+    @include grid-column(right);
     background-color: $warm-black;
     // margin-top: 1.7rem;
 }

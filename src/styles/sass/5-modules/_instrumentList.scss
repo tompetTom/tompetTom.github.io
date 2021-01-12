@@ -1,14 +1,24 @@
 .instrument-list {
     margin-top: .8em;
+    position: relative;
+
+    @include media-query(tablet-portrait-up) {
+        margin-left: 5vw;
+        width: 8em;
+    }
 
     li {
         margin-top: 0;
-        position: relative;
-        left: .5em;
+
+        @include media-query(mobile) {
+            position: relative;
+            left: .5em;
+        }
 
         h4 {
             cursor: pointer;
             margin-top: 0;
+            z-index: 0;
 
             &:after {
                 content: "▽";
@@ -17,17 +27,39 @@
                 padding: 0 .5em;
                 transition: .4s;
                 vertical-align: top;
+
+                @include media-query(tablet-portrait-up) {
+                    content: "▷";
+                }
+            }
+
+            @include media-query(tablet-portrait-up) {
+                border-right: 1px solid $warm-black;
+                text-align: right;
             }
         }
 
         ul {
             display: none;
             font-weight: $light;
-            margin: .5rem 0 .5rem 0;
+
+            @include media-query(mobile) {
+                margin: .5rem 0 .5rem 0;
+            }
+
+            @include media-query(tablet-portrait-up) {
+                left: 8.5em;
+                margin: 0;
+                position: absolute;
+                top: 0;
+                width: 25em;
+            }
 
             li {
-                position: relative;
-                left: -.5em;
+                @include media-query(mobile) {
+                    position: relative;
+                    left: -.5em;
+                }
             }
         }
 

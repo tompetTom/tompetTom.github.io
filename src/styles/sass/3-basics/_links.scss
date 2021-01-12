@@ -1,9 +1,19 @@
 a {
     cursor: pointer;
+
+    &:hover {
+        color: $chartreuse;
+    }
 }
 
 p {
     a {
         text-decoration: underline;
+    }
+}
+
+button {
+    a:hover {
+        color: inherit;
     }
 }

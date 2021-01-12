@@ -1,7 +1,9 @@
 /* MEDIA QUERIES - accepts:
 mobile,
 mobile-landscape-only,
+tablet-portrait-only,
 tablet-portrait-up,
+tablet-landscape-only,
 tablet-landscape-up,
 desktop-up,
 big-desktop-up
@@ -11,12 +13,16 @@ big-desktop-up
         @media (max-width: 599px) { @content; }
     } @else if $size == mobile-lanscape-only {
         @media (max-width: 599px) and (orientation: landscape) { @content; }
+    } @else if $size == tablet-portrait-only {
+        @media (min-width: 600px) and (max-width: 899px) { @content; }
     } @else if $size == tablet-portrait-up {
         @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-only {
+        @media (min-width: 900px) and (max-width: 1199px) { @content; }
     } @else if $size == tablet-landscape-up {
         @media (min-width: 900px) { @content; }
     } @else if $size == desktop-up {
-        @media (min-width: 1200px) { @content; }
+        @media (min-width: 1250px) { @content; }
     } @else if $size == big-desktop-up {
         @media (min-width: 1800px) { @content; }
     }
@@ -32,19 +38,19 @@ big-desktop-up
     @if $side == "always-left" {
         grid-column: 1 / span 1;
     } @else if $side == "always-right" {
-        grid-column: -1 / span 1;
+        grid-column: -1 / span -1;
     } @else if $side == fill {
         grid-column: 1 / -1;
     } @else if $side == right {
-        grid-column: 1 / -1;
-        @include media-query(tablet-portrait-up) {
-            grid-column: -1 / span 1;
-        };
+        // grid-column: 1 / -1;
+        // @include media-query(tablet-portrait-up) {
+            grid-column: -1 / span -1;
+        // };
     } @else if $side == left {
-        grid-column: 1 / -1;
-        @include media-query(tablet-portrait-up) {
+        // grid-column: 1 / -1;
+        // @include media-query(tablet-portrait-up) {
             grid-column: 1 / span 1;
-        };
+        // };
     }
 }
 
