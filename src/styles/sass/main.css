@@ -279,7 +279,7 @@ header #title:hover {
   }
 }
 
-@media (max-width: 599px) and (orientation: landscape) {
+@media (max-width: 699px) and (orientation: landscape) {
   header #title h1 span {
     position: relative;
     top: 1.1em;
