@@ -1,14 +1,5 @@
 iframe {
-    // @extend %no-gutter;
     display: block;
-    // height: calc((100vw - ($gutter * 2)) * (9 / 16));
-    // height: calc(900vw / 16);
-    height: 20rem;
+    height: 281.25px;
     width: 100%;
-
-    // @include media-query(mobile) {
-    //     width: 100vw;
-    //     position: relative;
-    //     left: -$gutter;
-    // }
 }

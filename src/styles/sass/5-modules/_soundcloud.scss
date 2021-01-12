@@ -1,7 +1,13 @@
 .soundcloud {
-    @extend section;
+    // @extend section;
     // @include grid-column(right);
-    padding-top: 1rem;
+    // padding-top: 1rem;
+
+    display: none;
+
+    @include media-query(tablet-landscape-up) {
+        display: block;
+    }
 
     iframe {
         height: 160px;

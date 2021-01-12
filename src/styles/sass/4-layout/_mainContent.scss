@@ -9,15 +9,18 @@
 }
 
 section {
-    // display: flex;
-    // flex-flow: column;
-    padding: 1rem $gutter;
+    padding: 2rem $gutter;
     margin: 0;
     position: relative;
 
     * {
         margin-top: 1.7rem;
     }
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 500px;
 }
 
 #desktop-landing-content {
@@ -30,37 +33,50 @@ section {
 
 .recording {
     @include grid-column(fill);
+    @include primary-bg-gradient(180deg);
     align-items: center;
     box-shadow: 0 0 30px fade-out($soft-black, .5);
     display: flex;
     flex-flow: column;
-    padding-bottom: 3rem;
-    @include primary-bg-gradient(180deg);
+    justify-content: center;
 
-    @include media-query(tablet-landscape-up) {
-        flex-flow: row;
-        
-        #instruments-section {
-            margin-left: $gutter;
+    .content {
+        margin: 0;
+    }
+
+        @include media-query(mobile) {
+            padding-bottom: 3rem;
         }
-    }
 
-    div {
-        margin-top: 0;
-    }
-
-    #intro {
-        margin-top: 0;
-        padding-top: 1rem;
-    }
-
-    #mobile-intro-content {
-        // margin-top: 0;
         @include media-query(tablet-landscape-up) {
-            display: none;
+            flex-flow: row;
+            
+            .content {
+                min-width: 400px;
+            }
+            
+            #instruments-section {
+                margin-left: $gutter;
+            }
+        }
+
+        div {
+            margin-top: 0;
+        }
+
+        #intro {
+            margin-top: 0;
+            padding-top: 1rem;
+        }
+
+        #mobile-intro-content {
+            // margin-top: 0;
+            @include media-query(tablet-landscape-up) {
+                display: none;
+            }
         }
     }
-}
+// }
 
 .testimonial {
     align-items: center;
@@ -90,7 +106,7 @@ section {
 
 .career {
     @include grid-column(left);
-    padding-top: 1.5rem;
+    // padding-top: 1.5rem;
     //padding-bottom: 0;
     background-color: $warm-black;
     color: $white;
@@ -100,12 +116,17 @@ section {
 }
 
 .lux {
+    // padding-top: 2rem;
     @include grid-column(right);
-    padding-top: 2rem;
     @include primary-bg-gradient(0deg);
+
+    @include media-query(tablet-landscape-up) {
+        padding-top: 1rem;
+    }
 }
 
 .lessons {
+    // padding: 2rem $gutter;
     @include grid-column(left);
     @include primary-bg-gradient(180deg);
 }

@@ -24,13 +24,13 @@ nav {
 }
 
 .nav-desktop {
-    display: block;
+    display: none;
     text-transform: uppercase;
     margin-left: $gutter;
     max-width: 650px;
 
-    @include media-query(mobile) {
-        display: none;
+    @include media-query(tablet-portrait-up) {
+        display: block;
     }
 
     @include media-query(desktop-up) {

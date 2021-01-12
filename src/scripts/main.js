@@ -3,17 +3,18 @@ $(document).ready(() => {
         $(document).on('scroll', () => {
             if ($(document).scrollTop() > 50) {
                 $('.landing-section').find('.tagline').addClass('fade');
-            }
+            };
             if ($(document).scrollTop() > 200) {
                 $('#title').children().addClass('small');
                 $('header').addClass('scroll');
-                // $('.landing-section').find('.tagline').addClass('fade');
             };
             if ($(document).scrollTop() < 50) {
                 $('#title').children().removeClass('small');
                 $('header').removeClass('scroll');
+            };
+            if ($(document).scrollTop() < 15) {
                 $('.landing-section').find('.tagline').removeClass('fade');
-            }
+            };
         });
     };
     $('.instrument-list li').on('click', event => {

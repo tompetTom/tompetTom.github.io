@@ -27,6 +27,7 @@ header {
     }
 
     @include media-query(tablet-landscape-up) {
+        flex-wrap: nowrap;
         height: auto;
     }
 

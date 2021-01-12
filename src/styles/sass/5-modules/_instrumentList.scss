@@ -18,14 +18,19 @@
         h4 {
             cursor: pointer;
             margin-top: 0;
+            transition: .3s;
             z-index: 0;
+
+            &:hover {
+                color: $dark-green;
+            }
 
             &:after {
                 content: "▽";
                 display: inline-block;
                 font-size: .6em;
                 padding: 0 .5em;
-                transition: .4s;
+                transition: transform .4s;
                 vertical-align: top;
 
                 @include media-query(tablet-portrait-up) {
@@ -52,7 +57,7 @@
                 margin: 0;
                 position: absolute;
                 top: 0;
-                width: 25em;
+                width: 14em;
             }
 
             li {
@@ -65,8 +70,12 @@
 
         &.active {
 
-            h4:after {
-                transform: rotate(-180deg);
+            h4 {
+                color: $chartreuse;
+
+                &:after {
+                    transform: rotate(-180deg);
+                }
             }
 
             ul {
