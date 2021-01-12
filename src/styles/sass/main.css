@@ -376,6 +376,16 @@ header #title .tagline {
   }
 }
 
+.landing-section .tagline .message {
+  display: none;
+}
+
+@media (max-width: 699px) and (orientation: landscape) {
+  .landing-section .tagline .message {
+    display: inline;
+  }
+}
+
 .landing-section #desktop-landing-content {
   width: 40vw;
 }

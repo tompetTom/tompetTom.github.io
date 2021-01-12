@@ -131,6 +131,14 @@ header {
         @include media-query(tablet-landscape-up) {
             display: none;
         }
+
+        .message {
+            display: none;
+            
+            @include media-query(mobile-landscape-only) {
+                display: inline;
+            }
+        }
     }
 
     #desktop-landing-content {
