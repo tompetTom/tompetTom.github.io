@@ -29,6 +29,10 @@ nav {
     margin-left: $gutter;
     max-width: 650px;
 
+    @include media-query(mobile-landscape-only) {
+        display: none;
+    }
+
     @include media-query(tablet-portrait-up) {
         display: block;
     }
@@ -47,7 +51,7 @@ nav {
 }
 
 .nav-mobile {
-    background-color: fade-out($pale-grey, .04);
+    @include inner-shadow-sides(fade-out($pale-grey, .04));
     box-shadow: 0 0 30px fade-out($soft-black, .5);
     font-size: .7rem;
     z-index: 5;

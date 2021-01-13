@@ -23,14 +23,6 @@ section {
     max-width: 500px;
 }
 
-#desktop-landing-content {
-    display: none;
-
-    @include media-query(tablet-landscape-up) {
-        display: block;
-    }
-}
-
 .recording {
     @include grid-column(fill);
     @include primary-bg-gradient(180deg);
@@ -75,8 +67,12 @@ section {
                 display: none;
             }
         }
+    // }
+
+    #video-1 {
+        margin-top: 1.7rem;
     }
-// }
+}
 
 .testimonial {
     align-items: center;
@@ -100,7 +96,8 @@ section {
 
 .recording-testimonials {
     @include grid-column(fill);
-    background-color: $dark-green;
+    @include inner-shadow($dark-green);
+    // background-color: $dark-green;
     // padding: 2.2em;
 }
 
@@ -128,11 +125,13 @@ section {
 .lessons {
     // padding: 2rem $gutter;
     @include grid-column(left);
+    // background-color: $alt-grey;
     @include primary-bg-gradient(180deg);
 }
 
 .teaching-testimonials {
     @include grid-column(right);
-    background-color: $warm-black;
+    @include inner-shadow($warm-black);
+    // background-color: $warm-black;
     // margin-top: 1.7rem;
 }

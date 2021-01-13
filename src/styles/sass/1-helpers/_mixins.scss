@@ -12,7 +12,7 @@ big-desktop-up
     @if $size == mobile {
         @media (max-width: 599px) { @content; }
     } @else if $size == mobile-landscape-only {
-        @media (max-width: 699px) and (orientation: landscape) { @content; }
+        @media (max-width: 700px) and (orientation: landscape) { @content; }
     } @else if $size == tablet-portrait-only {
         @media (min-width: 600px) and (max-width: 899px) { @content; }
     } @else if $size == tablet-portrait-up {
@@ -56,6 +56,14 @@ big-desktop-up
 
 @mixin primary-bg-gradient($direction) {
     background: linear-gradient($direction, $white, $pale-grey);
+}
+
+@mixin inner-shadow($background) {
+    background: radial-gradient($background, darken($background, 10%));
+}
+
+@mixin inner-shadow-sides($background) {
+    background: linear-gradient(to right, darken($background, 10%) 0%, $background 15%, $background 85%, darken($background, 10%) 100%);
 }
 
 @mixin side-padding($amount) {
