@@ -29,12 +29,12 @@ nav {
     margin-left: $gutter;
     max-width: 650px;
 
-    @include media-query(mobile-landscape-only) {
-        display: none;
-    }
-
     @include media-query(tablet-portrait-up) {
         display: block;
+    }
+
+    @include media-query(mobile-landscape-only) {
+        display: none;
     }
 
     @include media-query(desktop-up) {
@@ -59,6 +59,10 @@ nav {
     
     @include media-query(tablet-portrait-up) {
         display: none;
+    }
+
+    @include media-query(mobile-landscape-only) {
+        display: block;
     }
 
     ul {
