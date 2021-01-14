@@ -53,6 +53,10 @@ header {
                 }
             }
 
+            @include media-query(mobile) {
+                font-size: 15vmin;
+            }
+
             @include media-query(tablet-landscape-only) {
                 font-size: 3rem;
             }

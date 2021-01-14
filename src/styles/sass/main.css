@@ -222,7 +222,7 @@ header.scroll {
   transition: background-color .2s;
 }
 
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
   header.scroll {
     height: 55px;
   }
@@ -267,6 +267,12 @@ header #title h1 {
 @media (min-width: 900px) {
   header #title h1.small {
     font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 599px) {
+  header #title h1 {
+    font-size: 15vmin;
   }
 }
 
@@ -333,7 +339,7 @@ header #title .tagline {
   height: 70vh;
 }
 
-@media (max-width: 700px) and (orientation: landscape) {
+@media (max-width: 899px) and (orientation: landscape) {
   .landing-section {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -446,13 +452,13 @@ nav ul li a:active {
   max-width: 650px;
 }
 
-@media (max-width: 700px) and (orientation: landscape) {
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
   .nav-desktop {
-    display: none;
+    display: block;
   }
 }
 
-@media (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   .nav-desktop {
     display: block;
   }
@@ -489,6 +495,12 @@ nav ul li a:active {
 @media (min-width: 600px) {
   .nav-mobile {
     display: none;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .nav-mobile {
+    display: block;
   }
 }
 

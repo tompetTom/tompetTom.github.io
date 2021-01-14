@@ -29,13 +29,17 @@ nav {
     margin-left: $gutter;
     max-width: 650px;
 
-    @include media-query(tablet-portrait-up) {
+    @include media-query(tablet-portrait-only) {
         display: block;
     }
 
-    @include media-query(mobile-landscape-only) {
-        display: none;
+    @media only screen and (min-width: 700px) {
+        display: block;
     }
+
+    // @include media-query(mobile-landscape-only) {
+    //     display: none;
+    // }
 
     @include media-query(desktop-up) {
         min-width: 50%;
