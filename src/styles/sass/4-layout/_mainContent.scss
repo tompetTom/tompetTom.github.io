@@ -131,7 +131,7 @@ section {
 
 .teaching-testimonials {
     @include grid-column(right);
-    @include inner-shadow($warm-black);
+    @include inner-shadow(lighten($warm-black, 10%));
     // background-color: $warm-black;
     // margin-top: 1.7rem;
 }

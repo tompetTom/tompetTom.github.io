@@ -48,10 +48,6 @@ header {
                     font-size: .9rem;
                 }
 
-                @include media-query(mobile-landscape-only) {
-                    font-size: inherit;
-                }
-
                 @include media-query(tablet-landscape-up) {
                     font-size: 1.8rem;
                 }
@@ -73,12 +69,6 @@ header {
 
         .tagline {
             display: none;
-
-            @include media-query(mobile-landscape-only) {
-                display: block;
-                margin-top: 2rem;
-                text-align: left;
-            }
     
             @include media-query(tablet-landscape-up) {
                 display: block;
@@ -98,14 +88,30 @@ header {
                 }
             }
         }
+    }
 
-        @include media-query(mobile-landscape-only) {
+    @include media-query(mobile-landscape-only) {
+        display: block;
+        height: auto;
+        position: absolute;
+        width: 50vw;
+
+        #title {
             text-align: left;
-            padding-top: 2rem;
-            position: absolute;
+            padding-top: 3rem;
 
             h1 {
-                font-size: 8vh;
+                font-size: 14vh;
+
+                &.small {
+                    font-size: 14vh;
+                }
+            }
+
+            .tagline {
+                display: block;
+                margin-top: 2rem;
+                text-align: left;
             }
         }
     }
@@ -190,6 +196,7 @@ header {
         max-width: 100%;
 
         @include media-query(mobile-landscape-only) {
+            grid-column: -1 / span -1;
             max-height: 100vh;
         }
 

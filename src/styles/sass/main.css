@@ -264,12 +264,6 @@ header #title h1 {
   }
 }
 
-@media (max-width: 899px) and (orientation: landscape) {
-  header #title h1.small {
-    font-size: inherit;
-  }
-}
-
 @media (min-width: 900px) {
   header #title h1.small {
     font-size: 1.8rem;
@@ -300,14 +294,6 @@ header #title .tagline {
   display: none;
 }
 
-@media (max-width: 899px) and (orientation: landscape) {
-  header #title .tagline {
-    display: block;
-    margin-top: 2rem;
-    text-align: left;
-  }
-}
-
 @media (min-width: 900px) {
   header #title .tagline {
     display: block;
@@ -333,13 +319,26 @@ header #title .tagline {
 }
 
 @media (max-width: 899px) and (orientation: landscape) {
+  header {
+    display: block;
+    height: auto;
+    position: absolute;
+    width: 50vw;
+  }
   header #title {
     text-align: left;
-    padding-top: 2rem;
-    position: absolute;
+    padding-top: 3rem;
   }
   header #title h1 {
-    font-size: 8vh;
+    font-size: 14vh;
+  }
+  header #title h1.small {
+    font-size: 14vh;
+  }
+  header #title .tagline {
+    display: block;
+    margin-top: 2rem;
+    text-align: left;
   }
 }
 
@@ -451,6 +450,7 @@ header #title .tagline {
 
 @media (max-width: 899px) and (orientation: landscape) {
   .landing-section .hero-img {
+    grid-column: -1 / span -1;
     max-height: 100vh;
   }
 }
@@ -523,6 +523,7 @@ nav ul li a:active {
   background: linear-gradient(to right, rgba(199, 199, 192, 0.96) 0%, rgba(223, 223, 219, 0.96) 15%, rgba(223, 223, 219, 0.96) 85%, rgba(199, 199, 192, 0.96) 100%);
   -webkit-box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
           box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
+  display: block;
   font-size: .7rem;
   z-index: 5;
   position: -webkit-sticky;
@@ -533,14 +534,14 @@ nav ul li a:active {
 @media (min-width: 600px) {
   .nav-mobile {
     display: none;
+    max-width: 400px;
+    width: 100%;
   }
 }
 
 @media (max-width: 899px) and (orientation: landscape) {
   .nav-mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
   }
 }
 
@@ -699,7 +700,7 @@ section * {
 
 .teaching-testimonials {
   grid-column: -1 / span -1;
-  background: radial-gradient(#1E0C00, black);
+  background: radial-gradient(#512000, #1e0c00);
 }
 
 footer {
