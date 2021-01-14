@@ -318,27 +318,38 @@ header #title .tagline {
   }
 }
 
+header #title .tagline span {
+  display: none;
+}
+
 @media (max-width: 899px) and (orientation: landscape) {
   header {
     display: block;
-    height: auto;
+    height: 100vh;
+    padding-left: 3vw;
     position: absolute;
     width: 50vw;
   }
+  header.scroll {
+    background-color: transparent;
+  }
   header #title {
     text-align: left;
-    padding-top: 3rem;
   }
   header #title h1 {
-    font-size: 14vh;
+    font-size: 8vw;
+    padding-top: 20vh;
   }
   header #title h1.small {
-    font-size: 14vh;
+    font-size: 8vw;
   }
   header #title .tagline {
     display: block;
     margin-top: 2rem;
     text-align: left;
+  }
+  header #title .tagline span {
+    display: block;
   }
 }
 
@@ -365,15 +376,19 @@ header #title .tagline {
 
 @media (max-width: 899px) and (orientation: landscape) {
   .landing-section {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
     height: 100vh;
+    overflow: hidden;
   }
 }
 
 @media (min-width: 600px) {
   .landing-section {
     height: 100vh;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  .landing-section {
     padding-top: 30vh;
   }
 }
@@ -450,8 +465,8 @@ header #title .tagline {
 
 @media (max-width: 899px) and (orientation: landscape) {
   .landing-section .hero-img {
-    grid-column: -1 / span -1;
     max-height: 100vh;
+    margin-left: 50vw;
   }
 }
 
@@ -502,6 +517,12 @@ nav ul li a:active {
   }
 }
 
+@media (max-width: 899px) and (orientation: landscape) {
+  .nav-desktop {
+    display: none;
+  }
+}
+
 @media (min-width: 1250px) {
   .nav-desktop {
     min-width: 50%;
@@ -523,7 +544,6 @@ nav ul li a:active {
   background: linear-gradient(to right, rgba(199, 199, 192, 0.96) 0%, rgba(223, 223, 219, 0.96) 15%, rgba(223, 223, 219, 0.96) 85%, rgba(199, 199, 192, 0.96) 100%);
   -webkit-box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
           box-shadow: 0 0 30px rgba(18, 9, 4, 0.5);
-  display: block;
   font-size: .7rem;
   z-index: 5;
   position: -webkit-sticky;
@@ -534,7 +554,6 @@ nav ul li a:active {
 @media (min-width: 600px) {
   .nav-mobile {
     display: none;
-    max-width: 400px;
     width: 100%;
   }
 }
@@ -551,6 +570,7 @@ nav ul li a:active {
   margin: 0 auto;
   max-width: 400px;
   padding: .7em;
+  text-align: center;
 }
 
 * {

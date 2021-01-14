@@ -37,9 +37,9 @@ nav {
         display: block;
     }
 
-    // @include media-query(mobile-landscape-only) {
-    //     display: none;
-    // }
+    @include media-query(mobile-landscape-only) {
+        display: none;
+    }
 
     @include media-query(desktop-up) {
         min-width: 50%;
@@ -57,14 +57,12 @@ nav {
 .nav-mobile {
     @include inner-shadow-sides(fade-out($pale-grey, .04));
     box-shadow: 0 0 30px fade-out($soft-black, .5);
-    display: block;
     font-size: .7rem;
     z-index: 5;
     @include sticky;
     
     @include media-query(tablet-portrait-up) {
         display: none;
-        max-width: 400px;
         width: 100%;
     }
 
@@ -77,5 +75,6 @@ nav {
         margin: 0 auto;
         max-width: 400px;
         padding: .7em;
+        text-align: center;
     }
 }
