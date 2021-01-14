@@ -6,29 +6,3 @@
         grid-template-columns: 50% 50%
     }
 }
-
-// %grid-full-width {
-//     grid-column: 1 / -1;
-// }
-
-// %grid-always-left {
-//     grid-column: 1 / span 1;
-// }
-
-// %grid-always-right {
-//     grid-column: -1 / span -1;
-// }
-
-// %grid-right {
-//     grid-column: -1 / -2;
-//     // @include media-query(tablet-portrait-up) {
-//     //     grid-column: -1 / span -1;
-//     // }
-// }
-
-// %grid-left {
-//     grid-column: 1 / -1;
-//     @include media-query(tablet-portrait-up) {
-//         grid-column: 1 / span 1;
-//     }
-// }

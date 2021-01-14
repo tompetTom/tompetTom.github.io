@@ -48,6 +48,10 @@ header {
                     font-size: .9rem;
                 }
 
+                @include media-query(mobile-landscape-only) {
+                    font-size: inherit;
+                }
+
                 @include media-query(tablet-landscape-up) {
                     font-size: 1.8rem;
                 }
@@ -69,6 +73,12 @@ header {
 
         .tagline {
             display: none;
+
+            @include media-query(mobile-landscape-only) {
+                display: block;
+                margin-top: 2rem;
+                text-align: left;
+            }
     
             @include media-query(tablet-landscape-up) {
                 display: block;
@@ -86,6 +96,16 @@ header {
                     font-size: .5rem;
                     left: 2.1rem;
                 }
+            }
+        }
+
+        @include media-query(mobile-landscape-only) {
+            text-align: left;
+            padding-top: 2rem;
+            position: absolute;
+
+            h1 {
+                font-size: 8vh;
             }
         }
     }
@@ -108,6 +128,7 @@ header {
 
     @include media-query(mobile-landscape-only) {
         grid-template-columns: 1fr 1fr;
+        height: 100vh;
     }
 
     @include media-query(tablet-portrait-up) {
@@ -132,6 +153,10 @@ header {
             h3 {
                 margin-top: 0;
             }
+        }
+
+        @include media-query(mobile-landscape-only) {
+            display: none;
         }
 
         @include media-query(tablet-landscape-up) {
@@ -163,6 +188,10 @@ header {
         margin: 0 auto;
         max-height: 70vh;
         max-width: 100%;
+
+        @include media-query(mobile-landscape-only) {
+            max-height: 100vh;
+        }
 
         @include media-query(tablet-landscape-up) {
             max-height: 80vh;

@@ -264,6 +264,12 @@ header #title h1 {
   }
 }
 
+@media (max-width: 899px) and (orientation: landscape) {
+  header #title h1.small {
+    font-size: inherit;
+  }
+}
+
 @media (min-width: 900px) {
   header #title h1.small {
     font-size: 1.8rem;
@@ -294,6 +300,14 @@ header #title .tagline {
   display: none;
 }
 
+@media (max-width: 899px) and (orientation: landscape) {
+  header #title .tagline {
+    display: block;
+    margin-top: 2rem;
+    text-align: left;
+  }
+}
+
 @media (min-width: 900px) {
   header #title .tagline {
     display: block;
@@ -315,6 +329,17 @@ header #title .tagline {
   header #title .tagline.small {
     font-size: .5rem;
     left: 2.1rem;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  header #title {
+    text-align: left;
+    padding-top: 2rem;
+    position: absolute;
+  }
+  header #title h1 {
+    font-size: 8vh;
   }
 }
 
@@ -343,6 +368,7 @@ header #title .tagline {
   .landing-section {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    height: 100vh;
   }
 }
 
@@ -374,6 +400,12 @@ header #title .tagline {
 
 .landing-section .landing-text .desktop-landing-content h3 {
   margin-top: 0;
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .landing-section .landing-text {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -415,6 +447,12 @@ header #title .tagline {
   margin: 0 auto;
   max-height: 70vh;
   max-width: 100%;
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .landing-section .hero-img {
+    max-height: 100vh;
+  }
 }
 
 @media (min-width: 900px) {
@@ -500,7 +538,9 @@ nav ul li a:active {
 
 @media (max-width: 899px) and (orientation: landscape) {
   .nav-mobile {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
