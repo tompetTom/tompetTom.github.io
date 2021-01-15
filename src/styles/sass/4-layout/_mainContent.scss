@@ -125,13 +125,10 @@ section {
 .lessons {
     // padding: 2rem $gutter;
     @include grid-column(left);
-    // background-color: $alt-grey;
     @include primary-bg-gradient(180deg);
 }
 
 .teaching-testimonials {
     @include grid-column(right);
     @include inner-shadow(lighten($warm-black, 10%));
-    // background-color: $warm-black;
-    // margin-top: 1.7rem;
 }

@@ -11,7 +11,7 @@ header {
 
     &.scroll {
         background-color: fade-out($white, .04);
-        transition: background-color .2s;
+        transition: background-color $default-transition-time;
     }
 
     @include media-query(tablet-portrait-only) {
@@ -63,7 +63,7 @@ header {
 
             @include media-query(tablet-landscape-up) {
                 padding-top: 0;
-                transition: .2s;
+                transition: $default-transition-time;
             }
         }
 
@@ -135,7 +135,7 @@ header {
     font-size: 1rem;
     font-weight: $light;
     text-align: center;
-    transition: .2s;
+    transition: $default-transition-time;
 }
 
 .landing-section {
@@ -169,6 +169,7 @@ header {
         width: 100%;
 
         .desktop-landing-content {
+            @extend section;
             display: none;
             overflow: scroll;
             height: 80vh;
@@ -202,7 +203,7 @@ header {
 
             &.fade {
                 opacity: 0;
-                transition: opacity .2s;
+                transition: opacity $default-transition-time;
             }
         }
     }
@@ -213,9 +214,8 @@ header {
         max-width: 100%;
 
         @include media-query(mobile-landscape-only) {
-            max-height: 100vh;
+            max-height: 90vh;
             margin-left: 50vw;
-            // max-width: 50%;
         }
 
         @include media-query(tablet-landscape-up) {

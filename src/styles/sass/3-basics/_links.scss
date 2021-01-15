@@ -1,5 +1,6 @@
 a {
     cursor: pointer;
+    transition: $default-transition-time;
 
     &:hover {
         color: $chartreuse;

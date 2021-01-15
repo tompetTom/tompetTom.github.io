@@ -16,5 +16,9 @@ button {
 .btn-secondary {
     background: $bright-chartreuse;
     border-radius: .5em;
-    // color: $warm-black;
+    transition: $default-transition-time;
+    
+    &:hover {
+        background-color: $brass;
+    }
 }

@@ -31,7 +31,7 @@ html {
           box-sizing: inherit;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, .landing-section .landing-text .desktop-landing-content, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -62,7 +62,7 @@ button {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, .landing-section .landing-text .desktop-landing-content {
   display: block;
 }
 
@@ -164,10 +164,18 @@ button em {
 .btn-secondary {
   background: #c4ae3a;
   border-radius: .5em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #F9BE00;
 }
 
 a {
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 a:hover {
@@ -218,8 +226,8 @@ header {
 
 header.scroll {
   background-color: rgba(239, 238, 234, 0.96);
-  -webkit-transition: background-color .2s;
-  transition: background-color .2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
@@ -285,8 +293,8 @@ header #title h1 {
 @media (min-width: 900px) {
   header #title h1 {
     padding-top: 0;
-    -webkit-transition: .2s;
-    transition: .2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
   }
 }
 
@@ -358,8 +366,8 @@ header #title .tagline span {
   font-size: 1rem;
   font-weight: 200;
   text-align: center;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .landing-section {
@@ -453,8 +461,8 @@ header #title .tagline span {
 
 .landing-section .landing-text .tagline.fade {
   opacity: 0;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
 
 .landing-section .hero-img {
@@ -465,7 +473,7 @@ header #title .tagline span {
 
 @media (max-width: 899px) and (orientation: landscape) {
   .landing-section .hero-img {
-    max-height: 100vh;
+    max-height: 90vh;
     margin-left: 50vw;
   }
 }
@@ -548,7 +556,13 @@ nav ul li a:active {
   z-index: 5;
   position: -webkit-sticky;
   position: sticky;
+  -webkit-transition: top 0.2s;
+  transition: top 0.2s;
   top: 0px;
+}
+
+.nav-mobile.dismiss {
+  top: -100%;
 }
 
 @media (min-width: 600px) {
@@ -577,13 +591,13 @@ nav ul li a:active {
   margin-top: 1.7rem;
 }
 
-section {
+section, .landing-section .landing-text .desktop-landing-content {
   padding: 2rem 3vw;
   margin: 0;
   position: relative;
 }
 
-section * {
+section *, .landing-section .landing-text .desktop-landing-content * {
   margin-top: 1.7rem;
 }
 
