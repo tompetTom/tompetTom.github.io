@@ -1,21 +1,94 @@
-form {
-    display: grid;
-    gap: $gutter;
-    grid-template-columns: 1fr 1fr;
+.contact-form {
+    background-color: $dark-green;
 
-    .user-details {
-        grid-column: 1 / 2;
-        width: 100%;
+    .content {
 
-        input {
-            display: block;
-            padding: .2rem;
-            width: 100%;
+        h2 {
+            color: $white;
+            margin-top: 2.5rem;
+
+            @include media-query(tablet-landscape-up) {
+                margin-top: 0;
+            }
         }
-    }
 
-    textarea {
-        @extend input;
-        grid-column: 2 / 3;
+        form {
+            display: grid;
+            column-gap: $gutter;
+            grid-template-columns: 100%;
+            margin: 0;
+            padding: 0;
+
+            @include media-query(desktop-up) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            div {
+                margin: 0;
+                width: 100%;
+
+                * {
+                    margin-top: 1rem;
+                }
+
+                input, textarea {
+                    background-color: $white;
+                    border-radius: .6em;
+                    color: $warm-black;
+                    display: block;
+                    font-size: .7rem;
+                    padding: .2rem .5rem;
+                    width: 100%;
+                }
+            }
+
+            *::placeholder {
+                color: $warm-grey;
+            }
+
+            .message {
+
+                textarea {
+                    resize: none;
+                }
+            }
+
+            .details-submit {
+                text-align: right;
+
+                button {
+                    background: $chartreuse;
+                    font-size: 1rem;
+                    max-width: 250px;
+                    position: relative;
+                    text-align: left;
+                    width: 100%;
+
+                    &:hover {
+                        background: $bright-chartreuse;
+                    }
+                    
+                    svg {
+                        background-color: $bright-chartreuse;
+                        bottom: 0;
+                        border-radius: 50%;
+                        box-shadow: 0 0 3rem -.4rem $warm-black;
+                        margin: 0;
+                        padding: .7rem;
+                        position: absolute;
+                        right: 0;
+                        height: 100%;
+
+                        .stroke {
+                            fill: none;
+                            stroke: $warm-black;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                            stroke-width: 3px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

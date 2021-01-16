@@ -11,14 +11,14 @@ button {
         font-style: normal;
         text-transform: uppercase;
     }
-}
 
-.btn-secondary {
-    background: $bright-chartreuse;
-    border-radius: .5em;
-    transition: $default-transition-time;
-    
-    &:hover {
-        background-color: $brass;
+    &.btn-secondary {
+        background: $bright-chartreuse;
+        border-radius: .5em;
+        transition: $default-transition-time;
+        
+        &:hover {
+            background-color: $brass;
+        }
     }
 }

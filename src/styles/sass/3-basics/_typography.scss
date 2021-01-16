@@ -25,6 +25,10 @@ h2 {
     line-height: 1.2em;
 }
 
+input, textarea {
+    @extend %serif-font;
+}
+
 blockquote {
     color: $white;
     font-family: $sans;

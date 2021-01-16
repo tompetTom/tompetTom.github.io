@@ -1,69 +1,78 @@
 footer {
-    @include grid-column(fill);
+    @include grid-column(right);
+    align-items: center;
     background-color: $pale-grey;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: $gutter;
-
-    .contact-form {
-        text-align: center;
-        // margin: 0 auto;
-        max-width: 500px;
-        padding-top: 5rem;
-
-        @include media-query(desktop-up) {
-            padding: 0;
-        }
-    }
+    justify-content: center;
+    padding: 2rem $gutter;
 
     .links {
-        // @include grid-column(fill);
-        align-items: center;
-        // background-color: $pale-grey;
-        display: flex;
-        flex-flow: column-reverse;
-        flex-wrap: wrap;
-        font-size: .7rem;
-        justify-content: space-between;
-        // padding: 5rem 0 2.5em 0;
-        padding-top: 5rem;
-
-        @include media-query(tablet-landscape-up) {
-            // flex-flow: row;
-            // flex-wrap: nowrap;
-            // justify-content: center;
-            // padding: 5rem 0 2.5em 0;
-
-            p, a, div {
-                // margin: 0 1em;
-            }
-        }
+        font-size: .8rem;
+        text-align: center;
+        width: 13rem;
 
         @include media-query(desktop-up) {
-            // padding: 2.5em 27rem 2.5em 0;
+            margin-top: 4rem;
         }
 
-        @media only screen and (min-width: 1310px) {
-            // justify-content: space-between;
-            // padding: 2.5em 30rem 2.5em $gutter;
+        p, a {
+            display: block;
+            height: 1.5em;
+            position: relative;
+            bottom: .5em;
         }
 
-        p, a, div {
-            display: inline-block;
-            height: 1rem;
+        .consultation {
+            border-bottom: 1px solid $warm-black;
+            margin-bottom: .7em;
+            padding-bottom: .1em;
         }
 
-        .social-icons {
+        .copyright {
+            border-top: 1px solid $warm-black;
+            padding-top: .6em;
+        }
 
-            a {
+        .centre-links {
+
+            .lux-social {
+                border-right: 1px solid $warm-black;
                 display: inline-block;
-                margin: 0 .5em;
+                height: 3em;
+                text-align: right;
+                padding-right: 1em;
 
-                img {
-                    height: 1rem;
+                .social-icons {
+                    position: relative;
+                    margin-top: -.1em;
+                    top: .6em;
+
+                    a {
+                        display: inline-block;
+                        position: relative;
+                        width: 1.7em;
+
+                        img {
+                            height: 1.3em;
+                            position: absolute;
+                            right: 0;
+                            top: -.1em;
+                        }
+                    }
                 }
             }
-        }
+
+            .treason-sitemap {
+                display: inline-block;
+                text-align: left;
+                padding-left: 1em;
+                position: relative;
+                top: .1em;
+
+                a {
+                    margin-bottom: .1em;
+                }
+            }
+        }   
     }
 }
