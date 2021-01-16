@@ -47,7 +47,7 @@ section {
                 min-width: 400px;
             }
             
-            #instruments-section {
+            .instruments-section {
                 margin-left: $gutter;
             }
         }
@@ -130,5 +130,5 @@ section {
 
 .teaching-testimonials {
     @include grid-column(right);
-    @include inner-shadow(lighten($warm-black, 10%));
+    @include inner-shadow(lighten($warm-black, 8%));
 }

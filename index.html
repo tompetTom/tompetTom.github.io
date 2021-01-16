@@ -15,14 +15,14 @@
 <body>
     <div class="grid-container">
         <!-- HEADER / HERO / LANDING -->
-        <header>
+        <header class="h">
             <a href="#" id="title">
                 <h1>Sophie Creaner</h1>
                 <h2 class="tagline">Woodwind multi-instrumentalist<span>Recording, theatre and early music</span></h2>
             </a>
             <nav class="nav-desktop">
                 <ul>
-                    <li><a href="#recording">Recording</a></li>
+                    <li><a href="#recording" class="offer">Recording</a></li>
                     <li><a href="#video-1">Media</a></li>
                     <li><a href="#lessons">Lessons</a></li>
                     <li><a href="#about">About</a></li>
@@ -36,10 +36,9 @@
                 </h2>
                 <div class="desktop-landing-content">
                     <h3 class="intro-h3">Sophie is a woodwind multi-instrumentalist based in London, originally from
-                        Cork, Ireland. She records in sessions performs in theatre shows and plays early music.</h3>
-                    <h2>Remote recording</h2>
-                    <p>Do you need woodwind tracks recorded for your project? Click below to see if Sophie could be a
-                        good fit for you.</p>
+                        Cork, Ireland. She records for sessions, performs in theatre productions and plays early music.</h3>
+                    <h2>Woodwind Remote Recording</h2>
+                    <p>Do you need woodwind tracks recorded for your project? Sophie is known for bringing a unique flair to everything she does, all with BOOBIES. Get a free consultation with Sophie to see how she could take your music to a new level.</p>
                     <button><a href="#recording">Slot her in</a></button>
                 </div>
             </div>
@@ -50,19 +49,24 @@
         <!-- MOBILE NAV -->
         <nav class="nav-mobile">
             <ul>
-                <li><a href="#"><img src="images/icons/recording.png" alt="recording">
+                <li><a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-13 0 94 96"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="nav-svg-1" d="M1.5,42.77V54.7A20.57,20.57,0,0,0,11,72.5c5,3.37,11.71,5.29,19.49,5.62h4.9c7.78-.33,14.48-2.25,19.49-5.62a20.57,20.57,0,0,0,9.47-17.8V42.84"/><path class="nav-svg-1" d="M8.83,90H57"/><path class="nav-svg-2" d="M32.39,78.12V90.44"/><path class="nav-svg-1" d="M16.68,66.91c4,2.37,9.52,3.57,16.35,3.57s12.34-1.2,16.36-3.57a14.31,14.31,0,0,0,7.32-13V26.63C56.71,15.48,47,7.7,33,7.7S9.35,15.48,9.35,26.63V54A14.32,14.32,0,0,0,16.68,66.91Z"/><path class="nav-svg-1" d="M10.11,31.52H31.86"/><path class="nav-svg-1" d="M10.11,41.89H31.86"/><path class="nav-svg-1" d="M10.11,52.26H31.86"/><path class="nav-svg-1" d="M274.72,28.39l-42-17a1.2,1.2,0,0,0-.91,0l-42,17.05a1.22,1.22,0,0,0,0,2.26l42,17.06a1.3,1.3,0,0,0,.91,0l42-17.06A1.22,1.22,0,0,0,274.72,28.39Z"/><path class="nav-svg-1" d="M212.51,39.88l-8.36,11.88a2.82,2.82,0,0,0,.11,3.19S215,68.25,232,68.25c16,0,28.63-13.4,28.63-13.4a2.5,2.5,0,0,0,.18-3.06L252,39.88"/><polyline class="nav-svg-1" points="232.25 27.61 196.44 33.36 199 72.49"/><path class="nav-svg-1" d="M197.8,73.81l-4.17,11.85A1.36,1.36,0,0,0,195,87.47l9-.26a1.37,1.37,0,0,0,1.22-1.89l-4.8-11.58A1.37,1.37,0,0,0,197.8,73.81Z"/><path class="nav-svg-1" d="M158.16,22A36.67,36.67,0,1,0,168.9,47.93,36.54,36.54,0,0,0,158.16,22Z"/><path class="nav-svg-1" d="M156.43,45.4a10.48,10.48,0,0,1-.82-1l-.2-.2a3.75,3.75,0,0,0-1-.72l-15.11-8.67a.1.1,0,0,1-.1-.11L124,25.91a5.79,5.79,0,0,0-4.29-.62A6,6,0,0,0,116.21,28a8.15,8.15,0,0,0-.61,1.32c-.1.31-.1.72-.2,1.13V66A5.57,5.57,0,0,0,121,71.63a4.69,4.69,0,0,0,1.63-.3,6.39,6.39,0,0,0,1.43-.72l15-8.67.2-.11,15.11-8.67c.1,0,.1-.1.2-.1A5.77,5.77,0,0,0,157,49.69,5.35,5.35,0,0,0,156.43,45.4Z"/><path class="nav-svg-1" d="M340.87,61.62C334.09,64.7,326,63,324.52,57.56c-1.44-5.24,4.46-10.81,14.87-10.81,11.89,0,16.35,8.34,16.35,13.52,0,8.11-5.95,16.23-25.27,16.23-14.09,0-24.19-9.59-22.3-21.64,1.49-9.47,10.11-15.2,20.81-23,7.43-5.41,10.81-10.82,10.81-18.93,0-5.41-2.69-12-9.52-11.4s-8.78,6-8.14,13.23c.9,10.34,9.12,21.3,12.8,34.68,3,10.82,4.46,17.58,4.46,27.05,0,10.81-3.46,17.28-10.17,18-5.17.52-10.82-3.94-8.65-8.85"/><rect class="nav-svg-3" x="396" y="23.47" width="72" height="50.5" rx="3.58"/><path class="nav-svg-3" d="M396,27.33l34.38,24.9a3,3,0,0,0,3.24,0L468,27.33"/><line class="nav-svg-3" x1="397.64" y1="72.04" x2="412.55" y2="51.47"/><line class="nav-svg-3" x1="466.41" y1="72.04" x2="451.5" y2="51.47"/></g></g></svg>
                         <p>Recording</p>
                     </a></li>
-                <li><a href="#"><img src="images/icons/media.png" alt="media">
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="88 0 94 96"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="nav-svg-1" d="M1.5,42.77V54.7A20.57,20.57,0,0,0,11,72.5c5,3.37,11.71,5.29,19.49,5.62h4.9c7.78-.33,14.48-2.25,19.49-5.62a20.57,20.57,0,0,0,9.47-17.8V42.84"/><path class="nav-svg-1" d="M8.83,90H57"/><path class="nav-svg-2" d="M32.39,78.12V90.44"/><path class="nav-svg-1" d="M16.68,66.91c4,2.37,9.52,3.57,16.35,3.57s12.34-1.2,16.36-3.57a14.31,14.31,0,0,0,7.32-13V26.63C56.71,15.48,47,7.7,33,7.7S9.35,15.48,9.35,26.63V54A14.32,14.32,0,0,0,16.68,66.91Z"/><path class="nav-svg-1" d="M10.11,31.52H31.86"/><path class="nav-svg-1" d="M10.11,41.89H31.86"/><path class="nav-svg-1" d="M10.11,52.26H31.86"/><path class="nav-svg-1" d="M274.72,28.39l-42-17a1.2,1.2,0,0,0-.91,0l-42,17.05a1.22,1.22,0,0,0,0,2.26l42,17.06a1.3,1.3,0,0,0,.91,0l42-17.06A1.22,1.22,0,0,0,274.72,28.39Z"/><path class="nav-svg-1" d="M212.51,39.88l-8.36,11.88a2.82,2.82,0,0,0,.11,3.19S215,68.25,232,68.25c16,0,28.63-13.4,28.63-13.4a2.5,2.5,0,0,0,.18-3.06L252,39.88"/><polyline class="nav-svg-1" points="232.25 27.61 196.44 33.36 199 72.49"/><path class="nav-svg-1" d="M197.8,73.81l-4.17,11.85A1.36,1.36,0,0,0,195,87.47l9-.26a1.37,1.37,0,0,0,1.22-1.89l-4.8-11.58A1.37,1.37,0,0,0,197.8,73.81Z"/><path class="nav-svg-1" d="M158.16,22A36.67,36.67,0,1,0,168.9,47.93,36.54,36.54,0,0,0,158.16,22Z"/><path class="nav-svg-1" d="M156.43,45.4a10.48,10.48,0,0,1-.82-1l-.2-.2a3.75,3.75,0,0,0-1-.72l-15.11-8.67a.1.1,0,0,1-.1-.11L124,25.91a5.79,5.79,0,0,0-4.29-.62A6,6,0,0,0,116.21,28a8.15,8.15,0,0,0-.61,1.32c-.1.31-.1.72-.2,1.13V66A5.57,5.57,0,0,0,121,71.63a4.69,4.69,0,0,0,1.63-.3,6.39,6.39,0,0,0,1.43-.72l15-8.67.2-.11,15.11-8.67c.1,0,.1-.1.2-.1A5.77,5.77,0,0,0,157,49.69,5.35,5.35,0,0,0,156.43,45.4Z"/><path class="nav-svg-1" d="M340.87,61.62C334.09,64.7,326,63,324.52,57.56c-1.44-5.24,4.46-10.81,14.87-10.81,11.89,0,16.35,8.34,16.35,13.52,0,8.11-5.95,16.23-25.27,16.23-14.09,0-24.19-9.59-22.3-21.64,1.49-9.47,10.11-15.2,20.81-23,7.43-5.41,10.81-10.82,10.81-18.93,0-5.41-2.69-12-9.52-11.4s-8.78,6-8.14,13.23c.9,10.34,9.12,21.3,12.8,34.68,3,10.82,4.46,17.58,4.46,27.05,0,10.81-3.46,17.28-10.17,18-5.17.52-10.82-3.94-8.65-8.85"/><rect class="nav-svg-3" x="396" y="23.47" width="72" height="50.5" rx="3.58"/><path class="nav-svg-3" d="M396,27.33l34.38,24.9a3,3,0,0,0,3.24,0L468,27.33"/><line class="nav-svg-3" x1="397.64" y1="72.04" x2="412.55" y2="51.47"/><line class="nav-svg-3" x1="466.41" y1="72.04" x2="451.5" y2="51.47"/></g></g></svg>
                         <p>Media</p>
                     </a></li>
-                <li><a href="#"><img src="images/icons/lessons.png" alt="lessons">
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="183 0 94 96"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="nav-svg-1" d="M1.5,42.77V54.7A20.57,20.57,0,0,0,11,72.5c5,3.37,11.71,5.29,19.49,5.62h4.9c7.78-.33,14.48-2.25,19.49-5.62a20.57,20.57,0,0,0,9.47-17.8V42.84"/><path class="nav-svg-1" d="M8.83,90H57"/><path class="nav-svg-2" d="M32.39,78.12V90.44"/><path class="nav-svg-1" d="M16.68,66.91c4,2.37,9.52,3.57,16.35,3.57s12.34-1.2,16.36-3.57a14.31,14.31,0,0,0,7.32-13V26.63C56.71,15.48,47,7.7,33,7.7S9.35,15.48,9.35,26.63V54A14.32,14.32,0,0,0,16.68,66.91Z"/><path class="nav-svg-1" d="M10.11,31.52H31.86"/><path class="nav-svg-1" d="M10.11,41.89H31.86"/><path class="nav-svg-1" d="M10.11,52.26H31.86"/><path class="nav-svg-1" d="M274.72,28.39l-42-17a1.2,1.2,0,0,0-.91,0l-42,17.05a1.22,1.22,0,0,0,0,2.26l42,17.06a1.3,1.3,0,0,0,.91,0l42-17.06A1.22,1.22,0,0,0,274.72,28.39Z"/><path class="nav-svg-1" d="M212.51,39.88l-8.36,11.88a2.82,2.82,0,0,0,.11,3.19S215,68.25,232,68.25c16,0,28.63-13.4,28.63-13.4a2.5,2.5,0,0,0,.18-3.06L252,39.88"/><polyline class="nav-svg-1" points="232.25 27.61 196.44 33.36 199 72.49"/><path class="nav-svg-1" d="M197.8,73.81l-4.17,11.85A1.36,1.36,0,0,0,195,87.47l9-.26a1.37,1.37,0,0,0,1.22-1.89l-4.8-11.58A1.37,1.37,0,0,0,197.8,73.81Z"/><path class="nav-svg-1" d="M158.16,22A36.67,36.67,0,1,0,168.9,47.93,36.54,36.54,0,0,0,158.16,22Z"/><path class="nav-svg-1" d="M156.43,45.4a10.48,10.48,0,0,1-.82-1l-.2-.2a3.75,3.75,0,0,0-1-.72l-15.11-8.67a.1.1,0,0,1-.1-.11L124,25.91a5.79,5.79,0,0,0-4.29-.62A6,6,0,0,0,116.21,28a8.15,8.15,0,0,0-.61,1.32c-.1.31-.1.72-.2,1.13V66A5.57,5.57,0,0,0,121,71.63a4.69,4.69,0,0,0,1.63-.3,6.39,6.39,0,0,0,1.43-.72l15-8.67.2-.11,15.11-8.67c.1,0,.1-.1.2-.1A5.77,5.77,0,0,0,157,49.69,5.35,5.35,0,0,0,156.43,45.4Z"/><path class="nav-svg-1" d="M340.87,61.62C334.09,64.7,326,63,324.52,57.56c-1.44-5.24,4.46-10.81,14.87-10.81,11.89,0,16.35,8.34,16.35,13.52,0,8.11-5.95,16.23-25.27,16.23-14.09,0-24.19-9.59-22.3-21.64,1.49-9.47,10.11-15.2,20.81-23,7.43-5.41,10.81-10.82,10.81-18.93,0-5.41-2.69-12-9.52-11.4s-8.78,6-8.14,13.23c.9,10.34,9.12,21.3,12.8,34.68,3,10.82,4.46,17.58,4.46,27.05,0,10.81-3.46,17.28-10.17,18-5.17.52-10.82-3.94-8.65-8.85"/><rect class="nav-svg-3" x="396" y="23.47" width="72" height="50.5" rx="3.58"/><path class="nav-svg-3" d="M396,27.33l34.38,24.9a3,3,0,0,0,3.24,0L468,27.33"/><line class="nav-svg-3" x1="397.64" y1="72.04" x2="412.55" y2="51.47"/><line class="nav-svg-3" x1="466.41" y1="72.04" x2="451.5" y2="51.47"/></g></g></svg>
                         <p>Lessons</p>
                     </a></li>
-                <li><a href="#"><img src="images/icons/about.png" alt="about">
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="285 0 94 96"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="nav-svg-1" d="M1.5,42.77V54.7A20.57,20.57,0,0,0,11,72.5c5,3.37,11.71,5.29,19.49,5.62h4.9c7.78-.33,14.48-2.25,19.49-5.62a20.57,20.57,0,0,0,9.47-17.8V42.84"/><path class="nav-svg-1" d="M8.83,90H57"/><path class="nav-svg-2" d="M32.39,78.12V90.44"/><path class="nav-svg-1" d="M16.68,66.91c4,2.37,9.52,3.57,16.35,3.57s12.34-1.2,16.36-3.57a14.31,14.31,0,0,0,7.32-13V26.63C56.71,15.48,47,7.7,33,7.7S9.35,15.48,9.35,26.63V54A14.32,14.32,0,0,0,16.68,66.91Z"/><path class="nav-svg-1" d="M10.11,31.52H31.86"/><path class="nav-svg-1" d="M10.11,41.89H31.86"/><path class="nav-svg-1" d="M10.11,52.26H31.86"/><path class="nav-svg-1" d="M274.72,28.39l-42-17a1.2,1.2,0,0,0-.91,0l-42,17.05a1.22,1.22,0,0,0,0,2.26l42,17.06a1.3,1.3,0,0,0,.91,0l42-17.06A1.22,1.22,0,0,0,274.72,28.39Z"/><path class="nav-svg-1" d="M212.51,39.88l-8.36,11.88a2.82,2.82,0,0,0,.11,3.19S215,68.25,232,68.25c16,0,28.63-13.4,28.63-13.4a2.5,2.5,0,0,0,.18-3.06L252,39.88"/><polyline class="nav-svg-1" points="232.25 27.61 196.44 33.36 199 72.49"/><path class="nav-svg-1" d="M197.8,73.81l-4.17,11.85A1.36,1.36,0,0,0,195,87.47l9-.26a1.37,1.37,0,0,0,1.22-1.89l-4.8-11.58A1.37,1.37,0,0,0,197.8,73.81Z"/><path class="nav-svg-1" d="M158.16,22A36.67,36.67,0,1,0,168.9,47.93,36.54,36.54,0,0,0,158.16,22Z"/><path class="nav-svg-1" d="M156.43,45.4a10.48,10.48,0,0,1-.82-1l-.2-.2a3.75,3.75,0,0,0-1-.72l-15.11-8.67a.1.1,0,0,1-.1-.11L124,25.91a5.79,5.79,0,0,0-4.29-.62A6,6,0,0,0,116.21,28a8.15,8.15,0,0,0-.61,1.32c-.1.31-.1.72-.2,1.13V66A5.57,5.57,0,0,0,121,71.63a4.69,4.69,0,0,0,1.63-.3,6.39,6.39,0,0,0,1.43-.72l15-8.67.2-.11,15.11-8.67c.1,0,.1-.1.2-.1A5.77,5.77,0,0,0,157,49.69,5.35,5.35,0,0,0,156.43,45.4Z"/><path class="nav-svg-1" d="M340.87,61.62C334.09,64.7,326,63,324.52,57.56c-1.44-5.24,4.46-10.81,14.87-10.81,11.89,0,16.35,8.34,16.35,13.52,0,8.11-5.95,16.23-25.27,16.23-14.09,0-24.19-9.59-22.3-21.64,1.49-9.47,10.11-15.2,20.81-23,7.43-5.41,10.81-10.82,10.81-18.93,0-5.41-2.69-12-9.52-11.4s-8.78,6-8.14,13.23c.9,10.34,9.12,21.3,12.8,34.68,3,10.82,4.46,17.58,4.46,27.05,0,10.81-3.46,17.28-10.17,18-5.17.52-10.82-3.94-8.65-8.85"/><rect class="nav-svg-3" x="396" y="23.47" width="72" height="50.5" rx="3.58"/><path class="nav-svg-3" d="M396,27.33l34.38,24.9a3,3,0,0,0,3.24,0L468,27.33"/><line class="nav-svg-3" x1="397.64" y1="72.04" x2="412.55" y2="51.47"/><line class="nav-svg-3" x1="466.41" y1="72.04" x2="451.5" y2="51.47"/></g></g></svg>
                         <p>About</p>
                     </a></li>
-                <li><a href="#"><img src="images/icons/contact.png" alt="contact">
+                <li><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="387 0 94 96"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="nav-svg-1" d="M1.5,42.77V54.7A20.57,20.57,0,0,0,11,72.5c5,3.37,11.71,5.29,19.49,5.62h4.9c7.78-.33,14.48-2.25,19.49-5.62a20.57,20.57,0,0,0,9.47-17.8V42.84"/><path class="nav-svg-1" d="M8.83,90H57"/><path class="nav-svg-2" d="M32.39,78.12V90.44"/><path class="nav-svg-1" d="M16.68,66.91c4,2.37,9.52,3.57,16.35,3.57s12.34-1.2,16.36-3.57a14.31,14.31,0,0,0,7.32-13V26.63C56.71,15.48,47,7.7,33,7.7S9.35,15.48,9.35,26.63V54A14.32,14.32,0,0,0,16.68,66.91Z"/><path class="nav-svg-1" d="M10.11,31.52H31.86"/><path class="nav-svg-1" d="M10.11,41.89H31.86"/><path class="nav-svg-1" d="M10.11,52.26H31.86"/><path class="nav-svg-1" d="M274.72,28.39l-42-17a1.2,1.2,0,0,0-.91,0l-42,17.05a1.22,1.22,0,0,0,0,2.26l42,17.06a1.3,1.3,0,0,0,.91,0l42-17.06A1.22,1.22,0,0,0,274.72,28.39Z"/><path class="nav-svg-1" d="M212.51,39.88l-8.36,11.88a2.82,2.82,0,0,0,.11,3.19S215,68.25,232,68.25c16,0,28.63-13.4,28.63-13.4a2.5,2.5,0,0,0,.18-3.06L252,39.88"/><polyline class="nav-svg-1" points="232.25 27.61 196.44 33.36 199 72.49"/><path class="nav-svg-1" d="M197.8,73.81l-4.17,11.85A1.36,1.36,0,0,0,195,87.47l9-.26a1.37,1.37,0,0,0,1.22-1.89l-4.8-11.58A1.37,1.37,0,0,0,197.8,73.81Z"/><path class="nav-svg-1" d="M158.16,22A36.67,36.67,0,1,0,168.9,47.93,36.54,36.54,0,0,0,158.16,22Z"/><path class="nav-svg-1" d="M156.43,45.4a10.48,10.48,0,0,1-.82-1l-.2-.2a3.75,3.75,0,0,0-1-.72l-15.11-8.67a.1.1,0,0,1-.1-.11L124,25.91a5.79,5.79,0,0,0-4.29-.62A6,6,0,0,0,116.21,28a8.15,8.15,0,0,0-.61,1.32c-.1.31-.1.72-.2,1.13V66A5.57,5.57,0,0,0,121,71.63a4.69,4.69,0,0,0,1.63-.3,6.39,6.39,0,0,0,1.43-.72l15-8.67.2-.11,15.11-8.67c.1,0,.1-.1.2-.1A5.77,5.77,0,0,0,157,49.69,5.35,5.35,0,0,0,156.43,45.4Z"/><path class="nav-svg-1" d="M340.87,61.62C334.09,64.7,326,63,324.52,57.56c-1.44-5.24,4.46-10.81,14.87-10.81,11.89,0,16.35,8.34,16.35,13.52,0,8.11-5.95,16.23-25.27,16.23-14.09,0-24.19-9.59-22.3-21.64,1.49-9.47,10.11-15.2,20.81-23,7.43-5.41,10.81-10.82,10.81-18.93,0-5.41-2.69-12-9.52-11.4s-8.78,6-8.14,13.23c.9,10.34,9.12,21.3,12.8,34.68,3,10.82,4.46,17.58,4.46,27.05,0,10.81-3.46,17.28-10.17,18-5.17.52-10.82-3.94-8.65-8.85"/><rect class="nav-svg-3" x="396" y="23.47" width="72" height="50.5" rx="3.58"/><path class="nav-svg-3" d="M396,27.33l34.38,24.9a3,3,0,0,0,3.24,0L468,27.33"/><line class="nav-svg-3" x1="397.64" y1="72.04" x2="412.55" y2="51.47"/><line class="nav-svg-3" x1="466.41" y1="72.04" x2="451.5" y2="51.47"/></g></g></svg>
                         <p>Contact</p>
                     </a></li>
             </ul>
@@ -70,9 +74,9 @@
 
         <!-- RECORDING -->
         <section id="recording" class="recording">
-            <!-- <div class="content"> -->
             <div id="mobile-intro-content" class="content">
-                <h3 id="intro">Sophie is a woodwind multi-instrumentalist based in London, originally from Cork, Ireland.
+                <h3 id="intro">Sophie is a woodwind multi-instrumentalist based in London, originally from Cork,
+                    Ireland.
                     She records sessions, performs in theatre shows and plays early music.</h3>
                 <h2>Remote recording</h2>
                 <p>Do you need woodwind tracks recorded for your project? Click below to see if Sophie could be a good
@@ -80,19 +84,20 @@
                 </p>
                 <button><a href="#recording">Slot Sophie in</a></button>
             </div>
-            <iframe id="video-1" class="youtube content" src="https://www.youtube.com/embed/-dU4MBIRKbg" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            <div id="instruments-section">
-                <div class="content">
-                    <p>Sophie records existing lines or can help to compose woodwind parts. There are boundless
-                        possibilities for new sounds with woodwind instruments, especially when layering different lines
-                        together to create unique and exciting textures.</p>
+            <div class="content">
+                <iframe id="video-1" class="youtube cont" src="https://www.youtube.com/embed/-dU4MBIRKbg"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <!-- <div id="instruments-section"> -->
+                <div class="cont">
+                    <p>There are boundless possibilities for new sounds with woodwind instruments, especially when layering different lines together to create unique and exciting textures. Sophie records existing lines or can help to compose woodwind parts.</p>
                 </div>
-
+            </div>
+            <div class="instruments-section">
                 <!-- INSTRUMENTS -->
                 <div class="content">
-                    <h3>She can record any of these instruments:</h3>
+                    <h3>Sophie records all of these instruments:</h3>
                     <ul class="instrument-list">
                         <li>
                             <h4>Clarinets</h4>
@@ -137,12 +142,11 @@
                         </li>
                     </ul>
                     <p>She can also offer <em>any</em> combination of instruments by bringing in colleagues from the
-                        industry to collaborate with on a project. This negates any disparities when recording musicians separately.
+                        industry to collaborate with on a project. As well as getting fast results, this guarantees that all the parts will fit perfectly together – in tune and matching style.
                     </p>
-                    <button><a href="#recording">Get a <em>free</em> consultation</a></button>
+                    <button><a href="#recording">Get a <em>free</em> project consultation</a></button>
                 </div>
             </div>
-            <!-- </div> -->
             <div class="flute-divider"><img src="images/instruments/dividers/flute-divider.png"
                     alt="Sophie's flute by Juan Arista"></div>
         </section>
@@ -215,20 +219,32 @@
         </section>
 
         <!-- FOOTER -->
-        <footer id="contact">
-            <p>Copyright &copy; Sophie Creaner 2021</p>
-            <a href="./sitemap.html">Sitemap</a>
-            <a href="#recording">Free recording consultation</a>
-            <a href="#">Contact</a>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/sophiecreaner/" target="_blank"><img
-                        src="./images/icons/social/instagram.svg" alt="instagram icon"></a>
-                <a href="https://www.youtube.com/channel/UCOPsAUdzl8u-es5UiFc66tg" target="_blank"><img
-                        src="./images/icons/social/youtube.svg" alt="youtube icon"></a>
-                <a href="https://soundcloud.com/ophiereaner" target="_blank"><img
-                        src="./images/icons/social/soundcloud.svg" alt="soundcloud icon"></a>
-                <a href="https://www.tiktok.com/@sophiecreaner" target="_blank"><img
-                        src="./images/icons/social/tiktok.svg" alt="tiktok icon"></a>
+        <footer>
+            <div id="contact" class="contact-form">
+                <h2>Get in touch</h2>
+                <form>
+                    <div class="user-details">
+                        <input type="text" name="Name" placeholder="Name">
+                        <input type="email" name="Email" placeholder="Email">
+                        <input type="text" name="Subject" placeholder="Subject">
+                    </div>
+                    <textarea name="Message" cols="10" rows="6" placeholder="Message"></textarea>
+                </form>
+            </div>
+            <div class="links">
+                <p>Copyright &copy; Sophie Creaner 2021</p>
+                <a href="./sitemap.html">Sitemap</a>
+                <a href="#recording">Free recording consultation</a>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/sophiecreaner/" target="_blank"><img
+                            src="./images/icons/social/instagram.svg" alt="instagram icon"></a>
+                    <a href="https://www.youtube.com/channel/UCOPsAUdzl8u-es5UiFc66tg" target="_blank"><img
+                            src="./images/icons/social/youtube.svg" alt="youtube icon"></a>
+                    <a href="https://soundcloud.com/ophiereaner" target="_blank"><img
+                            src="./images/icons/social/soundcloud.svg" alt="soundcloud icon"></a>
+                    <a href="https://www.tiktok.com/@sophiecreaner" target="_blank"><img
+                            src="./images/icons/social/tiktok.svg" alt="tiktok icon"></a>
+                </div>
             </div>
         </footer>
     </div>

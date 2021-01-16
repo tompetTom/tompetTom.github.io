@@ -1,0 +1,21 @@
+form {
+    display: grid;
+    gap: $gutter;
+    grid-template-columns: 1fr 1fr;
+
+    .user-details {
+        grid-column: 1 / 2;
+        width: 100%;
+
+        input {
+            display: block;
+            padding: .2rem;
+            width: 100%;
+        }
+    }
+
+    textarea {
+        @extend input;
+        grid-column: 2 / 3;
+    }
+}

@@ -3,20 +3,64 @@ nav {
         display: flex;
         flex-wrap: nowrap;
 
-        img {
-            height: 8vw;
-            max-height: 25px;
-        }
-
         li {
             display: inline-block;
             line-height: 1.2em;
+            position: relative;
+
+            .offer {
+
+                &:after {
+                    content: "offer";
+                    color: $orange;
+                    display: inline-block;
+                    font-size: .7em;
+                    font-weight: $bold;
+                    position: absolute;
+                    right: -1.5em;
+                    top: -1em;
+                }
+            }
 
             a {
+                svg {
+                    height: 10vw;
+                    margin: 0;
+                    max-height: 35px;
+        
+                    .nav-svg-1, .nav-svg-2, .nav-svg-3 {
+                        fill: none;
+                        stroke: $warm-black;
+                        stroke-width: 3px;
+                    }
+                    
+                    .nav-svg-1, .nav-svg-3 {
+                        stroke-linecap: round;
+                    }
+                    
+                    .nav-svg-1, .nav-svg-2 {
+                        stroke-miterlimit: 10;
+                    }
+                    
+                    .nav-svg-3 {
+                        stroke-linejoin: round;
+                    }
+                }
+
+                &:hover {
+                    color: inherit;
+                }
+
                 &:active {
                     text-decoration: overline;
                     // border-bottom: 1px solid $chartreuse;
                     // padding-bottom: .3em;
+
+                    svg {
+                        .nav-svg-1, .nav-svg-2, .nav-svg-3 {
+                            stroke: $chartreuse;
+                        }
+                    }
                 }
             }
         }
@@ -76,5 +120,14 @@ nav {
         max-width: 400px;
         padding: .7em;
         text-align: center;
+
+        li {
+            a {
+                &:active {
+                    color: $chartreuse;
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }

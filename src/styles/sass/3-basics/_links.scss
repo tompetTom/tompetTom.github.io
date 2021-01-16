@@ -4,6 +4,10 @@ a {
 
     &:hover {
         color: $chartreuse;
+
+        &:after {
+            color: $chartreuse;
+        }
     }
 }
 
