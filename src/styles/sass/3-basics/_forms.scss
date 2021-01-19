@@ -1,0 +1,20 @@
+form {
+
+    input, textarea {
+        background-color: $white;
+        border-radius: .6em;
+        color: $warm-black;
+        display: block;
+        font-size: $form-font-size;
+        padding: .2rem .5rem;
+        width: 100%;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    *::placeholder {
+        color: $warm-grey;
+    }
+}

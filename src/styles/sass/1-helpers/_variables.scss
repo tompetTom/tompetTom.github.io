@@ -9,6 +9,8 @@ $semi-bold: 500;
 $bold: 700;
 
 $title-size: 4rem;
+$form-font-size: 16px;
+$small-font: .8rem;
 
 // COLOURS
 $soft-black: #120904;
@@ -24,9 +26,10 @@ $alt-grey: #DFDDD5;
 $white: lighten($warm-grey, 25%);
 
 // LAYOUT
-// $gutter: 1.7rem;
 $gutter: 3vw;
-
 $full-width: 1 / -1;
+$paragraph-width: 500px;
+$half-width: $paragraph-width / 2;
 
+$standard-border: 1px solid $warm-black;
 $default-transition-time: .2s;

@@ -3,6 +3,6 @@
     grid-template-columns: 1fr;
 
     @include media-query(tablet-landscape-up) {
-        grid-template-columns: 50% 50%
+        grid-template-columns: 1fr 1fr;
     }
 }

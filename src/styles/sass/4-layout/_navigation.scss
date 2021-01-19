@@ -25,30 +25,7 @@ nav {
             a {
                 svg {
                     height: 10vw;
-                    margin: 0;
                     max-height: 35px;
-        
-                    .nav-svg-1, .nav-svg-2, .nav-svg-3 {
-                        fill: none;
-                        stroke: $warm-black;
-                        stroke-width: 3px;
-                    }
-                    
-                    .nav-svg-1, .nav-svg-3 {
-                        stroke-linecap: round;
-                    }
-                    
-                    .nav-svg-1, .nav-svg-2 {
-                        stroke-miterlimit: 10;
-                    }
-                    
-                    .nav-svg-3 {
-                        stroke-linejoin: round;
-                    }
-                }
-
-                &:hover {
-                    color: inherit;
                 }
 
                 &:active {
@@ -57,7 +34,7 @@ nav {
                     // padding-bottom: .3em;
 
                     svg {
-                        .nav-svg-1, .nav-svg-2, .nav-svg-3 {
+                        .stroke {
                             stroke: $chartreuse;
                         }
                     }
@@ -67,7 +44,7 @@ nav {
     }
 }
 
-.nav-desktop {
+.nav-desktop, .nav-main {
     display: none;
     text-transform: uppercase;
     margin-left: $gutter;
@@ -103,7 +80,7 @@ nav {
     box-shadow: 0 0 30px fade-out($soft-black, .5);
     font-size: .7rem;
     z-index: 5;
-    @include sticky;
+    @include sticky(top);
     
     @include media-query(tablet-portrait-up) {
         display: none;
@@ -123,6 +100,10 @@ nav {
 
         li {
             a {
+                &:hover {
+                    color: inherit;
+                }
+                
                 &:active {
                     color: $chartreuse;
                     text-decoration: none;

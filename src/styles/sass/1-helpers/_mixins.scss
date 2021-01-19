@@ -29,14 +29,14 @@ big-desktop-up
 }
 
 // POSITIONING
-@mixin sticky($top: 0px) {
+@mixin sticky($end) {
     position: -webkit-sticky;
     position: sticky;
-    transition: top $default-transition-time;
-    top: $top;
+    transition: $end $default-transition-time;
+    #{$end}: 0;
 
     &.dismiss {
-        top: -100%;
+        #{$end}: -100%;
     }
 }
 
@@ -62,22 +62,22 @@ big-desktop-up
     background: linear-gradient(to right, darken($background, 10%) 0%, $background 15%, $background 85%, darken($background, 10%) 100%);
 }
 
-@mixin side-padding($amount) {
-    padding-left: $amount;
-    padding-right: $amount;
-}
+// @mixin side-padding($amount) {
+//     padding-left: $amount;
+//     padding-right: $amount;
+// }
 
-@mixin make-space($side, $amount) {
-    @if $side == top {
-        padding-top: $amount;
-    }
-    @if $side == right {
-        padding-right: $amount;
-    }
-    @if $side == bottom {
-        padding-bottom: $amount;
-    }
-    @if $side == left {
-        padding-left: $amount;
-    }
-}
+// @mixin make-space($side, $amount) {
+//     @if $side == top {
+//         padding-top: $amount;
+//     }
+//     @if $side == right {
+//         padding-right: $amount;
+//     }
+//     @if $side == bottom {
+//         padding-bottom: $amount;
+//     }
+//     @if $side == left {
+//         padding-left: $amount;
+//     }
+// }

@@ -1,22 +1,20 @@
 header {
-    @include grid-column(fill);
     display: flex;
     align-items: center;
     flex-wrap: wrap-reverse;
     height: 30vh;
     justify-content: space-around;
+    position: absolute;
     transition: .3s;
     transition: background-color 0s;
+    width: 100%;
     z-index: 3;
 
     &.scroll {
-        background-color: fade-out($white, .04);
-        transition: background-color $default-transition-time;
-    }
-
-    @include media-query(tablet-portrait-only) {
-        &.scroll {
+        @include media-query(tablet-portrait-only) {
+            background-color: fade-out($white, .04);
             height: 55px;
+            transition: background-color $default-transition-time;
         }
     }
 
@@ -24,6 +22,10 @@ header {
         position: fixed;
         padding: 1rem 0;
         width: 100%;
+    }
+
+    @include media-query(mobile-landscape-only) {
+        position: absolute;
     }
 
     @include media-query(tablet-landscape-up) {
@@ -69,19 +71,22 @@ header {
         }
 
         .tagline {
-            display: none;
+            display: block;
+            left: 6rem;
+            line-height: .1rem;
+            text-align: left;
+            position: relative;
+
+            span {
+                display: none;
+            }
+
+            @include media-query(mobile) {
+                font-size: 4vmin;
+            }
     
             @include media-query(tablet-landscape-up) {
-                display: block;
                 left: 5rem;
-                line-height: .1rem;
-                text-align: left;
-                position: relative;
-
-                @include media-query(tablet-landscape-only) {
-                    font-size: .85rem;
-                    left: 3.5rem;
-                }
 
                 &.small {
                     font-size: .5rem;
@@ -89,46 +94,48 @@ header {
                 }
             }
 
-            span {
-                display: none;
+            @include media-query(tablet-landscape-only) {
+                font-size: .85rem;
+                left: 3.5rem;
             }
         }
     }
 
-    @include media-query(mobile-landscape-only) {
-        display: block;
-        height: 100vh;
-        padding-left: $gutter;
-        position: absolute;
-        width: 50vw;
+    // @include media-query(mobile-landscape-only) {
+    //     display: block;
+    //     height: 100vh;
+    //     padding-left: $gutter;
+    //     position: absolute;
+    //     width: 50vw;
 
-        &.scroll {
-            background-color: transparent;
-        }
+    //     &.scroll {
+    //         background-color: transparent;
+    //     }
 
-        #title {
-            text-align: left;
+    //     #title {
+    //         text-align: left;
 
-            h1 {
-                font-size: 8vw;
-                padding-top: 20vh;
+    //         h1 {
+    //             font-size: 8vw;
+    //             padding-top: 20vh;
 
-                &.small {
-                    font-size: 8vw;
-                }
-            }
+    //             &.small {
+    //                 font-size: 8vw;
+    //             }
+    //         }
 
-            .tagline {
-                display: block;
-                margin-top: 2rem;
-                text-align: left;
+    //         .tagline {
+    //             left: 0;
+    //             line-height: 1.7em;
+    //             margin-top: 2rem;
+    //             text-align: left;
 
-                span {
-                    display: block;
-                }
-            }
-        }
-    }
+    //             span {
+    //                 display: block;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 .tagline {
@@ -140,22 +147,24 @@ header {
 }
 
 .landing-section {
-    // border: 1px solid red;
     @include grid-column(fill);
     align-items: end;
+    background-image: url(../../../../images/instruments/instrument-cartoons-single-image.png);
+    background-position: bottom 0 center;
+    background-repeat: no-repeat;
+    background-size: 98vw;
     display: grid;
     grid-template-columns: 100%;
-    // padding-top: 135px;
-    height: 70vh;
+    min-height: 100vh;
 
     @include media-query(mobile-landscape-only) {
+        background-position: bottom 0 right $gutter;
+        background-size: 50vw;
         height: 100vh;
-        overflow: hidden;
     }
 
     @include media-query(tablet-portrait-up) {
-        height: 100vh;
-        // padding-top: 30vh;
+        min-height: 100vh;
     }
 
     @include media-query(tablet-portrait-only) {
@@ -163,26 +172,37 @@ header {
     }
 
     @include media-query(tablet-landscape-up) {
-        grid-template-columns: 3fr 5fr;
+        background-attachment: fixed;
+        background-position: bottom 0 right $gutter;
+        background-size: 60vw;
         margin: 0 $gutter;
-        // padding-top: 135px;
-        // padding-top: 20vh;
+        padding-top: 20vh;
     }
 
-    .landing-text {
-        width: 100%;
-        // height: 100vh;
+    .tagline {
+        transition: opacity 2.5s;
 
-        .desktop-landing-content {
-            // border: 1px solid red;
-            @extend section;
+        &.fade {
+            opacity: 0;
+            transition: opacity $default-transition-time;
+        }
+
+        @include media-query(tablet-landscape-up) {
             display: none;
-            overflow: scroll;
-            height: 80vh;
+        }
 
-            h3 {
-                margin-top: 0;
-            }
+        @include media-query(mobile-landscape-only) {
+            display: none;
+        }
+    }
+
+    .desktop-landing-content {
+        @extend section;
+        display: none;
+        width: 40%;
+
+        h3 {
+            margin-top: 0;
         }
 
         @include media-query(mobile-landscape-only) {
@@ -190,42 +210,25 @@ header {
         }
 
         @include media-query(tablet-landscape-up) {
-            align-items: center;
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-
-            .desktop-landing-content {
-                display: block;
-            }
-
-            .tagline {
-                display: none;
-            }
-        }
-
-        .tagline {
-            transition: opacity 2.5s;
-
-            &.fade {
-                opacity: 0;
-                transition: opacity $default-transition-time;
-            }
+            // align-items: center;
+            display: block;
+            // flex-flow: column;
+            // justify-content: center;
         }
     }
 
-    .hero-img {
-        margin: 0 auto;
-        max-height: 70vh;
-        max-width: 100%;
+    // .hero-img {
+    //     margin: 0 auto;
+    //     max-height: 70vh;
+    //     max-width: 100%;
 
-        @include media-query(mobile-landscape-only) {
-            max-height: 90vh;
-            margin-left: 50vw;
-        }
+    //     @include media-query(mobile-landscape-only) {
+    //         max-height: 90vh;
+    //         margin-left: 50vw;
+    //     }
 
-        @include media-query(tablet-landscape-up) {
-            max-height: 80vh;
-        }
-    }
+    //     @include media-query(tablet-landscape-up) {
+    //         max-height: 80vh;
+    //     }
+    // }
 }

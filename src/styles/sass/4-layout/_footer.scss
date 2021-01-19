@@ -7,7 +7,7 @@ footer {
     padding: 2rem $gutter;
 
     .links {
-        font-size: .8rem;
+        font-size: $small-font;
         text-align: center;
         width: 13rem;
 
@@ -23,56 +23,60 @@ footer {
         }
 
         .consultation {
-            border-bottom: 1px solid $warm-black;
-            margin-bottom: .7em;
+            border-bottom: $standard-border;
             padding-bottom: .1em;
         }
 
         .copyright {
-            border-top: 1px solid $warm-black;
+            border-top: $standard-border;
             padding-top: .6em;
         }
 
         .centre-links {
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr;
+            height: 3.5rem;
+            overflow: hidden;
+            width: 100%;
 
-            .lux-social {
-                border-right: 1px solid $warm-black;
-                display: inline-block;
-                height: 3em;
-                text-align: right;
-                padding-right: 1em;
+            %box {
+                align-items: center;
+                display: flex;
+                width: 100%;
+
+                &:nth-child(1) {
+                    padding-top: .4rem;
+                }
 
                 .social-icons {
                     position: relative;
-                    margin-top: -.1em;
-                    top: .6em;
-
+                    top: .85rem;
+                
                     a {
                         display: inline-block;
                         position: relative;
-                        width: 1.7em;
-
+                        width: 1.1rem;
+            
                         img {
-                            height: 1.3em;
+                            height: 1rem;
                             position: absolute;
-                            right: 0;
-                            top: -.1em;
+                            left: 0;
                         }
                     }
                 }
             }
 
-            .treason-sitemap {
-                display: inline-block;
-                text-align: left;
-                padding-left: 1em;
-                position: relative;
-                top: .1em;
-
-                a {
-                    margin-bottom: .1em;
-                }
+            .footer-box-left {
+                @extend %box;
+                border-right: $standard-border;
+                justify-content: flex-end;
+                padding-right: .5rem;
             }
-        }   
+
+            .footer-box-right {
+                @extend %box;
+                padding-left: .5rem;
+            }
+        }
     }
 }

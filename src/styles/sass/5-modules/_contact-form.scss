@@ -1,0 +1,46 @@
+.contact-form {
+    background-color: $dark-green;
+
+    .content {
+
+        h2 {
+            color: $white;
+            margin-top: 2.5rem;
+
+            @include media-query(tablet-landscape-up) {
+                margin-top: 0;
+            }
+        }
+
+        form {
+            display: grid;
+            column-gap: $gutter;
+            grid-template-columns: 100%;
+            margin: 0;
+            padding: 0;
+
+            @include media-query(desktop-up) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            div {
+                margin: 0;
+                width: 100%;
+
+                * {
+                    margin-top: 1rem;
+                }
+            }
+
+            .details-submit {
+                text-align: right;
+
+                button {
+                    @include media-query(tablet-landscape-up) {
+                        max-width: $half-width;
+                    }
+                }
+            }
+        }
+    }
+}

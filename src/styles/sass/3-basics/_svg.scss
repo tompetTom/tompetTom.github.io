@@ -1,0 +1,29 @@
+svg {
+    margin: 0;
+
+    * {
+        fill: none;
+        stroke: $warm-black;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+    }
+
+    .filament {
+        stroke: $brass;
+    }
+
+    .fill {
+        fill: $warm-black;
+        stroke: none;
+    }
+
+    .square {
+        stroke-linecap: square;
+    }
+
+    .test {
+        stroke: $brass;
+    }
+}

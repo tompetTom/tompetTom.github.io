@@ -52,11 +52,22 @@
 }
 
 .ellis-flute-divider {
-    @extend %divider-left;
+    @extend %divider;
     bottom: -40px;
+    right: 0;
+
+    img {
+        float: right;
+        transform: scaleX(-1);
+    }
 
     @include media-query(tablet-landscape-up) {
-        left: -50vw;
+        left: 0;
+
+        img {
+            float: left;
+            transform: scaleX(1);
+        }
     }
 }
 
