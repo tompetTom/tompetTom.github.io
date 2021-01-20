@@ -1,7 +1,6 @@
 footer {
-    @include grid-column(right);
     align-items: center;
-    background-color: $pale-grey;
+    background-color: $grey;
     display: flex;
     justify-content: center;
     padding: 2rem $gutter;
@@ -11,10 +10,6 @@ footer {
         text-align: center;
         width: 13rem;
 
-        @include media-query(desktop-up) {
-            margin-top: 4rem;
-        }
-
         p, a {
             display: block;
             height: 1.5em;
@@ -23,12 +18,12 @@ footer {
         }
 
         .consultation {
-            border-bottom: $standard-border;
+            border-bottom: $black-border;
             padding-bottom: .1em;
         }
 
         .copyright {
-            border-top: $standard-border;
+            border-top: $black-border;
             padding-top: .6em;
         }
 
@@ -68,7 +63,7 @@ footer {
 
             .footer-box-left {
                 @extend %box;
-                border-right: $standard-border;
+                border-right: $black-border;
                 justify-content: flex-end;
                 padding-right: .5rem;
             }

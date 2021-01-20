@@ -40,13 +40,24 @@
 
     .recording {
         @include grid-column(fill);
-        @include primary-bg-gradient(180deg);
-        box-shadow: 0 0 30px fade-out($soft-black, .5);
+        box-shadow: 0 0 30px fade-out($black, .5);
         display: grid;
         grid-template-columns: 1fr;
+        margin-top: -6rem;
+        padding-top: 6rem;
     
         @include media-query(mobile) {
             padding-bottom: 3rem;
+        }
+
+        @include media-query(tablet-portrait-up) {
+            margin-top: 0;
+            padding-top: 1.7rem;
+        }
+
+        @include media-query(mobile-landscape-only) {
+            margin-top: -6rem;
+            padding-top: 6rem;
         }
 
         @include media-query(tablet-landscape-up) {
@@ -79,21 +90,19 @@
     
     .recording-testimonials {
         @include grid-column(fill);
-        @include inner-shadow($dark-green);
+        @include inner-shadow($dark);
     }
     
     .career {
         @include grid-column(left);
-        background-color: $warm-black;
-        color: $white;
+        background-color: $light;
         button {
-            color: $warm-black;
+            color: $black;
         }
     }
     
     .lux {
         @include grid-column(right);
-        @include primary-bg-gradient(0deg);
     
         @include media-query(tablet-landscape-up) {
             padding-top: 1rem;
@@ -102,7 +111,6 @@
     
     .lessons {
         @include grid-column(left);
-        @include primary-bg-gradient(180deg);
 
         .content {
             
@@ -118,6 +126,16 @@
     
     .teaching-testimonials {
         @include grid-column(right);
-        @include inner-shadow(lighten($warm-black, 8%));
+        @include inner-shadow(lighten($dark, 8%));
+    }
+
+    footer {
+        @include grid-column(right);
+
+        .links {
+            @include media-query(desktop-up) {
+                margin-top: 4rem;
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@ $handwriting: 'Bad Script', cursive;
 $sans: 'Lato', sans-serif;
 $serif: 'Raleway', sans-serif;
 
-$light: 200;
+$thin: 200;
 $normal: 400;
 $semi-bold: 500;
 $bold: 700;
@@ -13,17 +13,32 @@ $form-font-size: 16px;
 $small-font: .8rem;
 
 // COLOURS
-$soft-black: #120904;
-$warm-black: #1E0C00;
-$dark-green: #4D5952;
-$chartreuse: #B1A14D;
-$bright-chartreuse: saturate($chartreuse, 15%);
+$purple-black: #140E1B;
+$rich-dark-purple: #312142;
+$turquoise: #6A9992;
+$feminine-purple: #79648F;
+$chartreuse: #CFB72F;
 $brass: #F9BE00;
-$orange: #F29E00;
-$pale-grey: #DFDFDB;
+$skin-pink: #E6B5B5;
 $warm-grey: #B8B3A1;
 $alt-grey: #DFDDD5;
-$white: lighten($warm-grey, 25%);
+
+$white: #FCFAF0;
+$black: $purple-black;
+$black-gradient: #07050A;
+$dark: $rich-dark-purple;
+$dark-gradient: #231830;
+$primary: $turquoise;
+$primary-gradient: #97CCC3;
+$secondary: $feminine-purple;
+$secondary-gradient: #B99ADB;
+$grey: $alt-grey;
+$grey-gradient: $white;
+$light: $skin-pink;
+$light-gradient: #FCD0CA;
+$accent: $chartreuse;
+$accent-gradient: #D7C34F;
+$white-gradient: #FEFDF9;
 
 // LAYOUT
 $gutter: 3vw;
@@ -31,5 +46,34 @@ $full-width: 1 / -1;
 $paragraph-width: 500px;
 $half-width: $paragraph-width / 2;
 
-$standard-border: 1px solid $warm-black;
+$white-border: 1px solid $white;
+$black-border: 1px solid $black;
 $default-transition-time: .2s;
+
+// $soft-black: #12050A;
+// $mid-black: #180C06;
+// $warm-black: #1E0C00;
+// $darker-green: #37403B;
+// $vibrant-dark-green: #2E3C1D;
+// $warm-earth-green: #424228;
+// $dark-green: #4D5952;
+// $pale-shades-sanguine: #995C83;
+// $washed-purple: #706B99;
+// $grey-purple: #8C8199;
+// $murky-mauve: #A6809D;
+// $lavender: #B2ACE5;
+// $barbie-pink: #E57EC1;
+// $light-purple: #CBB5E5;
+// $pale-shades-green: #8E9964;
+// $chartreuse: #B1A14D;
+// $bright-chartreuse: #C1AF4F;
+// $bright-chartreuse: #C6B42A;
+// $orange: #F29E00;
+// $tan-green: #8E8E64;
+// $girly-brown: #998181;
+// $dull-sand: #A68D80;
+// $washed-green: #8E9988;
+// $bright-baby-blue: #AAE6DC;
+// $very-light-green: #DBDBAF;
+// $white-green-zing: #CEE6C1;
+// $pale-grey: #DFDFDB;

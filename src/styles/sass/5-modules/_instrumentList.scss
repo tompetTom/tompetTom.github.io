@@ -22,7 +22,7 @@
             z-index: 0;
 
             &:hover {
-                color: $dark-green;
+                color: $secondary;
             }
 
             &:after {
@@ -39,7 +39,7 @@
             }
 
             @include media-query(tablet-portrait-up) {
-                border-right: 1px solid $warm-black;
+                border-right: 1px solid $black;
                 text-align: right;
             }
         }
@@ -71,7 +71,7 @@
         &.active {
 
             h4 {
-                color: $chartreuse;
+                color: $primary;
 
                 &:after {
                     transform: rotate(-180deg);

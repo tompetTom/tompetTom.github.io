@@ -74,8 +74,10 @@ header {
             display: block;
             left: 6rem;
             line-height: .1rem;
+            font-weight: $thin;
             text-align: left;
             position: relative;
+            max-width: 21rem;
 
             span {
                 display: none;
@@ -83,6 +85,10 @@ header {
 
             @include media-query(mobile) {
                 font-size: 4vmin;
+            }
+
+            @include media-query(tablet-portrait-only) {
+                display: none;
             }
     
             @include media-query(tablet-landscape-up) {
@@ -148,13 +154,10 @@ header {
 
 .landing-section {
     @include grid-column(fill);
-    align-items: end;
-    background-image: url(../../../../images/instruments/instrument-cartoons-single-image.png);
+    background-image: url(../../../images/instruments/instrument-cartoons-single-image.png);
     background-position: bottom 0 center;
     background-repeat: no-repeat;
     background-size: 98vw;
-    display: grid;
-    grid-template-columns: 100%;
     min-height: 100vh;
 
     @include media-query(mobile-landscape-only) {
@@ -177,6 +180,10 @@ header {
         background-size: 60vw;
         margin: 0 $gutter;
         padding-top: 20vh;
+    }
+
+    @include media-query(desktop-up) {
+        background-size: 100vh;
     }
 
     .tagline {
@@ -210,25 +217,7 @@ header {
         }
 
         @include media-query(tablet-landscape-up) {
-            // align-items: center;
             display: block;
-            // flex-flow: column;
-            // justify-content: center;
         }
     }
-
-    // .hero-img {
-    //     margin: 0 auto;
-    //     max-height: 70vh;
-    //     max-width: 100%;
-
-    //     @include media-query(mobile-landscape-only) {
-    //         max-height: 90vh;
-    //         margin-left: 50vw;
-    //     }
-
-    //     @include media-query(tablet-landscape-up) {
-    //         max-height: 80vh;
-    //     }
-    // }
 }

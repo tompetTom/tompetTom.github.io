@@ -1,4 +1,5 @@
 nav {
+
     ul {
         display: flex;
         flex-wrap: nowrap;
@@ -12,7 +13,7 @@ nav {
 
                 &:after {
                     content: "offer";
-                    color: $orange;
+                    color: $accent;
                     display: inline-block;
                     font-size: .7em;
                     font-weight: $bold;
@@ -30,12 +31,12 @@ nav {
 
                 &:active {
                     text-decoration: overline;
-                    // border-bottom: 1px solid $chartreuse;
+                    // border-bottom: 1px solid $accent;
                     // padding-bottom: .3em;
 
                     svg {
                         .stroke {
-                            stroke: $chartreuse;
+                            stroke: $accent;
                         }
                     }
                 }
@@ -75,9 +76,10 @@ nav {
     }
 }
 
-.nav-mobile {
-    @include inner-shadow-sides(fade-out($pale-grey, .04));
-    box-shadow: 0 0 30px fade-out($soft-black, .5);
+.nav-mobile, .index-nav-mobile {
+    @include inner-shadow-sides(fade-out($grey, .04));
+    background: none;
+    // box-shadow: 0 0 30px fade-out($black, .5);
     font-size: .7rem;
     z-index: 5;
     @include sticky(top);
@@ -92,23 +94,46 @@ nav {
     }
 
     ul {
+        height: 4rem;
         justify-content: space-around;
-        margin: 0 auto;
-        max-width: 400px;
-        padding: .7em;
+        margin: 1rem auto;
+        // max-width: 400px;
+        padding: 0 .7em;
         text-align: center;
 
         li {
+            @include button-box-shadow($grey);
+            text-align: center;
+            background: linear-gradient(225deg, $primary-gradient, $primary);
+            border-radius: 1rem;
+            padding: .7em;
+            width: 5rem;
+
             a {
+                color: $white;
+
                 &:hover {
-                    color: inherit;
+                    color: $white;
                 }
                 
                 &:active {
-                    color: $chartreuse;
+                    color: $accent;
                     text-decoration: none;
                 }
             }
+
+            svg {
+                * {
+                    stroke: $white;
+                }
+            }
         }
+    }
+}
+
+.sub-navigation {
+    
+    ul {
+        flex-wrap: wrap;
     }
 }

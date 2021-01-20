@@ -1,0 +1,78 @@
+.colour-tryout {
+
+    %choose {
+        margin: 0;
+
+        div {
+            border-radius: 50%;
+            display: inline-block;
+            height: 100px;
+            margin: 20px;
+            width: 100px;
+        }
+    }
+
+    .colour-one {
+        @extend %choose;
+        :nth-child(1) {
+            background-color: $black;
+        }
+        :nth-child(2) {
+            background-color: $primary;
+        }
+        :nth-child(3) {
+            background-color: $grey;
+        }
+        :nth-child(4) {
+            background-color: $accent;
+        }
+        :nth-child(5) {
+            background-color: $dark;
+        }
+        :nth-child(6) {
+            background-color: $secondary;
+        }
+        :nth-child(7) {
+            background-color: $light;
+        }
+        :nth-child(8) {
+            background-color: $white;
+        }
+    }
+
+    .gradient-one {
+        @extend %choose;
+        :nth-child(1) {
+            background: linear-gradient($black, $black-gradient);
+            @include button-box-shadow($black);
+        }
+        :nth-child(2) {
+            background: linear-gradient($primary, $primary-gradient);
+            @include button-box-shadow($primary);
+        }
+        :nth-child(3) {
+            background: linear-gradient($grey, $grey-gradient);
+            @include button-box-shadow($grey);
+        }
+        :nth-child(4) {
+            background: linear-gradient($accent, $accent-gradient);
+            @include button-box-shadow($grey);
+        }
+        :nth-child(5) {
+            background: linear-gradient($dark, $dark-gradient);
+            @include button-box-shadow($dark);
+        }
+        :nth-child(6) {
+            background: linear-gradient($secondary, $secondary-gradient);
+            @include button-box-shadow($secondary);
+        }
+        :nth-child(7) {
+            background: linear-gradient($light, $light-gradient);
+            @include button-box-shadow($grey);
+        }
+        :nth-child(8) {
+            background: linear-gradient($white, $white-gradient);
+            @include button-box-shadow($grey);
+        }
+    }
+}

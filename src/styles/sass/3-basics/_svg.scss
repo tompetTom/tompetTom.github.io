@@ -3,7 +3,7 @@ svg {
 
     * {
         fill: none;
-        stroke: $warm-black;
+        stroke: $black;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-miterlimit: 10;
@@ -15,7 +15,7 @@ svg {
     }
 
     .fill {
-        fill: $warm-black;
+        fill: $black;
         stroke: none;
     }
 

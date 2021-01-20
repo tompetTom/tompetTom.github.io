@@ -1,0 +1,29 @@
+.recording-sub-page {
+    .first-section {
+        @include grid-column(fill);
+    }
+
+    .recording-instruments {
+        @include grid-column(fill);
+    }
+
+    .process-gear {
+        @include grid-column(fill);
+    }
+
+    .recording-clients {
+        @include grid-column(left);
+    }
+
+    .recording-testimonials {
+        @include grid-column(right);
+    }
+
+    .recording-pricing-contact {
+        @include grid-column(fill);
+    }
+
+    footer {
+        @include grid-column(fill);
+    }
+}

@@ -50,8 +50,16 @@ big-desktop-up
     }
 }
 
+@mixin button-box-shadow($colour) {
+    box-shadow: $colour 0 .7rem 2.5rem -.1rem;
+}
+
+@mixin button-box-shadow-high($colour) {
+    box-shadow: $colour 0 .7rem 2.5rem .5rem;
+}
+
 @mixin primary-bg-gradient($direction) {
-    background: linear-gradient($direction, $white, $pale-grey);
+    background: linear-gradient($direction, $white, $grey);
 }
 
 @mixin inner-shadow($background) {

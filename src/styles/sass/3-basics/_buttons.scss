@@ -1,49 +1,85 @@
 button {
     @extend %sans-font;
-    background: linear-gradient($brass, $orange);
-    border: $standard-border;
+    @include button-box-shadow($grey);
+    background: linear-gradient($accent, $accent-gradient);
     border-radius: 1.2em;
     cursor: pointer;
     font-size: 1.2rem;
     padding: .5em 1em;
+    transition: $default-transition-time;
     
     em {
         font-style: normal;
         text-transform: uppercase;
     }
 
+    &:hover {
+        @include button-box-shadow-high($grey);
+        transform: scale(1.03);
+    }
+
+    &:active {
+        transform: scale(.99);
+    }
+
     &.btn-secondary {
-        background: $chartreuse;
+        @include button-box-shadow($secondary);
+        background: linear-gradient($secondary, $secondary-gradient);
         border-radius: .5em;
-        transition: $default-transition-time;
+        // transition: $default-transition-time;
         
+        // &:hover {
+        //     background: $bright-chartreuse;
+        // }
+    }
+
+    &.show-hide {
+        border: $black-border;
+        background: linear-gradient($white, $white-gradient);
+        font-size: .9rem;
+        font-weight: $normal;
+        padding: .1rem 2rem;
+
+        span {
+            bottom: .2em;
+            font-size: .6em;
+            padding-left: .8em;
+            position: relative;
+
+            &.down {
+                bottom: .1em;
+            }
+        }
+
         &:hover {
-            background-color: $bright-chartreuse;
+            box-shadow: none;
+            transform: scale(.99);
         }
     }
 
     &[type=submit] {
-        background: $chartreuse;
-        color: $warm-black;
+        background: linear-gradient($accent, $accent-gradient);
+        box-shadow: none;
+        color: $black;
         font-size: 1rem;
         max-width: 8rem;
         position: relative;
         text-align: left;
         width: 100%;
 
-        &:hover {
-            background: $bright-chartreuse;
-        }
+        // &:hover {
+        //     background: $bright-chartreuse;
+        // }
             
         svg {
-            background-color: $bright-chartreuse;
+            background-color: $white;
             bottom: 0;
             border-radius: 50%;
-            box-shadow: 0 0 3rem -.4rem $warm-black;
+            // box-shadow: 0 0 .4rem -.1rem $black;
             // padding: .7rem;
             // padding: .5rem;
             position: absolute;
-            right: 0;
+            right: -.1px;
             height: 100%;
         }
     }

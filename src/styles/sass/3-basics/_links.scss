@@ -3,10 +3,10 @@ a {
     transition: $default-transition-time;
 
     &:hover {
-        color: $chartreuse;
+        color: $secondary;
 
         &:after {
-            color: $chartreuse;
+            color: $accent;
         }
     }
 }
