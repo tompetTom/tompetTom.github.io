@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>.stroke{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <ellipse class="stroke" cx="28.44" cy="52.54" rx="17.69" ry="6.69" transform="translate(-24.32 24.5) rotate(-33.59)"/>
+    <path class="stroke" d="M19.3,63.65C28.13,62.5,31.4,70.6,32,77.33c.8,8.53,4.57,13.48,10,14.72,6.66,1.5,14.59-3.14,17.87-19,3-14.54,3.44-30.69,4.65-42.29,1.11-10.66,2.59-14.1,4.93-14s4.16,4.84,8.66,7.24c4.1,2.19,8.59-1.16,8.59-1.16s-5.84-.62-8-3.79c-4.08-6-5.16-10.62-9.63-11.24C64,7,59,14.3,56.34,25.85c-4.67,20-3.5,36.57-10.16,36.23-4.83-.26-5.21-10.89-3.37-14.72"/>
+    <ellipse class="stroke" cx="51.25" cy="66.2" rx="6.64" ry="4.54" transform="translate(-23.82 103.27) rotate(-78.54)"/>
+    <ellipse class="stroke" cx="55.59" cy="48.96" rx="4.47" ry="3.06" transform="translate(-1.63 96) rotate(-80.8)"/>
+    <ellipse class="stroke" cx="57.8" cy="33.89" rx="4.28" ry="2.93" transform="translate(13.1 83.8) rotate(-78.54)"/>
+</svg>

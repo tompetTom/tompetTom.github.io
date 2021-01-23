@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>.stroke{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <polyline class="stroke" points="14.41 55.88 17.19 45.63 22.81 74.52 27.2 17.41 32.74 89.76 39.14 20.06 43.08 66.49 47.06 43.12 50.32 60.01 54.2 46.38 58.1 64.97 61.34 26.54 66.75 83.31 72.22 10.24 77.71 74.98 82.55 38.91 85.3 55.97"/>
+        </g>
+    </g>
+</svg>

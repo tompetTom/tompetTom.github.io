@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <defs>
+        <style>.stroke{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path class="stroke" d="M47.48,23.85V36.08a4.17,4.17,0,0,1-4.17,4.18H6.69a4.17,4.17,0,0,1-4.17-4.18V23.85"/>
+            <path class="stroke" d="M31.51,23.85s.74,6.81-6.51,6.87-6.57-6.87-6.57-6.87H2.52L13.19,9.74H36.63L47.48,23.85h-16Z"/>
+        </g>
+    </g>
+</svg>

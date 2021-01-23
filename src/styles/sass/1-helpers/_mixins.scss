@@ -33,7 +33,7 @@ big-desktop-up
     position: -webkit-sticky;
     position: sticky;
     transition: $end $default-transition-time;
-    #{$end}: 0;
+    #{$end}: -.5rem;
 
     &.dismiss {
         #{$end}: -100%;

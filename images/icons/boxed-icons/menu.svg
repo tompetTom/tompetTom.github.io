@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>.stroke{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <line class="stroke" x1="24.77" y1="30.27" x2="75.23" y2="30.45"/>
+            <line class="stroke" x1="24.66" y1="49.9" x2="75.11" y2="50.08"/>
+            <line class="stroke" x1="24.54" y1="69.55" x2="75" y2="69.73"/>
+        </g>
+    </g>
+</svg>

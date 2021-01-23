@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>.stroke,.dash{fill:none;}.stroke,.dash,.stroke-fill{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}.dash{stroke-dasharray:8.59 11.81;}</style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <polyline class="stroke" points="51.49 24.77 51.49 49.92 73.37 60.99"/>
+            <path class="stroke" d="M88.74,60.39a39.18,39.18,0,0,1-1.27,3.79"/>
+            <path class="dash" d="M81.54,74.35A38.79,38.79,0,0,1,12.62,49.27"/>
+            <path class="stroke" d="M13.18,43.39a36.07,36.07,0,0,1,.88-3.91"/>
+            <path class="stroke" d="M14.06,39.48A38.78,38.78,0,0,1,88.74,60.39"/>
+            <polygon class="stroke-fill" points="12.81 46.09 24.64 34.52 8.71 30.06 12.81 46.09"/>
+        </g>
+    </g>
+</svg>

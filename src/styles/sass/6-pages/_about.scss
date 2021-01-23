@@ -75,4 +75,30 @@
             @include button-box-shadow($grey);
         }
     }
+
+    svg {
+        .clarinet-svg {
+            display: none;
+            .clarinet-1 {fill: #b8b3a1;}
+            .clarinet-2 {fill: #262924;}
+            .clarinet-3 {fill: #b1a14d;}
+            .clarinet-4 {fill: #060707;}
+            .clarinet-5 {fill: #4d5952;}
+            // .clarinet-1 {
+            //     fill: $light;
+            // }
+            // .clarinet-2 {
+            //     fill: $dark;
+            // }
+            // .clarinet-3 {
+            //     fill: $accent;
+            // }
+            // .clarinet-4 {
+            //     fill: $black;
+            // }
+            // .clarinet-5 {
+            //     fill: $primary;
+            // }
+        }
+    }
 }

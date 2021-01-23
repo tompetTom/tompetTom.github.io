@@ -154,11 +154,12 @@ header {
 
 .landing-section {
     @include grid-column(fill);
-    background-image: url(../../../images/instruments/instrument-cartoons-single-image.png);
-    background-position: bottom 0 center;
-    background-repeat: no-repeat;
-    background-size: 98vw;
+    // background-image: url(../../../images/instruments/woodwind-line-art.jpg);
+    // background-position: bottom 0 center;
+    // background-repeat: no-repeat;
+    // background-size: 98vw;
     min-height: 100vh;
+    position: relative;
 
     @include media-query(mobile-landscape-only) {
         background-position: bottom 0 right $gutter;
@@ -176,8 +177,8 @@ header {
 
     @include media-query(tablet-landscape-up) {
         background-attachment: fixed;
-        background-position: bottom 0 right $gutter;
-        background-size: 60vw;
+        background-position: top 7.3rem right $gutter;
+        background-size: 59vw;
         margin: 0 $gutter;
         padding-top: 20vh;
     }
@@ -218,6 +219,63 @@ header {
 
         @include media-query(tablet-landscape-up) {
             display: block;
+        }
+    }
+
+    svg {
+        bottom: .3rem;
+        position: absolute;
+        right: 0;
+        width: 100vw;
+
+        @include media-query(mobile-landscape-only) {
+            // right: $gutter;
+            width: 50vw;
+        }
+    
+        @include media-query(tablet-landscape-up) {
+            // background-attachment: fixed;
+            height: 70vh;
+            top: 20%;
+            // right: $gutter;
+            width: auto;
+            // top: 7.3rem;
+            // width: 57.5vw;
+            // margin: 0 $gutter;
+        }
+    
+        @include media-query(desktop-up) {
+            height: auto;
+            top: 7.3rem;
+            width: 100vh;
+        }
+
+        #colour {
+            
+            path {
+                stroke: none;
+                // transition: 5s;
+
+                &.recorder {
+                    fill: $light;
+                }
+
+                &.clarinet {
+                    fill: $secondary-gradient;
+                }
+
+                &.flute {
+                    fill: $grey;
+                }
+
+                &.e-flute {
+                    fill: $primary-gradient;
+                }
+
+                &.sax {
+                    fill: $accent;
+                }
+            }
         }
     }
 }

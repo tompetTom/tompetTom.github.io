@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>.stroke{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <rect class="stroke" x="5.76" y="38.46" width="88.89" height="30.83"/>
+            <polyline class="stroke" points="15.73 38.46 24.84 30.7 75.14 30.7 83.73 38.46"/>
+            <rect class="stroke" x="56.57" y="43.67" width="28.35" height="20.66"/>
+            <circle class="stroke" cx="20.53" cy="47.9" r="3.76"/>
+            <circle class="stroke" cx="33.88" cy="47.9" r="3.76"/>
+            <circle class="stroke" cx="33.88" cy="60.11" r="3.76"/>
+            <circle class="stroke" cx="20.53" cy="60.11" r="3.76"/>
+            <line class="stroke" x1="63.06" y1="52" x2="63.06" y2="64.34"/>
+            <line class="stroke" x1="68.28" y1="57.68" x2="68.28" y2="64.34"/>
+            <line class="stroke" x1="73.5" y1="54.8" x2="73.5" y2="64.34"/>
+            <line class="stroke" x1="78.69" y1="49.16" x2="78.69" y2="64.34"/>
+        </g>
+    </g>
+</svg>

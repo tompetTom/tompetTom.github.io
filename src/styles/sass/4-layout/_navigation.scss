@@ -26,7 +26,12 @@ nav {
             a {
                 svg {
                     height: 10vw;
-                    max-height: 35px;
+                    max-height: 50px;
+                }
+
+                &.current {
+                    color: $accent;
+                    text-decoration: overline;
                 }
 
                 &:active {
@@ -76,17 +81,12 @@ nav {
     }
 }
 
-.nav-mobile, .index-nav-mobile {
-    @include inner-shadow-sides(fade-out($grey, .04));
-    background: none;
-    // box-shadow: 0 0 30px fade-out($black, .5);
-    font-size: .7rem;
+%nav-mobile-base {
+    font-size: .8rem;
     z-index: 5;
-    @include sticky(top);
     
     @include media-query(tablet-portrait-up) {
         display: none;
-        width: 100%;
     }
 
     @include media-query(mobile-landscape-only) {
@@ -94,46 +94,80 @@ nav {
     }
 
     ul {
-        height: 4rem;
-        justify-content: space-around;
-        margin: 1rem auto;
-        // max-width: 400px;
-        padding: 0 .7em;
-        text-align: center;
 
         li {
-            @include button-box-shadow($grey);
             text-align: center;
-            background: linear-gradient(225deg, $primary-gradient, $primary);
-            border-radius: 1rem;
-            padding: .7em;
-            width: 5rem;
 
             a {
-                color: $white;
-
-                &:hover {
-                    color: $white;
-                }
+                color: $black;
                 
                 &:active {
                     color: $accent;
                     text-decoration: none;
-                }
-            }
 
-            svg {
-                * {
-                    stroke: $white;
+                    svg {
+                        .stroke, .square {
+                            stroke: $accent;
+                        }
+                    }
+                }
+
+                p {
+                    background: linear-gradient(225deg, $grey-gradient, $grey);
+                    border: 2px solid $grey;
+                    border-radius: 1em;
+                    padding: .1em .5em;
+                }
+
+                svg {
+                    background: linear-gradient(225deg, $grey-gradient, $grey);
+                    border: 2px solid $grey;
+                    border-radius: 50%;
+                    height: 100%;
+                    padding: .1em;
+
+                    .stroke, .square {
+                        stroke: $black;
+                    }
                 }
             }
         }
     }
 }
 
+.nav-mobile {
+    @extend %nav-mobile-base;
+    bottom: 1rem;
+    position: fixed;
+    right: 1rem;
+}
+
+.index-nav-mobile {
+    @extend %nav-mobile-base;
+    @include sticky(top);
+    width: 100%;
+
+    ul {
+        height: 4rem;
+        justify-content: space-around;
+        margin: 1rem auto;
+        max-width: 400px;
+        padding: 0 .7em;
+        text-align: center;
+    }
+}
+
 .sub-navigation {
     
     ul {
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
+        display: block;
+
+        svg {
+            // flex-basis: 4rem;
+            // flex-grow: 0;
+            // flex-shrink: 0;
+            width: 4rem;
+        }
     }
 }

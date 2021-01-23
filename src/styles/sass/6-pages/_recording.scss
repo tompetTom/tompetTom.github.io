@@ -1,10 +1,134 @@
 .recording-sub-page {
     .first-section {
         @include grid-column(fill);
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include media-query(tablet-landscape-up) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .content {
+            .ticks {
+                div {
+                    align-items: flex-start;
+                    display: flex;
+                    text-align: left;
+                    margin: 0;
+                    width: 100%;
+
+                    svg {
+                        flex-basis: 2rem;
+                        // margin-right: 1rem;
+
+                        path {
+                            stroke: $primary;
+                        }
+                    }
+
+                    p {
+                        margin: 0;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+    .recording-instruments-intro {
+        @include grid-column(fill);
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include media-query(tablet-landscape-up) {
+            grid-template-columns: 1fr 2fr;
+        }
     }
 
     .recording-instruments {
         @include grid-column(fill);
+        padding: 0;
+
+        .recording-instrument-categories {
+            display: flex;
+            // justify-content: stretch;
+            width: 100%;
+
+            li {
+                background: $light;
+                cursor: pointer;
+                text-align: center;
+                width: 20%;
+
+                &:hover {
+                    background: $grey;
+                }
+
+                h3 {
+                    @extend %sans-font;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .recording-instrument-dropdown {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            @include media-query(tablet-landscape-up) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .instrument-image {
+                @include grid-column(fill);
+                text-align: center;
+
+                h4 {
+                    @extend %sans-font;
+                }
+            }
+
+            .instrument-info {
+                @extend .content;
+                @include grid-column(left);
+
+                ul {
+                    text-align: center;
+                }
+            }
+
+            .instrument-examples {
+                @extend .content;
+                @include grid-column(right);
+            }
+
+            .show-hide {
+                margin: 0 auto;
+
+                @include media-query(tablet-landscape-up) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .idea {
+        @extend .content;
+        align-items: start;
+        display: flex;
+        margin-top: 1.7rem;
+
+        &:nth-child(1) {
+            @include grid-column(left);
+        }
+
+        &:nth-child(2) {
+            @include grid-column(right);
+        }
+
+        svg {
+            flex-basis: 5rem;
+        }
     }
 
     .process-gear {
@@ -21,6 +145,13 @@
 
     .recording-pricing-contact {
         @include grid-column(fill);
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include media-query(tablet-landscape-up) {
+            grid-template-columns: 1fr 2fr;
+        }
     }
 
     footer {
