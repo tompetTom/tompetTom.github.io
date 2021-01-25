@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100.13 100">
+    <defs>
+        <style>.soundcloud-gradient{fill:url(#linear-gradient);}.cls-3{fill:url(#linear-gradient-2);}.cls-4{fill:url(#linear-gradient-3);}.cls-5{fill:url(#linear-gradient-4);}.cls-6{fill:url(#linear-gradient-5);}.cls-7{fill:url(#linear-gradient-6);}.cls-8{fill:url(#linear-gradient-7);}.cls-9{fill:url(#linear-gradient-8);}.cls-10{fill:url(#linear-gradient-9);}.cls-11{fill:url(#linear-gradient-10);}.cls-12{fill:url(#linear-gradient-11);}</style>
+        <linearGradient id="linear-gradient" x1="50" y1="30" x2="50" y2="70" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#de9329"/>
+            <stop offset="1" stop-color="#d64c1b"/>
+        </linearGradient>
+    </defs>
+    <path class="soundcloud-gradient" d="M100.1,58.92A11.59,11.59,0,0,0,83,49.55,21.33,21.33,0,0,0,61.67,28.67a17.52,17.52,0,0,0-7.79,1.93A1.59,1.59,0,0,0,53,32.05V69.86a1.58,1.58,0,0,0,1.58,1.58l34-.11A11.6,11.6,0,0,0,100.1,58.92Z"/>
+    <path class="soundcloud-gradient" d="M49,31.12a1.6,1.6,0,0,0-1.6,1.59v37a1.6,1.6,0,0,0,3.19,0v-37A1.59,1.59,0,0,0,49,31.12Z"/>
+    <path class="soundcloud-gradient" d="M43.75,35.05a1.6,1.6,0,0,0-1.6,1.59V69.7a1.6,1.6,0,0,0,3.19,0V36.64A1.59,1.59,0,0,0,43.75,35.05Z"/>
+    <path class="soundcloud-gradient" d="M38.48,36.84a1.6,1.6,0,0,0-1.59,1.6V69.7a1.59,1.59,0,0,0,3.18,0V38.44A1.6,1.6,0,0,0,38.48,36.84Z"/>
+    <path class="soundcloud-gradient" d="M33.21,34.45a1.6,1.6,0,0,0-1.59,1.6V69.7a1.59,1.59,0,0,0,3.18,0V36.05A1.6,1.6,0,0,0,33.21,34.45Z"/>
+    <path class="soundcloud-gradient" d="M27.94,36.05a1.59,1.59,0,0,0-1.59,1.59V69.7a1.59,1.59,0,0,0,3.18,0V37.64A1.59,1.59,0,0,0,27.94,36.05Z"/>
+    <path class="soundcloud-gradient" d="M22.67,39.23a1.6,1.6,0,0,0-1.59,1.6V69.7a1.59,1.59,0,1,0,3.18,0V40.83A1.6,1.6,0,0,0,22.67,39.23Z"/>
+    <path class="soundcloud-gradient" d="M17.4,45.41A1.59,1.59,0,0,0,15.81,47V69.7a1.59,1.59,0,0,0,3.18,0V47A1.59,1.59,0,0,0,17.4,45.41Z"/>
+    <path class="soundcloud-gradient" d="M12.13,48a1.6,1.6,0,0,0-1.59,1.6V69.7a1.59,1.59,0,1,0,3.18,0V49.59A1.6,1.6,0,0,0,12.13,48Z"/>
+    <path class="soundcloud-gradient" d="M6.86,48.59a1.59,1.59,0,0,0-1.59,1.59V69.1a1.59,1.59,0,0,0,3.18,0V50.18A1.59,1.59,0,0,0,6.86,48.59Z"/>
+    <path class="soundcloud-gradient" d="M1.59,52.75A1.59,1.59,0,0,0,0,54.34v10.9a1.59,1.59,0,0,0,3.18,0V54.34A1.59,1.59,0,0,0,1.59,52.75Z"/>
+</svg>

@@ -40,7 +40,6 @@
 
     .recording {
         @include grid-column(fill);
-        box-shadow: 0 0 30px fade-out($black, .5);
         display: grid;
         grid-template-columns: 1fr;
         margin-top: -6rem;
@@ -72,6 +71,10 @@
             margin-top: 0;
         }
 
+        .instruments-section {
+            @extend section;
+        }
+
         #intro {
             margin-top: 0;
             padding-top: 1rem;
@@ -90,15 +93,11 @@
     
     .recording-testimonials {
         @include grid-column(fill);
-        @include inner-shadow($dark);
+        // @include inner-shadow($dark);
     }
     
     .career {
         @include grid-column(left);
-        background-color: $light;
-        button {
-            color: $black;
-        }
     }
     
     .lux {
@@ -126,11 +125,12 @@
     
     .teaching-testimonials {
         @include grid-column(right);
-        @include inner-shadow(lighten($dark, 8%));
     }
 
     footer {
-        @include grid-column(right);
+        @include media-query(tablet-landscape-up) {
+            @include grid-column(right);
+        }
 
         .links {
             @include media-query(desktop-up) {

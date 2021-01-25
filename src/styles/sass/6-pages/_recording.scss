@@ -1,7 +1,9 @@
 .recording-sub-page {
     .first-section {
         @include grid-column(fill);
+        align-items: center;
         display: grid;
+        gap: $gutter;
         grid-template-columns: 1fr;
 
         @include media-query(tablet-landscape-up) {
@@ -9,130 +11,291 @@
         }
 
         .content {
+            align-self: start;
+
             .ticks {
-                div {
-                    align-items: flex-start;
-                    display: flex;
-                    text-align: left;
-                    margin: 0;
-                    width: 100%;
-
-                    svg {
-                        flex-basis: 2rem;
-                        // margin-right: 1rem;
-
-                        path {
-                            stroke: $primary;
-                        }
-                    }
-
-                    p {
-                        margin: 0;
-                        text-align: left;
-                    }
+                path {
+                    stroke: $primary;
                 }
+            }
+        }
+
+        form {
+            align-items: end;
+            display: none;
+
+            @include media-query(tablet-landscape-up) {
+                display: grid;
+            }
+
+            textarea {
+                height: 10rem;
             }
         }
     }
 
     .recording-instruments-intro {
+        @extend section;
         @include grid-column(fill);
         display: grid;
+        column-gap: $gutter;
         grid-template-columns: 1fr;
+        margin-top: $margin-top;
 
         @include media-query(tablet-landscape-up) {
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: minmax(19rem, 2fr) 3fr;
         }
     }
 
     .recording-instruments {
-        @include grid-column(fill);
+        @extend section;
+        @include grid-column(full-width);
         padding: 0;
+        margin-top: $margin-top;
+        width: 100%;
 
         .recording-instrument-categories {
+            align-items: stretch;
             display: flex;
-            // justify-content: stretch;
+            height: 20vw;
+            margin: 0 auto;
+            max-height: 260px;
+            max-width: 1300px;
             width: 100%;
 
             li {
-                background: $light;
+                align-items: center;
                 cursor: pointer;
-                text-align: center;
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-end;
+                margin: 0;
+                position: relative;
                 width: 20%;
 
-                &:hover {
-                    background: $grey;
+                &.flutes {
+                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1562808191-76e71b08a870?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3152&q=80);
                 }
 
-                h3 {
-                    @extend %sans-font;
-                    font-size: 1rem;
+                &.clarinets {
+                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1573871665247-2b556aa23460?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=3150&q=80);
+                }
+
+                &.recorders {
+                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1504339804171-c44c838612e6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80);
+                }
+
+                &.world-flutes {
+                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1575669572405-52da19d6a7db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2970&q=80);
+                }
+
+                &.saxophones {
+                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1566765479776-249be4decbaa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1943&q=80);
+                }
+
+                .caption {
+                    background-color: fade-out($white, .4);
+                    text-align: center;
+                    padding-top: .7rem;
+                    width: 100%;
+
+                    h3 {
+                        @extend %sans-font;
+                        color: $black;
+                        font-size: 2.5vw;
+
+                        @include media-query(desktop-up) {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    svg {
+                        width: 2.5vw;
+
+                        path {
+                            stroke: $black;
+                        }
+                    }
+                }
+
+                &:hover {
+
+                    &::after {
+                        background-color: fade-out($black, .5);
+                        content: " ";
+                        height: 100%;
+                        left: 0;
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                    }
                 }
             }
         }
+    }
 
-        .recording-instrument-dropdown {
+    .recording-instrument-dropdown {
+        @extend section;
+        @include grid-column(fill);
+        display: none;
+
+        &.active {
             display: grid;
+            column-gap: $gutter;
             grid-template-columns: 1fr;
 
             @include media-query(tablet-landscape-up) {
                 grid-template-columns: 1fr 1fr;
             }
+        }
 
-            .instrument-image {
-                @include grid-column(fill);
-                text-align: center;
+        .instrument-image {
+            grid-column: 1 / span 2;
+            margin: 0;
+            text-align: center;
 
-                h4 {
-                    @extend %sans-font;
-                }
+            h4 {
+                @extend %sans-font;
+                margin: 0;
             }
+        }
 
-            .instrument-info {
-                @extend .content;
-                @include grid-column(left);
+        .instrument-info {
+            @extend .content;
+             grid-column: 1 / span 1;
 
-                ul {
-                    text-align: center;
-                }
+             ul {
+                 text-align: center;
             }
+        }
 
-            .instrument-examples {
-                @extend .content;
-                @include grid-column(right);
+        .instrument-examples {
+            @extend .content;
+            grid-column: 1 / span 1;
+
+            @include media-query(tablet-landscape-up) {
+                grid-column: 2 / span 1;
             }
+        }
 
-            .show-hide {
-                margin: 0 auto;
+        .show-hide {
+            grid-column: 1 / -1;
+            margin: 0 auto;
 
-                @include media-query(tablet-landscape-up) {
-                    display: none;
-                }
+            @include media-query(tablet-landscape-up) {
+                display: none;
             }
         }
     }
+    
 
-    .idea {
+    %idea {
         @extend .content;
         align-items: start;
         display: flex;
-        margin-top: 1.7rem;
-
-        &:nth-child(1) {
-            @include grid-column(left);
-        }
-
-        &:nth-child(2) {
-            @include grid-column(right);
-        }
+        margin-top: $margin-top;
 
         svg {
             flex-basis: 5rem;
         }
     }
 
-    .process-gear {
+    .idea-1 {
+        @extend %idea;
+        @include grid-column(left);
+    }
+
+    .idea-2 {
+        @extend %idea;
+        @include grid-column(right);
+    }
+
+    .process-gear-mobile-headings {
         @include grid-column(fill);
+        margin-top: $margin-top;
+
+        ul {
+            display: flex;
+            width: 100%;
+
+            @include media-query(tablet-landscape-up) {
+                display: none;
+            }
+
+            li {
+                border-bottom: 1px solid $dark-grey;
+                color: $dark-grey;
+                padding-bottom: .3rem;
+                text-align: center;
+                width: 50%;
+
+                a {
+                    @extend h2;
+                    font-weight: $heading-thin;
+
+                    &:hover {
+                        color: inherit;
+                    }
+                }
+
+                &.active {
+                    border-bottom: 3px solid $black;
+                    color: $black;
+
+                    a {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    %process-gear-tab {
+        display: none;
+        margin: 0 auto;
+        max-width: 600px;
+
+        @include media-query(tablet-landscape-up) {
+            display: block;
+        }
+
+        &.active {
+            display: block;
+        }
+        
+        h2 {
+            display: none;
+
+            @include media-query(tablet-landscape-up) {
+                display: block;
+            }
+        }
+
+        ul {
+
+            li {
+                align-items: center;
+                border: 1px solid $black;
+                border-radius: 1.2rem;
+                margin: .5rem 0;
+                padding: .5rem;
+
+                svg {
+                    flex-basis: 2.2rem;
+                    margin: .5rem;
+                }
+            }
+        }
+    }
+
+    #tabs-process {
+        @extend %process-gear-tab;
+        @include grid-column(left);
+    }
+
+    #tabs-gear {
+        @extend %process-gear-tab;
+        @include grid-column(right);
     }
 
     .recording-clients {

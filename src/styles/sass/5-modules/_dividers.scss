@@ -1,77 +1,54 @@
 %divider {
-    margin: 0;
-    position: absolute;
+    position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 30rem;
 
-    img {
-        margin: 0;
-        width: 90vw;
-        max-width: 30rem;
+    .line {
+        stroke: $grey;
+    }
+
+    @include media-query(tablet-landscape-up) {
+        max-width: 50vw;
+    }
+
+    @include media-query(desktop-up) {
+        width: 50vw;
     }
 }
 
-%divider-left {
+.divider-left {
     @extend %divider;
-    left: 0;
-
-    img {
-        float: left;
-    }
+    left: -$gutter;
 }
 
-%divider-right {
+.divider-right {
     @extend %divider;
-    right: 0;
-    
-    img {
-        float: right;
-    }
+    float: right;
+    right: -$gutter;
 }
 
 .flute-divider {
-    @extend %divider-right;
-    bottom: -40px;
-
-    // @include media-query(tablet-landscape-up) {
-    //     right: -50vw;
-    // }
+    @extend .divider-right;
+    margin: 1rem 0 -2rem 0;
 }
 
 .clarinet-divider {
-    @extend %divider-left;
-    bottom: -40px;
+    @extend .divider-left;
+    margin: -4rem 0 -2rem 0;
 }
 
 .saxophone-divider {
-    @extend %divider-right;
-    bottom: -60px;
-
-    @include media-query(tablet-landscape-up) {
-        display: none;
-    }
+    @extend .divider-right;
+    margin: -4rem 0 -4rem 0;
 }
 
-.ellis-flute-divider {
-    @extend %divider;
-    bottom: -40px;
-    right: 0;
-
-    img {
-        float: right;
-        transform: scaleX(-1);
-    }
-
-    @include media-query(tablet-landscape-up) {
-        left: 0;
-
-        img {
-            float: left;
-            transform: scaleX(1);
-        }
-    }
+.e-flute-divider {
+    @extend .divider-left;
+    margin: -.5rem 0 -3rem 0;
 }
 
 .recorder-divider {
-    @extend %divider-right;
-    bottom: -65px;
+    @extend .divider-right;
+    margin: -2rem 0 -6rem 0;
 }

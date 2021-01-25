@@ -41,12 +41,17 @@ big-desktop-up
 }
 
 @mixin grid-column($side) {
-    @if $side == fill {
+    @if $side == full-width {
         grid-column: 1 / -1;
+    } @else if $side == fill {
+        grid-column: 2 / -2;
     } @else if $side == right {
-        grid-column: -1 / span -1;
+        grid-column: 2 / span 1;
+        @include media-query(tablet-landscape-up) {
+            grid-column: 3 / span 1;
+        }
     } @else if $side == left {
-        grid-column: 1 / span 1;
+        grid-column: 2 / span 1;
     }
 }
 

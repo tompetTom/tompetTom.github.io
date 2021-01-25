@@ -13,6 +13,41 @@ svg {
         transition: all $default-transition-time;
     }
 
+    &.blob {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+
+        path {
+            fill: fade-out($light, .3);
+            stroke: none;
+
+            &.grey {
+                fill: $grey;
+            }
+
+            &.primary {
+                fill: fade-out($primary, .3);
+            }
+
+            &.secondary {
+                fill: fade-out($secondary, .1);
+            }
+
+            &.accent {
+                fill: fade-out($accent, .1);
+            }
+        }
+    }
+
+    .blue {
+        fill: $primary;
+        stroke: none;
+    }
+
     .filament {
         stroke: $accent;
     }
@@ -22,11 +57,95 @@ svg {
         stroke: none;
     }
 
+    .red {
+        fill: $light;
+        stroke: none;
+    }
+
+    .stroke-fill {
+        fill: $black;
+    }
+
     .square {
         stroke-linecap: square;
     }
 
     .test {
         stroke: $brass;
+    }
+
+    .recorder-colour {
+        // fill: $light;
+        fill: none;
+        stroke: none;
+    }
+
+    .clarinet-colour {
+        // fill: $secondary;
+        fill: none;
+        stroke: none;
+    }
+
+    .flute-colour {
+        // fill: $grey;
+        fill: none;
+        stroke: none;
+    }
+
+    .e-flute-colour {
+        // fill: $primary;
+        fill: none;
+        stroke: none;
+    }
+
+    .sax-colour {
+        // fill: $accent;
+        fill: none;
+        stroke: none;
+    }
+
+    .stop-blue {
+        stop-color: $primary;
+    }
+
+    .stop-orange {
+        stop-color: $accent;
+    }
+
+    .stop-orange-gradient {
+        stop-color: $accent-gradient;
+    }
+
+    .stop-purple {
+        stop-color: $secondary-gradient;
+        // stop-color: $light;
+    }
+
+    .stop-red {
+        stop-color: $light;
+    }
+
+    &.instagram-svg {
+        * {
+            fill: url(#insta-gradient);
+            stroke: none;
+        }
+    }
+
+    &.soundcloud-svg {
+        path {
+            fill: url(#soundcloud-gradient);
+            stroke: none;
+        }
+
+        line {
+            stroke: url(#soundcloud-gradient);
+        }
+    }
+}
+
+a {
+    .blob {
+        width: 2rem;
     }
 }

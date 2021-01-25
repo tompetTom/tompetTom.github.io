@@ -31,7 +31,7 @@ html {
           box-sizing: inherit;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, .landing-section .desktop-landing-content, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, .recording-sub-page .process-gear-mobile-headings ul li a, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, .landing-section .desktop-landing-content, .home-page .recording .instruments-section, .recording-sub-page .recording-instruments-intro, .recording-sub-page .recording-instruments, .recording-sub-page .recording-instrument-dropdown, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -62,7 +62,7 @@ button {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, .landing-section .desktop-landing-content {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, .landing-section .desktop-landing-content, .home-page .recording .instruments-section, .recording-sub-page .recording-instruments-intro, .recording-sub-page .recording-instruments, .recording-sub-page .recording-instrument-dropdown {
   display: block;
 }
 
@@ -119,14 +119,14 @@ body {
   display: none;
 }
 
-h2, button, .recording-sub-page .recording-instruments .recording-instrument-categories li h3, .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-image h4 {
+h2, .recording-sub-page .process-gear-mobile-headings ul li a, button, .recording-sub-page .recording-instruments .recording-instrument-categories li .caption h3, .recording-sub-page .recording-instrument-dropdown .instrument-image h4 {
   font-family: "Lato", sans-serif;
   font-size: 2rem;
   font-weight: 700;
 }
 
 body, input, textarea {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", serif;
   line-height: 1.7em;
 }
 
@@ -140,12 +140,11 @@ h1 {
   line-height: 1.3em;
 }
 
-h2 {
+h2, .recording-sub-page .process-gear-mobile-headings ul li a {
   line-height: 1.2em;
 }
 
 blockquote {
-  color: #FCFAF0;
   font-family: "Lato", sans-serif;
   font-size: 1.5rem;
   font-style: italic;
@@ -159,16 +158,26 @@ em {
 }
 
 button {
-  -webkit-box-shadow: #DFDDD5 0 0.7rem 2.5rem -0.1rem;
-          box-shadow: #DFDDD5 0 0.7rem 2.5rem -0.1rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#CFB72F), to(#D7C34F));
-  background: linear-gradient(#CFB72F, #D7C34F);
-  border-radius: 1.2em;
+  background: no-repeat url(../../../../images/backgrounds/blobs/button-2-revised.svg);
   cursor: pointer;
   font-size: 1.2rem;
+  margin-top: 1.7rem;
   padding: .5em 1em;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+button a {
+  display: inline;
+}
+
+button a:after {
+  content: url(../../../../images/icons/boxed-icons/go.svg);
+  display: inline-block;
+  margin-left: .3em;
+  position: relative;
+  top: .2em;
+  width: 1em;
 }
 
 button em {
@@ -177,8 +186,6 @@ button em {
 }
 
 button:hover {
-  -webkit-box-shadow: #DFDDD5 0 0.7rem 2.5rem 0.5rem;
-          box-shadow: #DFDDD5 0 0.7rem 2.5rem 0.5rem;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
 }
@@ -188,16 +195,13 @@ button:active {
           transform: scale(0.99);
 }
 
-button.btn-secondary {
-  -webkit-box-shadow: #79648F 0 0.7rem 2.5rem -0.1rem;
-          box-shadow: #79648F 0 0.7rem 2.5rem -0.1rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#79648F), to(#B99ADB));
-  background: linear-gradient(#79648F, #B99ADB);
-  border-radius: .5em;
+button.button-secondary {
+  background: no-repeat url(../../../../images/backgrounds/blobs/button-1.svg);
 }
 
 button.show-hide {
   border: 1px solid #140E1B;
+  border-radius: 1.2em;
   background: -webkit-gradient(linear, left top, left bottom, from(#FCFAF0), to(#FEFDF9));
   background: linear-gradient(#FCFAF0, #FEFDF9);
   font-size: .9rem;
@@ -224,8 +228,6 @@ button.show-hide:hover {
 }
 
 button[type=submit] {
-  background: -webkit-gradient(linear, left top, left bottom, from(#CFB72F), to(#D7C34F));
-  background: linear-gradient(#CFB72F, #D7C34F);
   -webkit-box-shadow: none;
           box-shadow: none;
   color: #140E1B;
@@ -237,11 +239,9 @@ button[type=submit] {
 }
 
 button[type=submit] svg {
-  background-color: #FCFAF0;
   bottom: 0;
-  border-radius: 50%;
   position: absolute;
-  right: -.2px;
+  right: 1rem;
   height: 100%;
 }
 
@@ -252,7 +252,7 @@ a {
 }
 
 a:hover {
-  color: #79648F;
+  color: #B99ADB;
 }
 
 a:hover:after {
@@ -267,8 +267,42 @@ button a:hover {
   color: inherit;
 }
 
+form {
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1250px) {
+  form {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+form h2, form .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li form a {
+  margin: 0;
+}
+
+form div {
+  margin: 0;
+  width: 100%;
+}
+
+form div * {
+  margin-top: 1rem;
+}
+
 form input, form textarea {
   background-color: #FCFAF0;
+  border: 1px solid #140E1B;
   border-radius: .6em;
   color: #140E1B;
   display: block;
@@ -282,19 +316,19 @@ form textarea {
 }
 
 form *::-webkit-input-placeholder {
-  color: #B8B3A1;
+  color: #DFDDD5;
 }
 
 form *:-ms-input-placeholder {
-  color: #B8B3A1;
+  color: #DFDDD5;
 }
 
 form *::-ms-input-placeholder {
-  color: #B8B3A1;
+  color: #DFDDD5;
 }
 
 form *::placeholder {
-  color: #B8B3A1;
+  color: #DFDDD5;
 }
 
 svg {
@@ -317,6 +351,41 @@ svg * {
   transition: all 0.2s;
 }
 
+svg.blob {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+svg.blob path {
+  fill: rgba(230, 181, 181, 0.7);
+  stroke: none;
+}
+
+svg.blob path.grey {
+  fill: #DFDDD5;
+}
+
+svg.blob path.primary {
+  fill: rgba(151, 204, 195, 0.7);
+}
+
+svg.blob path.secondary {
+  fill: rgba(185, 154, 219, 0.9);
+}
+
+svg.blob path.accent {
+  fill: rgba(207, 183, 47, 0.9);
+}
+
+svg .blue {
+  fill: #97CCC3;
+  stroke: none;
+}
+
 svg .filament {
   stroke: #CFB72F;
 }
@@ -324,6 +393,15 @@ svg .filament {
 svg .fill {
   fill: #140E1B;
   stroke: none;
+}
+
+svg .red {
+  fill: #E6B5B5;
+  stroke: none;
+}
+
+svg .stroke-fill {
+  fill: #140E1B;
 }
 
 svg .square {
@@ -334,17 +412,89 @@ svg .test {
   stroke: #F9BE00;
 }
 
+svg .recorder-colour {
+  fill: none;
+  stroke: none;
+}
+
+svg .clarinet-colour {
+  fill: none;
+  stroke: none;
+}
+
+svg .flute-colour {
+  fill: none;
+  stroke: none;
+}
+
+svg .e-flute-colour {
+  fill: none;
+  stroke: none;
+}
+
+svg .sax-colour {
+  fill: none;
+  stroke: none;
+}
+
+svg .stop-blue {
+  stop-color: #97CCC3;
+}
+
+svg .stop-orange {
+  stop-color: #CFB72F;
+}
+
+svg .stop-orange-gradient {
+  stop-color: #D7C34F;
+}
+
+svg .stop-purple {
+  stop-color: #79648F;
+}
+
+svg .stop-red {
+  stop-color: #E6B5B5;
+}
+
+svg.instagram-svg * {
+  fill: url(#insta-gradient);
+  stroke: none;
+}
+
+svg.soundcloud-svg path {
+  fill: url(#soundcloud-gradient);
+  stroke: none;
+}
+
+svg.soundcloud-svg line {
+  stroke: url(#soundcloud-gradient);
+}
+
+a .blob {
+  width: 2rem;
+}
+
 .grid-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  gap: 0 3vw;
+  -ms-grid-columns: 1px 1fr 1px;
+      grid-template-columns: 1px 1fr 1px;
+  max-width: 100vw;
 }
 
 @media (min-width: 900px) {
   .grid-container {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1px 1fr 1fr 1px;
+        grid-template-columns: 1px 1fr 1fr 1px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .grid-container {
+    -ms-grid-columns: 1fr 550px 550px 1fr;
+        grid-template-columns: 1fr 550px 550px 1fr;
   }
 }
 
@@ -360,6 +510,7 @@ header {
   height: 30vh;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  overflow: hidden;
   position: absolute;
   -webkit-transition: .3s;
   transition: .3s;
@@ -490,7 +641,7 @@ header #title .tagline span {
 }
 
 .tagline {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", serif;
   font-size: 1rem;
   font-weight: #E6B5B5;
   text-align: center;
@@ -499,15 +650,13 @@ header #title .tagline span {
 }
 
 .landing-section {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
   min-height: 100vh;
   position: relative;
 }
 
 @media (max-width: 899px) and (orientation: landscape) {
   .landing-section {
-    background-position: bottom 0 right 3vw;
-    background-size: 50vw;
     height: 100vh;
   }
 }
@@ -526,17 +675,7 @@ header #title .tagline span {
 
 @media (min-width: 900px) {
   .landing-section {
-    background-attachment: fixed;
-    background-position: top 7.3rem right 3vw;
-    background-size: 59vw;
-    margin: 0 3vw;
     padding-top: 20vh;
-  }
-}
-
-@media (min-width: 1250px) {
-  .landing-section {
-    background-size: 100vh;
   }
 }
 
@@ -587,12 +726,13 @@ header #title .tagline span {
 .landing-section svg {
   bottom: .3rem;
   position: absolute;
-  right: 0;
+  right: -3vw;
   width: 100vw;
 }
 
 @media (max-width: 899px) and (orientation: landscape) {
   .landing-section svg {
+    right: -3vw;
     width: 50vw;
   }
 }
@@ -600,7 +740,9 @@ header #title .tagline span {
 @media (min-width: 900px) {
   .landing-section svg {
     height: 70vh;
+    max-width: 60vw;
     top: 20%;
+    right: -3vw;
     width: auto;
   }
 }
@@ -608,7 +750,9 @@ header #title .tagline span {
 @media (min-width: 1250px) {
   .landing-section svg {
     height: auto;
+    max-width: 60vw;
     top: 7.3rem;
+    right: -4.2vw;
     width: 100vh;
   }
 }
@@ -781,11 +925,13 @@ nav ul li a:active svg .stroke {
 }
 
 .index-nav-mobile {
+  grid-column: 1 / -1;
   position: -webkit-sticky;
   position: sticky;
   -webkit-transition: top 0.2s;
   transition: top 0.2s;
   top: -.5rem;
+  background-color: rgba(252, 250, 240, 0.96);
   width: 100%;
 }
 
@@ -804,53 +950,73 @@ nav ul li a:active svg .stroke {
 }
 
 .sub-navigation ul {
-  display: block;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2;
+  -ms-grid-columns: 1;
+      grid-template: 2 / 1;
+  justify-items: start;
+  padding: 0;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .sub-navigation ul {
+    justify-items: end;
+  }
 }
 
 .sub-navigation ul svg {
-  width: 4rem;
+  display: inline;
+  height: auto;
+  width: 1.5rem;
 }
 
-li {
-  margin-top: 0;
+.sub-navigation ul p {
+  display: inline;
 }
 
-li * {
-  margin-top: 0;
+@media (min-width: 900px) {
+  .sub-navigation ul .discuss {
+    display: none;
+  }
 }
 
-section, .landing-section .desktop-landing-content {
-  padding: 2rem 3vw;
+section, .landing-section .desktop-landing-content, .home-page .recording .instruments-section, .recording-sub-page .recording-instruments-intro, .recording-sub-page .recording-instruments, .recording-sub-page .recording-instrument-dropdown {
   margin: 0;
   position: relative;
 }
 
-section *, .landing-section .desktop-landing-content * {
+section h2, .landing-section .desktop-landing-content h2, .home-page .recording .instruments-section h2, .recording-sub-page .recording-instruments-intro h2, .recording-sub-page .recording-instruments h2, .recording-sub-page .recording-instrument-dropdown h2, section .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li section a, .landing-section .desktop-landing-content .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .landing-section .desktop-landing-content a, .home-page .recording .instruments-section .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .home-page .recording .instruments-section a, .recording-sub-page .recording-instruments-intro .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instruments-intro a, .recording-sub-page .recording-instruments .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instruments a, .recording-sub-page .recording-instrument-dropdown .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown a, section p, .landing-section .desktop-landing-content p, .home-page .recording .instruments-section p, .recording-sub-page .recording-instruments-intro p, .recording-sub-page .recording-instruments p, .recording-sub-page .recording-instrument-dropdown p, section ul, .landing-section .desktop-landing-content ul, .home-page .recording .instruments-section ul, .recording-sub-page .recording-instruments-intro ul, .recording-sub-page .recording-instruments ul, .recording-sub-page .recording-instrument-dropdown ul {
   margin-top: 1.7rem;
 }
 
-section li, .landing-section .desktop-landing-content li, section svg, .landing-section .desktop-landing-content svg {
+section li, .landing-section .desktop-landing-content li, .home-page .recording .instruments-section li, .recording-sub-page .recording-instruments-intro li, .recording-sub-page .recording-instruments li, .recording-sub-page .recording-instrument-dropdown li, section svg, .landing-section .desktop-landing-content svg, .home-page .recording .instruments-section svg, .recording-sub-page .recording-instruments-intro svg, .recording-sub-page .recording-instruments svg, .recording-sub-page .recording-instrument-dropdown svg {
   margin-top: 0;
 }
 
-section li *, .landing-section .desktop-landing-content li *, section svg *, .landing-section .desktop-landing-content svg * {
+section li *, .landing-section .desktop-landing-content li *, .home-page .recording .instruments-section li *, .recording-sub-page .recording-instruments-intro li *, .recording-sub-page .recording-instruments li *, .recording-sub-page .recording-instrument-dropdown li *, section svg *, .landing-section .desktop-landing-content svg *, .home-page .recording .instruments-section svg *, .recording-sub-page .recording-instruments-intro svg *, .recording-sub-page .recording-instruments svg *, .recording-sub-page .recording-instrument-dropdown svg * {
   margin-top: 0;
 }
 
 .first-section {
-  margin-top: 20vh;
+  margin-top: 30vh;
 }
 
-.content, .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info, .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples, .recording-sub-page .idea {
-  margin: 0 auto;
-  max-width: 500px;
+@media (min-width: 900px) {
+  .first-section {
+    margin-top: 20vh;
+  }
+}
+
+.content, .recording-sub-page .recording-instrument-dropdown .instrument-info, .recording-sub-page .recording-instrument-dropdown .instrument-examples, .recording-sub-page .idea-1, .recording-sub-page .idea-2 {
+  position: relative;
 }
 
 .testimonial {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #312142;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -859,6 +1025,8 @@ section li *, .landing-section .desktop-landing-content li *, section svg *, .la
           justify-content: center;
   text-align: center;
   padding: 3em;
+  position: relative;
+  width: 100%;
 }
 
 .testimonial * {
@@ -872,10 +1040,10 @@ section li *, .landing-section .desktop-landing-content li *, section svg *, .la
 }
 
 footer {
+  grid-column: 1 / -1;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #DFDDD5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -935,7 +1103,7 @@ footer .links .centre-links .footer-box-left:nth-child(1), footer .links .centre
 
 footer .links .centre-links .footer-box-left .social-icons, footer .links .centre-links .footer-box-right .social-icons {
   position: relative;
-  top: .85rem;
+  top: .8rem;
 }
 
 footer .links .centre-links .footer-box-left .social-icons a, footer .links .centre-links .footer-box-right .social-icons a {
@@ -963,21 +1131,22 @@ footer .links .centre-links .footer-box-right {
 }
 
 .contact-form {
-  background-color: #312142;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
 }
 
-.contact-form .content h2, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info h2, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples h2, .contact-form .recording-sub-page .idea h2, .recording-sub-page .contact-form .idea h2 {
-  color: #FCFAF0;
+.contact-form .content h2, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info h2, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples h2, .contact-form .recording-sub-page .idea-1 h2, .recording-sub-page .contact-form .idea-1 h2, .contact-form .recording-sub-page .idea-2 h2, .recording-sub-page .contact-form .idea-2 h2, .contact-form .content .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .contact-form .content a, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-info a, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .contact-form .instrument-info a, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-examples a, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .contact-form .instrument-examples a, .contact-form .recording-sub-page .idea-1 .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .idea-1 a, .recording-sub-page .contact-form .idea-1 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .contact-form .idea-1 a, .contact-form .recording-sub-page .idea-2 .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .idea-2 a, .recording-sub-page .contact-form .idea-2 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .contact-form .idea-2 a {
   margin-top: 2.5rem;
 }
 
 @media (min-width: 900px) {
-  .contact-form .content h2, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info h2, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples h2, .contact-form .recording-sub-page .idea h2, .recording-sub-page .contact-form .idea h2 {
+  .contact-form .content h2, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info h2, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples h2, .contact-form .recording-sub-page .idea-1 h2, .recording-sub-page .contact-form .idea-1 h2, .contact-form .recording-sub-page .idea-2 h2, .recording-sub-page .contact-form .idea-2 h2, .contact-form .content .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .contact-form .content a, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-info a, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .contact-form .instrument-info a, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-examples a, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .contact-form .instrument-examples a, .contact-form .recording-sub-page .idea-1 .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .idea-1 a, .recording-sub-page .contact-form .idea-1 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .contact-form .idea-1 a, .contact-form .recording-sub-page .idea-2 .process-gear-mobile-headings ul li a, .contact-form .recording-sub-page .process-gear-mobile-headings ul li .idea-2 a, .recording-sub-page .contact-form .idea-2 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .contact-form .idea-2 a {
     margin-top: 0;
   }
 }
 
-.contact-form .content form, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info form, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info form, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples form, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples form, .contact-form .recording-sub-page .idea form, .recording-sub-page .contact-form .idea form {
+.contact-form .content form, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info form, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info form, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples form, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples form, .contact-form .recording-sub-page .idea-1 form, .recording-sub-page .contact-form .idea-1 form, .contact-form .recording-sub-page .idea-2 form, .recording-sub-page .contact-form .idea-2 form {
   display: -ms-grid;
   display: grid;
   -webkit-column-gap: 3vw;
@@ -989,27 +1158,27 @@ footer .links .centre-links .footer-box-right {
 }
 
 @media (min-width: 1250px) {
-  .contact-form .content form, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info form, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info form, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples form, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples form, .contact-form .recording-sub-page .idea form, .recording-sub-page .contact-form .idea form {
+  .contact-form .content form, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info form, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info form, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples form, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples form, .contact-form .recording-sub-page .idea-1 form, .recording-sub-page .contact-form .idea-1 form, .contact-form .recording-sub-page .idea-2 form, .recording-sub-page .contact-form .idea-2 form {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
 }
 
-.contact-form .content form div, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info form div, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info form div, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples form div, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples form div, .contact-form .recording-sub-page .idea form div, .recording-sub-page .contact-form .idea form div {
+.contact-form .content form div, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info form div, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info form div, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples form div, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples form div, .contact-form .recording-sub-page .idea-1 form div, .recording-sub-page .contact-form .idea-1 form div, .contact-form .recording-sub-page .idea-2 form div, .recording-sub-page .contact-form .idea-2 form div {
   margin: 0;
   width: 100%;
 }
 
-.contact-form .content form div *, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info form div *, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info form div *, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples form div *, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples form div *, .contact-form .recording-sub-page .idea form div *, .recording-sub-page .contact-form .idea form div * {
+.contact-form .content form div *, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info form div *, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info form div *, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples form div *, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples form div *, .contact-form .recording-sub-page .idea-1 form div *, .recording-sub-page .contact-form .idea-1 form div *, .contact-form .recording-sub-page .idea-2 form div *, .recording-sub-page .contact-form .idea-2 form div * {
   margin-top: 1rem;
 }
 
-.contact-form .content form .details-submit, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info form .details-submit, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info form .details-submit, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples form .details-submit, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples form .details-submit, .contact-form .recording-sub-page .idea form .details-submit, .recording-sub-page .contact-form .idea form .details-submit {
+.contact-form .content form .details-submit, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info form .details-submit, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info form .details-submit, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples form .details-submit, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples form .details-submit, .contact-form .recording-sub-page .idea-1 form .details-submit, .recording-sub-page .contact-form .idea-1 form .details-submit, .contact-form .recording-sub-page .idea-2 form .details-submit, .recording-sub-page .contact-form .idea-2 form .details-submit {
   text-align: right;
 }
 
 @media (min-width: 900px) {
-  .contact-form .content form .details-submit button, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info form .details-submit button, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-info form .details-submit button, .contact-form .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples form .details-submit button, .recording-sub-page .recording-instruments .recording-instrument-dropdown .contact-form .instrument-examples form .details-submit button, .contact-form .recording-sub-page .idea form .details-submit button, .recording-sub-page .contact-form .idea form .details-submit button {
+  .contact-form .content form .details-submit button, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-info form .details-submit button, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-info form .details-submit button, .contact-form .recording-sub-page .recording-instrument-dropdown .instrument-examples form .details-submit button, .recording-sub-page .recording-instrument-dropdown .contact-form .instrument-examples form .details-submit button, .contact-form .recording-sub-page .idea-1 form .details-submit button, .recording-sub-page .contact-form .idea-1 form .details-submit button, .contact-form .recording-sub-page .idea-2 form .details-submit button, .recording-sub-page .contact-form .idea-2 form .details-submit button {
     max-width: 250px;
   }
 }
@@ -1017,7 +1186,31 @@ footer .links .centre-links .footer-box-right {
 iframe {
   display: block;
   height: 281.25px;
+  margin-top: 1.7rem;
   width: 100%;
+}
+
+.box li, .ticks li {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  margin: 0;
+  width: 100%;
+}
+
+.box li svg, .ticks li svg {
+  -ms-flex-preferred-size: 2rem;
+      flex-basis: 2rem;
+}
+
+.box li p, .ticks li p {
+  margin: 0;
+  padding: 0 .5em;
+  text-align: left;
 }
 
 .instrument-list {
@@ -1052,7 +1245,7 @@ iframe {
 }
 
 .instrument-list li h4:hover {
-  color: #79648F;
+  color: #B99ADB;
 }
 
 .instrument-list li h4:after {
@@ -1109,7 +1302,7 @@ iframe {
 }
 
 .instrument-list li.active h4 {
-  color: #6A9992;
+  color: #97CCC3;
 }
 
 .instrument-list li.active h4:after {
@@ -1121,76 +1314,56 @@ iframe {
   display: block;
 }
 
-.clarinet-divider, .flute-divider, .saxophone-divider, .recorder-divider, .ellis-flute-divider {
-  margin: 0;
-  position: absolute;
+.divider-left, .clarinet-divider, .e-flute-divider, .divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
+  position: relative;
   z-index: 2;
-}
-
-.clarinet-divider img, .flute-divider img, .saxophone-divider img, .recorder-divider img, .ellis-flute-divider img {
-  margin: 0;
-  width: 90vw;
+  width: 100%;
   max-width: 30rem;
 }
 
-.clarinet-divider {
-  left: 0;
+.divider-left .line, .clarinet-divider .line, .e-flute-divider .line, .divider-right .line, .flute-divider .line, .saxophone-divider .line, .recorder-divider .line {
+  stroke: #DFDDD5;
 }
 
-.clarinet-divider img {
-  float: left;
+@media (min-width: 900px) {
+  .divider-left, .clarinet-divider, .e-flute-divider, .divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
+    max-width: 50vw;
+  }
 }
 
-.flute-divider, .saxophone-divider, .recorder-divider {
-  right: 0;
+@media (min-width: 1250px) {
+  .divider-left, .clarinet-divider, .e-flute-divider, .divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
+    width: 50vw;
+  }
 }
 
-.flute-divider img, .saxophone-divider img, .recorder-divider img {
+.divider-left, .clarinet-divider, .e-flute-divider {
+  left: -3vw;
+}
+
+.divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
   float: right;
+  right: -3vw;
 }
 
 .flute-divider {
-  bottom: -40px;
+  margin: 1rem 0 -2rem 0;
 }
 
 .clarinet-divider {
-  bottom: -40px;
+  margin: -4rem 0 -2rem 0;
 }
 
 .saxophone-divider {
-  bottom: -60px;
+  margin: -4rem 0 -4rem 0;
 }
 
-@media (min-width: 900px) {
-  .saxophone-divider {
-    display: none;
-  }
-}
-
-.ellis-flute-divider {
-  bottom: -40px;
-  right: 0;
-}
-
-.ellis-flute-divider img {
-  float: right;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-@media (min-width: 900px) {
-  .ellis-flute-divider {
-    left: 0;
-  }
-  .ellis-flute-divider img {
-    float: left;
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
+.e-flute-divider {
+  margin: -.5rem 0 -3rem 0;
 }
 
 .recorder-divider {
-  bottom: -65px;
+  margin: -2rem 0 -6rem 0;
 }
 
 .soundcloud {
@@ -1240,9 +1413,7 @@ iframe {
 }
 
 .home-page .recording {
-  grid-column: 1 / -1;
-  -webkit-box-shadow: 0 0 30px rgba(20, 14, 27, 0.5);
-          box-shadow: 0 0 30px rgba(20, 14, 27, 0.5);
+  grid-column: 2 / -2;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -1301,23 +1472,27 @@ iframe {
 }
 
 .home-page .recording-testimonials {
-  grid-column: 1 / -1;
-  background: radial-gradient(#312142, #181020);
+  grid-column: 2 / -2;
 }
 
 .home-page .career {
-  -ms-grid-column: 1;
+  -ms-grid-column: 2;
   -ms-grid-column-span: 1;
-  grid-column: 1 / span 1;
-  background-color: #E6B5B5;
-}
-
-.home-page .career button {
-  color: #140E1B;
+  grid-column: 2 / span 1;
 }
 
 .home-page .lux {
-  grid-column: -1 / span -1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+@media (min-width: 900px) {
+  .home-page .lux {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+  }
 }
 
 @media (min-width: 900px) {
@@ -1327,28 +1502,49 @@ iframe {
 }
 
 .home-page .lessons {
-  -ms-grid-column: 1;
+  -ms-grid-column: 2;
   -ms-grid-column-span: 1;
-  grid-column: 1 / span 1;
+  grid-column: 2 / span 1;
 }
 
-.home-page .lessons .content h2, .home-page .lessons .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .home-page .lessons .instrument-info h2, .home-page .lessons .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .home-page .lessons .instrument-examples h2, .home-page .lessons .recording-sub-page .idea h2, .recording-sub-page .home-page .lessons .idea h2 {
+.home-page .lessons .content h2, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-info h2, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-examples h2, .home-page .lessons .recording-sub-page .idea-1 h2, .recording-sub-page .home-page .lessons .idea-1 h2, .home-page .lessons .recording-sub-page .idea-2 h2, .recording-sub-page .home-page .lessons .idea-2 h2, .home-page .lessons .content .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .home-page .lessons .content a, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-info .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-info a, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-info .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .home-page .lessons .instrument-info a, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-examples .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-examples a, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-examples .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .home-page .lessons .instrument-examples a, .home-page .lessons .recording-sub-page .idea-1 .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .idea-1 a, .recording-sub-page .home-page .lessons .idea-1 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .home-page .lessons .idea-1 a, .home-page .lessons .recording-sub-page .idea-2 .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .idea-2 a, .recording-sub-page .home-page .lessons .idea-2 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .home-page .lessons .idea-2 a {
   margin-top: -2rem;
 }
 
 @media (min-width: 900px) {
-  .home-page .lessons .content h2, .home-page .lessons .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .home-page .lessons .instrument-info h2, .home-page .lessons .recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instruments .recording-instrument-dropdown .home-page .lessons .instrument-examples h2, .home-page .lessons .recording-sub-page .idea h2, .recording-sub-page .home-page .lessons .idea h2 {
+  .home-page .lessons .content h2, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-info h2, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-info h2, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-examples h2, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-examples h2, .home-page .lessons .recording-sub-page .idea-1 h2, .recording-sub-page .home-page .lessons .idea-1 h2, .home-page .lessons .recording-sub-page .idea-2 h2, .recording-sub-page .home-page .lessons .idea-2 h2, .home-page .lessons .content .recording-sub-page .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .home-page .lessons .content a, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-info .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-info a, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-info .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .home-page .lessons .instrument-info a, .home-page .lessons .recording-sub-page .recording-instrument-dropdown .instrument-examples .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .instrument-examples a, .recording-sub-page .recording-instrument-dropdown .home-page .lessons .instrument-examples .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .recording-instrument-dropdown .home-page .lessons .instrument-examples a, .home-page .lessons .recording-sub-page .idea-1 .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .idea-1 a, .recording-sub-page .home-page .lessons .idea-1 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .home-page .lessons .idea-1 a, .home-page .lessons .recording-sub-page .idea-2 .process-gear-mobile-headings ul li a, .home-page .lessons .recording-sub-page .process-gear-mobile-headings ul li .idea-2 a, .recording-sub-page .home-page .lessons .idea-2 .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li .home-page .lessons .idea-2 a {
     margin-top: 2rem;
   }
 }
 
 .home-page .teaching-testimonials {
-  grid-column: -1 / span -1;
-  background: radial-gradient(#452f5d, #2c1e3b);
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
 }
 
-.home-page footer {
-  grid-column: -1 / span -1;
+@media (min-width: 900px) {
+  .home-page .teaching-testimonials {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .home-page footer {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
+  }
+}
+
+@media (min-width: 900px) and (min-width: 900px) {
+  .home-page footer {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+  }
 }
 
 @media (min-width: 1250px) {
@@ -1358,9 +1554,13 @@ iframe {
 }
 
 .recording-sub-page .first-section {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -ms-grid;
   display: grid;
+  gap: 3vw;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
@@ -1372,118 +1572,218 @@ iframe {
   }
 }
 
-.recording-sub-page .first-section .content .ticks div, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-info .ticks div, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-info .ticks div, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-examples .ticks div, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-examples .ticks div, .recording-sub-page .first-section .idea .ticks div {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  margin: 0;
-  width: 100%;
+.recording-sub-page .first-section .content, .recording-sub-page .first-section .recording-instrument-dropdown .instrument-info, .recording-sub-page .recording-instrument-dropdown .first-section .instrument-info, .recording-sub-page .first-section .recording-instrument-dropdown .instrument-examples, .recording-sub-page .recording-instrument-dropdown .first-section .instrument-examples, .recording-sub-page .first-section .idea-1, .recording-sub-page .first-section .idea-2 {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
 }
 
-.recording-sub-page .first-section .content .ticks div svg, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-info .ticks div svg, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-info .ticks div svg, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-examples .ticks div svg, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-examples .ticks div svg, .recording-sub-page .first-section .idea .ticks div svg {
-  -ms-flex-preferred-size: 2rem;
-      flex-basis: 2rem;
+.recording-sub-page .first-section .content .ticks path, .recording-sub-page .first-section .recording-instrument-dropdown .instrument-info .ticks path, .recording-sub-page .recording-instrument-dropdown .first-section .instrument-info .ticks path, .recording-sub-page .first-section .recording-instrument-dropdown .instrument-examples .ticks path, .recording-sub-page .recording-instrument-dropdown .first-section .instrument-examples .ticks path, .recording-sub-page .first-section .idea-1 .ticks path, .recording-sub-page .first-section .idea-2 .ticks path {
+  stroke: #97CCC3;
 }
 
-.recording-sub-page .first-section .content .ticks div svg path, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-info .ticks div svg path, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-info .ticks div svg path, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-examples .ticks div svg path, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-examples .ticks div svg path, .recording-sub-page .first-section .idea .ticks div svg path {
-  stroke: #6A9992;
+.recording-sub-page .first-section form {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  display: none;
 }
 
-.recording-sub-page .first-section .content .ticks div p, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-info .ticks div p, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-info .ticks div p, .recording-sub-page .first-section .recording-instruments .recording-instrument-dropdown .instrument-examples .ticks div p, .recording-sub-page .recording-instruments .recording-instrument-dropdown .first-section .instrument-examples .ticks div p, .recording-sub-page .first-section .idea .ticks div p {
-  margin: 0;
-  text-align: left;
+@media (min-width: 900px) {
+  .recording-sub-page .first-section form {
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
+.recording-sub-page .first-section form textarea {
+  height: 10rem;
 }
 
 .recording-sub-page .recording-instruments-intro {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
   display: -ms-grid;
   display: grid;
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  margin-top: 1.7rem;
 }
 
 @media (min-width: 900px) {
   .recording-sub-page .recording-instruments-intro {
-    -ms-grid-columns: 1fr 2fr;
-        grid-template-columns: 1fr 2fr;
+    -ms-grid-columns: minmax(19rem, 2fr) 3fr;
+        grid-template-columns: minmax(19rem, 2fr) 3fr;
   }
 }
 
 .recording-sub-page .recording-instruments {
   grid-column: 1 / -1;
   padding: 0;
+  margin-top: 1.7rem;
+  width: 100%;
 }
 
 .recording-sub-page .recording-instruments .recording-instrument-categories {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 20vw;
+  margin: 0 auto;
+  max-height: 260px;
+  max-width: 1300px;
   width: 100%;
 }
 
 .recording-sub-page .recording-instruments .recording-instrument-categories li {
-  background: #E6B5B5;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0;
+  position: relative;
   width: 20%;
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-categories li:hover {
-  background: #DFDDD5;
+.recording-sub-page .recording-instruments .recording-instrument-categories li.flutes {
+  background: center/cover no-repeat url(https://images.unsplash.com/photo-1562808191-76e71b08a870?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3152&q=80);
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-categories li h3 {
-  font-size: 1rem;
+.recording-sub-page .recording-instruments .recording-instrument-categories li.clarinets {
+  background: center/cover no-repeat url(https://images.unsplash.com/photo-1573871665247-2b556aa23460?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=3150&q=80);
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-dropdown {
+.recording-sub-page .recording-instruments .recording-instrument-categories li.recorders {
+  background: center/cover no-repeat url(https://images.unsplash.com/photo-1504339804171-c44c838612e6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80);
+}
+
+.recording-sub-page .recording-instruments .recording-instrument-categories li.world-flutes {
+  background: center/cover no-repeat url(https://images.unsplash.com/photo-1575669572405-52da19d6a7db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2970&q=80);
+}
+
+.recording-sub-page .recording-instruments .recording-instrument-categories li.saxophones {
+  background: center/cover no-repeat url(https://images.unsplash.com/photo-1566765479776-249be4decbaa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1943&q=80);
+}
+
+.recording-sub-page .recording-instruments .recording-instrument-categories li .caption {
+  background-color: rgba(252, 250, 240, 0.6);
+  text-align: center;
+  padding-top: .7rem;
+  width: 100%;
+}
+
+.recording-sub-page .recording-instruments .recording-instrument-categories li .caption h3 {
+  color: #140E1B;
+  font-size: 2.5vw;
+}
+
+@media (min-width: 1250px) {
+  .recording-sub-page .recording-instruments .recording-instrument-categories li .caption h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.recording-sub-page .recording-instruments .recording-instrument-categories li .caption svg {
+  width: 2.5vw;
+}
+
+.recording-sub-page .recording-instruments .recording-instrument-categories li .caption svg path {
+  stroke: #140E1B;
+}
+
+.recording-sub-page .recording-instruments .recording-instrument-categories li:hover::after {
+  background-color: rgba(20, 14, 27, 0.5);
+  content: " ";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.recording-sub-page .recording-instrument-dropdown {
+  grid-column: 2 / -2;
+  display: none;
+}
+
+.recording-sub-page .recording-instrument-dropdown.active {
   display: -ms-grid;
   display: grid;
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
 
 @media (min-width: 900px) {
-  .recording-sub-page .recording-instruments .recording-instrument-dropdown {
+  .recording-sub-page .recording-instrument-dropdown.active {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-image {
-  grid-column: 1 / -1;
+.recording-sub-page .recording-instrument-dropdown .instrument-image {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  margin: 0;
   text-align: center;
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info {
+.recording-sub-page .recording-instrument-dropdown .instrument-image h4 {
+  margin: 0;
+}
+
+.recording-sub-page .recording-instrument-dropdown .instrument-info {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-info ul {
+.recording-sub-page .recording-instrument-dropdown .instrument-info ul {
   text-align: center;
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-dropdown .instrument-examples {
-  grid-column: -1 / span -1;
+.recording-sub-page .recording-instrument-dropdown .instrument-examples {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / span 1;
 }
 
-.recording-sub-page .recording-instruments .recording-instrument-dropdown .show-hide {
+@media (min-width: 900px) {
+  .recording-sub-page .recording-instrument-dropdown .instrument-examples {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
+  }
+}
+
+.recording-sub-page .recording-instrument-dropdown .show-hide {
+  grid-column: 1 / -1;
   margin: 0 auto;
 }
 
 @media (min-width: 900px) {
-  .recording-sub-page .recording-instruments .recording-instrument-dropdown .show-hide {
+  .recording-sub-page .recording-instrument-dropdown .show-hide {
     display: none;
   }
 }
 
-.recording-sub-page .idea {
+.recording-sub-page .idea-1, .recording-sub-page .idea-2 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
@@ -1493,37 +1793,158 @@ iframe {
   margin-top: 1.7rem;
 }
 
-.recording-sub-page .idea:nth-child(1) {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1 / span 1;
-}
-
-.recording-sub-page .idea:nth-child(2) {
-  grid-column: -1 / span -1;
-}
-
-.recording-sub-page .idea svg {
+.recording-sub-page .idea-1 svg, .recording-sub-page .idea-2 svg {
   -ms-flex-preferred-size: 5rem;
       flex-basis: 5rem;
 }
 
-.recording-sub-page .process-gear {
-  grid-column: 1 / -1;
+.recording-sub-page .idea-1 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+.recording-sub-page .idea-2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+@media (min-width: 900px) {
+  .recording-sub-page .idea-2 {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+  }
+}
+
+.recording-sub-page .process-gear-mobile-headings {
+  grid-column: 2 / -2;
+  margin-top: 1.7rem;
+}
+
+.recording-sub-page .process-gear-mobile-headings ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .recording-sub-page .process-gear-mobile-headings ul {
+    display: none;
+  }
+}
+
+.recording-sub-page .process-gear-mobile-headings ul li {
+  border-bottom: 1px solid #555;
+  color: #555;
+  padding-bottom: .3rem;
+  text-align: center;
+  width: 50%;
+}
+
+.recording-sub-page .process-gear-mobile-headings ul li a {
+  font-weight: 300;
+}
+
+.recording-sub-page .process-gear-mobile-headings ul li a:hover {
+  color: inherit;
+}
+
+.recording-sub-page .process-gear-mobile-headings ul li.active {
+  border-bottom: 3px solid #140E1B;
+  color: #140E1B;
+}
+
+.recording-sub-page .process-gear-mobile-headings ul li.active a {
+  font-weight: bold;
+}
+
+.recording-sub-page #tabs-process, .recording-sub-page #tabs-gear {
+  display: none;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+@media (min-width: 900px) {
+  .recording-sub-page #tabs-process, .recording-sub-page #tabs-gear {
+    display: block;
+  }
+}
+
+.recording-sub-page .active#tabs-process, .recording-sub-page .active#tabs-gear {
+  display: block;
+}
+
+.recording-sub-page #tabs-process h2, .recording-sub-page #tabs-gear h2, .recording-sub-page #tabs-process .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li #tabs-process a, .recording-sub-page #tabs-gear .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li #tabs-gear a {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .recording-sub-page #tabs-process h2, .recording-sub-page #tabs-gear h2, .recording-sub-page #tabs-process .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li #tabs-process a, .recording-sub-page #tabs-gear .process-gear-mobile-headings ul li a, .recording-sub-page .process-gear-mobile-headings ul li #tabs-gear a {
+    display: block;
+  }
+}
+
+.recording-sub-page #tabs-process ul li, .recording-sub-page #tabs-gear ul li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #140E1B;
+  border-radius: 1.2rem;
+  margin: .5rem 0;
+  padding: .5rem;
+}
+
+.recording-sub-page #tabs-process ul li svg, .recording-sub-page #tabs-gear ul li svg {
+  -ms-flex-preferred-size: 2.2rem;
+      flex-basis: 2.2rem;
+  margin: .5rem;
+}
+
+.recording-sub-page #tabs-process {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+.recording-sub-page #tabs-gear {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+@media (min-width: 900px) {
+  .recording-sub-page #tabs-gear {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+  }
 }
 
 .recording-sub-page .recording-clients {
-  -ms-grid-column: 1;
+  -ms-grid-column: 2;
   -ms-grid-column-span: 1;
-  grid-column: 1 / span 1;
+  grid-column: 2 / span 1;
 }
 
 .recording-sub-page .recording-testimonials {
-  grid-column: -1 / span -1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+@media (min-width: 900px) {
+  .recording-sub-page .recording-testimonials {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+  }
 }
 
 .recording-sub-page .recording-pricing-contact {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -1538,7 +1959,7 @@ iframe {
 }
 
 .recording-sub-page footer {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
 }
 
 .colour-tryout .colour-one, .colour-tryout .gradient-one {
@@ -1558,7 +1979,7 @@ iframe {
 }
 
 .colour-tryout .colour-one :nth-child(2) {
-  background-color: #6A9992;
+  background-color: #97CCC3;
 }
 
 .colour-tryout .colour-one :nth-child(3) {
@@ -1574,7 +1995,7 @@ iframe {
 }
 
 .colour-tryout .colour-one :nth-child(6) {
-  background-color: #79648F;
+  background-color: #B99ADB;
 }
 
 .colour-tryout .colour-one :nth-child(7) {
@@ -1593,10 +2014,10 @@ iframe {
 }
 
 .colour-tryout .gradient-one :nth-child(2) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#6A9992), to(#97CCC3));
-  background: linear-gradient(#6A9992, #97CCC3);
-  -webkit-box-shadow: #6A9992 0 0.7rem 2.5rem -0.1rem;
-          box-shadow: #6A9992 0 0.7rem 2.5rem -0.1rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#97CCC3), to(#6A9992));
+  background: linear-gradient(#97CCC3, #6A9992);
+  -webkit-box-shadow: #97CCC3 0 0.7rem 2.5rem -0.1rem;
+          box-shadow: #97CCC3 0 0.7rem 2.5rem -0.1rem;
 }
 
 .colour-tryout .gradient-one :nth-child(3) {
@@ -1621,10 +2042,10 @@ iframe {
 }
 
 .colour-tryout .gradient-one :nth-child(6) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#79648F), to(#B99ADB));
-  background: linear-gradient(#79648F, #B99ADB);
-  -webkit-box-shadow: #79648F 0 0.7rem 2.5rem -0.1rem;
-          box-shadow: #79648F 0 0.7rem 2.5rem -0.1rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#B99ADB), to(#79648F));
+  background: linear-gradient(#B99ADB, #79648F);
+  -webkit-box-shadow: #B99ADB 0 0.7rem 2.5rem -0.1rem;
+          box-shadow: #B99ADB 0 0.7rem 2.5rem -0.1rem;
 }
 
 .colour-tryout .gradient-one :nth-child(7) {

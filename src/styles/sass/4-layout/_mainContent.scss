@@ -4,25 +4,12 @@
     left: -$gutter;
 }
 
-// * {
-//     margin-top: 1.7rem;
-// }
-
-li {
-    margin-top: 0;
-
-    * {
-        margin-top: 0;
-    }
-}
-
 section {
-    padding: 2rem $gutter;
     margin: 0;
     position: relative;
 
-    * {
-        margin-top: 1.7rem;
+    h2, p, ul {
+        margin-top: $margin-top;
     }
 
     li, svg {
@@ -35,21 +22,25 @@ section {
 }
 
 .first-section {
-    margin-top: 20vh;
+    margin-top: 30vh;
+
+    @include media-query(tablet-landscape-up) {
+        margin-top: 20vh;
+    }
 }
 
 .content {
-    margin: 0 auto;
-    max-width: $paragraph-width;
+    position: relative;
 }
 
 .testimonial {
     align-items: center;
-    background-color: $dark;
     display: flex;
     justify-content: center;
     text-align: center;
     padding: 3em;
+    position: relative;
+    width: 100%;
 
     * {
         margin: 0;

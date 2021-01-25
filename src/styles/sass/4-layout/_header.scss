@@ -4,6 +4,7 @@ header {
     flex-wrap: wrap-reverse;
     height: 30vh;
     justify-content: space-around;
+    overflow: hidden;
     position: absolute;
     transition: .3s;
     transition: background-color 0s;
@@ -162,8 +163,6 @@ header {
     position: relative;
 
     @include media-query(mobile-landscape-only) {
-        background-position: bottom 0 right $gutter;
-        background-size: 50vw;
         height: 100vh;
     }
 
@@ -176,15 +175,8 @@ header {
     }
 
     @include media-query(tablet-landscape-up) {
-        background-attachment: fixed;
-        background-position: top 7.3rem right $gutter;
-        background-size: 59vw;
-        margin: 0 $gutter;
+        // margin: 0 $gutter;
         padding-top: 20vh;
-    }
-
-    @include media-query(desktop-up) {
-        background-size: 100vh;
     }
 
     .tagline {
@@ -225,19 +217,20 @@ header {
     svg {
         bottom: .3rem;
         position: absolute;
-        right: 0;
+        right: -$gutter;
         width: 100vw;
 
         @include media-query(mobile-landscape-only) {
-            // right: $gutter;
+            right: -$gutter;
             width: 50vw;
         }
     
         @include media-query(tablet-landscape-up) {
             // background-attachment: fixed;
             height: 70vh;
+            max-width: 60vw;
             top: 20%;
-            // right: $gutter;
+            right: -$gutter;
             width: auto;
             // top: 7.3rem;
             // width: 57.5vw;
@@ -246,7 +239,9 @@ header {
     
         @include media-query(desktop-up) {
             height: auto;
+            max-width: 60vw;
             top: 7.3rem;
+            right: -$gutter * 1.4;
             width: 100vh;
         }
 
@@ -261,7 +256,7 @@ header {
                 }
 
                 &.clarinet {
-                    fill: $secondary-gradient;
+                    fill: $secondary;
                 }
 
                 &.flute {
@@ -269,7 +264,7 @@ header {
                 }
 
                 &.e-flute {
-                    fill: $primary-gradient;
+                    fill: $primary;
                 }
 
                 &.sax {

@@ -144,7 +144,9 @@ nav {
 
 .index-nav-mobile {
     @extend %nav-mobile-base;
+    @include grid-column(full-width);
     @include sticky(top);
+    background-color: fade-out($white, .04);
     width: 100%;
 
     ul {
@@ -160,14 +162,30 @@ nav {
 .sub-navigation {
     
     ul {
-        // flex-wrap: wrap;
-        display: block;
+        display: grid;
+        grid-template: 2 / 1;
+        justify-items: start;
+        padding: 0;
+        width: 100%;
 
+        @include media-query(tablet-landscape-up) {
+            justify-items: end;
+        }
+        
         svg {
-            // flex-basis: 4rem;
-            // flex-grow: 0;
-            // flex-shrink: 0;
-            width: 4rem;
+            display: inline;
+            height: auto;
+            width: 1.5rem;
+        }
+
+        p {
+            display: inline;
+        }
+
+        .discuss {
+            @include media-query(tablet-landscape-up) {
+                display: none;
+            }
         }
     }
 }

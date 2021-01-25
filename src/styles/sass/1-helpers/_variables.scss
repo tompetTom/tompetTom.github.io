@@ -1,9 +1,10 @@
 // TYPOGRAPHY
 $handwriting: 'Bad Script', cursive;
 $sans: 'Lato', sans-serif;
-$serif: 'Raleway', sans-serif;
+$serif: 'Raleway', serif;
 
 $thin: 200;
+$heading-thin: 300;
 $normal: 400;
 $semi-bold: 500;
 $bold: 700;
@@ -28,11 +29,12 @@ $black: $purple-black;
 $black-gradient: #07050A;
 $dark: $rich-dark-purple;
 $dark-gradient: #231830;
-$primary: $turquoise;
-$primary-gradient: #97CCC3;
-$secondary: $feminine-purple;
-$secondary-gradient: #B99ADB;
+$primary: #97CCC3;
+$primary-gradient: $turquoise;
+$secondary: #B99ADB;
+$secondary-gradient: $feminine-purple;
 $grey: $alt-grey;
+$dark-grey: #555;
 $grey-gradient: $white;
 $light: $skin-pink;
 $light-gradient: #FCD0CA;
@@ -42,9 +44,11 @@ $white-gradient: #FEFDF9;
 
 // LAYOUT
 $gutter: 3vw;
+$half-gutter: 1.5vw;
 $full-width: 1 / -1;
 $paragraph-width: 500px;
 $half-width: $paragraph-width / 2;
+$margin-top: 1.7rem;
 
 $white-border: 1px solid $white;
 $black-border: 1px solid $black;

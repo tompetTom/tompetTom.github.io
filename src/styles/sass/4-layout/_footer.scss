@@ -1,9 +1,11 @@
 footer {
+    @include grid-column(full-width);
     align-items: center;
-    background-color: $grey;
+    // background-color: $grey;
     display: flex;
     justify-content: center;
     padding: 2rem $gutter;
+    // position: relative;
 
     .links {
         font-size: $small-font;
@@ -45,7 +47,7 @@ footer {
 
                 .social-icons {
                     position: relative;
-                    top: .85rem;
+                    top: .8rem;
                 
                     a {
                         display: inline-block;

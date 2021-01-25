@@ -1,12 +1,24 @@
 button {
     @extend %sans-font;
-    @include button-box-shadow($grey);
-    background: linear-gradient($accent, $accent-gradient);
-    border-radius: 1.2em;
+    background: no-repeat url(../../../../images/backgrounds/blobs/button-2-revised.svg);
     cursor: pointer;
     font-size: 1.2rem;
+    margin-top: $margin-top;
     padding: .5em 1em;
     transition: $default-transition-time;
+
+    a {
+        display: inline;
+
+        &:after {
+            content: url(../../../../images/icons/boxed-icons/go.svg);
+            display: inline-block;
+            margin-left: .3em;
+            position: relative;
+            top: .2em;
+            width: 1em;
+        }
+    }
     
     em {
         font-style: normal;
@@ -14,7 +26,6 @@ button {
     }
 
     &:hover {
-        @include button-box-shadow-high($grey);
         transform: scale(1.03);
     }
 
@@ -22,19 +33,13 @@ button {
         transform: scale(.99);
     }
 
-    &.btn-secondary {
-        @include button-box-shadow($secondary);
-        background: linear-gradient($secondary, $secondary-gradient);
-        border-radius: .5em;
-        // transition: $default-transition-time;
-        
-        // &:hover {
-        //     background: $bright-chartreuse;
-        // }
+    &.button-secondary {
+        background: no-repeat url(../../../../images/backgrounds/blobs/button-1.svg);
     }
 
     &.show-hide {
         border: $black-border;
+        border-radius: 1.2em;
         background: linear-gradient($white, $white-gradient);
         font-size: .9rem;
         font-weight: $normal;
@@ -58,7 +63,7 @@ button {
     }
 
     &[type=submit] {
-        background: linear-gradient($accent, $accent-gradient);
+        // border-radius: 1.2em;
         box-shadow: none;
         color: $black;
         font-size: 1rem;
@@ -66,20 +71,13 @@ button {
         position: relative;
         text-align: left;
         width: 100%;
-
-        // &:hover {
-        //     background: $bright-chartreuse;
-        // }
             
         svg {
-            background-color: $white;
+            // background-color: $white;
             bottom: 0;
-            border-radius: 50%;
-            // box-shadow: 0 0 .4rem -.1rem $black;
-            // padding: .7rem;
-            // padding: .5rem;
+            // border-radius: 50%;
             position: absolute;
-            right: -.2px;
+            right: 1rem;
             height: 100%;
         }
     }

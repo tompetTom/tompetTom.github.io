@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>.cls-2{fill:none;}.cls-2,.cls-3{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <path class="cls-2" d="M42,71.5a28,28,0,0,1-18.15,4.35.78.78,0,0,1-.36-1.45,16.8,16.8,0,0,0,5.87-6.18,2.32,2.32,0,0,0-.88-3.09c-6.39-4-10.39-9.8-10.39-16.22,0-12.13,14.27-22,31.88-22s31.88,9.84,31.88,22-14.27,22-31.88,22a45.17,45.17,0,0,1-4.55-.22A5.34,5.34,0,0,0,42,71.5Z"/>
+    <circle class="stroke-fill" cx="50" cy="49.08" r="3"/>
+    <circle class="stroke-fill" cx="35.43" cy="49" r="3"/>
+    <circle class="stroke-fill" cx="64.57" cy="49.12" r="3"/>
+</svg>
