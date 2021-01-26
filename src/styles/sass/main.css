@@ -916,7 +916,24 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li, .index-nav-mobile ul li {
+  background: no-repeat url(../../../../images/backgrounds/squircle-one-grey.svg);
   text-align: center;
+}
+
+.nav-mobile ul li:nth-child(1), .index-nav-mobile ul li:nth-child(1) {
+  background: no-repeat url(../../../../images/backgrounds/squircle-one-pink.svg);
+}
+
+.nav-mobile ul li:nth-child(2), .index-nav-mobile ul li:nth-child(2) {
+  background: no-repeat url(../../../../images/backgrounds/squircle-one-turquoise.svg);
+}
+
+.nav-mobile ul li:nth-child(4), .index-nav-mobile ul li:nth-child(4) {
+  background: no-repeat url(../../../../images/backgrounds/squircle-one-purple.svg);
+}
+
+.nav-mobile ul li:nth-child(5), .index-nav-mobile ul li:nth-child(5) {
+  background: no-repeat url(../../../../images/backgrounds/squircle-one-chartruese.svg);
 }
 
 .nav-mobile ul li a, .index-nav-mobile ul li a {
@@ -933,18 +950,12 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li a p, .index-nav-mobile ul li a p {
-  background: linear-gradient(225deg, #FCFAF0, #DFDDD5);
-  border: 2px solid #DFDDD5;
-  border-radius: 1em;
+  margin-top: -.4rem;
   padding: .1em .5em;
 }
 
 .nav-mobile ul li a svg, .index-nav-mobile ul li a svg {
-  background: linear-gradient(225deg, #FCFAF0, #DFDDD5);
-  border: 2px solid #DFDDD5;
-  border-radius: 50%;
   height: 100%;
-  padding: .1em;
 }
 
 .nav-mobile ul li a svg .stroke, .index-nav-mobile ul li a svg .stroke, .nav-mobile ul li a svg .square, .index-nav-mobile ul li a svg .square {

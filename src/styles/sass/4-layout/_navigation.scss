@@ -96,7 +96,24 @@ nav {
     ul {
 
         li {
+            background: no-repeat url(../../../../images/backgrounds/squircle-one-grey.svg);
             text-align: center;
+
+            &:nth-child(1) {
+                background: no-repeat url(../../../../images/backgrounds/squircle-one-pink.svg);
+            }
+
+            &:nth-child(2) {
+                background: no-repeat url(../../../../images/backgrounds/squircle-one-turquoise.svg);
+            }
+
+            &:nth-child(4) {
+                background: no-repeat url(../../../../images/backgrounds/squircle-one-purple.svg);
+            }
+
+            &:nth-child(5) {
+                background: no-repeat url(../../../../images/backgrounds/squircle-one-chartruese.svg);
+            }
 
             a {
                 color: $black;
@@ -113,18 +130,19 @@ nav {
                 }
 
                 p {
-                    background: linear-gradient(225deg, $grey-gradient, $grey);
-                    border: 2px solid $grey;
-                    border-radius: 1em;
+                    // background: linear-gradient(225deg, $grey-gradient, $grey);
+                    // border: 2px solid $grey;
+                    // border-radius: 1em;
+                    margin-top: -.4rem;
                     padding: .1em .5em;
                 }
 
                 svg {
-                    background: linear-gradient(225deg, $grey-gradient, $grey);
-                    border: 2px solid $grey;
-                    border-radius: 50%;
+                    // background: linear-gradient(225deg, $grey-gradient, $grey);
+                    // border: 2px solid $grey;
+                    // border-radius: 50%;
                     height: 100%;
-                    padding: .1em;
+                    // padding: .1em;
 
                     .stroke, .square {
                         stroke: $black;
