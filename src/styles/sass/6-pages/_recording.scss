@@ -1,4 +1,4 @@
-.recording-sub-page {
+#recording-page {
     .first-section {
         @include grid-column(fill);
         align-items: center;
@@ -22,7 +22,9 @@
 
         form {
             align-items: end;
+            background: no-repeat url(../../../images/backgrounds/blobs/square-blob-1.svg);
             display: none;
+            padding-left: 1rem;
 
             @include media-query(tablet-landscape-up) {
                 display: grid;
@@ -37,10 +39,11 @@
     .recording-instruments-intro {
         @extend section;
         @include grid-column(fill);
+        background: no-repeat url(../../../images/backgrounds/blobs/blob-5.svg);
         display: grid;
         column-gap: $gutter;
         grid-template-columns: 1fr;
-        margin-top: $margin-top;
+        // margin-top: $margin-top;
 
         @include media-query(tablet-landscape-up) {
             grid-template-columns: minmax(19rem, 2fr) 3fr;
@@ -73,36 +76,61 @@
                 position: relative;
                 width: 20%;
 
+                &::after {
+                    background-color: none;
+                    content: " ";
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    transition: $slow-transition-time;
+                    width: 100%;
+                    z-index: 1;
+                }
+
                 &.flutes {
-                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1562808191-76e71b08a870?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3152&q=80);
+                    background: $flutes-image;
                 }
 
                 &.clarinets {
-                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1573871665247-2b556aa23460?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=3150&q=80);
+                    background: $clarinets-image;
                 }
 
                 &.recorders {
-                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1504339804171-c44c838612e6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80);
+                    background: $recorders-image;
                 }
 
                 &.world-flutes {
-                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1575669572405-52da19d6a7db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2970&q=80);
+                    background: $world-flutes-image;
                 }
 
                 &.saxophones {
-                    background: center / cover no-repeat url(https://images.unsplash.com/photo-1566765479776-249be4decbaa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1943&q=80);
+                    background: $saxophones-image;
                 }
 
                 .caption {
+                    align-items: center;
                     background-color: fade-out($white, .4);
-                    text-align: center;
-                    padding-top: .7rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    height: 25%;
+                    justify-content: center;
+                    overflow: hidden;
+                    position: relative;
+                    transition: $slow-transition-time;
                     width: 100%;
+                    z-index: 2;
 
                     h3 {
                         @extend %sans-font;
                         color: $black;
                         font-size: 2.5vw;
+                        line-height: 1em;
+                        margin: 3% 0 1em 0;
+                        text-align: center;
+                        transition: $slow-transition-time;
+                        position: relative;
+                        width: 100%;
 
                         @include media-query(desktop-up) {
                             font-size: 1.5rem;
@@ -110,7 +138,10 @@
                     }
 
                     svg {
-                        width: 2.5vw;
+                        bottom: 10%;
+                        position: absolute;
+                        transition: $slow-transition-time;
+                        width: 2vw;
 
                         path {
                             stroke: $black;
@@ -122,68 +153,148 @@
 
                     &::after {
                         background-color: fade-out($black, .5);
-                        content: " ";
+                    }
+                }
+
+                &.active {
+
+                    .caption {
+                        background-color: fade-out($white, .2);
                         height: 100%;
-                        left: 0;
-                        position: absolute;
-                        top: 0;
-                        width: 100%;
+
+                        h3 {
+                            margin: 0;
+
+                            &::after {
+                                content: url(../../../images/backgrounds/blobs/underline-blob-1.svg);
+                                left: 0;
+                                position: absolute;
+                                top: 0;
+                                width: 100%;
+                                z-index: -1;
+                            }
+                        }
+
+                        svg {
+                            bottom: -10%;
+                            transition: bottom $slow-transition-time 0s, transform 0s $slow-transition-time;
+                        }
+
+                        &.hover {
+                            svg {
+                                bottom: 10%;
+                                transform: rotate(180deg);
+                                transition: bottom $slow-transition-time 0s;
+                            }
+                        }
+                    }
+
+                    &::after {
+                        background-color: fade-out($black, .5);
                     }
                 }
             }
         }
     }
 
-    .recording-instrument-dropdown {
-        @extend section;
+    .recording-instrument-infos {
         @include grid-column(fill);
-        display: none;
 
-        &.active {
-            display: grid;
+        .recording-instrument-dropdown {
+            @extend section;
             column-gap: $gutter;
+            display: grid;
             grid-template-columns: 1fr;
+            height: auto;
+            margin: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1s ease-out, margin-top $slow-transition-time $slow-transition-time;
 
             @include media-query(tablet-landscape-up) {
                 grid-template-columns: 1fr 1fr;
             }
-        }
 
-        .instrument-image {
-            grid-column: 1 / span 2;
-            margin: 0;
-            text-align: center;
+            &.active {
+                margin-top: $margin-top;
+                max-height: 120rem;
+                transition: $slow-transition-time;
+            }
 
-            h4 {
-                @extend %sans-font;
+            &#flutes-info {
+                .instrument-image {
+                    background: $flutes-image;
+                }
+            }
+
+            &#clarinets-info {
+                .instrument-image {
+                    background: $clarinets-image;
+                }
+            }
+
+            &#recorders-info {
+                .instrument-image {
+                    background: $recorders-image;
+                }
+            }
+
+            &#world-flutes-info {
+                .instrument-image {
+                    background: $world-flutes-image;
+                }
+            }
+
+            &#saxophones-info {
+                .instrument-image {
+                    background: $saxophones-image;
+                }
+            }
+
+            .instrument-image {
+                align-items: center;
+                display: flex;
+                grid-column: 1 / span 2;
+                height: 7rem;
+                justify-content: center;
                 margin: 0;
+                text-align: center;
+
+                h4 {
+                    @extend %sans-font;
+                    background: $white;
+                    border: 2px solid $grey;
+                    border-radius: 1rem;
+                    margin: 0;
+                    padding: .5rem;
+                }
             }
-        }
 
-        .instrument-info {
-            @extend .content;
-             grid-column: 1 / span 1;
+            .instrument-info {
+                @extend .content;
+                grid-column: 1 / span 1;
 
-             ul {
-                 text-align: center;
+                ul {
+                    text-align: center;
+                }
             }
-        }
 
-        .instrument-examples {
-            @extend .content;
-            grid-column: 1 / span 1;
+            .instrument-examples {
+                @extend .content;
+                grid-column: 1 / span 1;
 
-            @include media-query(tablet-landscape-up) {
-                grid-column: 2 / span 1;
+                @include media-query(tablet-landscape-up) {
+                    grid-column: 2 / span 1;
+                }
             }
-        }
 
-        .show-hide {
-            grid-column: 1 / -1;
-            margin: 0 auto;
+            .show-hide {
+                grid-column: 1 / -1;
+                margin: 0 auto;
 
-            @include media-query(tablet-landscape-up) {
-                display: none;
+                @include media-query(tablet-landscape-up) {
+                    display: none;
+                }
             }
         }
     }
@@ -223,11 +334,14 @@
             }
 
             li {
-                border-bottom: 1px solid $dark-grey;
                 color: $dark-grey;
                 padding-bottom: .3rem;
                 text-align: center;
                 width: 50%;
+
+                &:nth-child(1) {
+                    border-right: 1px solid $dark-grey;
+                }
 
                 a {
                     @extend h2;
@@ -239,7 +353,7 @@
                 }
 
                 &.active {
-                    border-bottom: 3px solid $black;
+                    background: no-repeat url(../../../../images/backgrounds/blobs/underline-blob-1.svg);
                     color: $black;
 
                     a {
@@ -265,6 +379,7 @@
         
         h2 {
             display: none;
+            margin: 0;
 
             @include media-query(tablet-landscape-up) {
                 display: block;
@@ -303,6 +418,7 @@
     }
 
     .recording-testimonials {
+        // @extend .testimonial-container;
         @include grid-column(right);
     }
 

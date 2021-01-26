@@ -32,8 +32,18 @@ header {
     @include media-query(tablet-landscape-up) {
         background-color: fade-out($white, .04);
         flex-wrap: nowrap;
-        height: auto;
+        // height: auto;
         // height: 135px;
+        height: 6.5rem;
+        overflow: visible;
+
+        #title {
+            align-self: flex-start;
+        }
+
+        &.scroll {
+            height: auto;
+        }
     }
 
     #title {
@@ -42,6 +52,14 @@ header {
 
         &:hover {
             color: inherit;
+
+            .tagline {
+                &::after {
+                    left: -12%;
+                    top: -.4rem;
+                    width: 55%;
+                }
+            }
         }
     
         h1 {
@@ -73,12 +91,12 @@ header {
 
         .tagline {
             display: block;
-            left: 6rem;
-            line-height: .1rem;
+            float: right;
             font-weight: $thin;
-            text-align: left;
+            text-align: right;
+            margin-right: 2rem;
+            margin-top: -.6rem;
             position: relative;
-            max-width: 21rem;
 
             span {
                 display: none;
@@ -93,17 +111,33 @@ header {
             }
     
             @include media-query(tablet-landscape-up) {
-                left: 5rem;
+                margin-right: 1rem;
+
+                &::after {
+                    content: url(../../../images/backgrounds/blobs/underline-blob-2.svg);
+                    left: -8%;
+                    position: absolute;
+                    right: 0;
+                    top: .1rem;
+                    transition: $default-transition-time;
+                    width: 40%;
+                    z-index: -1;
+                }
 
                 &.small {
                     font-size: .5rem;
-                    left: 2.1rem;
+                    margin-right: .3rem;
+                    margin-top: -.3rem;
                 }
             }
 
             @include media-query(tablet-landscape-only) {
                 font-size: .85rem;
-                left: 3.5rem;
+                // margin-right: .5rem;
+            }
+
+            @include media-query(desktop-up) {
+                margin-right: 2rem;
             }
         }
     }

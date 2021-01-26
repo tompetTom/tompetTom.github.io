@@ -8,7 +8,7 @@ section {
     margin: 0;
     position: relative;
 
-    h2, p, ul {
+    h2, p, ul, .margin-top {
         margin-top: $margin-top;
     }
 
@@ -35,6 +35,7 @@ section {
 
 .testimonial {
     align-items: center;
+    background: no-repeat url(../../../images/backgrounds/blobs/blob-1-purple.svg);
     display: flex;
     justify-content: center;
     text-align: center;

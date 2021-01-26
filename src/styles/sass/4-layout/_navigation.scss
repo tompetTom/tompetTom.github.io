@@ -179,7 +179,11 @@ nav {
         }
 
         p {
-            display: inline;
+            display: none;
+
+            @include media-query(tablet-landscape-up) {
+                display: inline;
+            }
         }
 
         .discuss {

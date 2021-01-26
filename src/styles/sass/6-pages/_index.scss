@@ -93,7 +93,10 @@
     
     .recording-testimonials {
         @include grid-column(fill);
-        // @include inner-shadow($dark);
+        
+        .testimonial {
+            background: none;
+        }
     }
     
     .career {
@@ -102,25 +105,10 @@
     
     .lux {
         @include grid-column(right);
-    
-        @include media-query(tablet-landscape-up) {
-            padding-top: 1rem;
-        }
     }
     
     .lessons {
         @include grid-column(left);
-
-        .content {
-            
-            h2 {
-                margin-top: -2rem;
-
-                @include media-query(tablet-landscape-up) {
-                    margin-top: 2rem;
-                }
-            }
-        }
     }
     
     .teaching-testimonials {

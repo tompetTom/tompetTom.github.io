@@ -4,14 +4,14 @@ form {
     column-gap: $gutter;
     grid-template-columns: 100%;
     margin: 0;
-    padding: 0;
+    padding: $margin-top 0;
 
     @include media-query(desktop-up) {
         grid-template-columns: 1fr 1fr;
     }
 
     h2 {
-        margin: 0;
+        margin: 0 !important;
     }
 
     div {
@@ -35,10 +35,11 @@ form {
     }
 
     textarea {
+        height: 8rem;
         resize: none;
     }
 
     *::placeholder {
-        color: $grey;
+        color: $dark-grey;
     }
 }
