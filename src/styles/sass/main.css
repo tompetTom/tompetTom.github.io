@@ -916,24 +916,24 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li, .index-nav-mobile ul li {
-  background: no-repeat url(../../../../images/backgrounds/squircle-one-grey.svg);
+  background: no-repeat url(../../../images/backgrounds/squircle-one-grey.svg);
   text-align: center;
 }
 
 .nav-mobile ul li:nth-child(1), .index-nav-mobile ul li:nth-child(1) {
-  background: no-repeat url(../../../../images/backgrounds/squircle-one-pink.svg);
+  background: no-repeat url(../../../images/backgrounds/squircle-one-pink.svg);
 }
 
 .nav-mobile ul li:nth-child(2), .index-nav-mobile ul li:nth-child(2) {
-  background: no-repeat url(../../../../images/backgrounds/squircle-one-turquoise.svg);
+  background: no-repeat url(../../../images/backgrounds/squircle-one-turquoise.svg);
 }
 
 .nav-mobile ul li:nth-child(4), .index-nav-mobile ul li:nth-child(4) {
-  background: no-repeat url(../../../../images/backgrounds/squircle-one-purple.svg);
+  background: no-repeat url(../../../images/backgrounds/squircle-one-purple.svg);
 }
 
 .nav-mobile ul li:nth-child(5), .index-nav-mobile ul li:nth-child(5) {
-  background: no-repeat url(../../../../images/backgrounds/squircle-one-chartruese.svg);
+  background: no-repeat url(../../../images/backgrounds/squircle-one-chartruese.svg);
 }
 
 .nav-mobile ul li a, .index-nav-mobile ul li a {
