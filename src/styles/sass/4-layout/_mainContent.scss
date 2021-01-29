@@ -39,7 +39,7 @@ section {
     // background: no-repeat url(../../../images/backgrounds/blobs/blob-1-space-below-purple.svg);
     background: no-repeat url(../../../images/backgrounds/blobs/blob-1-purple.svg);
     display: flex;
-    height: 100%;
+    // height: 100%;
     // height: 15rem;
     justify-content: center;
     text-align: center;
@@ -79,5 +79,6 @@ section {
 }
 
 .youtube-container {
-    width: 100%;
+    margin: 0 $gutter;
+    max-width: 100%;
 }

@@ -1,15 +1,30 @@
 iframe {
-    // display: block;
-    display: inline-block;
-    height: 281.25px;
     // height: 100%;
-    // margin-top: $margin-top;
     // width: 100%;
 
     &.youtube {
         display: block;
         height: 281.25px;
-        margin-top: $margin-top;
         width: 100%;
     }
+}
+
+.youtube-aspect-ratio {
+    margin-top: $margin-top;
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+
+    .youtube {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.youtube-aspect-ratio-slick {
+    @extend .youtube-aspect-ratio;
+    margin: 0;
 }

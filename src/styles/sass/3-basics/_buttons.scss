@@ -45,6 +45,12 @@ button {
         font-weight: $normal;
         padding: .1rem 2rem;
 
+        a {
+            &::after {
+                content: none;
+            }
+        }
+
         span {
             bottom: .2em;
             font-size: .6em;

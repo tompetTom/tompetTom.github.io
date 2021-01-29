@@ -23,7 +23,7 @@ $(document).ready(() => {
     // slick
     $('.slick-quote').slick({
         autoplay: true,
-        autoplaySpeed: 6000,
+        autoplaySpeed: 5000,
         dots: false,
         arrows: false,
         speed: 1000
@@ -32,8 +32,15 @@ $(document).ready(() => {
     $('.slick-video').slick({
         autoplay: false,
         dots: true,
-        arrows: true,
-        speed: 1500
+        arrows: false,
+        speed: 900,
+        mobileFirst: true,
+        responsive: [{
+            breakpoint: 600,
+            settings: {
+                arrows: true
+            }
+        }]
     });
 
     // homepage instrument list
