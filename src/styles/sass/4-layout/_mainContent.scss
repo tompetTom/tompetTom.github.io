@@ -34,24 +34,50 @@ section {
 }
 
 .testimonial {
+    // border: 1px solid red;
     align-items: center;
+    // background: no-repeat url(../../../images/backgrounds/blobs/blob-1-space-below-purple.svg);
     background: no-repeat url(../../../images/backgrounds/blobs/blob-1-purple.svg);
     display: flex;
+    height: 100%;
+    // height: 15rem;
     justify-content: center;
     text-align: center;
+    // overflow: hidden;
     padding: 3em;
     position: relative;
     width: 100%;
 
-    * {
-        margin: 0;
-        max-width: 30em;
-    }
+    .slick-quote {
+        // border: 1px solid red;
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width: 100%;
 
-    blockquote {
-        span {
-            display: block;
-            margin-top: .7em;
+        .bq-container {
+            // border: 1px solid red;
+            align-items: center;
+            display: flex;
+            height: 100%;
+            margin: 0 auto;
+            width: 70%;
+
+            blockquote {
+                // border: 1px solid red;
+                margin: 0 auto;
+                // width: 70%;
+                max-width: 30em;
+
+                span {
+                    display: block;
+                    margin-top: .7em;
+                }
+            }
         }
     }
+}
+
+.youtube-container {
+    width: 100%;
 }

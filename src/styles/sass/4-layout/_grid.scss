@@ -1,11 +1,11 @@
 .grid-container {
     display: grid;
     gap: 0 $gutter;
-    grid-template-columns: 1px 1fr 1px;
+    grid-template-columns: 1px minmax(0, 1fr) 1px;
     max-width: 100vw;
 
     @include media-query(tablet-landscape-up) {
-        grid-template-columns: 1px 1fr 1fr 1px;
+        grid-template-columns: 1px minmax(0, 1fr) minmax(0, 1fr) 1px;
     }
 
     @include media-query(desktop-up) {

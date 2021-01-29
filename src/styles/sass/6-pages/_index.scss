@@ -41,7 +41,7 @@
     .recording {
         @include grid-column(fill);
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         margin-top: -6rem;
         padding-top: 6rem;
     
@@ -60,7 +60,7 @@
         }
 
         @include media-query(tablet-landscape-up) {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             
             .instruments-section {
                 margin-left: $gutter;

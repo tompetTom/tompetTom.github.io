@@ -20,6 +20,22 @@ $(document).ready(() => {
         });
     };
 
+    // slick
+    $('.slick-quote').slick({
+        autoplay: true,
+        autoplaySpeed: 6000,
+        dots: false,
+        arrows: false,
+        speed: 1000
+    });
+
+    $('.slick-video').slick({
+        autoplay: false,
+        dots: true,
+        arrows: true,
+        speed: 1500
+    });
+
     // homepage instrument list
     $('.instrument-list li').on('click', event => {
         $(event.currentTarget).siblings().removeClass('active');
