@@ -8,7 +8,7 @@ section {
     margin: 0;
     position: relative;
 
-    h2, p, ul, .margin-top {
+    h2, p, ul, table, .margin-top {
         margin-top: $margin-top;
     }
 
@@ -34,44 +34,41 @@ section {
 }
 
 .testimonial {
-    // border: 1px solid red;
     align-items: center;
-    // background: no-repeat url(../../../images/backgrounds/blobs/blob-1-space-below-purple.svg);
     background: no-repeat url(../../../images/backgrounds/blobs/blob-1-purple.svg);
     display: flex;
-    // height: 100%;
-    // height: 15rem;
     justify-content: center;
     text-align: center;
-    // overflow: hidden;
-    padding: 3em;
+    padding: $margin-top 3em 0 3em;
     position: relative;
     width: 100%;
 
     .slick-quote {
-        // border: 1px solid red;
         align-items: center;
         display: flex;
         height: 100%;
+        position: relative;
         width: 100%;
 
         .bq-container {
-            // border: 1px solid red;
-            align-items: center;
-            display: flex;
             height: 100%;
             margin: 0 auto;
             width: 70%;
 
             blockquote {
-                // border: 1px solid red;
                 margin: 0 auto;
-                // width: 70%;
                 max-width: 30em;
+                position: relative;
 
                 span {
                     display: block;
                     margin-top: .7em;
+
+                    &.recording-quotee {
+                        margin: .7em 2em 0 2em;
+                        max-width: 50%;
+                        float: right;
+                    }
                 }
             }
         }

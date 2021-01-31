@@ -20,6 +20,26 @@ $(document).ready(() => {
         });
     };
 
+    // scroll to element
+    function scrollToElement(link) {
+        var element = $(document).find(link.attr('href'));
+        if (link.attr('href') == '#gear') {
+            console.log('gear');
+            $('.process-gear').addClass('pg-right');
+            element = $(document).find('#process');
+        } else if (link.attr('href') == '#process') {
+            console.log('process');
+            $('.process-gear').removeClass('pg-right');
+        };
+        var scrollDistance = element.offset().top - 60;
+        $('html, body').animate({scrollTop: scrollDistance}, 500);
+    };
+
+    $('.scroll-link').on('click', event => {
+        event.preventDefault();
+        scrollToElement($(event.currentTarget));
+    });
+
     // slick
     $('.slick-quote').slick({
         autoplay: true,
@@ -32,15 +52,8 @@ $(document).ready(() => {
     $('.slick-video').slick({
         autoplay: false,
         dots: true,
-        arrows: false,
-        speed: 900,
-        mobileFirst: true,
-        responsive: [{
-            breakpoint: 600,
-            settings: {
-                arrows: true
-            }
-        }]
+        arrows: true,
+        speed: 900
     });
 
     // homepage instrument list
@@ -77,18 +90,28 @@ $(document).ready(() => {
     });
 
     $('.show-hide').on('click', () => {
+        $('#recording-instruments')[0].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
         $('.recording-instrument-dropdown').removeClass('active');
         $('.recording-instrument-categories li').removeClass('active');
     })
 
     // recording process/gear mobile tabs
-    $('.tablist li').on('click', event => {
-        event.preventDefault();
-        if ($(event.currentTarget).hasClass('active')) {
-            return;
-        } else {
-            $('.tablist').children().toggleClass('active');
-            $('.process-gear-tabs').toggleClass('active');
+    $('.pg-headings h2').on('click', event => {
+        if ($(event.currentTarget).hasClass('left')) {
+            $('.process-gear').removeClass('pg-right');
+        } else if ($(event.currentTarget).hasClass('right')) {
+            $('.process-gear').addClass('pg-right');
         };
-    })
+    });
+
+    $('.pg-track div').on('swipeleft', () => {
+        $('.process-gear').addClass('pg-right');
+    });
+
+    $('.pg-track div').on('swiperight', () => {
+        $('.process-gear').removeClass('pg-right');
+    });
 });

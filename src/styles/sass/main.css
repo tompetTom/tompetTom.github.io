@@ -4,6 +4,7 @@ mobile,
 mobile-landscape-only,
 tablet-portrait-only,
 tablet-portrait-up,
+single-column,
 tablet-landscape-only,
 tablet-landscape-up,
 desktop-up,
@@ -123,7 +124,7 @@ img {
   max-width: 100%;
 }
 
-h2, #recording-page .process-gear-mobile-headings ul li a, button, #recording-page .recording-instruments .recording-instrument-categories li .caption h3, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-image h4 {
+h2, #recording-page .process-gear-mobile-headings ul li a, h5, button, #recording-page .recording-instruments .recording-instrument-categories li .caption h3, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-image h4 {
   font-family: "Lato", sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -145,6 +146,11 @@ h1 {
 }
 
 h2, #recording-page .process-gear-mobile-headings ul li a {
+  line-height: 1.2em;
+}
+
+h5 {
+  font-size: 1.2rem;
   line-height: 1.2em;
 }
 
@@ -1046,7 +1052,7 @@ section, .landing-section .desktop-landing-content, .home-page .recording .instr
   position: relative;
 }
 
-section h2, .landing-section .desktop-landing-content h2, .home-page .recording .instruments-section h2, #recording-page .recording-instruments-intro h2, #recording-page .recording-instruments h2, #recording-page .recording-instrument-infos .recording-instrument-dropdown h2, section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li section a, .landing-section .desktop-landing-content #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .landing-section .desktop-landing-content a, .home-page .recording .instruments-section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .home-page .recording .instruments-section a, #recording-page .recording-instruments-intro .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments-intro a, #recording-page .recording-instruments .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments a, #recording-page .recording-instrument-infos .recording-instrument-dropdown .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instrument-infos .recording-instrument-dropdown a, section p, .landing-section .desktop-landing-content p, .home-page .recording .instruments-section p, #recording-page .recording-instruments-intro p, #recording-page .recording-instruments p, #recording-page .recording-instrument-infos .recording-instrument-dropdown p, section ul, .landing-section .desktop-landing-content ul, .home-page .recording .instruments-section ul, #recording-page .recording-instruments-intro ul, #recording-page .recording-instruments ul, #recording-page .recording-instrument-infos .recording-instrument-dropdown ul, section .margin-top, .landing-section .desktop-landing-content .margin-top, .home-page .recording .instruments-section .margin-top, #recording-page .recording-instruments-intro .margin-top, #recording-page .recording-instruments .margin-top, #recording-page .recording-instrument-infos .recording-instrument-dropdown .margin-top {
+section h2, .landing-section .desktop-landing-content h2, .home-page .recording .instruments-section h2, #recording-page .recording-instruments-intro h2, #recording-page .recording-instruments h2, #recording-page .recording-instrument-infos .recording-instrument-dropdown h2, section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li section a, .landing-section .desktop-landing-content #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .landing-section .desktop-landing-content a, .home-page .recording .instruments-section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .home-page .recording .instruments-section a, #recording-page .recording-instruments-intro .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments-intro a, #recording-page .recording-instruments .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments a, #recording-page .recording-instrument-infos .recording-instrument-dropdown .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instrument-infos .recording-instrument-dropdown a, section p, .landing-section .desktop-landing-content p, .home-page .recording .instruments-section p, #recording-page .recording-instruments-intro p, #recording-page .recording-instruments p, #recording-page .recording-instrument-infos .recording-instrument-dropdown p, section ul, .landing-section .desktop-landing-content ul, .home-page .recording .instruments-section ul, #recording-page .recording-instruments-intro ul, #recording-page .recording-instruments ul, #recording-page .recording-instrument-infos .recording-instrument-dropdown ul, section table, .landing-section .desktop-landing-content table, .home-page .recording .instruments-section table, #recording-page .recording-instruments-intro table, #recording-page .recording-instruments table, #recording-page .recording-instrument-infos .recording-instrument-dropdown table, section .margin-top, .landing-section .desktop-landing-content .margin-top, .home-page .recording .instruments-section .margin-top, #recording-page .recording-instruments-intro .margin-top, #recording-page .recording-instruments .margin-top, #recording-page .recording-instrument-infos .recording-instrument-dropdown .margin-top {
   margin-top: 1.7rem;
 }
 
@@ -1068,7 +1074,7 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
   }
 }
 
-.content, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples, #recording-page .idea-1, #recording-page .idea-2 {
+.content, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info, #recording-page .idea-1, #recording-page .idea-2 {
   position: relative;
 }
 
@@ -1084,7 +1090,7 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  padding: 3em;
+  padding: 1.7rem 3em 0 3em;
   position: relative;
   width: 100%;
 }
@@ -1097,16 +1103,11 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  position: relative;
   width: 100%;
 }
 
 .testimonial .slick-quote .bq-container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   height: 100%;
   margin: 0 auto;
   width: 70%;
@@ -1115,11 +1116,18 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
 .testimonial .slick-quote .bq-container blockquote {
   margin: 0 auto;
   max-width: 30em;
+  position: relative;
 }
 
 .testimonial .slick-quote .bq-container blockquote span {
   display: block;
   margin-top: .7em;
+}
+
+.testimonial .slick-quote .bq-container blockquote span.recording-quotee {
+  margin: .7em 2em 0 2em;
+  max-width: 50%;
+  float: right;
 }
 
 .youtube-container {
@@ -1248,12 +1256,6 @@ footer .links .centre-links .footer-box-right {
   text-align: right;
 }
 
-iframe.youtube {
-  display: block;
-  height: 281.25px;
-  width: 100%;
-}
-
 .youtube-aspect-ratio, .youtube-aspect-ratio-slick {
   margin-top: 1.7rem;
   padding-bottom: 56.25%;
@@ -1324,6 +1326,7 @@ iframe.youtube {
   top: 0;
   margin-left: auto;
   margin-right: auto;
+  overflow-y: visible;
 }
 
 .slick-track:before, .slick-track:after {
@@ -1382,7 +1385,7 @@ iframe.youtube {
 
 /* Slider */
 .slick-loading .slick-list {
-  background: #fff url("./ajax-loader.gif") center center no-repeat;
+  background: #FCFAF0 url("../../slick/slick/ajax-loader.gif") center center no-repeat;
 }
 
 /* Icons */
@@ -1400,14 +1403,13 @@ iframe.youtube {
   border: 3px solid red;
   position: absolute;
   display: block;
-  height: 20px;
-  width: 20px;
+  width: 2rem;
   line-height: 0px;
   font-size: 0px;
   cursor: pointer;
   background: transparent;
   color: transparent;
-  top: 50%;
+  top: 40%;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
@@ -1441,7 +1443,7 @@ iframe.youtube {
   font-size: 20px;
   line-height: 1;
   color: #140E1B;
-  opacity: 0.75;
+  opacity: 0.9;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1456,11 +1458,11 @@ iframe.youtube {
 }
 
 .slick-prev:before {
-  content: "←";
+  content: url(../../../images/icons/previous.svg);
 }
 
 [dir="rtl"] .slick-prev:before {
-  content: url(../../../../images/icons/boxed-icons/send.svg);
+  content: url(../../../images/icons/next.svg);
 }
 
 .slick-next {
@@ -1473,11 +1475,11 @@ iframe.youtube {
 }
 
 .slick-next:before {
-  content: url(../../../../images/icons/boxed-icons/send.svg);
+  content: url(../../../images/icons/next.svg);
 }
 
 [dir="rtl"] .slick-next:before {
-  content: "←";
+  content: url(../../../images/icons/previous.svg);
 }
 
 /* Dots */
@@ -1546,7 +1548,7 @@ iframe.youtube {
 
 .slick-dots li.slick-active button:before {
   color: #140E1B;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 .box li, .ticks li {
@@ -1820,6 +1822,10 @@ iframe.youtube {
   padding-top: 1rem;
 }
 
+.home-page .recording #mobile-intro-content {
+  margin-bottom: 1.7rem;
+}
+
 @media (min-width: 900px) {
   .home-page .recording #mobile-intro-content {
     display: none;
@@ -1919,13 +1925,13 @@ iframe.youtube {
   }
 }
 
-#recording-page .first-section .content, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-info, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-info, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-examples, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-examples, #recording-page .first-section .idea-1, #recording-page .first-section .idea-2 {
+#recording-page .first-section .content, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-info, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-info, #recording-page .first-section .idea-1, #recording-page .first-section .idea-2 {
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
 }
 
-#recording-page .first-section .content .ticks path, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-info .ticks path, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-info .ticks path, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-examples .ticks path, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-examples .ticks path, #recording-page .first-section .idea-1 .ticks path, #recording-page .first-section .idea-2 .ticks path {
+#recording-page .first-section .content .ticks path, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-info .ticks path, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-info .ticks path, #recording-page .first-section .idea-1 .ticks path, #recording-page .first-section .idea-2 .ticks path {
   stroke: #97CCC3;
 }
 
@@ -1981,11 +1987,21 @@ iframe.youtube {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 20vw;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 66vw;
   margin: 0 auto;
-  max-height: 260px;
   max-width: 1300px;
   width: 100%;
+}
+
+@media (min-width: 600px) {
+  #recording-page .recording-instruments .recording-instrument-categories {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    height: 20vw;
+    max-height: 260px;
+  }
 }
 
 #recording-page .recording-instruments .recording-instrument-categories li {
@@ -1996,16 +2012,25 @@ iframe.youtube {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 20%;
+          flex: 1 20%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  height: 50%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0;
   position: relative;
-  width: 20%;
+}
+
+@media (min-width: 600px) {
+  #recording-page .recording-instruments .recording-instrument-categories li {
+    height: 100%;
+  }
 }
 
 #recording-page .recording-instruments .recording-instrument-categories li::after {
@@ -2021,8 +2046,20 @@ iframe.youtube {
   z-index: 1;
 }
 
+#recording-page .recording-instruments .recording-instrument-categories li.world-flutes, #recording-page .recording-instruments .recording-instrument-categories li.saxophones {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+@media (min-width: 600px) {
+  #recording-page .recording-instruments .recording-instrument-categories li.world-flutes, #recording-page .recording-instruments .recording-instrument-categories li.saxophones {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+}
+
 #recording-page .recording-instruments .recording-instrument-categories li.flutes {
-  background: center/cover no-repeat url(https://images.unsplash.com/photo-1562808191-76e71b08a870?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3152&q=80);
+  background: center/cover no-repeat url(../../../images/instruments/flute/flutes-black-white.jpg);
 }
 
 #recording-page .recording-instruments .recording-instrument-categories li.clarinets {
@@ -2034,7 +2071,7 @@ iframe.youtube {
 }
 
 #recording-page .recording-instruments .recording-instrument-categories li.world-flutes {
-  background: center/cover no-repeat url(https://images.unsplash.com/photo-1575669572405-52da19d6a7db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2970&q=80);
+  background: center/cover no-repeat url(../../../images/instruments/world-flute/tepui-four.jpg);
 }
 
 #recording-page .recording-instruments .recording-instrument-categories li.saxophones {
@@ -2051,7 +2088,7 @@ iframe.youtube {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 25%;
+  height: 30%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2063,9 +2100,15 @@ iframe.youtube {
   z-index: 2;
 }
 
+@media (min-width: 600px) {
+  #recording-page .recording-instruments .recording-instrument-categories li .caption {
+    height: 25%;
+  }
+}
+
 #recording-page .recording-instruments .recording-instrument-categories li .caption h3 {
   color: #140E1B;
-  font-size: 2.5vw;
+  font-size: 1.5rem;
   line-height: 1em;
   margin: 3% 0 1em 0;
   text-align: center;
@@ -2073,6 +2116,18 @@ iframe.youtube {
   transition: 0.5s;
   position: relative;
   width: 100%;
+}
+
+@media (min-width: 600px) {
+  #recording-page .recording-instruments .recording-instrument-categories li .caption h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  #recording-page .recording-instruments .recording-instrument-categories li .caption h3 {
+    font-size: 2.5vw;
+  }
 }
 
 @media (min-width: 1250px) {
@@ -2086,7 +2141,13 @@ iframe.youtube {
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  width: 2vw;
+  width: 4vw;
+}
+
+@media (min-width: 600px) {
+  #recording-page .recording-instruments .recording-instrument-categories li .caption svg {
+    width: 2vw;
+  }
 }
 
 #recording-page .recording-instruments .recording-instrument-categories li .caption svg path {
@@ -2140,8 +2201,6 @@ iframe.youtube {
 }
 
 #recording-page .recording-instrument-infos .recording-instrument-dropdown {
-  -webkit-column-gap: 3vw;
-          column-gap: 3vw;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -2156,6 +2215,8 @@ iframe.youtube {
 
 @media (min-width: 900px) {
   #recording-page .recording-instrument-infos .recording-instrument-dropdown {
+    -webkit-column-gap: 3vw;
+            column-gap: 3vw;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
@@ -2168,8 +2229,14 @@ iframe.youtube {
   transition: 0.5s;
 }
 
+@media (min-width: 900px) {
+  #recording-page .recording-instrument-infos .recording-instrument-dropdown.active {
+    max-height: 60rem;
+  }
+}
+
 #recording-page .recording-instrument-infos .recording-instrument-dropdown#flutes-info .instrument-image {
-  background: center/cover no-repeat url(https://images.unsplash.com/photo-1562808191-76e71b08a870?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3152&q=80);
+  background: center/cover no-repeat url(../../../images/instruments/flute/flute-long.jpg);
 }
 
 #recording-page .recording-instrument-infos .recording-instrument-dropdown#clarinets-info .instrument-image {
@@ -2181,7 +2248,7 @@ iframe.youtube {
 }
 
 #recording-page .recording-instrument-infos .recording-instrument-dropdown#world-flutes-info .instrument-image {
-  background: center/cover no-repeat url(https://images.unsplash.com/photo-1575669572405-52da19d6a7db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2970&q=80);
+  background: center/cover no-repeat url(../../../images/instruments/world-flute/tepui-seven.jpg);
 }
 
 #recording-page .recording-instrument-infos .recording-instrument-dropdown#saxophones-info .instrument-image {
@@ -2224,10 +2291,44 @@ iframe.youtube {
   text-align: center;
 }
 
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info table {
+  width: 100%;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info table tr {
+  border-bottom: 1px solid #DFDDD5;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info table tr:last-child {
+  border: none;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info table tr td {
+  vertical-align: middle;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info table tr td:nth-child(1) {
+  border-right: 1px solid #140E1B;
+  padding-right: 1.5vw;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info table tr td:nth-child(2) {
+  padding-left: 1.5vw;
+  text-align: left;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .temporary-wf-p {
+  grid-column: 1 / -1;
+}
+
 #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
+  margin-top: 1.7rem;
+  width: 100%;
 }
 
 @media (min-width: 900px) {
@@ -2235,12 +2336,68 @@ iframe.youtube {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2 / span 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
   }
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples h5 {
+  width: 100%;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples .videos {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.7rem;
+  width: 100%;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples .videos div {
+  display: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 40%;
+          flex: 1 40%;
+  padding-bottom: 29.125%;
+  margin: 0 0 2px 0;
+  position: relative;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples .videos div:nth-child(2n) {
+  margin-left: 2px;
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples .videos div:nth-child(-n+4) {
+  display: inline-block;
+}
+
+@media (min-width: 900px) {
+  #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples .videos div {
+    display: inline-block;
+  }
+}
+
+#recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-examples .videos div .youtube {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 #recording-page .recording-instrument-infos .recording-instrument-dropdown .show-hide {
   grid-column: 1 / -1;
-  margin: 0 auto;
+  margin: 1.7rem auto 0 auto;
 }
 
 @media (min-width: 900px) {
@@ -2262,6 +2419,10 @@ iframe.youtube {
 #recording-page .idea-1 svg, #recording-page .idea-2 svg {
   -ms-flex-preferred-size: 5rem;
       flex-basis: 5rem;
+}
+
+#recording-page .idea-1 p, #recording-page .idea-2 p {
+  text-align: left !important;
 }
 
 #recording-page .idea-1 {
@@ -2390,6 +2551,154 @@ iframe.youtube {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3 / span 1;
+  }
+}
+
+#recording-page .process-gear {
+  grid-column: 2 / -2;
+}
+
+#recording-page .process-gear .pg-headings {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  #recording-page .process-gear .pg-headings {
+    gap: 3vw;
+  }
+}
+
+#recording-page .process-gear .pg-headings::after {
+  bottom: -.9rem;
+  content: url(../../../images/backgrounds/blobs/underline-blob-1.svg);
+  left: 0;
+  position: absolute;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  width: 50%;
+  z-index: -1;
+}
+
+@media (min-width: 900px) {
+  #recording-page .process-gear .pg-headings::after {
+    display: none;
+  }
+}
+
+#recording-page .process-gear .pg-headings h2, #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a {
+  color: #140E1B;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  #recording-page .process-gear .pg-headings h2, #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a {
+    cursor: default;
+    text-align: left;
+  }
+}
+
+#recording-page .process-gear .pg-headings h2:nth-child(1), #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a:nth-child(1), #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a:nth-child(1) {
+  border-right: 1px solid #b3b1aa;
+}
+
+@media (min-width: 900px) {
+  #recording-page .process-gear .pg-headings h2:nth-child(1), #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a:nth-child(1), #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a:nth-child(1) {
+    border: none;
+  }
+}
+
+#recording-page .process-gear .pg-headings h2:nth-child(2), #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a:nth-child(2), #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a:nth-child(2) {
+  color: #b3b1aa;
+  font-weight: 300;
+}
+
+@media (min-width: 900px) {
+  #recording-page .process-gear .pg-headings h2:nth-child(2), #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a:nth-child(2), #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a:nth-child(2) {
+    color: #140E1B;
+    font-weight: 700;
+  }
+}
+
+#recording-page .process-gear .pg-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 899px) {
+  #recording-page .process-gear .pg-container {
+    max-width: 600px;
+  }
+}
+
+#recording-page .process-gear .pg-container .pg-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+#recording-page .process-gear .pg-container .pg-window .pg-track {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-left: 0;
+  -webkit-transition: margin-left 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+  width: 200%;
+}
+
+@media (min-width: 900px) {
+  #recording-page .process-gear .pg-container .pg-window .pg-track {
+    gap: 3vw;
+    width: 100%;
+  }
+}
+
+#recording-page .process-gear .pg-container .pg-window .pg-track div ul li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #140E1B;
+  border-radius: 1.2rem;
+  margin: .5rem 0;
+  padding: .5rem;
+}
+
+#recording-page .process-gear .pg-container .pg-window .pg-track div ul li svg {
+  -ms-flex-preferred-size: 2.2rem;
+      flex-basis: 2.2rem;
+  margin: .5rem;
+}
+
+#recording-page .process-gear.pg-right .pg-headings::after {
+  left: 50%;
+}
+
+@media (max-width: 899px) {
+  #recording-page .process-gear.pg-right .pg-headings h2:nth-child(1), #recording-page .process-gear.pg-right .pg-headings .process-gear-mobile-headings ul li a:nth-child(1), #recording-page .process-gear-mobile-headings ul li .process-gear.pg-right .pg-headings a:nth-child(1) {
+    color: #b3b1aa;
+    font-weight: 300;
+  }
+  #recording-page .process-gear.pg-right .pg-headings h2:nth-child(2), #recording-page .process-gear.pg-right .pg-headings .process-gear-mobile-headings ul li a:nth-child(2), #recording-page .process-gear-mobile-headings ul li .process-gear.pg-right .pg-headings a:nth-child(2) {
+    color: #140E1B;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 899px) {
+  #recording-page .process-gear.pg-right .pg-container .pg-window .pg-track {
+    margin-left: -100%;
   }
 }
 

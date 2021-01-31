@@ -25,6 +25,12 @@ h2 {
     line-height: 1.2em;
 }
 
+h5 {
+    @extend %sans-font;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+}
+
 input, textarea {
     @extend %serif-font;
 }

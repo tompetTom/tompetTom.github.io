@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.18 59.18">
+    <defs>
+        <style>.arrow{fill:none;stroke:#140E1B;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <path fill="#97CCC3" d="M34.57,33.14c5-17.19-22.15-39.82-29-31.27C-3.74,13.39-.49,56.54,8.88,59,15.27,60.7,29.83,49.45,34.57,33.14Z"/>
+    <path class="arrow" d="M9.33,45.08,24.83,31.7a2.72,2.72,0,0,0,0-4.23L9.33,14.09"/>
+</svg>

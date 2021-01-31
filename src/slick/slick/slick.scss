@@ -1,7 +1,6 @@
 /* Slider */
 
 .slick-slider {
-    // border: 1px solid green;
     position: relative;
     display: block;
     box-sizing: border-box;
@@ -16,13 +15,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 .slick-list {
-    // border: 1px solid purple;
     position: relative;
     overflow: hidden;
     display: block;
     margin: 0;
     padding: 0;
-    // width: 100%;
 
     &:focus {
         outline: none;
@@ -43,16 +40,12 @@
 }
 
 .slick-track {
-    // border: 1px solid red;
-    align-items: center; // Tom
-    display: flex; // Tom
     position: relative;
     left: 0;
     top: 0;
-    // display: block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    overflow-y: visible; // Tom
 
     &:before,
     &:after {
@@ -72,15 +65,12 @@
     float: left;
     height: 100%;
     min-height: 1px;
-
     [dir="rtl"] & {
         float: right;
     }
-
     img {
         display: block;
     }
-
     &.slick-loading img {
         display: none;
     }

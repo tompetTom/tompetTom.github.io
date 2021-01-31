@@ -81,6 +81,7 @@
         }
 
         #mobile-intro-content {
+            margin-bottom: $margin-top;
             @include media-query(tablet-landscape-up) {
                 display: none;
             }

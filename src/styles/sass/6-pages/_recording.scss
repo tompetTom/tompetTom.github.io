@@ -60,21 +60,32 @@
         .recording-instrument-categories {
             align-items: stretch;
             display: flex;
-            height: 20vw;
+            flex-wrap: wrap;
+            height: 66vw;
             margin: 0 auto;
-            max-height: 260px;
             max-width: 1300px;
             width: 100%;
+
+            @include media-query(tablet-portrait-up) {
+                flex-wrap: nowrap;
+                height: 20vw;
+                max-height: 260px;
+            }
 
             li {
                 align-items: center;
                 cursor: pointer;
                 display: flex;
+                flex: 1 20%;
                 flex-flow: column;
+                height: 50%;
                 justify-content: flex-end;
                 margin: 0;
                 position: relative;
-                width: 20%;
+
+                @include media-query(tablet-portrait-up) {
+                    height: 100%;
+                }
 
                 &::after {
                     background-color: none;
@@ -88,24 +99,32 @@
                     z-index: 1;
                 }
 
+                &.world-flutes, &.saxophones {
+                    flex-basis: 50%;
+
+                    @include media-query(tablet-portrait-up) {
+                        flex-basis: 20%;
+                    }
+                }
+
                 &.flutes {
-                    background: $flutes-image;
+                    background: $flutes-image-square;
                 }
 
                 &.clarinets {
-                    background: $clarinets-image;
+                    background: $clarinets-image-square;
                 }
 
                 &.recorders {
-                    background: $recorders-image;
+                    background: $recorders-image-square;
                 }
 
                 &.world-flutes {
-                    background: $world-flutes-image;
+                    background: $world-flutes-image-square;
                 }
 
                 &.saxophones {
-                    background: $saxophones-image;
+                    background: $saxophones-image-square;
                 }
 
                 .caption {
@@ -113,7 +132,7 @@
                     background-color: fade-out($white, .4);
                     display: flex;
                     flex-wrap: wrap;
-                    height: 25%;
+                    height: 30%;
                     justify-content: center;
                     overflow: hidden;
                     position: relative;
@@ -121,16 +140,28 @@
                     width: 100%;
                     z-index: 2;
 
+                    @include media-query(tablet-portrait-up) {
+                        height: 25%;
+                    }
+
                     h3 {
                         @extend %sans-font;
                         color: $black;
-                        font-size: 2.5vw;
+                        font-size: 1.5rem;
                         line-height: 1em;
                         margin: 3% 0 1em 0;
                         text-align: center;
                         transition: $slow-transition-time;
                         position: relative;
                         width: 100%;
+
+                        @include media-query(tablet-portrait-up) {
+                            font-size: 1rem;
+                        }
+
+                        @include media-query(tablet-landscape-up) {
+                            font-size: 2.5vw;
+                        }
 
                         @include media-query(desktop-up) {
                             font-size: 1.5rem;
@@ -141,7 +172,11 @@
                         bottom: 10%;
                         position: absolute;
                         transition: $slow-transition-time;
-                        width: 2vw;
+                        width: 4vw;
+
+                        @include media-query(tablet-portrait-up) {
+                            width: 2vw;
+                        }
 
                         path {
                             stroke: $black;
@@ -202,7 +237,6 @@
 
         .recording-instrument-dropdown {
             @extend section;
-            column-gap: $gutter;
             display: grid;
             grid-template-columns: 1fr;
             height: auto;
@@ -212,6 +246,7 @@
             transition: max-height 1s ease-out, margin-top $slow-transition-time $slow-transition-time;
 
             @include media-query(tablet-landscape-up) {
+                column-gap: $gutter;
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -219,35 +254,39 @@
                 margin-top: $margin-top;
                 max-height: 120rem;
                 transition: $slow-transition-time;
+
+                @include media-query(tablet-landscape-up) {
+                    max-height: 60rem;
+                }
             }
 
             &#flutes-info {
                 .instrument-image {
-                    background: $flutes-image;
+                    background: $flutes-image-long;
                 }
             }
 
             &#clarinets-info {
                 .instrument-image {
-                    background: $clarinets-image;
+                    background: $clarinets-image-long;
                 }
             }
 
             &#recorders-info {
                 .instrument-image {
-                    background: $recorders-image;
+                    background: $recorders-image-long;
                 }
             }
 
             &#world-flutes-info {
                 .instrument-image {
-                    background: $world-flutes-image;
+                    background: $world-flutes-image-long;
                 }
             }
 
             &#saxophones-info {
                 .instrument-image {
-                    background: $saxophones-image;
+                    background: $saxophones-image-long;
                 }
             }
 
@@ -277,20 +316,94 @@
                 ul {
                     text-align: center;
                 }
+
+                table {
+                    width: 100%;
+
+                    tr {
+                        border-bottom: 1px solid $grey;
+                        &:last-child {
+                            border: none;
+                        }
+                        td {
+                            vertical-align: middle;
+
+                            &:nth-child(1) {
+                                border-right: 1px solid $black;
+                                padding-right: $gutter / 2;
+                                text-align: right;
+                                white-space: nowrap;
+                            }
+
+                            &:nth-child(2) {
+                                padding-left: $gutter / 2;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .temporary-wf-p {
+                grid-column: 1 / -1;
             }
 
             .instrument-examples {
-                @extend .content;
                 grid-column: 1 / span 1;
+                margin-top: $margin-top;
+                width: 100%;
 
                 @include media-query(tablet-landscape-up) {
                     grid-column: 2 / span 1;
+                    grid-row: 2 / span 1;
+                }
+
+                h5 {
+                    width: 100%;
+                }
+
+                .videos {
+                    align-items: flex-start;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-top: $margin-top;
+                    width: 100%;
+
+                    div {
+                        display: none;
+                        flex: 1 40%;
+                        padding-bottom: 29.125%;
+                        margin: 0 0 2px 0;
+                        position: relative;
+
+                        &:nth-child(2n) {
+                            margin-left: 2px;
+                        }
+
+                        &:nth-child(-n+4) {
+                            display: inline-block;
+                        }
+
+                        @include media-query(tablet-landscape-up) {
+                            display: inline-block;
+                        }
+
+                        .youtube {
+                            height: 100%;
+                            left: 0;
+                            margin: 0;
+                            position: absolute;
+                            top: 0;
+                            width: 100%;
+                        }
+                    }
                 }
             }
 
             .show-hide {
                 grid-column: 1 / -1;
-                margin: 0 auto;
+                margin: $margin-top auto 0 auto;
 
                 @include media-query(tablet-landscape-up) {
                     display: none;
@@ -308,6 +421,10 @@
 
         svg {
             flex-basis: 5rem;
+        }
+
+        p {
+            text-align: left !important;
         }
     }
 
@@ -411,6 +528,146 @@
     #tabs-gear {
         @extend %process-gear-tab;
         @include grid-column(right);
+    }
+
+    .process-gear {
+        @include grid-column(fill);
+
+        .pg-headings {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0;
+            position: relative;
+            width: 100%;
+
+            @include media-query(tablet-landscape-up) {
+                gap: $gutter;
+            }
+
+            &::after {
+                bottom: -.9rem;
+                content: url(../../../images/backgrounds/blobs/underline-blob-1.svg);
+                left: 0;
+                position: absolute;
+                transition: $slow-transition-time ease-in-out;
+                width: 50%;
+                z-index: -1;
+
+                @include media-query(tablet-landscape-up) {
+                    display: none;
+                }
+            }
+
+            h2 {
+                color: $black;
+                cursor: pointer;
+                font-weight: $bold;
+                text-align: center;
+                transition: $default-transition-time ease-in;
+                width: 100%;
+
+                @include media-query(tablet-landscape-up) {
+                    cursor: default;
+                    text-align: left;
+                }
+
+                &:nth-child(1) {
+                    border-right: 1px solid $dark-grey;
+
+                    @include media-query(tablet-landscape-up) {
+                        border: none;
+                    }
+                }
+
+                &:nth-child(2) {
+                    color: $dark-grey;
+                    font-weight: $heading-thin;
+
+                    @include media-query(tablet-landscape-up) {
+                        color: $black;
+                        font-weight: $bold;
+                    }
+                }
+            }
+        }
+
+        .pg-container {
+            margin: 0 auto;
+            width: 100%;
+
+            @include media-query(single-column) {
+                max-width: 600px;
+            }
+
+            .pg-window {
+                overflow: hidden;
+                width: 100%;
+
+                .pg-track {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 0;
+                    margin-left: 0;
+                    transition: margin-left $slow-transition-time ease-in-out;
+                    width: 200%;
+
+                    @include media-query(tablet-landscape-up) {
+                        gap: $gutter;
+                        width: 100%;
+                    }
+
+                    div {
+                        ul {
+                            li {
+                                align-items: center;
+                                border: 1px solid $black;
+                                border-radius: 1.2rem;
+                                margin: .5rem 0;
+                                padding: .5rem;
+                
+                                svg {
+                                    flex-basis: 2.2rem;
+                                    margin: .5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.pg-right {
+            .pg-headings {
+                &::after {
+                    left: 50%;
+                }
+
+                h2 {
+                    @include media-query(single-column) {
+
+                        &:nth-child(1) {
+                            color: $dark-grey;
+                            font-weight: $heading-thin;
+                        }
+
+                        &:nth-child(2) {
+                            color: $black;
+                            font-weight: $bold;
+                        }
+                    }
+                }
+            }
+
+            .pg-container {
+                .pg-window {
+                    .pg-track {
+                        @include media-query(single-column) {
+                            margin-left: -100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .recording-clients {
