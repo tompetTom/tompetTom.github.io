@@ -24,23 +24,29 @@ $skin-pink: #E6B5B5;
 $warm-grey: #B8B3A1;
 $alt-grey: #DFDDD5;
 
-$white: #FCFAF0;
+// $white: #FCFAF0;
+$white: #FEFCF4;
 $black: $purple-black;
 $black-gradient: #07050A;
 $dark: $rich-dark-purple;
 $dark-gradient: #231830;
 $primary: #97CCC3;
 $primary-gradient: $turquoise;
+$primary-bg: fade-out($primary, .5);
 $secondary: #B99ADB;
 $secondary-gradient: $feminine-purple;
+$secondary-bg: fade-out($secondary, .5);
 $grey: $alt-grey;
 $dark-grey: scale-color($grey, $lightness: -20%, $saturation: -60%);
 $grey-gradient: $white;
 $light: $skin-pink;
 $light-gradient: #FCD0CA;
+$light-bg: fade-out($light, .5);
 $accent: $chartreuse;
 $accent-gradient: #D7C34F;
+$accent-bg: fade-out($accent, .5);
 $white-gradient: #FEFDF9;
+$transparent: fade-out($white, 1);
 
 // LAYOUT
 $gutter: 3vw;

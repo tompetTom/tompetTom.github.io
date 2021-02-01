@@ -1,8 +1,10 @@
 .home-page {
 
+    // MOBILE LANDSCAPE HEADER
     header {
         @include media-query(mobile-landscape-only) {
-            display: block;
+            align-items: center;
+            display: flex;
             height: 100vh;
             padding-left: $gutter;
             position: absolute;
@@ -17,7 +19,7 @@
     
                 h1 {
                     font-size: 8vw;
-                    padding-top: 20vh;
+                    // padding-top: 20vh;
     
                     &.small {
                         font-size: 8vw;
@@ -34,6 +36,130 @@
                         display: block;
                     }
                 }
+            }
+        }
+    }
+
+    .hero-image {
+        // border: 1px solid red;
+        align-items: flex-end;
+        // @include grid-column(full-width);
+        display: flex;
+        grid-area: 1 / -1 / 2 / 1;
+        // bottom: 5%;
+        padding-bottom: 5%;
+        position: relative;
+        height: 100vh;
+        // right: -$gutter;
+        width: 100%;
+
+        @include media-query(mobile-landscape-only) {
+            align-items: center;
+            margin: 0 0 0 50%;
+            padding: 0;
+            right: 0;
+            width: 50%;
+        }
+
+        @include media-query(tablet-landscape-up) {
+            align-items: center;
+            bottom: 0;
+            padding-bottom: 0;
+            padding-top: 6.5rem;
+            position: absolute;
+            right: 0;
+            width: 50vw;
+        }
+
+        svg {
+            // border: 1px solid red;
+            // bottom: 5%;
+            // float: right;
+            // margin-left: auto;
+            // margin-bottom: 5%;
+            max-height: 70vh;
+            position: absolute;
+            right: 0;
+            width: auto;
+    
+            // @include media-query(mobile-landscape-only) {
+            //     right: -$gutter;
+            //     width: 50vw;
+            // }
+    
+            // @include media-query(tablet-portrait-only) {
+            //     max-width: 100vw;
+            // }
+        
+            @include media-query(tablet-landscape-up) {
+                // margin-top: 6.5rem;
+                max-height: 100%;
+                // max-width: 60vw;
+                // top: 20%;
+                // right: -$gutter;
+                // width: auto;
+            }
+        
+            // @include media-query(desktop-up) {
+            //     height: auto;
+            //     max-width: 60vw;
+            //     top: 7.3rem;
+            //     right: -$gutter * 1.4;
+            //     width: 100vh;
+            // }
+    
+            #colour {
+                
+                path {
+                    stroke: none;
+                    // transition: 5s;
+    
+                    &.recorder {
+                        fill: $light;
+                    }
+    
+                    &.clarinet {
+                        fill: $secondary;
+                    }
+    
+                    &.flute {
+                        fill: $grey;
+                    }
+    
+                    &.e-flute {
+                        fill: $primary;
+                    }
+    
+                    &.sax {
+                        fill: $accent;
+                    }
+                }
+            }
+        }
+    }
+
+    .intro-tryout {
+        @include grid-column(fill);
+        @include media-query(tablet-landscape-up) {
+            align-items: center;
+            display: flex;
+            grid-area: 1 / 3 / 2 / 2;
+            min-height: 100vh;
+            // padding-top: 6.5rem;
+        }
+
+        .desktop-landing-content {
+
+            @include media-query(mobile) {
+                margin-bottom: $margin-top;
+            }
+
+            @include media-query(tablet-landscape-up) {
+                margin-top: 6.5rem;
+            }
+
+            @include media-query(desktop-up) {
+                margin-top: 8rem;
             }
         }
     }

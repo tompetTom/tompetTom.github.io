@@ -9,7 +9,7 @@ header {
     transition: .3s;
     transition: background-color 0s;
     width: 100%;
-    z-index: 3;
+    z-index: 20;
 
     &.scroll {
         @include media-query(tablet-portrait-only) {
@@ -189,10 +189,6 @@ header {
 
 .landing-section {
     @include grid-column(fill);
-    // background-image: url(../../../images/instruments/woodwind-line-art.jpg);
-    // background-position: bottom 0 center;
-    // background-repeat: no-repeat;
-    // background-size: 98vw;
     min-height: 100vh;
     position: relative;
 

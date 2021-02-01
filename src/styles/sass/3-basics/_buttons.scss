@@ -37,13 +37,14 @@ button {
         background: no-repeat url(../../../images/backgrounds/blobs/button-1.svg);
     }
 
-    &.show-hide {
+    &.show-hide, &.show-more, &.collapse-instrument-dropdown {
         border: $black-border;
         border-radius: 1.2em;
         background: linear-gradient($white, $white-gradient);
         font-size: .9rem;
         font-weight: $normal;
         padding: .1rem 2rem;
+        z-index: 60;
 
         a {
             &::after {
@@ -59,6 +60,34 @@ button {
 
             &.down {
                 bottom: .1em;
+            }
+        }
+
+        .short & {
+
+            &::before {
+                content: "Show more";
+            }
+
+            span {
+                bottom: .1em;
+
+                &::before {
+                    content: "▼";
+                }
+            }
+        }
+
+        .full & {
+
+            &::before {
+                content: "Show less";
+            }
+
+            span {
+                &::before {
+                    content: "▲";
+                }
             }
         }
 
@@ -84,6 +113,25 @@ button {
             position: relative;
             top: .1em;
             width: 1.6em;
+        }
+    }
+
+    &.mobile-nav {
+        background: none;
+        cursor: pointer;
+        font: inherit;
+        height: inherit;
+        line-height: inherit;
+        margin: inherit;
+        padding: inherit;
+        transition: $default-transition-time;
+
+        &:hover {
+            transform: none;
+        }
+
+        &:active {
+            transform: none;
         }
     }
 }

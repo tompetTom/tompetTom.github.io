@@ -1,4 +1,6 @@
 nav {
+    position: relative;
+    // z-index: 5;
 
     ul {
         display: flex;
@@ -36,8 +38,6 @@ nav {
 
                 &:active {
                     text-decoration: overline;
-                    // border-bottom: 1px solid $accent;
-                    // padding-bottom: .3em;
 
                     svg {
                         .stroke {
@@ -98,6 +98,7 @@ nav {
         li {
             background: no-repeat url(../../../images/backgrounds/squircle-one-grey.svg);
             text-align: center;
+            transition: transform $default-transition-time;
 
             &:nth-child(1) {
                 background: no-repeat url(../../../images/backgrounds/squircle-one-pink.svg);
@@ -115,7 +116,15 @@ nav {
                 background: no-repeat url(../../../images/backgrounds/squircle-one-chartruese.svg);
             }
 
-            a {
+            &.hamburger-close {
+                background: no-repeat url(../../../images/backgrounds/squircle-one-turquoise.svg);
+
+                .menu {
+                    display: none;
+                }
+            }
+
+            a, button {
                 color: $black;
                 
                 &:active {
@@ -130,22 +139,33 @@ nav {
                 }
 
                 p {
-                    // background: linear-gradient(225deg, $grey-gradient, $grey);
-                    // border: 2px solid $grey;
-                    // border-radius: 1em;
                     margin-top: -.4rem;
                     padding: .1em .5em;
                 }
 
                 svg {
-                    // background: linear-gradient(225deg, $grey-gradient, $grey);
-                    // border: 2px solid $grey;
-                    // border-radius: 50%;
                     height: 100%;
-                    // padding: .1em;
 
                     .stroke, .square {
                         stroke: $black;
+                    }
+                }
+            }
+        }
+    }
+
+    &.closed {
+        ul {
+            li {
+                display: none;
+
+                &.hamburger-close {
+                    .close {
+                        display: none;
+                    }
+
+                    .menu {
+                        display: block;
                     }
                 }
             }
@@ -167,6 +187,18 @@ nav {
     background-color: fade-out($white, .04);
     width: 100%;
 
+    &.closed {
+        background: none;
+
+        ul {
+            .hamburger-close {
+                display: block;
+                position: absolute;
+                right: 1rem;
+            }
+        }
+    }
+
     ul {
         height: 4rem;
         justify-content: space-around;
@@ -174,6 +206,16 @@ nav {
         max-width: 400px;
         padding: 0 .7em;
         text-align: center;
+
+        .hamburger-close {
+            display: none;
+
+            @include media-query(mobile-landscape-only) {
+                display: block !important;
+                position: absolute;
+                right: 1rem;
+            }
+        }
     }
 }
 

@@ -42,6 +42,11 @@ section {
     padding: $margin-top 3em 0 3em;
     position: relative;
     width: 100%;
+    z-index: 3;
+
+    @include media-query(mobile) {
+        padding: $margin-top 0 0 0;
+    }
 
     .slick-quote {
         align-items: center;
@@ -78,4 +83,28 @@ section {
 .youtube-container {
     margin: 0 $gutter;
     max-width: 100%;
+}
+
+.short {
+
+    div {
+        margin-bottom: -2 * $margin-top;
+        max-height: 60vh;
+        overflow: hidden;
+        position: relative;
+        transition: max-height $default-transition-time;
+        z-index: -1;
+
+        &::after {
+            background: linear-gradient($transparent, $white 75%, $white 100%);
+            bottom: 0;
+            content: " ";
+            height: 10rem;
+            left: 0;
+            max-height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 5;
+        }
+    }
 }

@@ -4,6 +4,7 @@ a {
 
     &:hover {
         color: $secondary;
+        text-decoration: none;
 
         &:after {
             color: $accent;

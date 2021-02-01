@@ -401,7 +401,7 @@
                 }
             }
 
-            .show-hide {
+            .collapse-instrument-dropdown {
                 grid-column: 1 / -1;
                 margin: $margin-top auto 0 auto;
 
@@ -675,8 +675,24 @@
     }
 
     .recording-testimonials {
-        // @extend .testimonial-container;
         @include grid-column(right);
+        div {
+            p {
+                span {
+                    display: block;
+                    font-style: italic;
+                    margin-top: .5em;
+
+                    @include media-query(tablet-portrait-up) {
+                        margin-left: 1rem;
+                    }
+
+                    &::before {
+                        content: "~";
+                    }
+                }
+            }
+        }
     }
 
     .recording-pricing-contact {
