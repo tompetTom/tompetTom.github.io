@@ -58,6 +58,14 @@ big-desktop-up
     }
 }
 
+@mixin beneath-header() {
+    margin-top: 30vh;
+
+    @include media-query(tablet-landscape-up) {
+        margin-top: 20vh;
+    }
+}
+
 @mixin button-box-shadow($colour) {
     box-shadow: $colour 0 .7rem 2.5rem -.1rem;
 }

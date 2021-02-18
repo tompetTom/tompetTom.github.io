@@ -3,9 +3,11 @@
     // MOBILE LANDSCAPE HEADER
     header {
         @include media-query(mobile-landscape-only) {
-            align-items: center;
-            display: flex;
-            height: 100vh;
+            // border: 1px solid red;
+            // align-items: center;
+            // display: flex;
+            height: 90vh;
+            // justify-content: center;
             padding-left: $gutter;
             position: absolute;
             width: 50vw;
@@ -15,7 +17,13 @@
             }
     
             #title {
-                text-align: left;
+                // border: 1px solid red;
+                align-items: flex-end;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+                // text-align: center;
     
                 h1 {
                     font-size: 8vw;
@@ -27,10 +35,12 @@
                 }
     
                 .tagline {
+                    // border: 1px solid red;
                     left: 0;
                     line-height: 1.7em;
-                    margin-top: 2rem;
-                    text-align: left;
+                    // margin-top: 2rem;
+                    margin: 0;
+                    text-align: right;
     
                     span {
                         display: block;
@@ -42,23 +52,24 @@
 
     .hero-image {
         // border: 1px solid red;
-        align-items: flex-end;
+        align-items: center;
         // @include grid-column(full-width);
         display: flex;
         grid-area: 1 / -1 / 2 / 1;
         // bottom: 5%;
-        padding-bottom: 5%;
+        // padding-bottom: 5%;
+        padding-top: 30vh;
         position: relative;
         height: 100vh;
         // right: -$gutter;
         width: 100%;
 
         @include media-query(mobile-landscape-only) {
-            align-items: center;
-            margin: 0 0 0 50%;
-            padding: 0;
+            align-items: flex-start;
+            margin: 0 0 0 47%;
+            padding: 10vh 0 0 0;
             right: 0;
-            width: 50%;
+            width: 53%;
         }
 
         @include media-query(tablet-landscape-up) {
@@ -77,14 +88,16 @@
             // float: right;
             // margin-left: auto;
             // margin-bottom: 5%;
+            margin: 0;
             max-height: 70vh;
             position: absolute;
             right: 0;
             width: auto;
     
             // @include media-query(mobile-landscape-only) {
-            //     right: -$gutter;
-            //     width: 50vw;
+                // max-height: auto;
+                // right: -$gutter;
+                // width: 50vw;
             // }
     
             // @include media-query(tablet-portrait-only) {
@@ -151,6 +164,10 @@
         .desktop-landing-content {
 
             @include media-query(mobile) {
+                margin-bottom: $margin-top;
+            }
+
+            @include media-query(mobile-landscape-only) {
                 margin-bottom: $margin-top;
             }
 

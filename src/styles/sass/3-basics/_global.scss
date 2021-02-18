@@ -11,3 +11,10 @@ body {
 img {
     max-width: 100%;
 }
+
+hr {
+    @include grid-column(fill);
+    border-top: 1px solid $grey;
+    margin-top: $margin-top;
+    width: 100%;
+}

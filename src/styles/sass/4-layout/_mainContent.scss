@@ -22,11 +22,7 @@ section {
 }
 
 .first-section {
-    margin-top: 30vh;
-
-    @include media-query(tablet-landscape-up) {
-        margin-top: 20vh;
-    }
+    @include beneath-header;
 }
 
 .content {

@@ -1,0 +1,100 @@
+#contact-page {
+    main {
+        @include grid-column(fill);
+        @include beneath-header;
+        text-align: left;
+        width: 100%;
+
+        .container {
+            height: 60vh;
+            position: relative;
+            width: 100%;
+
+            .form-container {
+                background: $white;
+                border-radius: 1rem;
+                margin: 0 auto;
+                max-width: 500px;
+                padding: $margin-top;
+                z-index: 2;
+
+                @include media-query(tablet-portrait-up) {
+                    max-width: none;
+                }
+
+                @include media-query(tablet-landscape-up) {
+                    bottom: 0;
+                    box-shadow: fade-out($black, .8) .1rem .1rem .6rem;
+                    position: absolute;
+                    right: 0;
+                    width: 70%;
+                }
+
+                .options {
+                    display: flex;
+                    flex-flow: column wrap;
+                    margin-top: $margin-top;
+
+                    @include media-query(tablet-portrait-up) {
+                        flex-flow: row wrap;
+                    }
+
+                    .option {
+                        align-items: center;
+                        background: $white;
+                        border: 1px solid $black;
+                        border-radius: 1.2rem;
+                        cursor: pointer;
+                        display: flex;
+                        flex: 1 0 45%;
+                        height: 4rem;
+                        margin: .5rem;
+                        padding: .5rem;
+                        position: relative;
+                        transition: $default-transition-time;
+
+                        &:hover {
+                            background: $grey;
+                        }
+
+                        h3 {
+                            font-size: 1.5rem;
+                            width: 100%;
+                        }
+
+                        svg {
+                            flex: 1 1 20%;
+                        }
+                    }
+                }
+            }
+
+            .background {
+                display: none;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 55%;
+                z-index: 0;
+
+                @include media-query(tablet-landscape-up) {
+                    display: block;
+                }
+            }
+
+            .social-icons {
+                align-items: center;
+                bottom: 0;
+                display: flex;
+                justify-content: space-around;
+                position: absolute;
+                right: 0;
+                width: 45%;
+
+                svg {
+                    flex-basis: 12%;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 // TYPOGRAPHY
 $handwriting: 'Bad Script', cursive;
-$sans: 'Lato', sans-serif;
+$sans: 'Quicksand', sans-serif;
 $serif: 'Raleway', serif;
 
 $thin: 200;
@@ -60,6 +60,8 @@ $white-border: 1px solid $white;
 $black-border: 1px solid $black;
 $default-transition-time: .2s;
 $slow-transition-time: .5s;
+
+$finger-width: 48px;
 
 // IMAGES
 $flutes-image-square: center / cover no-repeat url(../../../images/instruments/flute/flutes-black-white.jpg);

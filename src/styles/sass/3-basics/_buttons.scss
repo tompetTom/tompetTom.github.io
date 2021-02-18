@@ -1,11 +1,15 @@
 button {
     @extend %sans-font;
-    background: no-repeat url(../../../images/backgrounds/blobs/button-2-accent.svg);
+    // background: no-repeat url(../../../images/backgrounds/blobs/button-2-accent.svg);
     cursor: pointer;
     font-size: 1.2rem;
     margin-top: $margin-top;
     padding: .5em 1em;
     transition: $default-transition-time;
+
+    &.button-primary {
+        background: no-repeat url(../../../images/backgrounds/blobs/button-2-accent.svg);
+    }
 
     a {
         display: inline;
@@ -96,7 +100,7 @@ button {
         }
     }
 
-    &[type=submit] {
+    &.button-send {
         background: no-repeat url(../../../images/backgrounds/blobs/button-2-pink.svg);
         box-shadow: none;
         color: $black;
@@ -116,7 +120,7 @@ button {
         }
     }
 
-    &.mobile-nav {
+    &.no-style {
         background: none;
         cursor: pointer;
         font: inherit;
@@ -133,5 +137,9 @@ button {
         &:active {
             transform: none;
         }
+    }
+
+    &.mobile-nav {
+        @extend .no-style;
     }
 }

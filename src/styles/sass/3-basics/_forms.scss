@@ -6,9 +6,9 @@ form {
     margin: 0;
     padding: $margin-top 0;
 
-    @include media-query(desktop-up) {
-        grid-template-columns: 1fr 1fr;
-    }
+    // @include media-query(desktop-up) {
+    //     grid-template-columns: 1fr 1fr;
+    // }
 
     h2 {
         margin: 0 !important;

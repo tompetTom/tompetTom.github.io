@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <defs>
+        <style>.stroke{fill:none;stroke:#140E1B;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <circle class="stroke" cx="25" cy="24.99" r="21.35"/>
+    <path class="stroke" d="M13.45,25.58A27.82,27.82,0,0,1,36.57,28.2"/>
+    <path class="stroke" d="M12.53,19a33,33,0,0,1,10.06-1.56,32.71,32.71,0,0,1,16.6,4.47"/>
+    <path class="stroke" d="M14.36,32.33a20.82,20.82,0,0,1,19.45,2"/>
+</svg>

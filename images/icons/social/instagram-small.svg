@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <defs>
+        <style>.stroke{fill:none;stroke:#140E1B;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <circle class="stroke" cx="25" cy="25" r="20.21"/>
+    <circle class="stroke" cx="25" cy="25" r="9.16"/>
+    <circle class="stroke" cx="36.77" cy="13.18" r="1.44"/>
+</svg>

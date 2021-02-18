@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <defs>
+        <style>.cls-2{fill:none;stroke:#140E1B;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <path class="cls-2" d="M45.21,25c0,18.37-1.84,20.21-20.21,20.21S4.79,43.37,4.79,25a76.06,76.06,0,0,1,.49-10.37C6.56,5.87,10.93,4.79,25,4.79,43.37,4.79,45.21,6.63,45.21,25Z"/>
+    <circle class="cls-2" cx="25" cy="25" r="9.16"/>
+    <circle class="cls-2" cx="36.77" cy="13.18" r="1.44"/>
+</svg>

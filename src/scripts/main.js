@@ -25,6 +25,14 @@ $(document).ready(() => {
         $(e.currentTarget).closest('nav').toggleClass('closed');
     });
 
+    // $('.sub-navigation li').mouseenter.find('p').addClass('show').mouseleave.removeClass('show');
+    $('.sub-navigation li').on('mouseenter', e => {
+        $(e.currentTarget).find('p').addClass('show');
+        $(e.currentTarget).on('mouseleave', () => {
+            $(e.currentTarget).find('p').removeClass('show');
+        })
+    });
+
     // scroll to element
     function scrollToElement(link) {
         var target;
@@ -62,23 +70,20 @@ $(document).ready(() => {
     });
 
     // slick
-    var slickMinimal = {
+    $('.slick-quote').slick({
         autoplay: true,
         autoplaySpeed: 5000,
         dots: false,
         arrows: false,
         speed: 1000
-    };
-
-    var slickControls = {
+    });
+    
+    $('.slick-video').slick({
         autoplay: false,
         dots: true,
         arrows: true,
         speed: 900
-    };
-
-    $('.slick-quote').slick({slickMinimal});
-    $('.slick-video').slick({slickControls});
+    });
 
     // homepage instrument list
     $('.instrument-list li').on('click', event => {
