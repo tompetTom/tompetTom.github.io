@@ -2,7 +2,7 @@ header {
     display: flex;
     align-items: center;
     flex-wrap: wrap-reverse;
-    height: 30vh;
+    height: 15vh;
     justify-content: space-around;
     overflow: hidden;
     position: absolute;
@@ -10,6 +10,32 @@ header {
     transition: background-color 0s;
     width: 100%;
     z-index: 20;
+
+    .home-page & {
+        @include media-query(single-column) {
+            height: 30vh;
+        }
+
+        @include media-query(mobile) {
+            justify-content: space-around;
+        }
+
+        #title {
+
+            h1 {
+                @include media-query(mobile) {
+                    font-size: 15vmin;
+                }
+            }
+
+            .tagline {
+                @include media-query(mobile) {
+                    font-size: 4vmin;
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
 
     &.scroll {
         @include media-query(tablet-portrait-only) {
@@ -19,7 +45,12 @@ header {
         }
     }
 
+    @include media-query(mobile) {
+        justify-content: flex-start;
+    }
+
     @include media-query(tablet-portrait-up) {
+        height: 30vh;
         position: fixed;
         padding: 1rem 0;
         width: 100%;
@@ -32,9 +63,9 @@ header {
     @include media-query(tablet-landscape-up) {
         background-color: fade-out($white, .04);
         flex-wrap: nowrap;
-        // height: auto;
+        height: auto;
         // height: 135px;
-        height: 6.5rem;
+        // height: 6.5rem;
         overflow: visible;
 
         #title {
@@ -76,7 +107,7 @@ header {
             }
 
             @include media-query(mobile) {
-                font-size: 15vmin;
+                font-size: 10vmin;
             }
 
             @include media-query(tablet-landscape-only) {
@@ -94,7 +125,7 @@ header {
             float: right;
             font-weight: $thin;
             text-align: right;
-            margin-right: 2rem;
+            margin-right: 0;
             margin-top: -.6rem;
             position: relative;
 
@@ -103,7 +134,7 @@ header {
             }
 
             @include media-query(mobile) {
-                font-size: 4vmin;
+                font-size: 3vmin;
             }
 
             @include media-query(tablet-portrait-only) {

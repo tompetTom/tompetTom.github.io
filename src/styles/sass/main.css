@@ -338,16 +338,7 @@ button a:hover {
 }
 
 form {
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  display: -ms-grid;
-  display: grid;
-  -webkit-column-gap: 3vw;
-          column-gap: 3vw;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
   margin: 0;
-  padding: 1.7rem 0;
 }
 
 form h2, form #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li form a {
@@ -571,7 +562,7 @@ header {
           align-items: center;
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse;
-  height: 30vh;
+  height: 15vh;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   overflow: hidden;
@@ -584,6 +575,32 @@ header {
   z-index: 20;
 }
 
+@media (max-width: 899px) {
+  .home-page header {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 599px) {
+  .home-page header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media (max-width: 599px) {
+  .home-page header #title h1 {
+    font-size: 15vmin;
+  }
+}
+
+@media (max-width: 599px) {
+  .home-page header #title .tagline {
+    font-size: 4vmin;
+    margin-right: 2rem;
+  }
+}
+
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
   header.scroll {
     background-color: rgba(254, 252, 244, 0.96);
@@ -593,8 +610,17 @@ header {
   }
 }
 
+@media (max-width: 599px) {
+  header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 @media (min-width: 600px) {
   header {
+    height: 30vh;
     position: fixed;
     padding: 1rem 0;
     width: 100%;
@@ -612,7 +638,7 @@ header {
     background-color: rgba(254, 252, 244, 0.96);
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    height: 6.5rem;
+    height: auto;
     overflow: visible;
   }
   header #title {
@@ -657,7 +683,7 @@ header #title h1 {
 
 @media (max-width: 599px) {
   header #title h1 {
-    font-size: 15vmin;
+    font-size: 10vmin;
   }
 }
 
@@ -680,7 +706,7 @@ header #title .tagline {
   float: right;
   font-weight: 200;
   text-align: right;
-  margin-right: 2rem;
+  margin-right: 0;
   margin-top: -.6rem;
   position: relative;
 }
@@ -691,7 +717,7 @@ header #title .tagline span {
 
 @media (max-width: 599px) {
   header #title .tagline {
-    font-size: 4vmin;
+    font-size: 3vmin;
   }
 }
 
@@ -1662,11 +1688,11 @@ footer .links .centre-links .footer-box-right {
 }
 
 .slick-prev:before {
-  content: url(../../../images/icons/previous.svg);
+  content: url(../../../images/icons/left-arrow.svg);
 }
 
 [dir="rtl"] .slick-prev:before {
-  content: url(../../../images/icons/next.svg);
+  content: url(../../../images/icons/right-arrow.svg);
 }
 
 .slick-next {
@@ -1679,11 +1705,11 @@ footer .links .centre-links .footer-box-right {
 }
 
 .slick-next:before {
-  content: url(../../../images/icons/next.svg);
+  content: url(../../../images/icons/right-arrow.svg);
 }
 
 [dir="rtl"] .slick-next:before {
-  content: url(../../../images/icons/previous.svg);
+  content: url(../../../images/icons/left-arrow.svg);
 }
 
 /* Dots */
@@ -2243,12 +2269,6 @@ footer .links .centre-links .footer-box-right {
 @media (min-width: 1250px) {
   .home-page footer .links {
     margin-top: 4rem;
-  }
-}
-
-@media (max-width: 599px) {
-  #recording-page header {
-    height: 25vh;
   }
 }
 
@@ -3258,7 +3278,7 @@ footer .links .centre-links .footer-box-right {
 }
 
 #contact-page main .container {
-  height: 60vh;
+  min-height: 60vh;
   position: relative;
   width: 100%;
 }
@@ -3269,6 +3289,7 @@ footer .links .centre-links .footer-box-right {
   margin: 0 auto;
   max-width: 500px;
   padding: 1.7rem;
+  top: 3.4rem;
   z-index: 2;
 }
 
@@ -3280,7 +3301,6 @@ footer .links .centre-links .footer-box-right {
 
 @media (min-width: 900px) {
   #contact-page main .container .form-container {
-    bottom: 0;
     -webkit-box-shadow: rgba(20, 14, 27, 0.2) 0.1rem 0.1rem 0.6rem;
             box-shadow: rgba(20, 14, 27, 0.2) 0.1rem 0.1rem 0.6rem;
     position: absolute;
@@ -3289,7 +3309,50 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
-#contact-page main .container .form-container .options {
+#contact-page main .container .form-container .headers #form-back, #contact-page main .container .form-container .headers #form-restart {
+  font-size: .9rem;
+  margin: 0;
+  position: relative;
+  top: -0.85rem;
+}
+
+#contact-page main .container .form-container .headers #form-back span, #contact-page main .container .form-container .headers #form-restart span {
+  margin-right: .5em;
+  position: relative;
+  width: 1.5em;
+}
+
+#contact-page main .container .form-container .headers #form-back span {
+  content: url(../../../images/icons/left-arrow.svg);
+}
+
+#contact-page main .container .form-container .headers #form-restart {
+  float: right;
+}
+
+#contact-page main .container .form-container .headers #form-restart span {
+  content: url(../../../images/icons/restart.svg);
+  bottom: -.3em;
+}
+
+#contact-page main .container .form-container .headers .summary-sentence span {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#contact-page main .container .form-container .headers hr {
+  margin-top: 0;
+}
+
+#contact-page main .container .form-container .tab {
+  display: none;
+}
+
+#contact-page main .container .form-container #start-page-contact {
+  display: none;
+}
+
+#contact-page main .container .form-container #start-page-contact .options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3301,7 +3364,7 @@ footer .links .centre-links .footer-box-right {
 }
 
 @media (min-width: 600px) {
-  #contact-page main .container .form-container .options {
+  #contact-page main .container .form-container #start-page-contact .options {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
@@ -3309,7 +3372,7 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
-#contact-page main .container .form-container .options .option {
+#contact-page main .container .form-container #start-page-contact .options .option, #contact-page main .container .form-container #start-page-contact .options .contact-option {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3331,16 +3394,16 @@ footer .links .centre-links .footer-box-right {
   transition: 0.2s;
 }
 
-#contact-page main .container .form-container .options .option:hover {
-  background: #DFDDD5;
+#contact-page main .container .form-container #start-page-contact .options .option:hover, #contact-page main .container .form-container #start-page-contact .options .contact-option:hover {
+  border: 2px solid #97CCC3;
 }
 
-#contact-page main .container .form-container .options .option h3 {
+#contact-page main .container .form-container #start-page-contact .options .option h3, #contact-page main .container .form-container #start-page-contact .options .contact-option h3 {
   font-size: 1.5rem;
   width: 100%;
 }
 
-#contact-page main .container .form-container .options .option svg {
+#contact-page main .container .form-container #start-page-contact .options .option svg, #contact-page main .container .form-container #start-page-contact .options .contact-option svg {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 20%;
           flex: 1 1 20%;

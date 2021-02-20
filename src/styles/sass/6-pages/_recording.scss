@@ -1,9 +1,9 @@
 #recording-page {
 
     header {
-        @include media-query(mobile) {
-            height: 25vh;
-        }
+        // @include media-query(mobile) {
+        //     height: 25vh;
+        // }
 
         @include media-query(mobile-landscape-only) {
             height: 8rem;

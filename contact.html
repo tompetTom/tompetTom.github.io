@@ -81,35 +81,218 @@
         </header>
         <main>
             <div class="container">
-                <form class="form-container" method="get">
-                    <h2>What do you want to talk about?</h2>
-                    <ul class="options box">
-                        <button type="submit" class="option" id="recording">
-                            <svg viewbox="0 0 100 100">
-                                <path d="M21.71,43.09V55.28c0,7.65,2.95,13.93,8.53,18.18,4.51,3.44,10.55,5.41,17.55,5.75h4.42c7-.34,13-2.31,17.55-5.75,5.58-4.25,8.53-10.53,8.53-18.18V43.16"/>
-                                <path d="M30.91,91.31H69.09"/>
-                                <path d="M50,79.21v12.1"/>
-                                <path d="M35.38,67.76C39,70.17,44,71.39,50.11,71.39s11.11-1.22,14.73-3.63c4.31-2.89,6.6-7.47,6.6-13.25V26.6c0-11.39-8.77-19.34-21.33-19.34s-21.33,8-21.33,19.34V54.51C28.78,60.29,31.07,64.87,35.38,67.76Z"/>
-                                <path d="M29.47,31.6H49.06"/>
-                                <path d="M29.47,42.19H49.06"/>
-                                <path d="M29.47,52.79H49.06"/>
-                            </svg>
-                            <h3>Recording</h3>
-                        </button>
-                        <button type="submit" class="option" id="performing">
-                            <h3>Performing live</h3>
-                        </button>
-                        <button type="submit" class="option" id="lessons">
-                            <h3>Lessons</h3>
-                        </button>
-                        <button type="submit" class="option" id="hello">
-                            <h3>Say Hello</h3>
-                        </button>
-                        <button type="submit" class="option" id="other">
-                            <h3>Something else</h3>
-                        </button>
-                    </ul>
-                </form>
+                <div class="form-container">
+                    <div class="headers">
+                        <button id="form-back"><span></span>Back</button>
+                        <button id="form-restart"><span></span>Start over</button>
+                        <p class="summary-sentence"></p>
+                        <hr>
+                    </div>
+                    <div id="start-page-contact">
+                        <h2>What do you want to talk about?</h2>
+                        <div class="options box">
+                            <button class="contact-option" id="contact-option-recording">
+                                <svg viewbox="0 0 100 100">
+                                    <path d="M21.71,43.09V55.28c0,7.65,2.95,13.93,8.53,18.18,4.51,3.44,10.55,5.41,17.55,5.75h4.42c7-.34,13-2.31,17.55-5.75,5.58-4.25,8.53-10.53,8.53-18.18V43.16"/>
+                                    <path d="M30.91,91.31H69.09"/>
+                                    <path d="M50,79.21v12.1"/>
+                                    <path d="M35.38,67.76C39,70.17,44,71.39,50.11,71.39s11.11-1.22,14.73-3.63c4.31-2.89,6.6-7.47,6.6-13.25V26.6c0-11.39-8.77-19.34-21.33-19.34s-21.33,8-21.33,19.34V54.51C28.78,60.29,31.07,64.87,35.38,67.76Z"/>
+                                    <path d="M29.47,31.6H49.06"/>
+                                    <path d="M29.47,42.19H49.06"/>
+                                    <path d="M29.47,52.79H49.06"/>
+                                </svg>
+                                <h3>Recording</h3>
+                            </button>
+                            <button class="contact-option" id="contact-option-performing">
+                                <h3>Performing live</h3>
+                            </button>
+                            <button class="contact-option" id="contact-option-lessons">
+                                <h3>Lessons</h3>
+                            </button>
+                            <button class="contact-option" id="contact-option-hello">
+                                <h3>Say Hello</h3>
+                            </button>
+                            <button class="contact-option" id="contact-option-other">
+                                <h3>Something else</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <form method="post" id="recording-contact-form">
+                        <div class="tab">
+                            <h2>Let's talk about recording</h2>
+                            <label for="Description">What's the project?</label><br>
+                            <input type="text" name="Description" id="description" value=""><br>
+                            <input type="checkbox" name="Bypass" id="bypass">
+                            <label for="Bypass">I don't have a specific project</label><br>
+                            <label for="Message">Talk about what you're looking for</label><br>
+                            <textarea name="Message" id="message" placeholder="e.g. instrument(s), timeframe, budget etc." required></textarea><br>
+                            <!-- <button>Add attachments (currently unavailable)</button><br> -->
+                            <label for="Name">Name</label><br>
+                            <input type="text" name="Name" id="name" required><br>
+                            <label for="Email">Email address</label><br>
+                            <input type="email" name="Email" id="email" required><br>
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                    <form method="post" id="performing-contact-form">
+                        <div class="tab">
+                            <h2>Performing</h2>
+                            <label for="Description">What's the gig?</label><br>
+                            <input type="text" name="Description" id="description" required><br>
+                            <label for="Location">Where is it?</label><br>
+                            <input type="text" name="Location" id="location"><br>
+                            <label for="Budget">What's your budget?</label><br>
+                            <input type="text" name="Budget" id="budget"><br>
+                            <label for="Name">Full name</label><br>
+                            <input type="text" name="Name" id="name" required><br>
+                            <label for="Company">Company (optional)</label><br>
+                            <input type="text" name="Company" id="company"><br>
+                            <label for="Email">Email address</label><br>
+                            <input type="email" name="Email" id="email"><br>
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                    <form method="post" id="lessons-contact-form">
+                        <div class="tab">
+                            <h2>Who are the lessons for?</h2>
+                            <div>
+                                <input type="radio" name="Student" id="myself" value="myself">
+                                <label for="myself">Myself</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Student" id="child" value="my child">
+                                <label for="child">My child</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Student" id="friend" value="my friend/family member">
+                                <label for="friend">A friend or family member</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Student" id="other" value="someone else">
+                                <label for="other">Someone else</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Student" id="none" value="none">
+                                <label for="none">No one, I just have a few questions</label>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <h2>What instrument do <span class="accusative-pronoun"></span> want to learn?</h2>
+                            <div>
+                                <input type="checkbox" name="Instrument" id="flutes" value="flute">
+                                <label for="Instrument">Flute</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="Instrument" id="clarinet" value="clarinet">
+                                <label for="Instrument">Clarinet</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="Instrument" id="recorder" value="recorder">
+                                <label for="Instrument">Recorder</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="Instrument" id="saxophone" value="saxophone">
+                                <label for="Instrument">Saxophone</label>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <h2>How long have <span class="accusative-pronoun"></span> been playing?</h2>
+                            <div>
+                                <input type="radio" name="Experience" id="none" value="none">
+                                <label for="none"><span class="nominative-pronoun"></span>'ve never played before</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Experience" id="beginner" value="beginner">
+                                <label for="beginner"><span class="nominative-pronoun"></span> started within the last couple of years</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Experience" id="intermediate" value="intermediate">
+                                <label for="intermediate"><span class="nominative-pronoun"></span>’ve been learning for a while</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Experience" id="professional" value="professional">
+                                <label for="professional"><span class="nominative-pronoun"></span> play professionally</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Experience" id="returner" value="returner">
+                                <label for="returner"><span class="nominative-pronoun"></span> used to play, but took a break</label>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <h2><span class="nominative-pronoun"></span> would want lessons...</h2>
+                            <div>
+                                <input type="radio" name="Frequency" id="weekly" value="weekly">
+                                <label for="weekly">Every week</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Frequency" id="regularly" value="every few weeks">
+                                <label for="regularly">Every few weeks</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Frequency" id="infrequently" value="every now and then">
+                                <label for="infrequently">Every now and then</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Frequency" id="once" value="just one">
+                                <label for="once">Just a one-off</label>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <h2>Let's organise <span>a free trial</span> lesson! When works for <span class="dative-pronoun"></span>?</h2>
+                            <div>
+                                <input type="radio" name="Availability" id="daytimes" value="Daytimes">
+                                <label for="daytimes">Daytimes</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Availability" id="evenings" value="Evenings">
+                                <label for="evenings">Evenings</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="Availability" id="none" value="none">
+                                <label for="none">I don’t want to organise a <span>free </span>lesson just yet</label>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <label for="Message" id="message-title"></label><br>
+                            <textarea name="Message" id="message"></textarea><br>
+                            <label for="Name">Name</label><br>
+                            <input type="text" name="Name" id="name" required><br>
+                            <label for="Email">Email address</label><br>
+                            <input type="email" name="Email" id="email" required><br>
+                            <button type="submit">Finish</button>
+                        </div>
+                    </form>
+                    <form method="post" id="hello-contact-form">
+                        <div class="tab">
+                            <h2>Hello!</h2>
+                            <label for="Subject">Subject (optional)</label><br>
+                            <input type="text" name="Subject" id="subject" value=""><br>
+                            <label for="Message">Message</label><br>
+                            <textarea name="Message" id="message" required></textarea><br>
+                            <label for="Name">Name</label><br>
+                            <input type="text" name="Name" id="name" required><br>
+                            <label for="Email">Email address</label><br>
+                            <input type="email" name="Email" id="email" required><br>
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                    <form method="post" id="other-contact-form">
+                        <div class="tab">
+                            <h2>What do you want to know?</h2>
+                            <label for="Subject">Subject</label><br>
+                            <input type="text" name="Subject" id="subject" value=""><br>
+                            <label for="Message">Message</label><br>
+                            <textarea name="Message" id="message" required></textarea><br>
+                            <label for="Name">Name</label><br>
+                            <input type="text" name="Name" id="name" required><br>
+                            <label for="Email">Email address</label><br>
+                            <input type="email" name="Email" id="email" required><br>
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                    <span id="error"></span>
+                    <button id="nextBtn">Next</button>
+                </div>
                 <svg class="background" viewBox="0 0 116.42 91.12">
                     <path class="blue" d="M5.75,8.11C-4.74,14.75.84,86,8.82,90.37c11.5,6.25,49.46-28.59,49.12-38S19.52-.62,5.75,8.11Z"/>
                     <path class="stroke" d="M8.34,46.83C10.57,64,5.16,80.28,10.58,85.76c6.22,6.3,22.43.69,51.16,1.31,25.05.54,41.83,5.09,48.44-.41,5.1-4.25,1.91-21.47,1.93-39.21,0-18.83,5.51-33.92,1.1-38.95-5.55-6.33-37.36-1.35-53.48-1.35s-35.93-3.88-46,0c-13.71,5.32,5.5,16.14,18.57,27,10.24,8.51,18.83,19.6,27.39,19.53s18-9.78,30.13-20.77c9.09-8.25,18.92-18.11,24-31.4"/>
@@ -126,32 +309,32 @@
                         <div class="social-icons">
                             <a href="https://www.instagram.com/sophiecreaner/" target="_blank">
                                 <svg viewBox="0 0 50 50">
-                                    <path class="cls-2" d="M45.21,25c0,18.37-1.84,20.21-20.21,20.21S4.79,43.37,4.79,25a76.06,76.06,0,0,1,.49-10.37C6.56,5.87,10.93,4.79,25,4.79,43.37,4.79,45.21,6.63,45.21,25Z"/>
-                                    <circle class="cls-2" cx="25" cy="25" r="9.16"/>
-                                    <circle class="cls-2" cx="36.77" cy="13.18" r="1.44"/>
+                                    <path d="M45.21,25c0,18.37-1.84,20.21-20.21,20.21S4.79,43.37,4.79,25a76.06,76.06,0,0,1,.49-10.37C6.56,5.87,10.93,4.79,25,4.79,43.37,4.79,45.21,6.63,45.21,25Z"/>
+                                    <circle cx="25" cy="25" r="9.16"/>
+                                    <circle cx="36.77" cy="13.18" r="1.44"/>
                                 </svg>
                             </a>
                             <a href="https://www.youtube.com/channel/UCOPsAUdzl8u-es5UiFc66tg" target="_blank">
                                 <svg viewbox="0 0 50 50">
-                                    <path class="stroke" d="M1.81,25C1.81,9.3,2.27,9,25,9s23.19.32,23.19,16S47.73,41,25,41,1.81,40.7,1.81,25"/>
-                                    <path class="stroke" d="M31.48,24.57,21.3,18.32a.5.5,0,0,0-.76.42V31.26a.5.5,0,0,0,.76.42l10.18-6.25A.51.51,0,0,0,31.48,24.57Z"/>
+                                    <path d="M1.81,25C1.81,9.3,2.27,9,25,9s23.19.32,23.19,16S47.73,41,25,41,1.81,40.7,1.81,25"/>
+                                    <path d="M31.48,24.57,21.3,18.32a.5.5,0,0,0-.76.42V31.26a.5.5,0,0,0,.76.42l10.18-6.25A.51.51,0,0,0,31.48,24.57Z"/>
                                 </svg>
                             </a>
                             <a href="https://soundcloud.com/ophiereaner" target="_blank">
                                 <svg viewbox="0 0 50 50">
-                                    <path class="stroke" d="M47.69,28.41a5.16,5.16,0,0,0-5.15-5.3,5.45,5.45,0,0,0-2.87.65,10,10,0,0,0-10-9.78,8.15,8.15,0,0,0-3.65.91.73.73,0,0,0-.44.67V33.28a.74.74,0,0,0,.74.74L42.27,34A5.31,5.31,0,0,0,47.69,28.41Z"/>
-                                    <line class="stroke" x1="16.2" y1="34.02" x2="16.2" y2="17.06"/>
-                                    <line class="stroke" x1="11.57" y1="34.02" x2="11.57" y2="19.48"/>
-                                    <line class="stroke" x1="6.94" y1="34.02" x2="6.94" y2="23.84"/>
-                                    <line class="stroke" x1="2.31" y1="31.68" x2="2.31" y2="26.17"/>
-                                    <line class="stroke" x1="20.82" y1="34.02" x2="20.82" y2="17.34"/>
+                                    <path d="M47.69,28.41a5.16,5.16,0,0,0-5.15-5.3,5.45,5.45,0,0,0-2.87.65,10,10,0,0,0-10-9.78,8.15,8.15,0,0,0-3.65.91.73.73,0,0,0-.44.67V33.28a.74.74,0,0,0,.74.74L42.27,34A5.31,5.31,0,0,0,47.69,28.41Z"/>
+                                    <line x1="16.2" y1="34.02" x2="16.2" y2="17.06"/>
+                                    <line x1="11.57" y1="34.02" x2="11.57" y2="19.48"/>
+                                    <line x1="6.94" y1="34.02" x2="6.94" y2="23.84"/>
+                                    <line x1="2.31" y1="31.68" x2="2.31" y2="26.17"/>
+                                    <line x1="20.82" y1="34.02" x2="20.82" y2="17.34"/>
                                 </svg>
                             </a>
                             <a href="https://www.tiktok.com/@sophiecreaner" target="_blank">
                                 <svg viewbox="0 0 50 50">
                                     <path class="blue" d="M39.31,10.81a10.81,10.81,0,0,1-2.7-7.18H34.5A10.94,10.94,0,0,0,39.31,10.81ZM19.82,26.32a6.63,6.63,0,0,0-3.05,12.49,6.61,6.61,0,0,1,5.35-10.49,6.86,6.86,0,0,1,2,.31v-8a14.25,14.25,0,0,0-2-.15h-.35v6.1A7.08,7.08,0,0,0,19.82,26.32Z"/>
                                     <path class="blue" d="M45.27,14.36v6.1a18.7,18.7,0,0,1-10.94-3.55V33A14.51,14.51,0,0,1,19.82,47.43a14.35,14.35,0,0,1-8.3-2.63A14.48,14.48,0,0,0,36.61,35V19a18.69,18.69,0,0,0,11,3.51V14.6a11.06,11.06,0,0,1-2.29-.24Z"/>
-                                    <path class="stroke" d="M13.8,36.49A6.46,6.46,0,0,1,19,26.24a6.86,6.86,0,0,1,1.91.3V18.69A12.2,12.2,0,0,0,19,18.54H18.7A14.15,14.15,0,0,0,4.79,32.93a14,14,0,0,0,3.88,9.43,14.17,14.17,0,0,0,24.54-9.64V17.07a18.37,18.37,0,0,0,10.71,3.44V12.82a10.59,10.59,0,0,1-2.24-.24l0,0A10.69,10.69,0,0,1,35.85,9.1h0a10.59,10.59,0,0,1-2.64-7H25.5V33a6.47,6.47,0,0,1-11.71,3.53"/>
+                                    <path d="M13.8,36.49A6.46,6.46,0,0,1,19,26.24a6.86,6.86,0,0,1,1.91.3V18.69A12.2,12.2,0,0,0,19,18.54H18.7A14.15,14.15,0,0,0,4.79,32.93a14,14,0,0,0,3.88,9.43,14.17,14.17,0,0,0,24.54-9.64V17.07a18.37,18.37,0,0,0,10.71,3.44V12.82a10.59,10.59,0,0,1-2.24-.24l0,0A10.69,10.69,0,0,1,35.85,9.1h0a10.59,10.59,0,0,1-2.64-7H25.5V33a6.47,6.47,0,0,1-11.71,3.53"/>
                                 </svg>
                             </a>
                         </div>
@@ -169,5 +352,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="src/scripts/main.js"></script>
 </body>
 </html>

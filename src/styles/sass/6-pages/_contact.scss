@@ -6,7 +6,7 @@
         width: 100%;
 
         .container {
-            height: 60vh;
+            min-height: 60vh;
             position: relative;
             width: 100%;
 
@@ -16,6 +16,7 @@
                 margin: 0 auto;
                 max-width: 500px;
                 padding: $margin-top;
+                top: 2 * $margin-top;
                 z-index: 2;
 
                 @include media-query(tablet-portrait-up) {
@@ -23,50 +24,103 @@
                 }
 
                 @include media-query(tablet-landscape-up) {
-                    bottom: 0;
+                    // bottom: 0;
                     box-shadow: fade-out($black, .8) .1rem .1rem .6rem;
                     position: absolute;
                     right: 0;
                     width: 70%;
                 }
 
-                .options {
-                    display: flex;
-                    flex-flow: column wrap;
-                    margin-top: $margin-top;
+                .headers {
 
-                    @include media-query(tablet-portrait-up) {
-                        flex-flow: row wrap;
+                    #form-back, #form-restart {
+                        // display: none;
+                        font-size: .9rem;
+                        margin: 0;
+                        position: relative;
+                        top: -$margin-top / 2;
+
+                        span {
+                            margin-right: .5em;
+                            position: relative;
+                            width: 1.5em;
+                        }
                     }
 
-                    .option {
-                        align-items: center;
-                        background: $white;
-                        border: 1px solid $black;
-                        border-radius: 1.2rem;
-                        cursor: pointer;
+                    #form-back {
+                        span {
+                            content: url(../../../images/icons/left-arrow.svg);
+                        }
+                    }
+
+                    #form-restart {
+                        float: right;
+
+                        span {
+                            content: url(../../../images/icons/restart.svg);
+                            bottom: -.3em;
+                        }
+                    }
+
+                    .summary-sentence {
+                        span {
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    hr {
+                        margin-top: 0;
+                    }
+                }
+
+                .tab {
+                    display: none;
+                }
+
+                #start-page-contact {
+                    display: none;
+
+                    .options {
                         display: flex;
-                        flex: 1 0 45%;
-                        height: 4rem;
-                        margin: .5rem;
-                        padding: .5rem;
-                        position: relative;
-                        transition: $default-transition-time;
+                        flex-flow: column wrap;
+                        margin-top: $margin-top;
 
-                        &:hover {
-                            background: $grey;
+                        @include media-query(tablet-portrait-up) {
+                            flex-flow: row wrap;
                         }
 
-                        h3 {
-                            font-size: 1.5rem;
-                            width: 100%;
-                        }
+                        .option, .contact-option {
+                            align-items: center;
+                            background: $white;
+                            border: 1px solid $black;
+                            border-radius: 1.2rem;
+                            cursor: pointer;
+                            display: flex;
+                            flex: 1 0 45%;
+                            height: 4rem;
+                            margin: .5rem;
+                            padding: .5rem;
+                            position: relative;
+                            transition: $default-transition-time;
 
-                        svg {
-                            flex: 1 1 20%;
+                            &:hover {
+                                border: 2px solid $primary;
+                            }
+
+                            h3 {
+                                font-size: 1.5rem;
+                                width: 100%;
+                            }
+
+                            svg {
+                                flex: 1 1 20%;
+                            }
                         }
                     }
                 }
+
+                // #form {}
             }
 
             .background {

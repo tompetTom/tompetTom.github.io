@@ -1,51 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Form</title>
-    </head>
+<?php
+
+    $summary_sentence = "";
+    $student = "";
+    $first_person_pronoun = "";
+    $second_person_pronoun = "";
+    $instruments = "";
+    $experience = "";
+    $frequency = "";
+    $availability = "";
+    $comments = "";
+    $name = "";
+    $email = "";
+    $validation_error = "";
+
+?>
+
+<html>
     <body>
-        <button class="form-back">Back</button>
-        <button class="form-restart">Start over</button>
-        <form method="post" id="recording-contact">
-            <div class="tab">
-                <h2>Let's talk about recording</h2>
-                <label for="Description">What's the project?</label><br>
-                <input type="text" name="Description" id="description" value=""><br>
-                <input type="checkbox" name="Bypass" id="bypass">
-                <label for="Bypass">I don't have a specific project</label><br>
-                <label for="Message">Talk about what you're looking for</label><br>
-                <textarea name="Message" id="message" placeholder="e.g. instrument(s), timeframe, budget etc." required></textarea><br>
-                <button>Add attachments (currently unavailable)</button><br>
-                <label for="Name">Name</label><br>
-                <input type="text" name="Name" id="name" required><br>
-                <label for="Email">Email address</label><br>
-                <input type="email" name="Email" id="email" required><br>
-                <button type="submit">Send message</button>
-            </div>
-        </form>
-        <form method="post" id="performing-contact">
-            <div class="tab">
-                <h2>Performing</h2>
-                <label for="Description">What's the gig?</label><br>
-                <input type="text" name="Description" id="description" required><br>
-                <label for="Location">Where is it?</label><br>
-                <input type="text" name="Location" id="location"><br>
-                <label for="Budget">What's your budget?</label><br>
-                <input type="text" name="Budget" id="budget"><br>
-                <label for="Name">Full name</label><br>
-                <input type="text" name="Name" id="name" required><br>
-                <label for="Company">Company (optional)</label><br>
-                <input type="text" name="Company" id="company"><br>
-                <label for="Email">Email address</label><br>
-                <input type="email" name="Email" id="email"><br>
-                <button type="submit">Send message</button>
-            </div>
-        </form>
-        <form method="post" id="lessons-contact">
+    <form method="post" id="lessons-contact">
             <button>Back</button>
             <button>Start over</button>
+            <?=$summary_sentence;?>
             <div class="tab">
                 <h2>Who are the lessons for?</h2>
                 <div>
@@ -68,7 +43,9 @@
                 <label for="Bypass">No one, I just have a few questions</label><br>
             </div>
             <div class="tab">
-                <h2>What instrument do <span>you</span> want to learn?</h2>
+                <p>Lessons for <span>myself</span></p>
+                <hr>
+                <?="<h2>What instrument do {$second_person_pronoun} want to learn?</h2>";?>
                 <div>
                     <input type="checkbox" name="Instrument" id="flutes">
                     <label for="Instrument">Flute</label>
@@ -88,6 +65,8 @@
                 <button class="next">Next</button>
             </div>
             <div class="tab">
+                <p><span>Flute</span> lessons for <span>myself</span></p>
+                <hr>
                 <h2>How long have <span>you</span> been playing?</h2>
                 <div>
                     <input type="radio" name="Experience" id="none" value="none">
@@ -152,40 +131,12 @@
                 <p><span>Flute</span> lessons for <span>myself</span>, <span>every week</span>. <span>I</span>'ve never played before.<span> Daytimes generally work.</span></p>
                 <hr>
                 <label for="Message">Anything else to add?</label><br>
-                <textarea name="Message" id="message"></textarea><br>
+                <textarea name="Message" id="message" value="<?=$comments;?>"></textarea><br>
                 <label for="Name">Name</label><br>
                 <input type="text" name="Name" id="name" required><br>
                 <label for="Email">Email address</label><br>
                 <input type="email" name="Email" id="email" required><br>
                 <button type="submit">Finish</button>
-            </div>
-        </form>
-        <form method="post" id="hello-contact">
-            <div class="tab">
-                <h2>Hello!</h2>
-                <label for="Subject">Subject (optional)</label><br>
-                <input type="text" name="Subject" id="subject" value=""><br>
-                <label for="Message">Message</label><br>
-                <textarea name="Message" id="message" required></textarea><br>
-                <label for="Name">Name</label><br>
-                <input type="text" name="Name" id="name" required><br>
-                <label for="Email">Email address</label><br>
-                <input type="email" name="Email" id="email" required><br>
-                <button type="submit">Send message</button>
-            </div>
-        </form>
-        <form method="post" id="other-contact">
-            <div class="tab">
-                <h2>What do you want to know?</h2>
-                <label for="Subject">Subject</label><br>
-                <input type="text" name="Subject" id="subject" value=""><br>
-                <label for="Message">Message</label><br>
-                <textarea name="Message" id="message" required></textarea><br>
-                <label for="Name">Name</label><br>
-                <input type="text" name="Name" id="name" required><br>
-                <label for="Email">Email address</label><br>
-                <input type="email" name="Email" id="email" required><br>
-                <button type="submit">Send message</button>
             </div>
         </form>
     </body>
