@@ -3266,7 +3266,7 @@ footer .links .centre-links .footer-box-right {
 
 #contact-page main {
   grid-column: 2 / -2;
-  margin-top: 30vh;
+  margin-top: 20vh;
   text-align: left;
   width: 100%;
 }
@@ -3288,14 +3288,13 @@ footer .links .centre-links .footer-box-right {
   border-radius: 1rem;
   margin: 0 auto;
   max-width: 500px;
-  padding: 1.7rem;
-  top: 3.4rem;
   z-index: 2;
 }
 
 @media (min-width: 600px) {
   #contact-page main .container .form-container {
     max-width: none;
+    padding: 1.7rem;
   }
 }
 
@@ -3303,8 +3302,8 @@ footer .links .centre-links .footer-box-right {
   #contact-page main .container .form-container {
     -webkit-box-shadow: rgba(20, 14, 27, 0.2) 0.1rem 0.1rem 0.6rem;
             box-shadow: rgba(20, 14, 27, 0.2) 0.1rem 0.1rem 0.6rem;
-    position: absolute;
-    right: 0;
+    float: right;
+    margin-top: 3.4rem;
     width: 70%;
   }
 }
@@ -3340,12 +3339,92 @@ footer .links .centre-links .footer-box-right {
   text-decoration: underline;
 }
 
-#contact-page main .container .form-container .headers hr {
-  margin-top: 0;
+#contact-page main .container .form-container .headers .progress-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .5rem;
+  margin: 0.85rem 0;
+  width: 100%;
+}
+
+#contact-page main .container .form-container .headers .progress-bar div {
+  background: #DFDDD5;
+  border-radius: .1rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 1px;
+}
+
+#contact-page main .container .form-container .headers .progress-bar div.active {
+  background: #6A9992;
+}
+
+#contact-page main .container .form-container .headers .progress-bar div.complete {
+  background: #97CCC3;
+}
+
+#contact-page main .container .form-container .headers .progress-bar.incognito {
+  background: #DFDDD5;
+  height: 1px;
+}
+
+#contact-page main .container .form-container .headers .progress-bar.incognito div {
+  display: none;
 }
 
 #contact-page main .container .form-container .tab {
   display: none;
+}
+
+#contact-page main .container .form-container .tab .multi-choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+#contact-page main .container .form-container .tab .multi-choice div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #DFDDD5;
+  border-radius: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 10rem;
+          flex: 1 0 10rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: .4rem;
+}
+
+#contact-page main .container .form-container .tab .multi-choice div:hover {
+  border: 2px solid #97CCC3;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#contact-page main .container .form-container .tab .multi-choice div.checked {
+  background: rgba(151, 204, 195, 0.5);
+  border: 2px solid #6A9992;
+}
+
+#contact-page main .container .form-container .tab .multi-choice div input, #contact-page main .container .form-container .tab .multi-choice div label {
+  margin: 0;
 }
 
 #contact-page main .container .form-container #start-page-contact {
@@ -3409,13 +3488,19 @@ footer .links .centre-links .footer-box-right {
           flex: 1 1 20%;
 }
 
+#contact-page main .container .form-container #nextBtn, #contact-page main .container .form-container button[type=submit] {
+  background: #CFB72F;
+  border-radius: .5rem;
+  width: 100%;
+}
+
 #contact-page main .container .background {
   display: none;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 55%;
-  z-index: 0;
+  left: 5rem;
+  position: fixed;
+  top: 20vh;
+  width: 45%;
+  z-index: -1;
 }
 
 @media (min-width: 900px) {

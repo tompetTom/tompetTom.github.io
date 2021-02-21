@@ -58,8 +58,14 @@ big-desktop-up
     }
 }
 
-@mixin beneath-header() {
-    margin-top: 30vh;
+@mixin beneath-header($changes: normal) {
+    @if $changes == small {
+        margin-top: 20vh;
+    } @else if $changes == normal {
+        margin-top: 30vh;
+    } @else if $changes == big {
+        margin-top: 35vh;
+    }
 
     @include media-query(tablet-landscape-up) {
         margin-top: 20vh;

@@ -1,11 +1,12 @@
 #contact-page {
     main {
         @include grid-column(fill);
-        @include beneath-header;
+        @include beneath-header(small);
         text-align: left;
         width: 100%;
 
         .container {
+            // background: left 55% no-repeat url(../../../images/pages/contact-contained.svg);
             min-height: 60vh;
             position: relative;
             width: 100%;
@@ -15,19 +16,21 @@
                 border-radius: 1rem;
                 margin: 0 auto;
                 max-width: 500px;
-                padding: $margin-top;
-                top: 2 * $margin-top;
+                // top: 2 * $margin-top;
                 z-index: 2;
 
                 @include media-query(tablet-portrait-up) {
                     max-width: none;
+                    padding: $margin-top;
                 }
 
                 @include media-query(tablet-landscape-up) {
                     // bottom: 0;
                     box-shadow: fade-out($black, .8) .1rem .1rem .6rem;
-                    position: absolute;
-                    right: 0;
+                    float: right;
+                    margin-top: 2 * $margin-top;
+                    // position: absolute;
+                    // right: 0;
                     width: 70%;
                 }
 
@@ -69,13 +72,71 @@
                         }
                     }
 
-                    hr {
-                        margin-top: 0;
+                    .progress-bar {
+                        display: flex;
+                        height: .5rem;
+                        margin: $margin-top / 2 0;
+                        width: 100%;
+
+                        div {
+                            background: $grey;
+                            border-radius: .1rem;
+                            flex-grow: 1;
+                            margin: 1px;
+
+                            &.active {
+                                background: $primary-gradient;
+                            }
+
+                            &.complete {
+                                background: $primary;
+                            }
+                        }
+
+                        &.incognito {
+                            background: $grey;
+                            height: 1px;
+
+                            div {
+                                display: none;
+                            }
+                        }
                     }
                 }
 
                 .tab {
                     display: none;
+
+                    .multi-choice {
+                        display: flex;
+                        flex-flow: row wrap;
+
+                        div {
+                            align-items: center;
+                            border: 2px solid $grey;
+                            border-radius: .5rem;
+                            display: flex;
+                            flex: 1 0 10rem;
+                            flex-flow: column nowrap;
+                            justify-content: center;
+                            margin: .4rem;
+
+                            &:hover {
+                                border: 2px solid $primary;
+                                transform: $hover-grow;
+                                transition: $default-transition-time;
+                            }
+
+                            &.checked {
+                                background: fade-out($primary, .5);
+                                border: 2px solid $primary-gradient;
+                            }
+
+                            input, label {
+                                margin: 0;
+                            }
+                        }
+                    }
                 }
 
                 #start-page-contact {
@@ -120,16 +181,20 @@
                     }
                 }
 
-                // #form {}
+                #nextBtn, button[type=submit] {
+                    background: $accent;
+                    border-radius: .5rem;
+                    width: 100%;
+                }
             }
 
             .background {
                 display: none;
-                left: 0;
-                position: absolute;
-                top: 0;
-                width: 55%;
-                z-index: 0;
+                left: 5rem;
+                position: fixed;
+                top: 20vh;
+                width: 45%;
+                z-index: -1;
 
                 @include media-query(tablet-landscape-up) {
                     display: block;

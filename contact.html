@@ -86,7 +86,7 @@
                         <button id="form-back"><span></span>Back</button>
                         <button id="form-restart"><span></span>Start over</button>
                         <p class="summary-sentence"></p>
-                        <hr>
+                        <div class="progress-bar"></div>
                     </div>
                     <div id="start-page-contact">
                         <h2>What do you want to talk about?</h2>
@@ -155,101 +155,111 @@
                     <form method="post" id="lessons-contact-form">
                         <div class="tab">
                             <h2>Who are the lessons for?</h2>
-                            <div>
-                                <input type="radio" name="Student" id="myself" value="myself">
-                                <label for="myself">Myself</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Student" id="child" value="my child">
-                                <label for="child">My child</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Student" id="friend" value="my friend/family member">
-                                <label for="friend">A friend or family member</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Student" id="other" value="someone else">
-                                <label for="other">Someone else</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Student" id="none" value="none">
-                                <label for="none">No one, I just have a few questions</label>
+                            <div class="multi-choice">
+                                <div>
+                                    <input type="radio" name="Student" id="myself" value="myself">
+                                    <label for="myself">Myself</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Student" id="child" value="my child">
+                                    <label for="child">My child</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Student" id="friend" value="my friend/family member">
+                                    <label for="friend">A friend or family member</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Student" id="other" value="someone else">
+                                    <label for="other">Someone else</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Student" id="none" value="none">
+                                    <label for="none">No one, I just have a few questions</label>
+                                </div>
                             </div>
                         </div>
                         <div class="tab">
                             <h2>What instrument do <span class="accusative-pronoun"></span> want to learn?</h2>
-                            <div>
-                                <input type="checkbox" name="Instrument" id="flutes" value="flute">
-                                <label for="Instrument">Flute</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="Instrument" id="clarinet" value="clarinet">
-                                <label for="Instrument">Clarinet</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="Instrument" id="recorder" value="recorder">
-                                <label for="Instrument">Recorder</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="Instrument" id="saxophone" value="saxophone">
-                                <label for="Instrument">Saxophone</label>
+                            <div class="multi-choice">
+                                <div>
+                                    <input type="checkbox" name="Instrument" id="flutes" value="flute">
+                                    <label for="Instrument">Flute</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="Instrument" id="clarinet" value="clarinet">
+                                    <label for="Instrument">Clarinet</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="Instrument" id="recorder" value="recorder">
+                                    <label for="Instrument">Recorder</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="Instrument" id="saxophone" value="saxophone">
+                                    <label for="Instrument">Saxophone</label>
+                                </div>
                             </div>
                         </div>
                         <div class="tab">
                             <h2>How long have <span class="accusative-pronoun"></span> been playing?</h2>
-                            <div>
-                                <input type="radio" name="Experience" id="none" value="none">
-                                <label for="none"><span class="nominative-pronoun"></span>'ve never played before</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Experience" id="beginner" value="beginner">
-                                <label for="beginner"><span class="nominative-pronoun"></span> started within the last couple of years</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Experience" id="intermediate" value="intermediate">
-                                <label for="intermediate"><span class="nominative-pronoun"></span>’ve been learning for a while</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Experience" id="professional" value="professional">
-                                <label for="professional"><span class="nominative-pronoun"></span> play professionally</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Experience" id="returner" value="returner">
-                                <label for="returner"><span class="nominative-pronoun"></span> used to play, but took a break</label>
+                            <div class="multi-choice">
+                                <div>
+                                    <input type="radio" name="Experience" id="none" value="none">
+                                    <label for="none"><span class="nominative-pronoun"></span>'ve never played before</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Experience" id="beginner" value="beginner">
+                                    <label for="beginner"><span class="nominative-pronoun"></span> started within the last couple of years</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Experience" id="intermediate" value="intermediate">
+                                    <label for="intermediate"><span class="nominative-pronoun"></span>’ve been learning for a while</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Experience" id="professional" value="professional">
+                                    <label for="professional"><span class="nominative-pronoun"></span> play professionally</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Experience" id="returner" value="returner">
+                                    <label for="returner"><span class="nominative-pronoun"></span> used to play, but took a break</label>
+                                </div>
                             </div>
                         </div>
                         <div class="tab">
                             <h2><span class="nominative-pronoun"></span> would want lessons...</h2>
-                            <div>
-                                <input type="radio" name="Frequency" id="weekly" value="weekly">
-                                <label for="weekly">Every week</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Frequency" id="regularly" value="every few weeks">
-                                <label for="regularly">Every few weeks</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Frequency" id="infrequently" value="every now and then">
-                                <label for="infrequently">Every now and then</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Frequency" id="once" value="just one">
-                                <label for="once">Just a one-off</label>
+                            <div class="multi-choice">
+                                <div>
+                                    <input type="radio" name="Frequency" id="weekly" value="weekly">
+                                    <label for="weekly">Every week</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Frequency" id="regularly" value="every few weeks">
+                                    <label for="regularly">Every few weeks</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Frequency" id="infrequently" value="every now and then">
+                                    <label for="infrequently">Every now and then</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Frequency" id="once" value="just one">
+                                    <label for="once">Just a one-off</label>
+                                </div>
                             </div>
                         </div>
                         <div class="tab">
                             <h2>Let's organise <span>a free trial</span> lesson! When works for <span class="dative-pronoun"></span>?</h2>
-                            <div>
-                                <input type="radio" name="Availability" id="daytimes" value="Daytimes">
-                                <label for="daytimes">Daytimes</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Availability" id="evenings" value="Evenings">
-                                <label for="evenings">Evenings</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="Availability" id="none" value="none">
-                                <label for="none">I don’t want to organise a <span>free </span>lesson just yet</label>
+                            <div class="multi-choice">
+                                <div>
+                                    <input type="radio" name="Availability" id="daytimes" value="Daytimes">
+                                    <label for="daytimes">Daytimes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Availability" id="evenings" value="Evenings">
+                                    <label for="evenings">Evenings</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="Availability" id="none" value="none">
+                                    <label for="none">I don’t want to organise a <span>free </span>lesson just yet</label>
+                                </div>
                             </div>
                         </div>
                         <div class="tab">

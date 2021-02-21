@@ -30,11 +30,11 @@ button {
     }
 
     &:hover {
-        transform: scale(1.03);
+        transform: $hover-grow;
     }
 
     &:active {
-        transform: scale(.99);
+        transform: $hover-shrink;
     }
 
     &.button-secondary {

@@ -75,11 +75,13 @@ $(document).ready(() => {
     var topic;
     let summaryObject = {
         instrument: '',
+        lessons: 'lessons',
         student: '',
         frequency: '',
         experience: '',
         availability: '',
-        frequencyFirst: false
+        frequencyFirst: false,
+        bypass: false
     };
     var summarySentence = '';
     var summaryElement = $('.summary-sentence');
@@ -89,7 +91,8 @@ $(document).ready(() => {
     $('input[name=Student]').change(() => {
         student = $('input[name=Student]:checked').val();
         if (student !== 'none') {
-            summaryObject.student = `lessons for <span>${student}</span>`;
+            summaryObject.bypass = false;
+            summaryObject.student = ` for <span id="edit-answer-student">${student}</span>`;
             if (student === 'myself') {
                 nominativePronoun = 'I';
                 accusativePronoun = 'you';
@@ -103,38 +106,36 @@ $(document).ready(() => {
             $('.accusative-pronoun').html(accusativePronoun);
             $('.dative-pronoun').html(dativePronoun);
         } else {
-            currentTab = 4;
+            summaryObject.bypass = true;
+            // currentTab = 4;
         }
     });
-    function capitalise(str) {
-        return str[0].toUpperCase() + str.slice(1);
-    }
     var instruments = [];
     $('input[name=Instrument]').click(function() {
         instruments = $('input[name=Instrument]:checked').map(function(){
             return $(this).val()
         }).get();
         if (instruments.length === 1) {
-            summaryObject.instrument = `<span>${instruments}</span> `;
+            summaryObject.instrument = `<span id="edit-answer-instruments">${instruments}</span> `;
         } else if (instruments.length === 2) {
-            summaryObject.instrument = `<span>${instruments.join(' and ')}</span> `;
+            summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.join(' and ')}</span> `;
         } else if (instruments.length > 2) {
-            summaryObject.instrument = `<span>${instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]}</span> `;
+            summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]}</span> `;
         }
     });
     var experience = '';
     $('input[name=Experience]').change(() => {
         experience = $('input[name=Experience]:checked').val();
         if (experience === 'none') {
-            summaryObject.experience = ` ${nominativePronoun}'ve <span>never played before</span>.`;
+            summaryObject.experience = ` ${nominativePronoun}'ve <span id="edit-answer-experience">never played before</span>.`;
         } else if (experience === 'beginner') {
-            summaryObject.experience = ` ${nominativePronoun} started <span>within the last couple of years</span>.`;
+            summaryObject.experience = ` ${nominativePronoun}'ve been learning for <span id="edit-answer-experience">less than 2 years</span>.`;
         } else if (experience === 'intermediate') {
-            summaryObject.experience = ` ${nominativePronoun}’ve been <span>learning for a while</span>.`;
+            summaryObject.experience = ` ${nominativePronoun}’ve been <span id="edit-answer-experience">learning for a while</span>.`;
         } else if (experience === 'professional') {
-            summaryObject.experience = ` ${nominativePronoun} play <span>professionally</span>.`;
+            summaryObject.experience = ` ${nominativePronoun} play <span id="edit-answer-experience">professionally</span>.`;
         } else if (experience === 'returner') {
-            summaryObject.experience = ` ${nominativePronoun} <span>used to play</span>, but took a break.`;
+            summaryObject.experience = ` ${nominativePronoun} <span id="edit-answer-experience">used to play</span>, but took a break.`;
         } else {
             validationError = 'An error occurred. Please try reloading the page.';
         }
@@ -143,10 +144,15 @@ $(document).ready(() => {
     $('input[name=Frequency]').change(() => {
         frequency = $('input[name=Frequency]:checked').val();
         if (frequency === 'weekly' || frequency === 'just one') {
-            summaryObject.frequency = `<span>${frequency}</span> `;
+            summaryObject.frequency = `<span id="edit-answer-frequency">${frequency}</span> `;
             summaryObject.frequencyFirst = true;
+            if (frequency === 'just one') {
+                summaryObject.lessons = 'lesson';
+            } else {
+                summaryObject.lessons = 'lessons';
+            }
         } else {
-            summaryObject.frequency = `, <span>${frequency}</span>`;
+            summaryObject.frequency = `, <span id="edit-answer-frequency">${frequency}</span>`;
             summaryObject.frequencyFirst = false;
         }
     });
@@ -154,13 +160,21 @@ $(document).ready(() => {
     $('input[name=Availability]').change(() => {
         availability = $('input[name=Availability]:checked').val();
         if (availability !== 'none') {
-            summaryObject.availability = ` <span>${availability}</span> generally work.`;
+            summaryObject.availability = ` <span id="edit-answer-availability">${availability}</span> should work for a trial session.`;
+        } else {
+            summaryObject.availability = '';
         }
     });
     var comments = '';
     var name = '';
     var email = '';
     var validationError = '';
+
+    $('.multi-choice input').change(() => {
+        $('input:checked').parent().addClass('checked');
+        $('input:not(:checked)').parent().removeClass('checked');
+    })
+
     showTab(currentTab);
 
     function showTab(n) {
@@ -179,7 +193,7 @@ $(document).ready(() => {
             } else {
                 $('#nextBtn').css('display', 'block');
             }
-            // fixStepIndicator(n)
+            updateProgressBar(n);
         }
         if (n > 0) {
             $('#message-title').html('Anything else to add?');
@@ -191,17 +205,19 @@ $(document).ready(() => {
     }
 
     function updateSummary(step) {
-        if (step === 1) {
-            summarySentence = 'I want ' + summaryObject.student + '.';
+        if (summaryObject.bypass) {
+            summarySentence = '';
+        } else if (step === 1) {
+            summarySentence = 'I want ' + summaryObject.lessons + summaryObject.student + '.';
         } else if (step === 2) {
-            summarySentence = 'I want ' + summaryObject.instrument + summaryObject.student + '.';
+            summarySentence = 'I want ' + summaryObject.instrument + summaryObject.lessons + summaryObject.student + '.';
         } else if (step === 3) {
             summarySentence += summaryObject.experience;
         } else if (step === 4) {
             if (summaryObject.frequencyFirst) {
-                summarySentence = 'I want ' + summaryObject.frequency + summaryObject.instrument + summaryObject.student + '.' + summaryObject.experience;
+                summarySentence = 'I want ' + summaryObject.frequency + summaryObject.instrument + summaryObject.lessons + summaryObject.student + '.' + summaryObject.experience;
             } else {
-                summarySentence = 'I want ' + summaryObject.instrument + summaryObject.student + summaryObject.frequency + '.' + summaryObject.experience;
+                summarySentence = 'I want ' + summaryObject.instrument + summaryObject.lessons + summaryObject.student + summaryObject.frequency + '.' + summaryObject.experience;
             }
         } else if (step === 5) {
             if (student === 'none') {
@@ -233,8 +249,8 @@ $(document).ready(() => {
     function validateForm() {
     // This function deals with validation of the form fields
     var x, y, i, valid = true;
-    x = $('.tab');
-    y = x[currentTab].getElementsByTagName('input');
+    x = currentForm.find('.tab');
+    y = x[currentTab].find('input');
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
         // If a field is empty...
@@ -252,15 +268,41 @@ $(document).ready(() => {
     return valid; // return the valid status
     }
 
-    function fixStepIndicator(n) {
-        var x = $('.step');
-        x.removeClass('active');
-        x[n].addClass('active');
+    function createProgressBar() {
+        let bar = $('.progress-bar');
+        let div = '<div></div>';
+        let steps = $(currentForm).find('.tab');
+        let noOfSteps = steps.length;
+        if (noOfSteps > 1) {
+            $(bar).removeClass('incognito');
+        } else {
+            $(bar).addClass('incognito');
+        }
+        bar.html(div.repeat(noOfSteps));
     }
 
-    var startingOptions = $('.contact-option');
-    startingOptions.on('click', event => {
-        var destination = startingOptions.index(event.currentTarget);
+    function updateProgressBar(tab) {
+        let bar = $('.progress-bar');
+        let divs = $(bar).children('div');
+        console.log(tab);
+        console.log(divs.length);
+        if (divs.length) {
+            for (let i = 0; i < divs.length; i++) {
+                $(divs[i]).removeClass('complete');
+                $(divs[i]).removeClass('active');
+                if (i < tab) {
+                    $(divs[i]).addClass('complete');
+                } else if (i === tab) {
+                    $(divs[i]).addClass('active');
+                }
+            }
+        } else {
+            console.log(divs.length);
+        }
+    }
+
+    $('.contact-option').on('click', event => {
+        var destination = $('.contact-option').index(event.currentTarget);
         switch (destination) {
             case 0:
                 topic = 'recording';
@@ -281,6 +323,7 @@ $(document).ready(() => {
         currentForm = $('.form-container form')[destination];
         currentTab = 0;
         $('#start-page-contact').css('display', 'none');
+        createProgressBar();
         showTab(currentTab);
     });
 
@@ -298,9 +341,37 @@ $(document).ready(() => {
         showTab(currentTab);
     });
 
+    $('.summary-sentence').on('click', event => {
+        let sentence = event.currentTarget;
+        let span = $(sentence).children('span');
+        let id = $(span).attr('id');
+        switch (id) {
+            case 'edit-answer-student':
+                currentTab = 0;
+                break;
+            case 'edit-answer-instruments':
+                currentTab = 1;
+                break;
+            case 'edit-answer-experience':
+                currentTab = 2;
+                break;
+            case 'edit-answer-frequency':
+                currentTab = 3;
+                break;
+            case 'edit-answer-availability':
+                currentTab = 4;
+                break;
+        }
+        showTab(currentTab);
+    });
+
     $('#nextBtn').on('click', () => {
         if (!validationError) {
-            currentTab += 1;
+            if (summaryObject.bypass) {
+                currentTab = 5;
+            } else {
+                currentTab += 1;
+            }
             showTab(currentTab);
         } else {
             $('#error').html(validationError);
