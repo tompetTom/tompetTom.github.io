@@ -354,7 +354,7 @@ form div * {
   margin-top: 1rem;
 }
 
-form input, form textarea {
+form input:not([type=checkbox]):not([type=radio]), form textarea {
   background-color: #FEFCF4;
   border: 1px solid #140E1B;
   border-radius: .6em;
@@ -363,6 +363,11 @@ form input, form textarea {
   font-size: 16px;
   padding: .2rem .5rem;
   width: 100%;
+}
+
+form input[type=checkbox], form input[type=radio] {
+  margin: 0;
+  width: auto;
 }
 
 form textarea {
@@ -3334,9 +3339,25 @@ footer .links .centre-links .footer-box-right {
   bottom: -.3em;
 }
 
+#contact-page main .container .form-container .headers .summary-sentence {
+  font-weight: 200;
+}
+
+#contact-page main .container .form-container .headers .summary-sentence p, #contact-page main .container .form-container .headers .summary-sentence span {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
 #contact-page main .container .form-container .headers .summary-sentence span {
   cursor: pointer;
-  text-decoration: underline;
+  font-weight: 500;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#contact-page main .container .form-container .headers .summary-sentence span:hover {
+  color: #B99ADB;
 }
 
 #contact-page main .container .form-container .headers .progress-bar {
@@ -3378,6 +3399,33 @@ footer .links .centre-links .footer-box-right {
   display: none;
 }
 
+#contact-page main .container .form-container .tab .bypassable {
+  margin-bottom: 0;
+}
+
+#contact-page main .container .form-container .tab .bypassable.disabled {
+  border-color: #DFDDD5;
+  color: #DFDDD5;
+}
+
+#contact-page main .container .form-container .tab label {
+  border-radius: .5rem;
+}
+
+#contact-page main .container .form-container .tab label.bypass {
+  margin-top: 0;
+  padding: .2rem .5rem;
+}
+
+#contact-page main .container .form-container .tab label.bypass.checked {
+  background: rgba(151, 204, 195, 0.5);
+  border: 2px solid #6A9992;
+}
+
+#contact-page main .container .form-container .tab label.bypass input[type=checkbox] {
+  margin-right: .5rem;
+}
+
 #contact-page main .container .form-container .tab .multi-choice {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3388,29 +3436,16 @@ footer .links .centre-links .footer-box-right {
           flex-flow: row wrap;
 }
 
-#contact-page main .container .form-container .tab .multi-choice div {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#contact-page main .container .form-container .tab .multi-choice label {
   border: 2px solid #DFDDD5;
-  border-radius: .5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 10rem;
           flex: 1 0 10rem;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   margin: .4rem;
+  text-align: center;
 }
 
-#contact-page main .container .form-container .tab .multi-choice div:hover {
+#contact-page main .container .form-container .tab .multi-choice label:hover {
   border: 2px solid #97CCC3;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
@@ -3418,13 +3453,14 @@ footer .links .centre-links .footer-box-right {
   transition: 0.2s;
 }
 
-#contact-page main .container .form-container .tab .multi-choice div.checked {
+#contact-page main .container .form-container .tab .multi-choice label.checked {
   background: rgba(151, 204, 195, 0.5);
   border: 2px solid #6A9992;
 }
 
-#contact-page main .container .form-container .tab .multi-choice div input, #contact-page main .container .form-container .tab .multi-choice div label {
+#contact-page main .container .form-container .tab .multi-choice label input {
   margin: 0;
+  opacity: 0;
 }
 
 #contact-page main .container .form-container #start-page-contact {

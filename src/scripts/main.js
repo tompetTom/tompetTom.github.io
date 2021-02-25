@@ -92,7 +92,8 @@ $(document).ready(() => {
         student = $('input[name=Student]:checked').val();
         if (student !== 'none') {
             summaryObject.bypass = false;
-            summaryObject.student = ` for <span id="edit-answer-student">${student}</span>`;
+            // summaryObject.student = ` for <span id="edit-answer-student">${student}</span>`;
+            $('#edit-answer-student').html(student);
             if (student === 'myself') {
                 nominativePronoun = 'I';
                 accusativePronoun = 'you';
@@ -116,44 +117,64 @@ $(document).ready(() => {
             return $(this).val()
         }).get();
         if (instruments.length === 1) {
-            summaryObject.instrument = `<span id="edit-answer-instruments">${instruments}</span> `;
+            // summaryObject.instrument = `<span id="edit-answer-instruments">${instruments}</span> `;
+            $('#edit-answer-instruments').html(instruments);
         } else if (instruments.length === 2) {
-            summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.join(' and ')}</span> `;
+            // summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.join(' and ')}</span> `;
+            $('#edit-answer-instruments').html(instruments.join(' and '));
         } else if (instruments.length > 2) {
-            summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]}</span> `;
+            // summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]}</span> `;
+            $('#edit-answer-instruments').html(instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]);
         }
     });
     var experience = '';
     $('input[name=Experience]').change(() => {
         experience = $('input[name=Experience]:checked').val();
+        $('#fullstop-experience').html('.');
         if (experience === 'none') {
             summaryObject.experience = ` ${nominativePronoun}'ve <span id="edit-answer-experience">never played before</span>.`;
+            $('#experience-p').html(` ${nominativePronoun}'ve `);
+            $('#edit-answer-experience').html('never played before');
         } else if (experience === 'beginner') {
             summaryObject.experience = ` ${nominativePronoun}'ve been learning for <span id="edit-answer-experience">less than 2 years</span>.`;
+            $('#experience-p').html(` ${nominativePronoun}'ve been learning for `);
+            $('#edit-answer-experience').html('less than 2 years');
         } else if (experience === 'intermediate') {
             summaryObject.experience = ` ${nominativePronoun}’ve been <span id="edit-answer-experience">learning for a while</span>.`;
+            $('#experience-p').html(` ${nominativePronoun}’ve been `);
+            $('#edit-answer-experience').html('learning for a while');
         } else if (experience === 'professional') {
             summaryObject.experience = ` ${nominativePronoun} play <span id="edit-answer-experience">professionally</span>.`;
+            $('#experience-p').html(` ${nominativePronoun} play `);
+            $('#edit-answer-experience').html('professionally');
         } else if (experience === 'returner') {
             summaryObject.experience = ` ${nominativePronoun} <span id="edit-answer-experience">used to play</span>, but took a break.`;
+            $('#experience-p').html(` ${nominativePronoun} `);
+            $('#edit-answer-experience').html('used to play');
+            $('#fullstop-experience').html(', but took a break.');
         } else {
             validationError = 'An error occurred. Please try reloading the page.';
         }
     });
-    var frequency = '';
+    let frequencyInfo = {
+        frequencyFirst: false,
+        justOne: false,
+    };
     $('input[name=Frequency]').change(() => {
         frequency = $('input[name=Frequency]:checked').val();
+        let span = $('.edit-answer-frequency');
+        span.html(frequency);
         if (frequency === 'weekly' || frequency === 'just one') {
-            summaryObject.frequency = `<span id="edit-answer-frequency">${frequency}</span> `;
-            summaryObject.frequencyFirst = true;
+            frequencyInfo.frequencyFirst = true;
             if (frequency === 'just one') {
-                summaryObject.lessons = 'lesson';
+                frequencyInfo.justOne = true;
             } else {
-                summaryObject.lessons = 'lessons';
+                frequencyInfo.justOne = false;
             }
         } else {
-            summaryObject.frequency = `, <span id="edit-answer-frequency">${frequency}</span>`;
-            summaryObject.frequencyFirst = false;
+            frequencyInfo.frequencyFirst = false;
+            frequencyInfo.justOne = false;
+            // span.html(frequency + '.');
         }
     });
     var availability = '';
@@ -161,6 +182,7 @@ $(document).ready(() => {
         availability = $('input[name=Availability]:checked').val();
         if (availability !== 'none') {
             summaryObject.availability = ` <span id="edit-answer-availability">${availability}</span> should work for a trial session.`;
+            $('#edit-answer-availability').html(availability);
         } else {
             summaryObject.availability = '';
         }
@@ -169,11 +191,6 @@ $(document).ready(() => {
     var name = '';
     var email = '';
     var validationError = '';
-
-    $('.multi-choice input').change(() => {
-        $('input:checked').parent().addClass('checked');
-        $('input:not(:checked)').parent().removeClass('checked');
-    })
 
     showTab(currentTab);
 
@@ -207,26 +224,56 @@ $(document).ready(() => {
     function updateSummary(step) {
         if (summaryObject.bypass) {
             summarySentence = '';
-        } else if (step === 1) {
-            summarySentence = 'I want ' + summaryObject.lessons + summaryObject.student + '.';
-        } else if (step === 2) {
-            summarySentence = 'I want ' + summaryObject.instrument + summaryObject.lessons + summaryObject.student + '.';
-        } else if (step === 3) {
-            summarySentence += summaryObject.experience;
-        } else if (step === 4) {
-            if (summaryObject.frequencyFirst) {
-                summarySentence = 'I want ' + summaryObject.frequency + summaryObject.instrument + summaryObject.lessons + summaryObject.student + '.' + summaryObject.experience;
+        }
+        let sentenceDiv = $('.summary-sentence').children();
+        let sentence = {
+            iWant: sentenceDiv[0],
+            editAnswerFrequency: sentenceDiv[1],
+            editAnswerInstruments: sentenceDiv[2],
+            lessonsFor: sentenceDiv[3],
+            editAnswerStudent: sentenceDiv[4],
+            postStudentPunc: sentenceDiv[5],
+            editAnswerFrequency: sentenceDiv[6],
+            fullstopFrequency: sentenceDiv[7],
+            experienceP: sentenceDiv[8],
+            editAnswerExperience: sentenceDiv[9],
+            fullstopExperience: sentenceDiv[10],
+            editAnswerAvailability: sentenceDiv[11],
+            availabilityEnd: sentenceDiv[12]
+        };
+        $(sentenceDiv).hide();
+        $('#lessons-for').html('lessons for');
+        $('#post-student-punc').html('. ');
+        if (step > 0) {
+            $(Array.from([sentenceDiv[0], sentenceDiv[3], sentenceDiv[4], sentenceDiv[5]])).show();
+        }
+        if (step > 1) {
+            $(Array.from([sentenceDiv[2]])).show();
+        }
+        if (step > 2) {
+            $(Array.from([sentenceDiv[8], sentenceDiv[9], sentenceDiv[10]])).show();
+        }
+        if (step > 3) {
+            if (frequencyInfo.frequencyFirst) {
+                $('#post-student-punc').html('. ');
+                $(Array.from([sentenceDiv[1]])).show();
+                if (frequencyInfo.justOne) {
+                    $('#lessons-for').html('lesson for');
+                }
             } else {
-                summarySentence = 'I want ' + summaryObject.instrument + summaryObject.lessons + summaryObject.student + summaryObject.frequency + '.' + summaryObject.experience;
-            }
-        } else if (step === 5) {
-            if (student === 'none') {
-                $('#message-title').html('Ask away!');
-            } else {
-                summarySentence += summaryObject.availability;
+                $('#post-student-punc').html(', ');
+                $(Array.from([sentenceDiv[6], sentenceDiv[7]])).show();
             }
         }
-        summaryElement.html(summarySentence);
+        if (step > 4) {
+            $(Array.from([sentenceDiv[11], sentenceDiv[12]])).show();
+        }
+        if (student === 'none') {
+            $('#message-title').html('Ask away!');
+        } else {
+            summarySentence += summaryObject.availability;
+        }
+        // summaryElement.html(summarySentence);
     }
 
     function nextPrev(n) {
@@ -284,8 +331,6 @@ $(document).ready(() => {
     function updateProgressBar(tab) {
         let bar = $('.progress-bar');
         let divs = $(bar).children('div');
-        console.log(tab);
-        console.log(divs.length);
         if (divs.length) {
             for (let i = 0; i < divs.length; i++) {
                 $(divs[i]).removeClass('complete');
@@ -296,8 +341,6 @@ $(document).ready(() => {
                     $(divs[i]).addClass('active');
                 }
             }
-        } else {
-            console.log(divs.length);
         }
     }
 
@@ -327,6 +370,20 @@ $(document).ready(() => {
         showTab(currentTab);
     });
 
+    $('input').change(() => {
+        $('input:checked').parent('label').addClass('checked');
+        $('input:not(:checked)').parent('label').removeClass('checked');
+    });
+
+    $('.bypass').on('click', event => {
+        let label = event.currentTarget;
+        if (!$(label).hasClass('checked')) {
+            $('.bypassable').addClass('disabled').prop('disabled', true);
+        } else {
+            $('.bypassable').removeClass('disabled').prop('disabled', false);
+        }
+    });
+
     $('#form-back').on('click', () => {
         if (student === 'none' && currentTab !== 0) {
             currentTab = 0;
@@ -341,9 +398,8 @@ $(document).ready(() => {
         showTab(currentTab);
     });
 
-    $('.summary-sentence').on('click', event => {
-        let sentence = event.currentTarget;
-        let span = $(sentence).children('span');
+    $('.summary-sentence span').on('click', event => {
+        let span = event.currentTarget;
         let id = $(span).attr('id');
         switch (id) {
             case 'edit-answer-student':

@@ -23,7 +23,7 @@ form {
         }
     }
 
-    input, textarea {
+    input:not([type=checkbox]):not([type=radio]),textarea {
         background-color: $white;
         border: 1px solid $black;
         border-radius: .6em;
@@ -32,6 +32,11 @@ form {
         font-size: $form-font-size;
         padding: .2rem .5rem;
         width: 100%;
+    }
+
+    input[type=checkbox], input[type=radio] {
+        margin: 0;
+        width: auto;
     }
 
     textarea {

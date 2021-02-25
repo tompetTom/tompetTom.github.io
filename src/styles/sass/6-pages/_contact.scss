@@ -66,9 +66,22 @@
                     }
 
                     .summary-sentence {
+                        font-weight: $thin;
+
+                        p, span {
+                            display: inline;
+                            margin: 0;
+                            padding: 0;
+                        }
+
                         span {
                             cursor: pointer;
-                            text-decoration: underline;
+                            font-weight: $semi-bold;
+                            transition: $default-transition-time;
+
+                            &:hover {
+                                color: $secondary;
+                            }
                         }
                     }
 
@@ -107,19 +120,42 @@
                 .tab {
                     display: none;
 
+                    .bypassable {
+                        margin-bottom: 0;
+
+                        &.disabled {
+                            border-color: $grey;
+                            color: $grey;
+                        }
+                    }
+
+                    label {
+                        border-radius: .5rem;
+
+                        &.bypass {
+                            margin-top: 0;
+                            padding: .2rem .5rem;
+
+                            &.checked {
+                                background: fade-out($primary, .5);
+                                border: 2px solid $primary-gradient;
+                            }
+
+                            input[type=checkbox] {
+                                margin-right: .5rem;
+                            }
+                        }
+                    }
+
                     .multi-choice {
                         display: flex;
                         flex-flow: row wrap;
 
-                        div {
-                            align-items: center;
+                        label {
                             border: 2px solid $grey;
-                            border-radius: .5rem;
-                            display: flex;
                             flex: 1 0 10rem;
-                            flex-flow: column nowrap;
-                            justify-content: center;
                             margin: .4rem;
+                            text-align: center;
 
                             &:hover {
                                 border: 2px solid $primary;
@@ -132,8 +168,9 @@
                                 border: 2px solid $primary-gradient;
                             }
 
-                            input, label {
+                            input {
                                 margin: 0;
+                                opacity: 0;
                             }
                         }
                     }
