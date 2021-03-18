@@ -350,7 +350,8 @@ form div {
   width: 100%;
 }
 
-form div * {
+form label {
+  display: inline-block;
   margin-top: 1rem;
 }
 
@@ -1368,6 +1369,12 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
   position: absolute;
   width: 100%;
   z-index: 5;
+}
+
+.spotify {
+  margin-top: 1.7rem;
+  min-height: 250px;
+  width: 100%;
 }
 
 footer {
@@ -3096,6 +3103,18 @@ footer .links .centre-links .footer-box-right {
   grid-column: 2 / span 1;
 }
 
+#recording-page .recording-clients .clients-container .entry {
+  border: 1px solid #DFDDD5;
+  border-radius: 1.2rem;
+  margin: 0.85rem 0;
+  padding: 1.5vw;
+}
+
+#recording-page .recording-clients .clients-container .entry .info h3 {
+  border-bottom: 1px solid #DFDDD5;
+  font-weight: 500;
+}
+
 #recording-page .recording-testimonials {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -3128,8 +3147,7 @@ footer .links .centre-links .footer-box-right {
 
 #recording-page .recording-pricing-contact {
   grid-column: 2 / -2;
-  display: -ms-grid;
-  display: grid;
+  display: none;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
@@ -3413,16 +3431,19 @@ footer .links .centre-links .footer-box-right {
 }
 
 #contact-page main .container .form-container .tab label.bypass {
-  margin-top: 0;
-  padding: .2rem .5rem;
+  background: none;
+  border: 1px solid transparent;
+  margin-top: .2rem;
+  padding: 0 .5rem;
 }
 
 #contact-page main .container .form-container .tab label.bypass.checked {
   background: rgba(151, 204, 195, 0.5);
-  border: 2px solid #6A9992;
+  border: 1px solid #6A9992;
 }
 
 #contact-page main .container .form-container .tab label.bypass input[type=checkbox] {
+  height: .9rem;
   margin-right: .5rem;
 }
 

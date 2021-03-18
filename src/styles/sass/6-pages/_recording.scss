@@ -698,6 +698,22 @@
 
     .recording-clients {
         @include grid-column(left);
+
+        .clients-container {
+            .entry {
+                border: 1px solid $grey;
+                border-radius: 1.2rem;
+                margin: $margin-top/2 0;
+                padding: $gutter/2;
+
+                .info {
+                    h3 {
+                        border-bottom: 1px solid $grey;
+                        font-weight: $semi-bold;
+                    }
+                }
+            }
+        }
     }
 
     .recording-testimonials {
@@ -724,7 +740,8 @@
     .recording-pricing-contact {
         @include grid-column(fill);
 
-        display: grid;
+        // display: grid;
+        display: none;
         grid-template-columns: 1fr;
 
         @include media-query(tablet-landscape-up) {

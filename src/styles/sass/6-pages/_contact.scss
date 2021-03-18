@@ -133,15 +133,18 @@
                         border-radius: .5rem;
 
                         &.bypass {
-                            margin-top: 0;
-                            padding: .2rem .5rem;
+                            background: none;
+                            border: 1px solid transparent;
+                            margin-top: .2rem;
+                            padding: 0 .5rem;
 
                             &.checked {
                                 background: fade-out($primary, .5);
-                                border: 2px solid $primary-gradient;
+                                border: 1px solid $primary-gradient;
                             }
 
                             input[type=checkbox] {
+                                height: .9rem;
                                 margin-right: .5rem;
                             }
                         }

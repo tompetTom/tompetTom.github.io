@@ -378,9 +378,9 @@ $(document).ready(() => {
     $('.bypass').on('click', event => {
         let label = event.currentTarget;
         if (!$(label).hasClass('checked')) {
-            $('.bypassable').addClass('disabled').prop('disabled', true);
+            $('.bypassable').addClass('disabled').prop('disabled', true).attr('placeholder', '');
         } else {
-            $('.bypassable').removeClass('disabled').prop('disabled', false);
+            $('.bypassable').removeClass('disabled').prop('disabled', false).attr('placeholder', 'e.g. Clarinet for short film');
         }
     });
 
