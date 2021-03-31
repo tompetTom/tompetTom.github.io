@@ -512,19 +512,13 @@ $(document).ready(() => {
     $('.show-hide').on('click', e => {
         var button = $(e.currentTarget);
         var section = button.closest('section');
-        // var id = section.attr('id');
         if (section.hasClass('full')) {
-            console.log('full (1)');
             scrollToElement(section);
-            console.log('full (2)');
             section.removeClass('full');
             section.addClass('short');
-            console.log('full (3)');
         } else {
-            console.log('short (1)');
             section.removeClass('short');
             section.addClass('full');
-            console.log('short (2)');
         };
     });
 });

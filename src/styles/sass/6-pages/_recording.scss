@@ -43,7 +43,13 @@
         }
 
         .quote-form-top {
-            background: contain no-repeat url(../../../images/pages/recording.svg);
+            align-self: end;
+
+            svg {
+                margin: 0 auto;
+                max-width: 30vw;
+                width: 65%;
+            }
         }
 
         form {
@@ -720,6 +726,11 @@
         @include grid-column(right);
         div {
             p {
+                border: 1px solid $grey;
+                border-radius: 1.2rem;
+                margin: $margin-top/2 0;
+                padding: $gutter/2;
+                
                 span {
                     display: block;
                     font-style: italic;

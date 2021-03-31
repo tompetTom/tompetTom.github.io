@@ -26,14 +26,24 @@ nav {
             }
 
             a {
+                border-radius: .7em;
+                padding: .5em;
+
                 svg {
                     height: 10vw;
                     max-height: 50px;
                 }
 
                 &.current {
-                    color: $accent;
-                    text-decoration: overline;
+                    background: $light;
+                    border: 2px solid $black;
+                    // border-radius: .7em;
+                    // padding: .5em;
+
+                    &:hover {
+                        background: none;
+                        color: inherit;
+                    }
                 }
 
                 &:active {
