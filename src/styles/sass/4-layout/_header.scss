@@ -11,6 +11,11 @@ header {
     width: 100%;
     z-index: 20;
 
+    // .buffer {
+    //     border: 1px solid red;
+    //     width: 50%;
+    // }
+
     .home-page & {
         @include media-query(single-column) {
             height: 30vh;

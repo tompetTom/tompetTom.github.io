@@ -25,7 +25,8 @@ $warm-grey: #B8B3A1;
 $alt-grey: #DFDDD5;
 
 // $white: #FCFAF0;
-$white: #FEFCF4;
+// $white: #FEFCF4;
+$white: #FFF;
 $black: $purple-black;
 $black-gradient: #07050A;
 $dark: $rich-dark-purple;
@@ -45,7 +46,8 @@ $light-bg: fade-out($light, .5);
 $accent: $chartreuse;
 $accent-gradient: #D7C34F;
 $accent-bg: fade-out($accent, .5);
-$white-gradient: #FEFDF9;
+//$white-gradient: #FEFDF9;
+$white-gradient: $white;
 $transparent: fade-out($white, 1);
 
 // LAYOUT

@@ -59,6 +59,8 @@ if (isset($_POST['Email'])) {
 
     if (strlen($error_message) > 0) {
         problem($error_message);
+    } else {
+        echo "Thank you\n";
     }
 
     $email_message = "Form details below.\n\n";

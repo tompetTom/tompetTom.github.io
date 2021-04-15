@@ -1,7 +1,6 @@
 footer {
     @include grid-column(full-width);
     align-items: center;
-    // background-color: $grey;
     display: flex;
     justify-content: center;
     padding: 2rem $gutter;
