@@ -111,12 +111,6 @@ body {
   background-color: #FFF;
 }
 
-@media (max-width: 599px) {
-  body {
-    text-align: center;
-  }
-}
-
 .hide {
   display: none;
 }
@@ -1026,6 +1020,16 @@ nav ul li a:active svg .stroke {
 .nav-mobile ul li, .index-nav-mobile ul li {
   background: no-repeat url(../../../images/backgrounds/squircle-one-grey.svg);
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
@@ -1057,7 +1061,11 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li a, .index-nav-mobile ul li a, .nav-mobile ul li button, .index-nav-mobile ul li button {
+  bottom: .2rem;
   color: #140E1B;
+  margin: 0;
+  position: relative;
+  width: 100%;
 }
 
 .nav-mobile ul li a:active, .index-nav-mobile ul li a:active, .nav-mobile ul li button:active, .index-nav-mobile ul li button:active {
@@ -1075,7 +1083,8 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li a svg, .index-nav-mobile ul li a svg, .nav-mobile ul li button svg, .index-nav-mobile ul li button svg {
-  height: 100%;
+  margin: 0;
+  position: static;
 }
 
 .nav-mobile ul li a svg .stroke, .index-nav-mobile ul li a svg .stroke, .nav-mobile ul li a svg .square, .index-nav-mobile ul li a svg .square, .nav-mobile ul li button svg .stroke, .index-nav-mobile ul li button svg .stroke, .nav-mobile ul li button svg .square, .index-nav-mobile ul li button svg .square {
@@ -1828,6 +1837,7 @@ footer .links .centre-links .footer-box-right {
 .instrument-list {
   margin-top: .8em;
   position: relative;
+  text-align: center;
 }
 
 @media (min-width: 600px) {
@@ -2222,6 +2232,22 @@ footer .links .centre-links .footer-box-right {
   margin-top: 0;
 }
 
+.home-page .recording .instruments-section {
+  margin-top: 1.7rem;
+}
+
+@media (min-width: 900px) {
+  .home-page .recording .instruments-section {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .home-page .recording .instruments-section h3 {
+    text-align: center;
+  }
+}
+
 .home-page .recording #intro {
   margin-top: 0;
   padding-top: 1rem;
@@ -2289,8 +2315,10 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
-.home-page .contact-form form .button-send {
-  margin-bottom: 1.7rem;
+@media (min-width: 900px) {
+  .home-page .contact-form form .button-send {
+    margin-bottom: 1.7rem;
+  }
 }
 
 @media (min-width: 900px) {

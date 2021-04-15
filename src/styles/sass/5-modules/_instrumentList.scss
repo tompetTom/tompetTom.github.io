@@ -1,6 +1,7 @@
 .instrument-list {
     margin-top: .8em;
     position: relative;
+    text-align: center;
 
     @include media-query(tablet-portrait-up) {
         margin-left: 3vw;

@@ -235,6 +235,18 @@
 
         .instruments-section {
             @extend section;
+
+            margin-top: $margin-top;
+
+            @include media-query(tablet-landscape-up) {
+                margin-top: 0;
+            }
+
+            h3 {
+                @include media-query(mobile) {
+                    text-align: center;
+                }
+            }
         }
 
         #intro {
@@ -281,7 +293,9 @@
     .contact-form {
         form {
             .button-send {
-                margin-bottom: $margin-top;
+                @include media-query(tablet-landscape-up) {
+                    margin-bottom: $margin-top;
+                }
             }
         }
     }
