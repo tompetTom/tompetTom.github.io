@@ -290,25 +290,15 @@
         @include grid-column(right);
     }
 
-    .contact-form {
-        form {
-            .button-send {
-                @include media-query(tablet-landscape-up) {
-                    margin-bottom: $margin-top;
-                }
-            }
-        }
-    }
-
     footer {
-        @include media-query(tablet-landscape-up) {
-            @include grid-column(right);
-        }
+        // @include media-query(tablet-landscape-up) {
+        //     @include grid-column(right);
+        // }
 
         .links {
-            @include media-query(desktop-up) {
-                margin-top: 4rem;
-            }
+            // @include media-query(desktop-up) {
+            //     margin-top: 4rem;
+            // }
 
             .social-icons {
                 position: relative;

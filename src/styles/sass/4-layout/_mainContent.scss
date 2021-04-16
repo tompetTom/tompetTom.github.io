@@ -66,9 +66,12 @@ section {
                     margin-top: .7em;
 
                     &.recording-quotee {
+                        line-height: 1em;
                         margin: .7em 2em 0 2em;
                         max-width: 50%;
                         float: right;
+                        font-size: .6em;
+                        font-weight: $normal;
                     }
                 }
             }

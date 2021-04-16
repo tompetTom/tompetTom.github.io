@@ -1,5 +1,5 @@
 .contact-form {
-    @include grid-column(left);
+    @include grid-column(fill);
     margin: $margin-top 0;
 
         @include media-query(tablet-landscape-up) {
@@ -11,17 +11,25 @@
         form {
             padding: 0;
 
-            div {
-                margin: 0;
-                width: 100%;
+            fieldset {
+                display: grid;
+                gap: $gutter;
+                grid-template-columns: 1fr;
 
-                * {
-                    margin-top: 1rem;
+                @include media-query(tablet-landscape-up) {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                div {
+                    margin: 0;
+                    width: 100%;
                 }
             }
 
-            .details-submit {
-                text-align: right;
+            button {
+                @include media-query(tablet-landscape-up) {
+                    margin: 0;
+                }
             }
         }
     }

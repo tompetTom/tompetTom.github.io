@@ -428,7 +428,7 @@
         <section id="contact" class="contact-form">
             <div>
                 <h2>Get in touch</h2>
-                <form action="./form_handler.php" method="POST">
+                <!-- <form action="./form_handler.php" method="POST">
                     <div class="message">
                         <textarea name="Message" cols="10" rows="6" placeholder="Message"></textarea>
                     </div>
@@ -441,6 +441,27 @@
                         <path class="grey"
                             d="M23.75,18.26c-12,3.12-15.83,20.14-14,32.61C12.09,66.24,20.58,89.7,44.26,93c27.35,3.84,36.95-9,41.35-23.45,3.6-11.79,10.28-56.46-2.1-61.69C66.94.87,63,19.3,50,21.79,40.79,23.55,33.59,15.72,23.75,18.26Z" />
                     </svg>
+                </form> -->
+                <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzbyzzjp" method="post">
+                    <fieldset id="fs-frm-inputs">
+                        <div class="message">
+                            <label for="message">Message</label>
+                            <textarea rows="5" name="message" id="message" placeholder="What are you after?" required></textarea>
+                            <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                        </div>
+                        <div class="details-submit">
+                            <label for="full-name">Name</label>
+                            <input type="text" name="name" id="full-name" placeholder="Penelope Strawberry" required>
+                            <label for="email-address">Email Address</label>
+                            <input type="email" name="_replyto" id="email-address" placeholder="penelope@email.com" required>
+                        </div>
+                    </fieldset>
+                    <!-- <input type="submit" value="Submit"> -->
+                    <button class="button-send" type="submit">Send</button>
+                    <!-- <svg class="blob" viewbox="0 -10 100 120">
+                        <path class="grey"
+                            d="M23.75,18.26c-12,3.12-15.83,20.14-14,32.61C12.09,66.24,20.58,89.7,44.26,93c27.35,3.84,36.95-9,41.35-23.45,3.6-11.79,10.28-56.46-2.1-61.69C66.94.87,63,19.3,50,21.79,40.79,23.55,33.59,15.72,23.75,18.26Z" />
+                    </svg> -->
                 </form>
             </div>
         </section>

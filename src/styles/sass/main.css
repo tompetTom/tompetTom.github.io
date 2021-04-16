@@ -1356,9 +1356,12 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
 }
 
 .testimonial .slick-quote .bq-container blockquote span.recording-quotee {
+  line-height: 1em;
   margin: .7em 2em 0 2em;
   max-width: 50%;
   float: right;
+  font-size: .6em;
+  font-weight: 400;
 }
 
 .youtube-container {
@@ -1487,9 +1490,7 @@ footer .links .centre-links .footer-box-right {
 }
 
 .contact-form {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / span 1;
+  grid-column: 2 / -2;
   margin: 1.7rem 0;
 }
 
@@ -1503,17 +1504,30 @@ footer .links .centre-links .footer-box-right {
   padding: 0;
 }
 
-.contact-form div form div {
+.contact-form div form fieldset {
+  display: -ms-grid;
+  display: grid;
+  gap: 3vw;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .contact-form div form fieldset {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-form div form fieldset div {
   margin: 0;
   width: 100%;
 }
 
-.contact-form div form div * {
-  margin-top: 1rem;
-}
-
-.contact-form div form .details-submit {
-  text-align: right;
+@media (min-width: 900px) {
+  .contact-form div form button {
+    margin: 0;
+  }
 }
 
 .youtube-aspect-ratio, .youtube-aspect-ratio-slick {
@@ -2312,34 +2326,6 @@ footer .links .centre-links .footer-box-right {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3 / span 1;
-  }
-}
-
-@media (min-width: 900px) {
-  .home-page .contact-form form .button-send {
-    margin-bottom: 1.7rem;
-  }
-}
-
-@media (min-width: 900px) {
-  .home-page footer {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2 / span 1;
-  }
-}
-
-@media (min-width: 900px) and (min-width: 900px) {
-  .home-page footer {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3 / span 1;
-  }
-}
-
-@media (min-width: 1250px) {
-  .home-page footer .links {
-    margin-top: 4rem;
   }
 }
 
