@@ -1889,6 +1889,7 @@ footer .links .centre-links .footer-box-right {
 @media (min-width: 600px) {
   .instrument-list {
     margin-left: 3vw;
+    text-align: left;
     width: 8em;
   }
 }

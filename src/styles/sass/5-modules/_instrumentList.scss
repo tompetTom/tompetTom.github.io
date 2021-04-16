@@ -5,6 +5,7 @@
 
     @include media-query(tablet-portrait-up) {
         margin-left: 3vw;
+        text-align: left;
         width: 8em;
     }
 
