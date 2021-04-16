@@ -7,7 +7,6 @@
         }
 
     div {
-
         form {
             padding: 0;
 
@@ -29,6 +28,15 @@
             button {
                 @include media-query(tablet-landscape-up) {
                     margin: 0;
+                }
+            }
+
+            svg {
+                float: left;
+                width: 100%;
+
+                @include media-query(tablet-landscape-up) {
+                    width: 50%;
                 }
             }
         }

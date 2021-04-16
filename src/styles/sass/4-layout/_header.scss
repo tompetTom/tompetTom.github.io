@@ -282,7 +282,12 @@ header {
         }
     }
 
-    svg {
+    .page-icon {
+        border: 1px solid red;
+        width: 2rem;
+    }
+
+    svg:not(.page-icon) {
         bottom: 5%;
         max-height: 70%;
         position: absolute;

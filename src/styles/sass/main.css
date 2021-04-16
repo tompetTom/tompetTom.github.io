@@ -843,7 +843,12 @@ header #title .tagline span {
   }
 }
 
-.landing-section svg {
+.landing-section .page-icon {
+  border: 1px solid red;
+  width: 2rem;
+}
+
+.landing-section svg:not(.page-icon) {
   bottom: 5%;
   max-height: 70%;
   position: absolute;
@@ -852,20 +857,20 @@ header #title .tagline span {
 }
 
 @media (max-width: 899px) and (orientation: landscape) {
-  .landing-section svg {
+  .landing-section svg:not(.page-icon) {
     right: -3vw;
     width: 50vw;
   }
 }
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
-  .landing-section svg {
+  .landing-section svg:not(.page-icon) {
     max-width: 100vw;
   }
 }
 
 @media (min-width: 900px) {
-  .landing-section svg {
+  .landing-section svg:not(.page-icon) {
     height: 70vh;
     max-width: 60vw;
     top: 20%;
@@ -875,7 +880,7 @@ header #title .tagline span {
 }
 
 @media (min-width: 1250px) {
-  .landing-section svg {
+  .landing-section svg:not(.page-icon) {
     height: auto;
     max-width: 60vw;
     top: 7.3rem;
@@ -884,27 +889,27 @@ header #title .tagline span {
   }
 }
 
-.landing-section svg #colour path {
+.landing-section svg:not(.page-icon) #colour path {
   stroke: none;
 }
 
-.landing-section svg #colour path.recorder {
+.landing-section svg:not(.page-icon) #colour path.recorder {
   fill: #E6B5B5;
 }
 
-.landing-section svg #colour path.clarinet {
+.landing-section svg:not(.page-icon) #colour path.clarinet {
   fill: #B99ADB;
 }
 
-.landing-section svg #colour path.flute {
+.landing-section svg:not(.page-icon) #colour path.flute {
   fill: #DFDDD5;
 }
 
-.landing-section svg #colour path.e-flute {
+.landing-section svg:not(.page-icon) #colour path.e-flute {
   fill: #97CCC3;
 }
 
-.landing-section svg #colour path.sax {
+.landing-section svg:not(.page-icon) #colour path.sax {
   fill: #CFB72F;
 }
 
@@ -946,13 +951,12 @@ nav ul li a svg {
 }
 
 nav ul li a.current {
-  background: #E6B5B5;
-  border: 2px solid #140E1B;
+  border: 2px solid #E6B5B5;
 }
 
 nav ul li a.current:hover {
-  background: none;
-  color: inherit;
+  border: 2px solid #FFF;
+  color: #E6B5B5;
 }
 
 nav ul li a:active {
@@ -1360,7 +1364,7 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
   margin: .7em 2em 0 2em;
   max-width: 50%;
   float: right;
-  font-size: .6em;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -1410,6 +1414,23 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 2rem 3vw;
+}
+
+footer .links .social-icons {
+  position: relative;
+  top: .5rem;
+}
+
+footer .links .social-icons a {
+  display: inline-block;
+  position: relative;
+  width: 1.1rem;
+}
+
+footer .links .social-icons a img {
+  height: 1rem;
+  position: absolute;
+  left: 0;
 }
 
 footer .links {
@@ -1527,6 +1548,17 @@ footer .links .centre-links .footer-box-right {
 @media (min-width: 900px) {
   .contact-form div form button {
     margin: 0;
+  }
+}
+
+.contact-form div form svg {
+  float: left;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .contact-form div form svg {
+    width: 50%;
   }
 }
 
@@ -2329,23 +2361,6 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
-.home-page footer .links .social-icons {
-  position: relative;
-  top: .5rem;
-}
-
-.home-page footer .links .social-icons a {
-  display: inline-block;
-  position: relative;
-  width: 1.1rem;
-}
-
-.home-page footer .links .social-icons a img {
-  height: 1rem;
-  position: absolute;
-  left: 0;
-}
-
 @media (max-width: 899px) and (orientation: landscape) {
   #recording-page header {
     height: 8rem;
@@ -2408,17 +2423,10 @@ footer .links .centre-links .footer-box-right {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  padding-left: 1rem;
 }
 
 #recording-page .first-section form textarea {
-  height: 5rem;
-}
-
-@media (min-width: 1250px) {
-  #recording-page .first-section form textarea {
-    height: 10rem;
-  }
+  height: 8rem;
 }
 
 #recording-page .recording-instruments-intro {

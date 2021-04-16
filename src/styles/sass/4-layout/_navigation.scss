@@ -35,14 +35,11 @@ nav {
                 }
 
                 &.current {
-                    background: $light;
-                    border: 2px solid $black;
-                    // border-radius: .7em;
-                    // padding: .5em;
+                    border: 2px solid $light;
 
                     &:hover {
-                        background: none;
-                        color: inherit;
+                        border: 2px solid $white;
+                        color: $light;
                     }
                 }
 

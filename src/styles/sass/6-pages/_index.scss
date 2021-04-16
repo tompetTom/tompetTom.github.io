@@ -290,32 +290,24 @@
         @include grid-column(right);
     }
 
-    footer {
-        // @include media-query(tablet-landscape-up) {
-        //     @include grid-column(right);
-        // }
-
-        .links {
-            // @include media-query(desktop-up) {
-            //     margin-top: 4rem;
-            // }
-
-            .social-icons {
-                position: relative;
-                top: .5rem;
+    // footer {
+    //     .links {
+    //         .social-icons {
+    //             position: relative;
+    //             top: .5rem;
             
-                a {
-                    display: inline-block;
-                    position: relative;
-                    width: 1.1rem;
+    //             a {
+    //                 display: inline-block;
+    //                 position: relative;
+    //                 width: 1.1rem;
         
-                    img {
-                        height: 1rem;
-                        position: absolute;
-                        left: 0;
-                    }
-                }
-            }
-        }
-    }
+    //                 img {
+    //                     height: 1rem;
+    //                     position: absolute;
+    //                     left: 0;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }

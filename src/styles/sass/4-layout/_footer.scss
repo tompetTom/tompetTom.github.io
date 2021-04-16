@@ -7,6 +7,25 @@ footer {
     // position: relative;
 
     .links {
+        .social-icons {
+            position: relative;
+            top: .5rem;
+
+            a {
+                display: inline-block;
+                position: relative;
+                width: 1.1rem;
+
+                img {
+                    height: 1rem;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    .links {
         font-size: $small-font;
         text-align: center;
         width: 13rem;

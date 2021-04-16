@@ -54,16 +54,9 @@
 
         form {
             align-items: end;
-            // background: no-repeat url(../../../images/backgrounds/blobs/square-blob-1.svg);
-            // display: none;
-            padding-left: 1rem;
 
             textarea {
-                height: 5rem;
-
-                @include media-query(desktop-up) {
-                    height: 10rem;
-                }
+                height: 8rem;
             }
         }
     }
