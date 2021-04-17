@@ -80,7 +80,7 @@ nav {
     }
 
     ul {
-        // justify-content: space-between;
+        justify-content: space-between;
 
         li {
             margin-right: $gutter;
@@ -89,7 +89,8 @@ nav {
 }
 
 %nav-mobile-base {
-    font-size: .8rem;
+    font-size: .7rem;
+    text-align: center;
     z-index: 5;
     
     @include media-query(tablet-portrait-up) {
@@ -103,12 +104,12 @@ nav {
     ul {
 
         li {
+            align-items: center;
             background: no-repeat url(../../../images/backgrounds/squircle-one-grey.svg);
             text-align: center;
             display: flex;
             flex-grow: 0;
             justify-content: center;
-            margin-left: .3rem;
             padding: 0;
             transition: transform $default-transition-time;
             // width: 5rem;
@@ -140,7 +141,7 @@ nav {
 
             a, button {
                 border: none;
-                bottom: .2rem;
+                // bottom: .2rem;
                 color: $black;
                 margin: 0;
                 position: relative;
@@ -158,8 +159,9 @@ nav {
                 }
 
                 p {
-                    margin-top: -.4rem;
-                    padding: .1em .5em;
+                    line-height: .5rem;
+                    // margin-top: -.4rem;
+                    // padding: .1em .5em;
                 }
 
                 svg {
@@ -202,6 +204,14 @@ nav {
     bottom: 1rem;
     position: fixed;
     right: 1rem;
+
+    ul {
+        flex-flow: column wrap;
+
+        li {
+            margin-bottom: .3rem;
+        }
+    }
 }
 
 .index-nav-mobile {
@@ -224,12 +234,13 @@ nav {
     }
 
     ul {
-        height: 4rem;
+        height: 3.5rem;
         justify-content: space-around;
         margin: 1rem auto;
         max-width: 400px;
-        padding: 0 .7em;
+        // padding: 0 .7em;
         text-align: center;
+        width: 100%;
 
         .hamburger-close {
             display: none;

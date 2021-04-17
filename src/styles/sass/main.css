@@ -111,7 +111,7 @@ body {
   background-color: #FFF;
 }
 
-.hide {
+.hide, .honeypot {
   display: none;
 }
 
@@ -779,7 +779,7 @@ header #title .tagline span {
   position: absolute;
   right: 3vw;
   top: 3vw;
-  width: 10rem;
+  width: 20vw;
   z-index: 100;
 }
 
@@ -1018,12 +1018,19 @@ nav ul li a:active svg .stroke {
   }
 }
 
+.nav-desktop ul, .nav-main ul {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .nav-desktop ul li, .nav-main ul li {
   margin-right: 3vw;
 }
 
 .nav-mobile, .index-nav-mobile {
-  font-size: .8rem;
+  font-size: .7rem;
+  text-align: center;
   z-index: 5;
 }
 
@@ -1040,6 +1047,9 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li, .index-nav-mobile ul li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: no-repeat url(../../../images/backgrounds/squircle-one-grey.svg);
   text-align: center;
   display: -webkit-box;
@@ -1051,7 +1061,6 @@ nav ul li a:active svg .stroke {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: .3rem;
   padding: 0;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
@@ -1086,7 +1095,6 @@ nav ul li a:active svg .stroke {
 
 .nav-mobile ul li a, .index-nav-mobile ul li a, .nav-mobile ul li button, .index-nav-mobile ul li button {
   border: none;
-  bottom: .2rem;
   color: #140E1B;
   margin: 0;
   position: relative;
@@ -1103,8 +1111,7 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li a p, .index-nav-mobile ul li a p, .nav-mobile ul li button p, .index-nav-mobile ul li button p {
-  margin-top: -.4rem;
-  padding: .1em .5em;
+  line-height: .5rem;
 }
 
 .nav-mobile ul li a svg, .index-nav-mobile ul li a svg, .nav-mobile ul li button svg, .index-nav-mobile ul li button svg {
@@ -1138,6 +1145,17 @@ nav ul li a:active svg .stroke {
   right: 1rem;
 }
 
+.nav-mobile ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.nav-mobile ul li {
+  margin-bottom: .3rem;
+}
+
 .index-nav-mobile {
   grid-column: 1 / -1;
   position: -webkit-sticky;
@@ -1164,13 +1182,13 @@ nav ul li a:active svg .stroke {
 }
 
 .index-nav-mobile ul {
-  height: 4rem;
+  height: 3.5rem;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: 1rem auto;
   max-width: 400px;
-  padding: 0 .7em;
   text-align: center;
+  width: 100%;
 }
 
 .index-nav-mobile ul .hamburger-close {
@@ -1324,6 +1342,15 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
 @media (min-width: 900px) {
   .first-section {
     margin-top: 20vh;
+  }
+}
+
+@media (max-width: 599px) {
+  .page-title::before {
+    content: url(../../../images/backgrounds/blobs/underline-blob-2.svg);
+    display: block;
+    width: 100%;
+    z-index: -1;
   }
 }
 
@@ -2397,7 +2424,7 @@ footer .links .centre-links .footer-box-right {
   gap: 3vw;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  margin-top: 20vh;
+  margin-top: 1rem;
 }
 
 @media (min-width: 600px) {

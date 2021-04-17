@@ -219,7 +219,7 @@ header {
     position: absolute;
     right: $gutter;
     top: $gutter;
-    width: 10rem;
+    width: 20vw;
     z-index: 100;
 
     @include media-query(tablet-portrait-up) {

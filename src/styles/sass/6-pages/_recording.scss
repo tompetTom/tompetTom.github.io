@@ -17,7 +17,7 @@
         display: grid;
         gap: $gutter;
         grid-template-columns: 1fr;
-        margin-top: 20vh;
+        margin-top: 1rem;
 
         @include media-query(tablet-portrait-up) {
             margin-top: 25vh;

@@ -25,6 +25,17 @@ section {
     @include beneath-header;
 }
 
+.page-title {
+    &::before {
+        @include media-query(mobile) {
+            content: url(../../../images/backgrounds/blobs/underline-blob-2.svg);
+            display: block;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+}
+
 .content {
     position: relative;
 }

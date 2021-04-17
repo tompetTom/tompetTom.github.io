@@ -20,11 +20,10 @@
             </a>
             <nav class="nav-main">
                 <ul>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./recording.html">Recording</a></li>
-                    <li><a href="./media.html">Media</a></li>
-                    <li><a href="./lessons.html">Lessons</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a class="current" href="./contact.html">Contact</a></li>
+                    <li><a href="./index.html#lessons">Lessons</a></li>
+                    <li><a class="current scroll-link" href="#">Contact</a></li>
                 </ul>
             </nav>
             <nav class="nav-mobile">
@@ -107,15 +106,6 @@
                         <h2>What do you want to talk about?</h2>
                         <div class="options box">
                             <button class="contact-option" id="contact-option-recording">
-                                <svg viewbox="0 0 100 100">
-                                    <path d="M21.71,43.09V55.28c0,7.65,2.95,13.93,8.53,18.18,4.51,3.44,10.55,5.41,17.55,5.75h4.42c7-.34,13-2.31,17.55-5.75,5.58-4.25,8.53-10.53,8.53-18.18V43.16"/>
-                                    <path d="M30.91,91.31H69.09"/>
-                                    <path d="M50,79.21v12.1"/>
-                                    <path d="M35.38,67.76C39,70.17,44,71.39,50.11,71.39s11.11-1.22,14.73-3.63c4.31-2.89,6.6-7.47,6.6-13.25V26.6c0-11.39-8.77-19.34-21.33-19.34s-21.33,8-21.33,19.34V54.51C28.78,60.29,31.07,64.87,35.38,67.76Z"/>
-                                    <path d="M29.47,31.6H49.06"/>
-                                    <path d="M29.47,42.19H49.06"/>
-                                    <path d="M29.47,52.79H49.06"/>
-                                </svg>
                                 <h3>Recording</h3>
                             </button>
                             <button class="contact-option" id="contact-option-performing">
@@ -132,10 +122,11 @@
                             </button>
                         </div>
                     </div>
-                    <form method="post" id="recording-contact-form">
+                    <form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzbyzzjp" method="post" id="recording-contact-form">
                         <div class="tab">
                             <h2>Let's talk about recording</h2>
                             <label for="Description">What's the project?</label>
+                            <input type="hidden" name="_subject" id="email-subject" value="Recording Form Submission">
                             <input class="bypassable" type="text" name="Description" id="description" value="" placeholder="e.g. Saxophone backgrounds">
                             <label class="bypass"><input type="checkbox" name="Bypass">I don't have a specific project</label><br>
                             <label for="Message">Talk about what you're looking for</label>
@@ -148,7 +139,7 @@
                             <button type="submit">Send message</button>
                         </div>
                     </form>
-                    <form method="post" id="performing-contact-form">
+                    <form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzbyzzjp" method="post" id="performing-contact-form">
                         <div class="tab">
                             <h2>Performing</h2>
                             <label for="Description">What's the gig?</label><br>
@@ -166,7 +157,7 @@
                             <button type="submit">Send message</button>
                         </div>
                     </form>
-                    <form method="post" id="lessons-contact-form">
+                    <form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzbyzzjp" method="post" id="lessons-contact-form">
                         <div class="tab">
                             <h2>Who are the lessons for?</h2>
                             <div class="multi-choice">
@@ -223,7 +214,7 @@
                             <button type="submit">Finish</button>
                         </div>
                     </form>
-                    <form method="post" id="hello-contact-form">
+                    <form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzbyzzjp" method="post" id="hello-contact-form">
                         <div class="tab">
                             <h2>Hello!</h2>
                             <label for="Subject">Subject (optional)</label><br>
@@ -237,7 +228,7 @@
                             <button type="submit">Send message</button>
                         </div>
                     </form>
-                    <form method="post" id="other-contact-form">
+                    <form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzbyzzjp" method="post" id="other-contact-form">
                         <div class="tab">
                             <h2>What do you want to know?</h2>
                             <label for="Subject">Subject</label><br>
@@ -262,50 +253,62 @@
         </main>
         <footer>
             <div class="links">
-                <div class="centre-links">
-                    <div class="footer-box-left">
-                        <a href="https://www.luxmusicaelondon.com">Lux Musicae</a>
-                    </div>
-                    <div class="footer-box-right">
-                        <div class="social-icons">
-                            <a href="https://www.instagram.com/sophiecreaner/" target="_blank">
-                                <svg viewBox="0 0 50 50">
-                                    <path d="M45.21,25c0,18.37-1.84,20.21-20.21,20.21S4.79,43.37,4.79,25a76.06,76.06,0,0,1,.49-10.37C6.56,5.87,10.93,4.79,25,4.79,43.37,4.79,45.21,6.63,45.21,25Z"/>
-                                    <circle cx="25" cy="25" r="9.16"/>
-                                    <circle cx="36.77" cy="13.18" r="1.44"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.youtube.com/channel/UCOPsAUdzl8u-es5UiFc66tg" target="_blank">
-                                <svg viewbox="0 0 50 50">
-                                    <path d="M1.81,25C1.81,9.3,2.27,9,25,9s23.19.32,23.19,16S47.73,41,25,41,1.81,40.7,1.81,25"/>
-                                    <path d="M31.48,24.57,21.3,18.32a.5.5,0,0,0-.76.42V31.26a.5.5,0,0,0,.76.42l10.18-6.25A.51.51,0,0,0,31.48,24.57Z"/>
-                                </svg>
-                            </a>
-                            <a href="https://soundcloud.com/ophiereaner" target="_blank">
-                                <svg viewbox="0 0 50 50">
-                                    <path d="M47.69,28.41a5.16,5.16,0,0,0-5.15-5.3,5.45,5.45,0,0,0-2.87.65,10,10,0,0,0-10-9.78,8.15,8.15,0,0,0-3.65.91.73.73,0,0,0-.44.67V33.28a.74.74,0,0,0,.74.74L42.27,34A5.31,5.31,0,0,0,47.69,28.41Z"/>
-                                    <line x1="16.2" y1="34.02" x2="16.2" y2="17.06"/>
-                                    <line x1="11.57" y1="34.02" x2="11.57" y2="19.48"/>
-                                    <line x1="6.94" y1="34.02" x2="6.94" y2="23.84"/>
-                                    <line x1="2.31" y1="31.68" x2="2.31" y2="26.17"/>
-                                    <line x1="20.82" y1="34.02" x2="20.82" y2="17.34"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.tiktok.com/@sophiecreaner" target="_blank">
-                                <svg viewbox="0 0 50 50">
-                                    <path class="blue" d="M39.31,10.81a10.81,10.81,0,0,1-2.7-7.18H34.5A10.94,10.94,0,0,0,39.31,10.81ZM19.82,26.32a6.63,6.63,0,0,0-3.05,12.49,6.61,6.61,0,0,1,5.35-10.49,6.86,6.86,0,0,1,2,.31v-8a14.25,14.25,0,0,0-2-.15h-.35v6.1A7.08,7.08,0,0,0,19.82,26.32Z"/>
-                                    <path class="blue" d="M45.27,14.36v6.1a18.7,18.7,0,0,1-10.94-3.55V33A14.51,14.51,0,0,1,19.82,47.43a14.35,14.35,0,0,1-8.3-2.63A14.48,14.48,0,0,0,36.61,35V19a18.69,18.69,0,0,0,11,3.51V14.6a11.06,11.06,0,0,1-2.29-.24Z"/>
-                                    <path d="M13.8,36.49A6.46,6.46,0,0,1,19,26.24a6.86,6.86,0,0,1,1.91.3V18.69A12.2,12.2,0,0,0,19,18.54H18.7A14.15,14.15,0,0,0,4.79,32.93a14,14,0,0,0,3.88,9.43,14.17,14.17,0,0,0,24.54-9.64V17.07a18.37,18.37,0,0,0,10.71,3.44V12.82a10.59,10.59,0,0,1-2.24-.24l0,0A10.69,10.69,0,0,1,35.85,9.1h0a10.59,10.59,0,0,1-2.64-7H25.5V33a6.47,6.47,0,0,1-11.71,3.53"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="footer-box-left">
-                        <a class="treason" href="https://treasonthemusical.com">Treason</a>
-                    </div>
-                    <div class="footer-box-right">
-                        <a class="sitemap" href="./sitemap.html">Sitemap</a>
-                    </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/sophiecreaner/" target="_blank">
+                        <svg class="instagram-svg" viewBox="0 0 100 100">
+                            <linearGradient id="insta-gradient" x1="50" y1="0" x2="50" y2="100"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" class="stop-purple" />
+                                <stop offset="100%" class="stop-orange" />
+                            </linearGradient>
+                            <path class="instagram-gradient"
+                                d="M70.21,0H29.79A29.82,29.82,0,0,0,0,29.79V70.21A29.82,29.82,0,0,0,29.79,100H70.21A29.82,29.82,0,0,0,100,70.21V29.79A29.82,29.82,0,0,0,70.21,0ZM89.94,70.21A19.73,19.73,0,0,1,70.21,89.94H29.79A19.73,19.73,0,0,1,10.06,70.21V29.79A19.73,19.73,0,0,1,29.79,10.06H70.21A19.73,19.73,0,0,1,89.94,29.79V70.21Z" />
+                            <path class="instagram-gradient"
+                                d="M50,24.14A25.86,25.86,0,1,0,75.86,50,25.89,25.89,0,0,0,50,24.14ZM50,65.8A15.8,15.8,0,1,1,65.8,50,15.8,15.8,0,0,1,50,65.8Z" />
+                            <circle class="instagram-gradient" cx="75.91" cy="24.33" r="6.2" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCOPsAUdzl8u-es5UiFc66tg" target="_blank">
+                        <svg viewbox="0 0 100 100">
+                            <path class="red"
+                                d="M79.25,14.61H20.77A20.77,20.77,0,0,0,0,35.38V64.62A20.77,20.77,0,0,0,20.77,85.39H79.25A20.78,20.78,0,0,0,100,64.62V35.38A20.78,20.78,0,0,0,79.25,14.61Zm-14,36.81-27.35,13a1.1,1.1,0,0,1-1.57-1V36.57a1.09,1.09,0,0,1,1.59-1L65.23,49.45A1.1,1.1,0,0,1,65.2,51.42Z" />
+                        </svg>
+                    </a>
+                    <a href="https://soundcloud.com/ophiereaner" target="_blank">
+                        <svg class="soundcloud-svg" viewbox="0 0 100 100">
+                            <linearGradient id="soundcloud-gradient" x1="50" y1="30" x2="50" y2="70"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" class="stop-orange-gradient" />
+                                <stop offset="100%" class="stop-orange" />
+                            </linearGradient>
+                            <path
+                                d="M100,59.47c0-7-5.17-11-11-11.32a11.71,11.71,0,0,0-6.13,1.4A21.32,21.32,0,0,0,61.58,28.67a17.52,17.52,0,0,0-7.79,1.93,1.59,1.59,0,0,0-.93,1.45V69.86a1.58,1.58,0,0,0,1.58,1.58l34-.11C95.11,71.33,100,66.35,100,59.47Z" />
+                            <line x1="48.92" y1="69.96" x2="48.92" y2="32.66" />
+                            <line x1="38.39" y1="69.96" x2="38.39" y2="38.44" />
+                            <line x1="33.12" y1="69.96" x2="33.12" y2="36.05" />
+                            <line x1="27.85" y1="69.96" x2="27.85" y2="37.66" />
+                            <line x1="22.58" y1="69.96" x2="22.58" y2="40.88" />
+                            <line x1="17.31" y1="69.96" x2="17.31" y2="46.99" />
+                            <line x1="12.04" y1="69.96" x2="12.04" y2="49.6" />
+                            <line x1="6.77" y1="69.96" x2="6.77" y2="50.13" />
+                            <line x1="1.5" y1="65.28" x2="1.5" y2="54.27" />
+                            <line x1="43.65" y1="69.96" x2="43.65" y2="36.61" />
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@sophiecreaner" target="_blank">
+                        <svg viewbox="0 0 100 100">
+                            <path class="blue"
+                                d="M40.24,39.38V35.49a28,28,0,0,0-4.08-.36,30.32,30.32,0,0,0-17.38,55.2A30.28,30.28,0,0,1,40.24,39.38Z" />
+                            <path class="blue"
+                                d="M41,83.52A13.87,13.87,0,0,0,54.81,70.27V4.18H66.88A23.43,23.43,0,0,1,66.53,0H50V66A13.78,13.78,0,0,1,29.8,77.77,13.84,13.84,0,0,0,41,83.52ZM89.43,26.61V22.93a22.57,22.57,0,0,1-12.49-3.77A22.9,22.9,0,0,0,89.43,26.61Z" />
+                            <path class="red"
+                                d="M76.94,19.16a22.76,22.76,0,0,1-5.65-15H66.88A22.85,22.85,0,0,0,76.94,19.16ZM36.16,51.65a13.86,13.86,0,0,0-6.39,26.12A13.83,13.83,0,0,1,41,55.83a15,15,0,0,1,4.09.64V39.67A29.53,29.53,0,0,0,41,39.35h-.74V52.13A14.07,14.07,0,0,0,36.16,51.65Z" />
+                            <path class="red"
+                                d="M89.43,26.61V39.38a39.17,39.17,0,0,1-22.9-7.44V65.51A30.34,30.34,0,0,1,18.78,90.33,30.31,30.31,0,0,0,71.29,69.7V36.22a39.31,39.31,0,0,0,22.93,7.35V27.12a24.13,24.13,0,0,1-4.79-.51Z" />
+                            <path class="fill"
+                                d="M66.53,65.51V31.94a39.14,39.14,0,0,0,22.93,7.35V26.51a22.89,22.89,0,0,1-12.52-7.35,22.85,22.85,0,0,1-10.06-15H54.81V70.27a13.87,13.87,0,0,1-25.08,7.57,13.87,13.87,0,0,1,6.39-26.13,14.15,14.15,0,0,1,4.09.64V39.57A30.28,30.28,0,0,0,18.75,90.68a30,30,0,0,0,17.41,5.14A30.37,30.37,0,0,0,66.53,65.51Z" />
+                        </svg>
+                    </a>
                 </div>
                 <div class="copyright">
                     <p>Copyright &copy; Sophie Creaner 2021</p>
