@@ -1089,6 +1089,10 @@ nav ul li a:active svg .stroke {
   margin-left: 2rem;
 }
 
+.nav-mobile ul li.hamburger-close svg, .index-nav-mobile ul li.hamburger-close svg {
+  width: 3.5rem;
+}
+
 .nav-mobile ul li.hamburger-close .menu, .index-nav-mobile ul li.hamburger-close .menu {
   display: none;
 }
