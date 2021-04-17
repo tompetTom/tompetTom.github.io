@@ -26,6 +26,7 @@ nav {
             }
 
             a {
+                border: 2px solid $white;
                 border-radius: .7em;
                 padding: .5em;
 
@@ -39,12 +40,11 @@ nav {
 
                     &:hover {
                         border: 2px solid $white;
-                        color: $light;
                     }
                 }
 
                 &:active {
-                    text-decoration: overline;
+                    border: 2px solid $light;
 
                     svg {
                         .stroke {
@@ -104,11 +104,11 @@ nav {
 
         li {
             background: no-repeat url(../../../images/backgrounds/squircle-one-grey.svg);
-            // border: 1px solid red;
             text-align: center;
             display: flex;
             flex-grow: 0;
             justify-content: center;
+            margin-left: .3rem;
             padding: 0;
             transition: transform $default-transition-time;
             // width: 5rem;
@@ -131,6 +131,7 @@ nav {
 
             &.hamburger-close {
                 background: no-repeat url(../../../images/backgrounds/squircle-one-turquoise.svg);
+                margin-left: 2rem;
 
                 .menu {
                     display: none;
@@ -138,7 +139,7 @@ nav {
             }
 
             a, button {
-                // border: 1px solid red;
+                border: none;
                 bottom: .2rem;
                 color: $black;
                 margin: 0;
@@ -181,6 +182,8 @@ nav {
                 display: none;
 
                 &.hamburger-close {
+                    display: block;
+
                     .close {
                         display: none;
                     }

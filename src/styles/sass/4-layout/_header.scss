@@ -215,6 +215,18 @@ header {
     // }
 }
 
+.page-icon {
+    position: absolute;
+    right: $gutter;
+    top: $gutter;
+    width: 10rem;
+    z-index: 100;
+
+    @include media-query(tablet-portrait-up) {
+        display: none;
+    }
+}
+
 .tagline {
     font-family: $serif;
     font-size: 1rem;
@@ -280,11 +292,6 @@ header {
         @include media-query(tablet-landscape-up) {
             display: block;
         }
-    }
-
-    .page-icon {
-        border: 1px solid red;
-        width: 2rem;
     }
 
     svg:not(.page-icon) {

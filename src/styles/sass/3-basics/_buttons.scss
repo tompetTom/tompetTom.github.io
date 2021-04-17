@@ -6,6 +6,7 @@ button {
     margin-top: $margin-top;
     padding: .5em 1em;
     transition: $default-transition-time;
+    z-index: 10;
 
     &.button-primary {
         background: no-repeat url(../../../images/backgrounds/blobs/button-2-accent.svg);
@@ -83,6 +84,11 @@ button {
         }
 
         .full & {
+            @include media-query(single-column) {
+                bottom: 2.5rem;
+                left: $gutter;
+                position: fixed;
+            }
 
             &::before {
                 content: "Show less";

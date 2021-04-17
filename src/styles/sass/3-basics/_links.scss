@@ -3,7 +3,7 @@ a {
     transition: $default-transition-time;
 
     &:hover {
-        color: $secondary;
+        color: $light;
         text-decoration: none;
 
         &:after {

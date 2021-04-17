@@ -176,6 +176,7 @@ button {
   padding: .5em 1em;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  z-index: 10;
 }
 
 button.button-primary {
@@ -252,6 +253,14 @@ button.show-hide span.down, button.show-more span.down, button.collapse-instrume
   content: "▼";
 }
 
+@media (max-width: 899px) {
+  .full button.show-hide, .full button.show-more, .full button.collapse-instrument-dropdown {
+    bottom: 2.5rem;
+    left: 3vw;
+    position: fixed;
+  }
+}
+
 .full button.show-hide::before, .full button.show-more::before, .full button.collapse-instrument-dropdown::before {
   content: "Show less";
 }
@@ -315,7 +324,7 @@ a {
 }
 
 a:hover {
-  color: #B99ADB;
+  color: #E6B5B5;
   text-decoration: none;
 }
 
@@ -766,6 +775,20 @@ header #title .tagline span {
   }
 }
 
+.page-icon {
+  position: absolute;
+  right: 3vw;
+  top: 3vw;
+  width: 10rem;
+  z-index: 100;
+}
+
+@media (min-width: 600px) {
+  .page-icon {
+    display: none;
+  }
+}
+
 .tagline {
   font-family: "Raleway", serif;
   font-size: 1rem;
@@ -841,11 +864,6 @@ header #title .tagline span {
   .landing-section .desktop-landing-content {
     display: block;
   }
-}
-
-.landing-section .page-icon {
-  border: 1px solid red;
-  width: 2rem;
 }
 
 .landing-section svg:not(.page-icon) {
@@ -941,6 +959,7 @@ nav ul li .offer:after {
 }
 
 nav ul li a {
+  border: 2px solid #FFF;
   border-radius: .7em;
   padding: .5em;
 }
@@ -956,11 +975,10 @@ nav ul li a.current {
 
 nav ul li a.current:hover {
   border: 2px solid #FFF;
-  color: #E6B5B5;
 }
 
 nav ul li a:active {
-  text-decoration: overline;
+  border: 2px solid #E6B5B5;
 }
 
 nav ul li a:active svg .stroke {
@@ -1033,6 +1051,7 @@ nav ul li a:active svg .stroke {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-left: .3rem;
   padding: 0;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
@@ -1058,6 +1077,7 @@ nav ul li a:active svg .stroke {
 
 .nav-mobile ul li.hamburger-close, .index-nav-mobile ul li.hamburger-close {
   background: no-repeat url(../../../images/backgrounds/squircle-one-turquoise.svg);
+  margin-left: 2rem;
 }
 
 .nav-mobile ul li.hamburger-close .menu, .index-nav-mobile ul li.hamburger-close .menu {
@@ -1065,6 +1085,7 @@ nav ul li a:active svg .stroke {
 }
 
 .nav-mobile ul li a, .index-nav-mobile ul li a, .nav-mobile ul li button, .index-nav-mobile ul li button {
+  border: none;
   bottom: .2rem;
   color: #140E1B;
   margin: 0;
@@ -1097,6 +1118,10 @@ nav ul li a:active svg .stroke {
 
 .closed.nav-mobile ul li, .closed.index-nav-mobile ul li {
   display: none;
+}
+
+.closed.nav-mobile ul li.hamburger-close, .closed.index-nav-mobile ul li.hamburger-close {
+  display: block;
 }
 
 .closed.nav-mobile ul li.hamburger-close .close, .closed.index-nav-mobile ul li.hamburger-close .close {
@@ -2241,8 +2266,6 @@ footer .links .centre-links .footer-box-right {
   display: grid;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  margin-top: -6rem;
-  padding-top: 6rem;
 }
 
 @media (max-width: 599px) {
@@ -2255,13 +2278,6 @@ footer .links .centre-links .footer-box-right {
   .home-page .recording {
     margin-top: 0;
     padding-top: 1.7rem;
-  }
-}
-
-@media (max-width: 899px) and (orientation: landscape) {
-  .home-page .recording {
-    margin-top: -6rem;
-    padding-top: 6rem;
   }
 }
 

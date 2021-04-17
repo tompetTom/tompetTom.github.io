@@ -36,31 +36,39 @@ $(document).ready(() => {
     // scroll to element
     function scrollToElement(link) {
         var target;
+        var scrollDistance;
         if (link.attr('href')) {
             target = link.attr('href');
         } else if (link.attr('id')) {
             target = `#${link.attr('id')}`;
         };
-        var element = $(document).find(target);
-        if (target == '#gear') {
-            $('.process-gear').addClass('pg-right');
-            element = $(document).find('#process');
-        } else if (target == '#process') {
-            $('.process-gear').removeClass('pg-right');
-        };
-        var windowWidth = $(window).width();
-        var windowHeight = $(window).height();
-        var headerHeight;
-        if (windowWidth < 600) {
-            headerHeight = 0;
-        } else if (windowWidth < 900 && windowHeight < windowWidth) {
-            headerHeight = 0;
-        } else if (windowWidth >= 600 && windowWidth < 900 && windowHeight > windowWidth) {
-            headerHeight = 55;
+        if (target == '#') {
+            scrollDistance = 0;
         } else {
-            headerHeight = 67;
-        };
-        var scrollDistance = element.offset().top - headerHeight;
+            var element = $(document).find(target);
+            if (target == '#gear') {
+                $('.process-gear').addClass('pg-right');
+                element = $(document).find('#process');
+            } else if (target == '#process') {
+                $('.process-gear').removeClass('pg-right');
+            };
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+            var headerHeight;
+            if (windowWidth < 600) {
+                headerHeight = 60;
+            } else if (windowWidth < 900 && windowHeight < windowWidth) {
+                headerHeight = 0;
+            } else if (windowWidth >= 600 && windowWidth < 900 && windowHeight > windowWidth) {
+                headerHeight = 55;
+            } else {
+                headerHeight = 67;
+            };
+            scrollDistance = element.offset().top - headerHeight;
+        }
+        if (scrollDistance < 50 && $(document).scrollTop() < 50) {
+            $('html, body').animate({scrollTop: 100}, 500);
+        }
         $('html, body').animate({scrollTop: scrollDistance}, 500);
     };
 
