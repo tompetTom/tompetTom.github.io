@@ -28,6 +28,10 @@ form {
         margin-top: 1rem;
     }
 
+    .invalid {
+        border: 2px solid red !important;
+    }
+
     input:not([type=checkbox]):not([type=radio]),textarea {
         background-color: $white;
         border: 1px solid $black;

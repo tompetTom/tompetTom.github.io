@@ -112,7 +112,7 @@ body {
 }
 
 .hide, .honeypot {
-  display: none;
+  display: none !important;
 }
 
 img {
@@ -356,6 +356,10 @@ form div {
 form label {
   display: inline-block;
   margin-top: 1rem;
+}
+
+form .invalid {
+  border: 2px solid red !important;
 }
 
 form input:not([type=checkbox]):not([type=radio]), form textarea {
@@ -3682,6 +3686,17 @@ footer .links .centre-links .footer-box-right {
   background: #CFB72F;
   border-radius: .5rem;
   width: 100%;
+}
+
+#contact-page main .container .form-container #nextBtn:disabled, #contact-page main .container .form-container button[type=submit]:disabled {
+  background: none;
+  color: #DFDDD5;
+  cursor: default;
+}
+
+#contact-page main .container .form-container #nextBtn:disabled:hover, #contact-page main .container .form-container button[type=submit]:disabled:hover {
+  -webkit-transform: none;
+          transform: none;
 }
 
 #contact-page main .container .background {
