@@ -399,6 +399,23 @@ form *::placeholder {
   color: #b3b1aa;
 }
 
+#nextBtn, .nextBtn, .submitBtn {
+  background: #CFB72F;
+  border-radius: .5rem;
+  width: 100%;
+}
+
+#nextBtn:disabled, .nextBtn:disabled, .submitBtn:disabled {
+  background: none;
+  color: #DFDDD5;
+  cursor: default;
+}
+
+#nextBtn:disabled:hover, .nextBtn:disabled:hover, .submitBtn:disabled:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
 svg {
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -3512,7 +3529,7 @@ footer .links .centre-links .footer-box-right {
 }
 
 #contact-page main .container .form-container .headers .summary-sentence span:hover {
-  color: #B99ADB;
+  color: #E6B5B5;
 }
 
 #contact-page main .container .form-container .headers .progress-bar {
@@ -3680,23 +3697,6 @@ footer .links .centre-links .footer-box-right {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 20%;
           flex: 1 1 20%;
-}
-
-#contact-page main .container .form-container #nextBtn, #contact-page main .container .form-container button[type=submit] {
-  background: #CFB72F;
-  border-radius: .5rem;
-  width: 100%;
-}
-
-#contact-page main .container .form-container #nextBtn:disabled, #contact-page main .container .form-container button[type=submit]:disabled {
-  background: none;
-  color: #DFDDD5;
-  cursor: default;
-}
-
-#contact-page main .container .form-container #nextBtn:disabled:hover, #contact-page main .container .form-container button[type=submit]:disabled:hover {
-  -webkit-transform: none;
-          transform: none;
 }
 
 #contact-page main .container .background {

@@ -57,3 +57,19 @@ form {
         color: $dark-grey;
     }
 }
+
+#nextBtn, .nextBtn, .submitBtn {
+    background: $accent;
+    border-radius: .5rem;
+    width: 100%;
+
+    &:disabled {
+        background: none;
+        color: $grey;
+        cursor: default;
+
+        &:hover {
+            transform: none;
+        }
+    }
+}

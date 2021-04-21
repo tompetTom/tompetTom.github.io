@@ -77,39 +77,62 @@ $(document).ready(() => {
         scrollToElement($(event.currentTarget));
     });
 
-    function validateEmail($email) {
+    // contact page
+    function validateEmail(email) {
         let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,6})+$/;
-        return regex.test($email);
+        return regex.test(email);
     }
 
-    // contact page
-    $('input').blur(e => {
-        let input = $(e.currentTarget);
+    function validateInput(input) {
+        let valid = true;
         let prop = input.prop('type');
         if (prop == 'email') {
             if (!validateEmail(input.val())) {
-                input.addClass('invalid');
+                valid = false;
             }
-        } else if (prop == 'text') {
-            if (!input.val()) {
-                input.addClass('invalid');
+        } else if (prop == 'text' || $(input).is('textarea')) {
+            if (input.val().length <= 1 && input.attr('required')) {
+                valid = false;
             }
+        }
+        return valid;
+    }
+
+    function validateForm() {
+        let valid = true;
+        let tab = $(currentForm).find('.tab');
+        let inputs = $(tab[currentTab]).find('input, textarea');
+        console.log(inputs);
+        // A loop that checks every input field in the current tab:
+        $(inputs).each(function() {
+            if (!validateInput($(this))) {
+                valid = false;
+                return false;
+            }
+        });
+        if (valid) {
+            $(tab).find('.submitBtn').removeAttr('disabled');
+        } else {
+            $(tab).find('.submitBtn').prop('disabled', true);
+        }
+        return valid;
+    }
+
+    $('input, textarea').blur(e => {
+        let input = $(e.currentTarget)
+        if (!validateInput(input)) {
+            input.addClass('invalid');
         }
     });
 
-    $('input').on('change paste keyup', function() {
-        let currentInput = $(this);
-        if (currentInput.hasClass('invalid')) {
-            if (currentInput.prop('type') == 'email') {
-                if (validateEmail(currentInput.val())) {
-                    currentInput.removeClass('invalid');
-                }
-            } else if (currentInput.prop('type') == 'text') {
-                if (currentInput.val().length > 1) {
-                    currentInput.removeClass('invalid');
-                }
+    $('input, textarea').on('change paste keyup', function() {
+        let input = $(this);
+        if (input.hasClass('invalid')) {
+            if (validateInput(input)) {
+                input.removeClass('invalid');
             }
         }
+        validateForm();
     });
 
     if ($('body').attr('id') == 'contact-page') {
@@ -124,21 +147,25 @@ $(document).ready(() => {
             frequency: '',
             experience: '',
             availability: '',
+            available: true,
             frequencyFirst: false,
             bypass: false
         };
-        // var summarySentence = '';
+        var summarySentence = '';
         var summaryElement = $('.summary-sentence');
         var student = '';
         var nominativePronoun = '';
         var accusativePronoun = '';
+        let postStudentPunc = '.';
+        let fullstopFrequency = '';
+        let fullstopExperience = '';
 
         $('input[name=Student]').change(() => {
             student = $('input[name=Student]:checked').val();
             if (student !== 'none') {
                 summaryObject.bypass = false;
-                // summaryObject.student = ` for <span id="edit-answer-student">${student}</span>`;
-                $('#edit-answer-student').html(student);
+                summaryObject.student = student;
+                // $('#edit-answer-student').html(student);
                 if (student === 'myself') {
                     nominativePronoun = 'I';
                     accusativePronoun = 'you';
@@ -162,41 +189,38 @@ $(document).ready(() => {
                 return $(this).val()
             }).get();
             if (instruments.length === 1) {
-                // summaryObject.instrument = `<span id="edit-answer-instruments">${instruments}</span> `;
                 $('#edit-answer-instruments').html(instruments);
             } else if (instruments.length === 2) {
-                // summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.join(' and ')}</span> `;
                 $('#edit-answer-instruments').html(instruments.join(' and '));
             } else if (instruments.length > 2) {
-                // summaryObject.instrument = `<span id="edit-answer-instruments">${instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]}</span> `;
                 $('#edit-answer-instruments').html(instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]);
             }
         });
         var experience = '';
         $('input[name=Experience]').change(() => {
             experience = $('input[name=Experience]:checked').val();
-            $('#fullstop-experience').html('.');
+            // $('#fullstop-experience').html('.');
             if (experience === 'none') {
                 summaryObject.experience = ` ${nominativePronoun}'ve <span id="edit-answer-experience">never played before</span>.`;
                 $('#experience-p').html(` ${nominativePronoun}'ve `);
-                $('#edit-answer-experience').html('never played before');
+                $('#edit-answer-experience').html('never played before.');
             } else if (experience === 'beginner') {
                 summaryObject.experience = ` ${nominativePronoun}'ve been learning for <span id="edit-answer-experience">less than 2 years</span>.`;
                 $('#experience-p').html(` ${nominativePronoun}'ve been learning for `);
-                $('#edit-answer-experience').html('less than 2 years');
+                $('#edit-answer-experience').html('less than 2 years.');
             } else if (experience === 'intermediate') {
                 summaryObject.experience = ` ${nominativePronoun}’ve been <span id="edit-answer-experience">learning for a while</span>.`;
                 $('#experience-p').html(` ${nominativePronoun}’ve been `);
-                $('#edit-answer-experience').html('learning for a while');
+                $('#edit-answer-experience').html('learning for a while.');
             } else if (experience === 'professional') {
                 summaryObject.experience = ` ${nominativePronoun} play <span id="edit-answer-experience">professionally</span>.`;
                 $('#experience-p').html(` ${nominativePronoun} play `);
-                $('#edit-answer-experience').html('professionally');
+                $('#edit-answer-experience').html('professionally.');
             } else if (experience === 'returner') {
                 summaryObject.experience = ` ${nominativePronoun} <span id="edit-answer-experience">used to play</span>, but took a break.`;
                 $('#experience-p').html(` ${nominativePronoun} `);
-                $('#edit-answer-experience').html('used to play');
-                $('#fullstop-experience').html(', but took a break.');
+                $('#edit-answer-experience').html('used to play,');
+                $('#experience-end').html('but took a break.');
             } else {
                 validationError = 'An error occurred. Please try reloading the page.';
             }
@@ -213,24 +237,35 @@ $(document).ready(() => {
                 frequencyInfo.frequencyFirst = true;
                 if (frequency === 'just one') {
                     frequencyInfo.justOne = true;
+                    $('#trial-option').hide();
                 } else {
                     frequencyInfo.justOne = false;
+                    $('#trial-option').show();
                 }
             } else {
                 frequencyInfo.frequencyFirst = false;
                 frequencyInfo.justOne = false;
+                $('#trial-option').show();
+                postStudentPunc = ',';
+                summaryObject.student = student;
+                fullstopFrequency = '.';
                 // span.html(frequency + '.');
             }
+            // $('.edit-answer-frequency').html(frequency + fullstopFrequency);
+            // $('#edit-answer-student').html(student + postStudentPunc);
+            summaryObject.frequency = frequency;
+            summaryObject.student = student;
         });
         var availability = '';
         $('input[name=Availability]').change(() => {
             availability = $('input[name=Availability]:checked').val();
-            if (availability !== 'none') {
-                summaryObject.availability = ` <span id="edit-answer-availability">${availability}</span> should work for a trial session.`;
-                $('#edit-answer-availability').html(availability);
+            if (availability == 'none') {
+                availability = `${nominativePronoun} don\'t want to book a lesson now.`;
+                summaryObject.available = false;
             } else {
-                summaryObject.availability = '';
+                summaryObject.available = true;
             }
+            summaryObject.availability = availability;
         });
         var comments = '';
         var name = '';
@@ -240,35 +275,41 @@ $(document).ready(() => {
         showTab(currentTab);
 
         function showTab(n) {
+            let nextBtn = $('#nextBtn');
             $('.tab').css('display', 'none');
             if (n == -1) {
                 $('.headers').hide();
                 $('#start-page-contact').css('display', 'block');
-                $('#nextBtn').css('display', 'none');
+                nextBtn.css('display', 'none');
             } else {
                 var x = $(currentForm).find('.tab');
-                var specificTab = x[n];
-                $(specificTab).css('display', 'block');
+                var specificTab = $(x[n]);
+                specificTab.css('display', 'block');
                 $('.headers').show();
                 if (n == (x.length - 1)) {
-                    $('#nextBtn').css('display', 'none');
+                    nextBtn.css('display', 'none');
                 } else {
-                    $('#nextBtn').css('display', 'block');
-                    if ($(specificTab).find('input').prop('checked')) {
-                        $('#nextBtn').removeAttr('disabled');
+                    if (specificTab.find('.checked').length) {
+                        nextBtn.removeAttr('disabled');
                     } else {
-                        $('#nextBtn').prop('disabled', true);
+                        nextBtn.prop('disabled', true);
                     }
+                    nextBtn.css('display', 'block');
                 }
                 updateProgressBar(n);
             }
             if (n > 0) {
                 $('#message-title').html('Anything else to add?');
                 updateSummary(n);
-                summaryElement.show();
+                if (student === 'none') {
+                    summaryElement.hide();
+                } else {
+                    summaryElement.show();
+                }
             } else {
                 summaryElement.hide();
             }
+            validateForm();
         }
 
         function updateSummary(step) {
@@ -278,12 +319,12 @@ $(document).ready(() => {
             let sentenceDiv = $('.summary-sentence').children();
             let sentence = {
                 iWant: sentenceDiv[0],
-                editAnswerFrequency: sentenceDiv[1],
+                editAnswerFrequencyFirst: sentenceDiv[1],
                 editAnswerInstruments: sentenceDiv[2],
                 lessonsFor: sentenceDiv[3],
                 editAnswerStudent: sentenceDiv[4],
                 postStudentPunc: sentenceDiv[5],
-                editAnswerFrequency: sentenceDiv[6],
+                editAnswerFrequencySecond: sentenceDiv[6],
                 fullstopFrequency: sentenceDiv[7],
                 experienceP: sentenceDiv[8],
                 editAnswerExperience: sentenceDiv[9],
@@ -291,39 +332,47 @@ $(document).ready(() => {
                 editAnswerAvailability: sentenceDiv[11],
                 availabilityEnd: sentenceDiv[12]
             };
+            let fullSentence = '';
             $(sentenceDiv).hide();
+            summaryElement.hide();
             $('#lessons-for').html('lessons for');
-            $('#post-student-punc').html('. ');
+            $('.edit-answer-frequency').html(summaryObject.frequency + fullstopFrequency);
+            $('#edit-answer-student').html(summaryObject.student + postStudentPunc);
+            $('#edit-answer-availability').html(summaryObject.availability);
             if (step > 0) {
-                $(Array.from([sentenceDiv[0], sentenceDiv[3], sentenceDiv[4], sentenceDiv[5]])).show();
+                $(Array.from([sentence.iWant, sentence.lessonsFor, sentence.editAnswerStudent])).show();
+                fullSentence = $(sentence.iWant).text() + $(sentence.lessonsFor).text() + $(sentence.editAnswerStudent).text() + $(sentence.postStudentPunc).text();
+                console.log(fullSentence);
+                summarySentence = $.parseHTML(fullSentence);
             }
             if (step > 1) {
-                $(Array.from([sentenceDiv[2]])).show();
+                $(Array.from([sentence.editAnswerInstruments])).show();
             }
             if (step > 2) {
-                $(Array.from([sentenceDiv[8], sentenceDiv[9], sentenceDiv[10]])).show();
+                $(Array.from([sentence.experienceP, sentence.editAnswerExperience, sentence.fullstopExperience])).show();
             }
             if (step > 3) {
                 if (frequencyInfo.frequencyFirst) {
-                    $('#post-student-punc').html('. ');
-                    $(Array.from([sentenceDiv[1]])).show();
+                    $(Array.from([sentence.editAnswerFrequencyFirst])).show();
                     if (frequencyInfo.justOne) {
                         $('#lessons-for').html('lesson for');
                     }
                 } else {
-                    $('#post-student-punc').html(', ');
-                    $(Array.from([sentenceDiv[6], sentenceDiv[7]])).show();
+                    $(Array.from([sentence.editAnswerFrequencySecond, sentence.fullstopFrequency])).show();
                 }
             }
             if (step > 4) {
-                $(Array.from([sentenceDiv[11], sentenceDiv[12]])).show();
+                if (!summaryObject.available) {
+                    $(sentence.editAnswerAvailability).show();
+                } else {
+                    $(Array.from([sentence.editAnswerAvailability, sentence.availabilityEnd])).show();
+                }
             }
             if (student === 'none') {
                 $('#message-title').html('Ask away!');
             } else {
                 summarySentence += summaryObject.availability;
             }
-            // summaryElement.html(summarySentence);
         }
 
         function nextPrev(n) {
@@ -341,28 +390,6 @@ $(document).ready(() => {
             }
 
             showTab(currentTab);
-        }
-
-        function validateForm() {
-        // This function deals with validation of the form fields
-        var x, y, i, valid = true;
-        x = currentForm.find('.tab');
-        y = x[currentTab].find('input');
-        // A loop that checks every input field in the current tab:
-        for (i = 0; i < y.length; i++) {
-            // If a field is empty...
-            if (y[i].value == '') {
-            // add an 'invalid' class to the field:
-            y[i].className += ' invalid';
-            // and set the current valid status to false:
-            valid = false;
-            }
-        }
-        // If the valid status is true, mark the step as finished and valid:
-        if (valid) {
-            $('.step')[currentTab].className += ' finish';
-        }
-        return valid; // return the valid status
         }
 
         function createProgressBar() {
@@ -420,14 +447,22 @@ $(document).ready(() => {
             showTab(currentTab);
         });
 
-        $('input').change(() => {
-            $('input:checked').parent('label').addClass('checked');
-            $('input:not(:checked)').parent('label').removeClass('checked');
+        // Visible checkboxes and activate #nextBtn
+        $('input').change(e => {
+            let input = $(e.currentTarget);
+            let type = input.attr('type');
+            if (type == 'checkbox' || type == 'radio') {
+                $('input:checked').parent('label').addClass('checked');
+                $('input:not(:checked)').parent('label').removeClass('checked');
+                if (input.closest('div').find('input:checked')) {
+                    $('#nextBtn').removeAttr('disabled');
+                }
+            }
         });
 
         $('.bypass').on('click', event => {
-            let label = event.currentTarget;
-            if (!$(label).hasClass('checked')) {
+            let label = $(event.currentTarget);
+            if (!label.hasClass('checked')) {
                 $('.bypassable').addClass('disabled').prop('disabled', true).attr('placeholder', '').removeClass('invalid');
             } else {
                 $('.bypassable').removeClass('disabled').prop('disabled', false).attr('placeholder', 'e.g. Clarinet for short film');
@@ -449,8 +484,9 @@ $(document).ready(() => {
         });
 
         $('.summary-sentence span').on('click', event => {
-            let span = event.currentTarget;
-            let id = $(span).attr('id');
+            let prevTab = currentTab;
+            let span = $(event.currentTarget);
+            let id = span.attr('id');
             switch (id) {
                 case 'edit-answer-student':
                     currentTab = 0;
@@ -461,14 +497,17 @@ $(document).ready(() => {
                 case 'edit-answer-experience':
                     currentTab = 2;
                     break;
-                case 'edit-answer-frequency':
+                case 'frequency-span-1':
+                    currentTab = 3;
+                    break;
+                case 'frequency-span-2':
                     currentTab = 3;
                     break;
                 case 'edit-answer-availability':
                     currentTab = 4;
                     break;
             }
-            showTab(currentTab);
+            showTab(currentTab, prevTab);
         });
 
         $('#nextBtn').on('click', () => {
@@ -478,8 +517,8 @@ $(document).ready(() => {
                 } else {
                     currentTab += 1;
                 }
-                showTab(currentTab);
                 $('#nextBtn').prop('disabled', true);
+                showTab(currentTab);
             } else {
                 $('#error').html(validationError);
             }
