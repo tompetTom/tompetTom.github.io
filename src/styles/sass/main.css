@@ -3609,15 +3609,31 @@ footer .links .centre-links .footer-box-right {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  margin-top: 1.7rem;
 }
 
 #contact-page main .container .form-container .tab .multi-choice label {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 2px solid #DFDDD5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 10rem;
           flex: 1 0 10rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: .4rem;
+  min-height: 48px;
+  padding: 0 .5rem;
   text-align: center;
+}
+
+#contact-page main .container .form-container .tab .multi-choice label * {
+  display: contents;
 }
 
 #contact-page main .container .form-container .tab .multi-choice label:hover {

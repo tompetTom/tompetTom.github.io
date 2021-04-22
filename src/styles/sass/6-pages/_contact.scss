@@ -11,6 +11,10 @@
             position: relative;
             width: 100%;
 
+            @include media-query(mobile-portrait-only) {
+                margin-top: $margin-top;
+            }
+
             .form-container {
                 background: $white;
                 border-radius: 1rem;
@@ -148,12 +152,22 @@
                     .multi-choice {
                         display: flex;
                         flex-flow: row wrap;
+                        margin-top: $margin-top;
 
                         label {
+                            align-items: center;
                             border: 2px solid $grey;
+                            display: flex;
                             flex: 1 0 10rem;
+                            justify-content: center;
                             margin: .4rem;
+                            min-height: $finger-width;
+                            padding: 0 .5rem;
                             text-align: center;
+
+                            * {
+                                display: contents;
+                            }
 
                             &:hover {
                                 border: 2px solid $primary;

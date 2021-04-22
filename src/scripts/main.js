@@ -267,9 +267,7 @@ $(document).ready(() => {
             }
             summaryObject.availability = availability;
         });
-        var comments = '';
-        var name = '';
-        var email = '';
+
         var validationError = '';
 
         showTab(currentTab);
@@ -375,23 +373,6 @@ $(document).ready(() => {
             }
         }
 
-        function nextPrev(n) {
-            // This function will figure out which tab to display
-            var x = currentForm.find('.tab');
-            // Exit the function if any field in the current tab is invalid:
-            if (n == 1 && !validateForm()) return false;
-            x[currentTab].style.display = 'none';
-            currentTab = currentTab + n;
-            // if you have reached the end of the form... :
-            if (currentTab >= x.length) {
-                //...the form gets submitted:
-                document.getElementById('regForm').submit();
-                return false;
-            }
-
-            showTab(currentTab);
-        }
-
         function createProgressBar() {
             let bar = $('.progress-bar');
             let div = '<div></div>';
@@ -463,9 +444,12 @@ $(document).ready(() => {
         $('.bypass').on('click', event => {
             let label = $(event.currentTarget);
             if (!label.hasClass('checked')) {
-                $('.bypassable').addClass('disabled').prop('disabled', true).attr('placeholder', '').removeClass('invalid');
+                $('.bypassable').addClass('disabled').prop('disabled', true).removeAttr('required').attr('placeholder', '').removeClass('invalid');
             } else {
-                $('.bypassable').removeClass('disabled').prop('disabled', false).attr('placeholder', 'e.g. Clarinet for short film');
+                $('.bypassable').removeClass('disabled').prop('disabled', false).prop('required', 'required').attr('placeholder', 'e.g. Clarinet for short film');
+                if (!validateInput($('.bypassable'))) {
+                    $('.bypassable').addClass('invalid');
+                }
             }
         });
 
@@ -484,7 +468,6 @@ $(document).ready(() => {
         });
 
         $('.summary-sentence span').on('click', event => {
-            let prevTab = currentTab;
             let span = $(event.currentTarget);
             let id = span.attr('id');
             switch (id) {
@@ -507,7 +490,7 @@ $(document).ready(() => {
                     currentTab = 4;
                     break;
             }
-            showTab(currentTab, prevTab);
+            showTab(currentTab);
         });
 
         $('#nextBtn').on('click', () => {
@@ -527,7 +510,7 @@ $(document).ready(() => {
     }
 
     // slick
-    if ($('.slick-quote')) {
+    if ($('body').attr('id') == 'home-page' || $('body').attr('id') == 'recording-page') {
         $('.slick-quote').slick({
             autoplay: true,
             autoplaySpeed: 5000,
@@ -535,9 +518,7 @@ $(document).ready(() => {
             arrows: false,
             speed: 1000
         });
-    }
 
-    if ($('.slick-video')) {
         $('.slick-video').slick({
             autoplay: false,
             dots: true,

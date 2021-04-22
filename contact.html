@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="./src/styles/sass/main.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -146,7 +147,7 @@
                             <h2>Let's talk about recording</h2>
                             <label for="Description">What's the project?</label>
                             <input type="hidden" name="_subject" id="email-subject" value="Recording Form Submission">
-                            <input class="bypassable" type="text" name="Description" id="description" value="" placeholder="e.g. Saxophone backgrounds">
+                            <input class="bypassable" type="text" name="Description" id="description" value="" placeholder="e.g. Saxophone backgrounds" required>
                             <label class="bypass"><input type="checkbox" name="Bypass">I don't have a specific project</label><br>
                             <label for="message">Talk about what you're looking for</label>
                             <textarea name="message" id="message" placeholder="e.g. instrument(s), timeframe, budget etc." required></textarea>
@@ -224,7 +225,7 @@
                         </div>
                         <div class="tab">
                             <label for="message" id="message-title"></label><br>
-                            <textarea name="message" id="message" required></textarea>
+                            <textarea name="message" id="message"></textarea>
                             <label for="name">Name</label><br>
                             <input type="text" name="name" id="name" required>
                             <label for="_replyto">Email address</label><br>
