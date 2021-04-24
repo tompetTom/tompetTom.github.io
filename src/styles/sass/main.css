@@ -3683,7 +3683,7 @@ footer .links .centre-links .footer-box-right {
       -ms-flex-align: center;
           align-items: center;
   background: #FFF;
-  border: 1px solid #140E1B;
+  border: 2px solid #DFDDD5;
   border-radius: 1.2rem;
   cursor: pointer;
   display: -webkit-box;
@@ -3701,7 +3701,15 @@ footer .links .centre-links .footer-box-right {
 }
 
 #contact-page main .container .form-container #start-page-contact .options .option:hover, #contact-page main .container .form-container #start-page-contact .options .contact-option:hover {
-  border: 2px solid #97CCC3;
+  border: 2px solid #CFB72F;
+}
+
+#contact-page main .container .form-container #start-page-contact .options .option:nth-child(3n-1):hover, #contact-page main .container .form-container #start-page-contact .options .contact-option:nth-child(3n-1):hover {
+  border: 2px solid #E6B5B5;
+}
+
+#contact-page main .container .form-container #start-page-contact .options .option:nth-child(3n):hover, #contact-page main .container .form-container #start-page-contact .options .contact-option:nth-child(3n):hover {
+  border: 2px solid #B99ADB;
 }
 
 #contact-page main .container .form-container #start-page-contact .options .option h3, #contact-page main .container .form-container #start-page-contact .options .contact-option h3 {

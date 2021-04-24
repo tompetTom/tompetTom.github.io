@@ -25,13 +25,16 @@ $(document).ready(() => {
         $(e.currentTarget).closest('nav').toggleClass('closed');
     });
 
-    // $('.sub-navigation li').mouseenter.find('p').addClass('show').mouseleave.removeClass('show');
     $('.sub-navigation li').on('mouseenter', e => {
         $(e.currentTarget).find('p').addClass('show');
         $(e.currentTarget).on('mouseleave', () => {
             $(e.currentTarget).find('p').removeClass('show');
         })
     });
+
+    function scrollTo(scrollDistance) {
+        $('html, body').animate({scrollTop: scrollDistance}, 500);
+    }
 
     // scroll to element
     function scrollToElement(link) {
@@ -67,9 +70,11 @@ $(document).ready(() => {
             scrollDistance = element.offset().top - headerHeight;
         }
         if (scrollDistance < 50 && $(document).scrollTop() < 50) {
-            $('html, body').animate({scrollTop: 100}, 500);
+            // $('html, body').animate({scrollTop: 100}, 500);
+            scrollTo(100);
         }
-        $('html, body').animate({scrollTop: scrollDistance}, 500);
+        // $('html, body').animate({scrollTop: scrollDistance}, 500);
+        scrollTo(scrollDistance);
     };
 
     $('.scroll-link').on('click', event => {
@@ -139,7 +144,7 @@ $(document).ready(() => {
 
         var currentForm;
         var currentTab = -1;
-        // var topic;
+        var summaryElement = $('.summary-sentence');
         let summaryObject = {
             instrument: '',
             lessons: 'lessons',
@@ -151,22 +156,20 @@ $(document).ready(() => {
             frequencyFirst: false,
             bypass: false
         };
-        var summarySentence = '';
-        var summaryElement = $('.summary-sentence');
-        var student = '';
-        var nominativePronoun = '';
-        var accusativePronoun = '';
+        let frequencyInfo = {
+            frequencyFirst: false,
+            justOne: false,
+        };
+        var nominativePronoun = 'I';
+        var accusativePronoun = 'you';
         let postStudentPunc = '.';
         let fullstopFrequency = '';
-        let fullstopExperience = '';
 
         $('input[name=Student]').change(() => {
-            student = $('input[name=Student]:checked').val();
-            if (student !== 'none') {
+            summaryObject.student = $('input[name=Student]:checked').val();
+            if (summaryObject.student !== 'none') {
                 summaryObject.bypass = false;
-                summaryObject.student = student;
-                // $('#edit-answer-student').html(student);
-                if (student === 'myself') {
+                if (summaryObject.student === 'myself') {
                     nominativePronoun = 'I';
                     accusativePronoun = 'you';
                     dativePronoun = 'you';
@@ -178,14 +181,14 @@ $(document).ready(() => {
                 $('.nominative-pronoun').html(nominativePronoun);
                 $('.accusative-pronoun').html(accusativePronoun);
                 $('.dative-pronoun').html(dativePronoun);
+                updateExperience();
             } else {
                 summaryObject.bypass = true;
-                // currentTab = 4;
             }
         });
-        var instruments = [];
+
         $('input[name=Instrument]').click(function() {
-            instruments = $('input[name=Instrument]:checked').map(function(){
+            let instruments = $('input[name=Instrument]:checked').map(function(){
                 return $(this).val()
             }).get();
             if (instruments.length === 1) {
@@ -196,45 +199,41 @@ $(document).ready(() => {
                 $('#edit-answer-instruments').html(instruments.slice(0, (instruments.length - 1)).join(', ') + ' and ' + instruments[instruments.length - 1]);
             }
         });
-        var experience = '';
-        $('input[name=Experience]').change(() => {
-            experience = $('input[name=Experience]:checked').val();
-            // $('#fullstop-experience').html('.');
-            if (experience === 'none') {
-                summaryObject.experience = ` ${nominativePronoun}'ve <span id="edit-answer-experience">never played before</span>.`;
-                $('#experience-p').html(` ${nominativePronoun}'ve `);
-                $('#edit-answer-experience').html('never played before.');
-            } else if (experience === 'beginner') {
-                summaryObject.experience = ` ${nominativePronoun}'ve been learning for <span id="edit-answer-experience">less than 2 years</span>.`;
-                $('#experience-p').html(` ${nominativePronoun}'ve been learning for `);
-                $('#edit-answer-experience').html('less than 2 years.');
-            } else if (experience === 'intermediate') {
-                summaryObject.experience = ` ${nominativePronoun}’ve been <span id="edit-answer-experience">learning for a while</span>.`;
-                $('#experience-p').html(` ${nominativePronoun}’ve been `);
-                $('#edit-answer-experience').html('learning for a while.');
-            } else if (experience === 'professional') {
-                summaryObject.experience = ` ${nominativePronoun} play <span id="edit-answer-experience">professionally</span>.`;
-                $('#experience-p').html(` ${nominativePronoun} play `);
-                $('#edit-answer-experience').html('professionally.');
-            } else if (experience === 'returner') {
-                summaryObject.experience = ` ${nominativePronoun} <span id="edit-answer-experience">used to play</span>, but took a break.`;
+
+        function updateExperience() {
+            let experience = $('input[name=Experience]:checked').val();
+            if (experience === 'returner') {
                 $('#experience-p').html(` ${nominativePronoun} `);
                 $('#edit-answer-experience').html('used to play,');
                 $('#experience-end').html('but took a break.');
             } else {
-                validationError = 'An error occurred. Please try reloading the page.';
+                $('#experience-end').html('');
+                if (experience === 'none') {
+                    $('#experience-p').html(` ${nominativePronoun}'ve `);
+                    $('#edit-answer-experience').html('never played before.');
+                } else if (experience === 'beginner') {
+                    $('#experience-p').html(` ${nominativePronoun}'ve been learning for `);
+                    $('#edit-answer-experience').html('less than 2 years.');
+                } else if (experience === 'intermediate') {
+                    $('#experience-p').html(` ${nominativePronoun}’ve been `);
+                    $('#edit-answer-experience').html('playing for a while.');
+                } else if (experience === 'professional') {
+                    $('#experience-p').html(` ${nominativePronoun} play `);
+                    $('#edit-answer-experience').html('professionally.');
+                }
             }
+        }
+
+        $('input[name=Experience]').change(() => {
+            updateExperience();
         });
-        let frequencyInfo = {
-            frequencyFirst: false,
-            justOne: false,
-        };
+
         $('input[name=Frequency]').change(() => {
             frequency = $('input[name=Frequency]:checked').val();
-            let span = $('.edit-answer-frequency');
-            span.html(frequency);
             if (frequency === 'weekly' || frequency === 'just one') {
                 frequencyInfo.frequencyFirst = true;
+                postStudentPunc = '.';
+                fullstopFrequency = '';
                 if (frequency === 'just one') {
                     frequencyInfo.justOne = true;
                     $('#trial-option').hide();
@@ -247,28 +246,22 @@ $(document).ready(() => {
                 frequencyInfo.justOne = false;
                 $('#trial-option').show();
                 postStudentPunc = ',';
-                summaryObject.student = student;
                 fullstopFrequency = '.';
-                // span.html(frequency + '.');
             }
-            // $('.edit-answer-frequency').html(frequency + fullstopFrequency);
-            // $('#edit-answer-student').html(student + postStudentPunc);
             summaryObject.frequency = frequency;
-            summaryObject.student = student;
         });
+        
         var availability = '';
         $('input[name=Availability]').change(() => {
             availability = $('input[name=Availability]:checked').val();
             if (availability == 'none') {
-                availability = `${nominativePronoun} don\'t want to book a lesson now.`;
+                availability = `${nominativePronoun} don't want to book a lesson now.`;
                 summaryObject.available = false;
             } else {
                 summaryObject.available = true;
             }
             summaryObject.availability = availability;
         });
-
-        var validationError = '';
 
         showTab(currentTab);
 
@@ -299,7 +292,7 @@ $(document).ready(() => {
             if (n > 0) {
                 $('#message-title').html('Anything else to add?');
                 updateSummary(n);
-                if (student === 'none') {
+                if (summaryObject.student === 'none') {
                     summaryElement.hide();
                 } else {
                     summaryElement.show();
@@ -311,9 +304,6 @@ $(document).ready(() => {
         }
 
         function updateSummary(step) {
-            if (summaryObject.bypass) {
-                summarySentence = '';
-            }
             let sentenceDiv = $('.summary-sentence').children();
             let sentence = {
                 iWant: sentenceDiv[0],
@@ -321,27 +311,22 @@ $(document).ready(() => {
                 editAnswerInstruments: sentenceDiv[2],
                 lessonsFor: sentenceDiv[3],
                 editAnswerStudent: sentenceDiv[4],
-                postStudentPunc: sentenceDiv[5],
-                editAnswerFrequencySecond: sentenceDiv[6],
-                fullstopFrequency: sentenceDiv[7],
-                experienceP: sentenceDiv[8],
-                editAnswerExperience: sentenceDiv[9],
-                fullstopExperience: sentenceDiv[10],
-                editAnswerAvailability: sentenceDiv[11],
-                availabilityEnd: sentenceDiv[12]
+                editAnswerFrequencySecond: sentenceDiv[5],
+                fullstopFrequency: sentenceDiv[6],
+                experienceP: sentenceDiv[7],
+                editAnswerExperience: sentenceDiv[8],
+                fullstopExperience: sentenceDiv[9],
+                editAnswerAvailability: sentenceDiv[10],
+                availabilityEnd: sentenceDiv[11]
             };
-            let fullSentence = '';
             $(sentenceDiv).hide();
             summaryElement.hide();
             $('#lessons-for').html('lessons for');
             $('.edit-answer-frequency').html(summaryObject.frequency + fullstopFrequency);
-            $('#edit-answer-student').html(summaryObject.student + postStudentPunc);
+            $('#edit-answer-student').html(summaryObject.student + '.');
             $('#edit-answer-availability').html(summaryObject.availability);
             if (step > 0) {
                 $(Array.from([sentence.iWant, sentence.lessonsFor, sentence.editAnswerStudent])).show();
-                fullSentence = $(sentence.iWant).text() + $(sentence.lessonsFor).text() + $(sentence.editAnswerStudent).text() + $(sentence.postStudentPunc).text();
-                console.log(fullSentence);
-                summarySentence = $.parseHTML(fullSentence);
             }
             if (step > 1) {
                 $(Array.from([sentence.editAnswerInstruments])).show();
@@ -350,6 +335,7 @@ $(document).ready(() => {
                 $(Array.from([sentence.experienceP, sentence.editAnswerExperience, sentence.fullstopExperience])).show();
             }
             if (step > 3) {
+                $('#edit-answer-student').html(summaryObject.student + postStudentPunc);
                 if (frequencyInfo.frequencyFirst) {
                     $(Array.from([sentence.editAnswerFrequencyFirst])).show();
                     if (frequencyInfo.justOne) {
@@ -366,10 +352,8 @@ $(document).ready(() => {
                     $(Array.from([sentence.editAnswerAvailability, sentence.availabilityEnd])).show();
                 }
             }
-            if (student === 'none') {
+            if (summaryObject.student === 'none') {
                 $('#message-title').html('Ask away!');
-            } else {
-                summarySentence += summaryObject.availability;
             }
         }
 
@@ -454,7 +438,7 @@ $(document).ready(() => {
         });
 
         $('#form-back').on('click', () => {
-            if (student === 'none' && currentTab !== 0) {
+            if (summaryObject.student === 'none' && currentTab !== 0) {
                 currentTab = 0;
             } else {
                 currentTab -= 1;
@@ -494,17 +478,13 @@ $(document).ready(() => {
         });
 
         $('#nextBtn').on('click', () => {
-            if (!validationError) {
-                if (summaryObject.bypass) {
-                    currentTab = 5;
-                } else {
-                    currentTab += 1;
-                }
-                $('#nextBtn').prop('disabled', true);
-                showTab(currentTab);
+            if (summaryObject.bypass) {
+                currentTab = 5;
             } else {
-                $('#error').html(validationError);
+                currentTab += 1;
             }
+            $('#nextBtn').prop('disabled', true);
+            showTab(currentTab);
         });
 
     }

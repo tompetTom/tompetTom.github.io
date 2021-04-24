@@ -203,7 +203,7 @@
                         .option, .contact-option {
                             align-items: center;
                             background: $white;
-                            border: 1px solid $black;
+                            border: 2px solid $grey;
                             border-radius: 1.2rem;
                             cursor: pointer;
                             display: flex;
@@ -215,7 +215,15 @@
                             transition: $default-transition-time;
 
                             &:hover {
-                                border: 2px solid $primary;
+                                border: 2px solid $accent;
+                            }
+
+                            &:nth-child(3n-1):hover {
+                                border: 2px solid $light;
+                            }
+
+                            &:nth-child(3n):hover {
+                                border: 2px solid $secondary;
                             }
 
                             h3 {
