@@ -1920,7 +1920,7 @@ footer .links .centre-links .footer-box-right {
   width: 20px;
   height: 20px;
   font-family: "slick";
-  font-size: 1rem;
+  font-size: 0.5rem;
   line-height: 20px;
   text-align: center;
   color: #140E1B;
@@ -2296,10 +2296,6 @@ footer .links .centre-links .footer-box-right {
 
 @media (min-width: 900px) {
   .home-page .intro-tryout .desktop-landing-content #landing-page-recording {
-    border: 2px solid #E6B5B5;
-    border-radius: 1rem;
-    -webkit-box-shadow: 0 0 10rem -1rem #DFDDD5;
-            box-shadow: 0 0 10rem -1rem #DFDDD5;
     left: -1rem;
     margin-top: 1.7rem;
     padding: 1rem;

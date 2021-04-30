@@ -485,6 +485,9 @@ $(document).ready(() => {
             }
             $('#nextBtn').prop('disabled', true);
             showTab(currentTab);
+            if ($(document).width() < 900) {
+                scrollTo(100);
+            }
         });
 
     }
