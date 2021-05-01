@@ -24,7 +24,40 @@
     }
 }
 
-.youtube-aspect-ratio-slick {
+.youtube-thumbnail-div {
     @extend .youtube-aspect-ratio;
+    background: center/100% no-repeat;
+
+    .slick-video & {
+        margin: 0;
+    }
+
+    &:after {
+        content: url(../../../images/icons/boxed-icons/youtube-black.svg);
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        // width: 12.5%;
+        width: 3.8rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        &::after {
+            content: url(../../../images/icons/boxed-icons/youtube-blue.svg);
+        }
+    }
+
+    &.play {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.youtube-aspect-ratio-slick {
+    @extend .youtube-thumbnail-div;
     margin: 0;
 }

@@ -502,6 +502,10 @@ $(document).ready(() => {
             speed: 1000
         });
 
+        $(window).on('orientationchange', function() {
+            $('.slick-quote').slick('resize');
+        });
+
         $('.slick-video').slick({
             autoplay: false,
             dots: true,
@@ -509,6 +513,34 @@ $(document).ready(() => {
             speed: 900
         });
     }
+
+    // youtube thumbnails
+    function setYoutubeThumbnails(youtubes) {
+        for (let i = 0; i < youtubes.length; i++) {
+            if ($(youtubes[i]).hasClass('unloaded-thumbnail')) {
+                let src = 'https://i.ytimg.com/vi/' + youtubes[i].dataset.id + '/hqdefault.jpg';
+                let url = 'url(' + src + ')';
+                $(youtubes[i]).css('background-image', url);
+                $(youtubes[i]).removeClass('unloaded-thumbnail');
+            }
+        }
+    }
+
+    setYoutubeThumbnails($('#home-page .youtube-thumbnail-div'));
+    setYoutubeThumbnails($('.load-first'));
+
+    $('.youtube-thumbnail-div').click(function() {
+        $(this).addClass('play');
+        $('<iframe/>', {
+            'src': 'https://www.youtube.com/embed/' + this.dataset.id + '?autoplay=1&rel=0&enablejsapi=1',
+            'frameborder': '0',
+            'modestbranding': '1',
+            'show-info': '0',
+            'allowfullscreen': '1',
+            'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+            'class': 'youtube'
+        }).appendTo(this);
+    });
 
     // homepage instrument list
     $('.instrument-list li').on('click', event => {
@@ -535,6 +567,7 @@ $(document).ready(() => {
         image.toggleClass('active');
         info.siblings().removeClass('active');
         info.toggleClass('active');
+        setYoutubeThumbnails($(info.find('.unloaded-thumbnail')));
     });
 
     $('.caption').mouseenter(event => {
@@ -581,4 +614,6 @@ $(document).ready(() => {
             section.addClass('full');
         };
     });
+
+    $('#clients .show-hide').one('click', setYoutubeThumbnails($('#clients').find('.youtube-thumbnail-div')));
 });
