@@ -147,8 +147,8 @@ $(document).ready(() => {
 
     if ($('body').attr('id') == 'contact-page') {
 
-        let currentForm;
-        let currentTab = -1;
+        var currentForm;
+        var currentTab = -1;
         let summaryElement = $('.summary-sentence');
         let summaryObject = {
             instrument: '',
