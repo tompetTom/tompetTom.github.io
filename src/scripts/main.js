@@ -38,8 +38,8 @@ $(document).ready(() => {
 
     // scroll to element
     function scrollToElement(link) {
-        var target;
-        var scrollDistance;
+        let target;
+        let scrollDistance;
         if (link.attr('href')) {
             target = link.attr('href');
         } else if (link.attr('id')) {
@@ -48,16 +48,16 @@ $(document).ready(() => {
         if (target == '#') {
             scrollDistance = 0;
         } else {
-            var element = $(document).find(target);
+            let element = $(document).find(target);
             if (target == '#gear') {
                 $('.process-gear').addClass('pg-right');
                 element = $(document).find('#process');
             } else if (target == '#process') {
                 $('.process-gear').removeClass('pg-right');
             };
-            var windowWidth = $(window).width();
-            var windowHeight = $(window).height();
-            var headerHeight;
+            let windowWidth = $(window).width();
+            let windowHeight = $(window).height();
+            let headerHeight;
             if (windowWidth < 600) {
                 headerHeight = 60;
             } else if (windowWidth < 900 && windowHeight < windowWidth) {
@@ -103,12 +103,17 @@ $(document).ready(() => {
         return valid;
     }
 
-    function validateForm() {
+    function validateForm(input) {
         let valid = true;
-        let tab = $(currentForm).find('.tab');
-        let inputs = $(tab[currentTab]).find('input, textarea');
-        console.log(inputs);
-        // A loop that checks every input field in the current tab:
+        let form, inputs;
+        if ($('body').attr('id') !== 'contact-page') {
+            form = $(input).closest('form');
+            inputs = $(form).find('input', 'textarea');
+            console.log(inputs);
+        } else {
+            form = $(currentForm).find('.tab');
+            inputs = $(form[currentTab]).find('input, textarea');
+        }
         $(inputs).each(function() {
             if (!validateInput($(this))) {
                 valid = false;
@@ -116,9 +121,9 @@ $(document).ready(() => {
             }
         });
         if (valid) {
-            $(tab).find('.submitBtn').removeAttr('disabled');
+            $(form).find('.submitBtn').removeAttr('disabled');
         } else {
-            $(tab).find('.submitBtn').prop('disabled', true);
+            $(form).find('.submitBtn').prop('disabled', true);
         }
         return valid;
     }
@@ -137,14 +142,14 @@ $(document).ready(() => {
                 input.removeClass('invalid');
             }
         }
-        validateForm();
+        validateForm(input);
     });
 
     if ($('body').attr('id') == 'contact-page') {
 
-        var currentForm;
-        var currentTab = -1;
-        var summaryElement = $('.summary-sentence');
+        let currentForm;
+        let currentTab = -1;
+        let summaryElement = $('.summary-sentence');
         let summaryObject = {
             instrument: '',
             lessons: 'lessons',
@@ -160,8 +165,8 @@ $(document).ready(() => {
             frequencyFirst: false,
             justOne: false,
         };
-        var nominativePronoun = 'I';
-        var accusativePronoun = 'you';
+        let nominativePronoun = 'I';
+        let accusativePronoun = 'you';
         let postStudentPunc = '.';
         let fullstopFrequency = '';
 
@@ -251,7 +256,7 @@ $(document).ready(() => {
             summaryObject.frequency = frequency;
         });
         
-        var availability = '';
+        let availability = '';
         $('input[name=Availability]').change(() => {
             availability = $('input[name=Availability]:checked').val();
             if (availability == 'none') {
@@ -273,8 +278,8 @@ $(document).ready(() => {
                 $('#start-page-contact').css('display', 'block');
                 nextBtn.css('display', 'none');
             } else {
-                var x = $(currentForm).find('.tab');
-                var specificTab = $(x[n]);
+                let x = $(currentForm).find('.tab');
+                let specificTab = $(x[n]);
                 specificTab.css('display', 'block');
                 $('.headers').show();
                 if (n == (x.length - 1)) {
@@ -387,7 +392,7 @@ $(document).ready(() => {
         }
 
         $('.contact-option').on('click', event => {
-            var destination = $('.contact-option').index(event.currentTarget);
+            let destination = $('.contact-option').index(event.currentTarget);
             switch (destination) {
                 case 0:
                     topic = 'recording';
@@ -518,7 +523,12 @@ $(document).ready(() => {
     function setYoutubeThumbnails(youtubes) {
         for (let i = 0; i < youtubes.length; i++) {
             if ($(youtubes[i]).hasClass('unloaded-thumbnail')) {
-                let src = 'https://i.ytimg.com/vi/' + youtubes[i].dataset.id + '/hqdefault.jpg';
+                let src;
+                if ($(youtubes[i]).hasClass('facebook-video')) {
+                    src = 'https://bsp-static.playbill.com/dims4/default/eddc159/2147483647/crop/6644x3740%2B0%2B2915/resize/970x546/quality/90/?url=http%3A%2F%2Fpb-asset-replication.s3.amazonaws.com%2Fc5%2Fb4%2F7fce0e31418ab9146014dcb572b6%2Fromantics-anonymous-2019-0036.jpg';
+                } else {
+                    src = 'https://i.ytimg.com/vi/' + youtubes[i].dataset.id + '/hqdefault.jpg';
+                }
                 let url = 'url(' + src + ')';
                 $(youtubes[i]).css('background-image', url);
                 $(youtubes[i]).removeClass('unloaded-thumbnail');
@@ -529,17 +539,37 @@ $(document).ready(() => {
     setYoutubeThumbnails($('#home-page .youtube-thumbnail-div'));
     setYoutubeThumbnails($('.load-first'));
 
-    $('.youtube-thumbnail-div').click(function() {
-        $(this).addClass('play');
-        $('<iframe/>', {
-            'src': 'https://www.youtube.com/embed/' + this.dataset.id + '?autoplay=1&rel=0&enablejsapi=1',
-            'frameborder': '0',
-            'modestbranding': '1',
-            'show-info': '0',
-            'allowfullscreen': '1',
-            'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
-            'class': 'youtube'
-        }).appendTo(this);
+    function iframeAttributes(div) {
+        let data = {};
+        if ($(div).hasClass('facebook-video')) {
+            data = {
+                'src': 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com' + div.dataset.id + '&show_text=false&autoplay=true',
+                'frameborder': '0',
+                'allowfullscreen': '1',
+                'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+                'class': 'youtube'
+            }
+        } else {
+            data = {
+                'src': 'https://www.youtube.com/embed/' + div.dataset.id + '?autoplay=1&rel=0&enablejsapi=1',
+                'frameborder': '0',
+                'modestbranding': '1',
+                'show-info': '0',
+                'allowfullscreen': '1',
+                'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+                'class': 'youtube'
+            }
+        }
+        return data;
+    }
+
+    function createVideoIframe(div) {
+        $(div).addClass('play');
+        $('<iframe/>', iframeAttributes(div)).appendTo($(div));
+    }
+
+    $('.youtube-thumbnail-div').one('click', function() {
+        createVideoIframe(this);
     });
 
     // homepage instrument list
@@ -603,8 +633,8 @@ $(document).ready(() => {
 
     // show/hide button
     $('.show-hide').on('click', e => {
-        var button = $(e.currentTarget);
-        var section = button.closest('section');
+        let button = $(e.currentTarget);
+        let section = button.closest('section');
         if (section.hasClass('full')) {
             scrollToElement(section);
             section.removeClass('full');
