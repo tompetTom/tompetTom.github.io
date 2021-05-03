@@ -32,7 +32,7 @@
         margin: 0;
     }
 
-    &:after {
+    &::after {
         content: url(../../../images/icons/boxed-icons/youtube-black.svg);
         left: 50%;
         position: absolute;

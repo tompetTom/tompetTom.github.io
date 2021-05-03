@@ -10,6 +10,7 @@ $(document).ready(() => {
                 $('#title').children().addClass('small');
                 $('header').addClass('scroll');
             };
+            // if ($(document).scrollTop() < 50 && $('body').attr('id') !== 'media-page') {
             if ($(document).scrollTop() < 50) {
                 $('#title').children().removeClass('small');
                 $('header').removeClass('scroll');
@@ -109,7 +110,6 @@ $(document).ready(() => {
         if ($('body').attr('id') !== 'contact-page') {
             form = $(input).closest('form');
             inputs = $(form).find('input', 'textarea');
-            console.log(inputs);
         } else {
             form = $(currentForm).find('.tab');
             inputs = $(form[currentTab]).find('input, textarea');
@@ -145,7 +145,45 @@ $(document).ready(() => {
         validateForm(input);
     });
 
+    $('input').change(e => {
+        let input = $(e.currentTarget);
+        let type = input.attr('type');
+        if (type == 'checkbox' || type == 'radio') {
+            $('input:checked').parent('label').addClass('checked');
+            $('input:not(:checked)').parent('label').removeClass('checked');
+            if (input.closest('div').find('input:checked')) {
+                $('#nextBtn').removeAttr('disabled');
+            }
+        }
+    });
+
     if ($('body').attr('id') == 'contact-page') {
+
+        const contactPage = {
+            currentForm: 0,
+            currentTab: -1,
+            summaryElement: $('.summary-sentence'),
+            summaryObject: {
+                instrument: '',
+                lessons: 'lessons',
+                student: '',
+                frequency: '',
+                experience: '',
+                availability: '',
+                available: true,
+                frequencyFirst: false,
+                bypass: false
+            },
+            frequencyInfo: {
+                frequencyFirst: false,
+                justOne: false,
+            },
+            nominativePronoun: 'I',
+            accusativePronoun: 'you',
+            postStudentPunc: '.',
+            fullstopFrequency: '',
+            availability: ''
+        };
 
         var currentForm;
         var currentTab = -1;
@@ -418,17 +456,19 @@ $(document).ready(() => {
         });
 
         // Visible checkboxes and activate #nextBtn
-        $('input').change(e => {
-            let input = $(e.currentTarget);
-            let type = input.attr('type');
-            if (type == 'checkbox' || type == 'radio') {
-                $('input:checked').parent('label').addClass('checked');
-                $('input:not(:checked)').parent('label').removeClass('checked');
-                if (input.closest('div').find('input:checked')) {
-                    $('#nextBtn').removeAttr('disabled');
-                }
-            }
-        });
+
+        // **** MOVED ****
+        // $('input').change(e => {
+        //     let input = $(e.currentTarget);
+        //     let type = input.attr('type');
+        //     if (type == 'checkbox' || type == 'radio') {
+        //         $('input:checked').parent('label').addClass('checked');
+        //         $('input:not(:checked)').parent('label').removeClass('checked');
+        //         if (input.closest('div').find('input:checked')) {
+        //             $('#nextBtn').removeAttr('disabled');
+        //         }
+        //     }
+        // });
 
         $('.bypass').on('click', event => {
             let label = $(event.currentTarget);
@@ -523,15 +563,27 @@ $(document).ready(() => {
     function setYoutubeThumbnails(youtubes) {
         for (let i = 0; i < youtubes.length; i++) {
             if ($(youtubes[i]).hasClass('unloaded-thumbnail')) {
+                let video = youtubes[i];
                 let src;
-                if ($(youtubes[i]).hasClass('facebook-video')) {
+                if ($(video).hasClass('facebook-video') || $(video).data('format') === 'facebook') {
                     src = 'https://bsp-static.playbill.com/dims4/default/eddc159/2147483647/crop/6644x3740%2B0%2B2915/resize/970x546/quality/90/?url=http%3A%2F%2Fpb-asset-replication.s3.amazonaws.com%2Fc5%2Fb4%2F7fce0e31418ab9146014dcb572b6%2Fromantics-anonymous-2019-0036.jpg';
+                } else if ($(video).data('format') === 'spotify') {
+                    src = 'https://i.redd.it/jx6l09reuse41.jpg';
                 } else {
-                    src = 'https://i.ytimg.com/vi/' + youtubes[i].dataset.id + '/hqdefault.jpg';
+                    src = 'https://i.ytimg.com/vi/' + video.dataset.id + '/hqdefault.jpg';
                 }
-                let url = 'url(' + src + ')';
-                $(youtubes[i]).css('background-image', url);
-                $(youtubes[i]).removeClass('unloaded-thumbnail');
+                if (video.dataset.thumbnail) {
+                    src = video.dataset.thumbnail;
+                }
+                if ($(video).children('img').length) {
+                    $('<div/>').appendTo($(video)).addClass('icon').addClass(video.dataset.format);
+                    $(video).children('img').attr('src', src).attr('alt', video.dataset.title);
+                    $('<div/>').appendTo($(video)).addClass('details').append($(`<h3>${video.dataset.title}</h3>`), $(`<p>${video.dataset.description}</p>`));
+                } else {
+                    let url = 'url(' + src + ')';
+                    $(video).css('background-image', url);
+                }
+                $(video).removeClass('unloaded-thumbnail');
             }
         }
     }
@@ -539,9 +591,31 @@ $(document).ready(() => {
     setYoutubeThumbnails($('#home-page .youtube-thumbnail-div'));
     setYoutubeThumbnails($('.load-first'));
 
+    function showMediaThumbnails() {
+        const videoArr = $('.media-results').children();
+        const filterArr = [];
+        const toDisplay = [];
+        $('#media-filter').find('input:checked').each(function() {
+            filterArr.push($(this).attr('id'));
+        });
+        $(videoArr).each(function() {
+            const tags = $(this).data('tags');
+            for (let i = 0; i < filterArr.length; i++) {
+                if (tags.includes(filterArr[i])) {
+                    toDisplay.push($(this));
+                    break;
+                }
+            }
+        });
+    }
+
+    $('#media-filter').find('input').on('change', function() {
+        showMediaThumbnails();
+    });
+
     function iframeAttributes(div) {
         let data = {};
-        if ($(div).hasClass('facebook-video')) {
+        if ($(div).hasClass('facebook-video') || $(div).data('format') === 'facebook') {
             data = {
                 'src': 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com' + div.dataset.id + '&show_text=false&autoplay=true',
                 'frameborder': '0',
@@ -563,14 +637,28 @@ $(document).ready(() => {
         return data;
     }
 
-    function createVideoIframe(div) {
+    function changeToVideoIframe(div) {
         $(div).addClass('play');
         $('<iframe/>', iframeAttributes(div)).appendTo($(div));
     }
 
+    function assignToVideoPlayer(div) {
+        $(div).addClass('play');
+    }
+
     $('.youtube-thumbnail-div').one('click', function() {
-        createVideoIframe(this);
+        changeToVideoIframe(this);
     });
+
+    $('.media-results').children().on('click', function() {
+        $('.media-results').children().removeClass('play');
+        assignToVideoPlayer(this);
+    });
+
+    // media
+    if ($('body').attr('id') == 'media-page') {
+        setYoutubeThumbnails($('.media-results div'));
+    }
 
     // homepage instrument list
     $('.instrument-list li').on('click', event => {

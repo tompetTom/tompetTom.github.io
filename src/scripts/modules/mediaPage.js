@@ -16,6 +16,8 @@ export const mediaPage = {
         let url = '';
         if (video.format === 'youtube') {
             url = youtubeThumbnail[0] + video.src + youtubeThumbnail[1];
+        } else if (video.format === 'facebook') {
+            url = 'https://bsp-static.playbill.com/dims4/default/eddc159/2147483647/crop/6644x3740%2B0%2B2915/resize/970x546/quality/90/?url=http%3A%2F%2Fpb-asset-replication.s3.amazonaws.com%2Fc5%2Fb4%2F7fce0e31418ab9146014dcb572b6%2Fromantics-anonymous-2019-0036.jpg';
         } else {
             url = 'https://images.unsplash.com/photo-1612548403247-aa2873e9422d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2667&q=80';
         }
@@ -38,15 +40,16 @@ export const mediaPage = {
         return url;
     },
     
-    filterVideos(tagArr) {
+    filterVideos(tagArr) { // Inputted filter options
         let videos = [];
         tagArr.forEach(selected => {
-            media.forEach(video => {
-                video.tags.forEach(tag => {
-                    if (tag === selected) {
+            media.forEach(video => { // All videos in 'media'
+                for (let i = 0; i < video.tags.length; i++) {
+                    if (video.tags[i] === selected) {
                         videos.push(video);
+                        break;
                     }
-                })
+                }
             })
         });
         return videos;
@@ -65,7 +68,7 @@ export const mediaPage = {
             });
         }
         if (orderBy === 'date' || orderBy === 'year') {
-            videoArr.sort((a, b) => a - b);
+            videoArr.sort((a, b) => a[orderBy] - b[orderBy]);
         }
         return videoArr;
     }

@@ -17,6 +17,7 @@ header {
     // }
 
     .home-page & {
+        
         @include media-query(single-column) {
             height: 30vh;
         }
@@ -69,8 +70,6 @@ header {
         background-color: fade-out($white, .04);
         flex-wrap: nowrap;
         height: auto;
-        // height: 135px;
-        // height: 6.5rem;
         overflow: visible;
 
         #title {
@@ -178,41 +177,24 @@ header {
         }
     }
 
-    // @include media-query(mobile-landscape-only) {
-    //     display: block;
-    //     height: 100vh;
-    //     padding-left: $gutter;
-    //     position: absolute;
-    //     width: 50vw;
+    .sub-page & {
+        @include media-query(mobile) {
+            @include grid-column(fill);
+            display: block;
+            position: relative;
+            text-align: right;
 
-    //     &.scroll {
-    //         background-color: transparent;
-    //     }
+            #title {
+                h1 {
+                    font-size: 7vmin;
+                }
 
-    //     #title {
-    //         text-align: left;
-
-    //         h1 {
-    //             font-size: 8vw;
-    //             padding-top: 20vh;
-
-    //             &.small {
-    //                 font-size: 8vw;
-    //             }
-    //         }
-
-    //         .tagline {
-    //             left: 0;
-    //             line-height: 1.7em;
-    //             margin-top: 2rem;
-    //             text-align: left;
-
-    //             span {
-    //                 display: block;
-    //             }
-    //         }
-    //     }
-    // }
+                .tagline {
+                    font-size: 2vmin;
+                }
+            }
+        }
+    }
 }
 
 .page-icon {

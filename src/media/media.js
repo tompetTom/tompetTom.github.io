@@ -1,33 +1,23 @@
-export const media = [
-    {
-        title: 'A la una yo nací',
-        description: 'Lux Musicae London',
-        format: 'youtube',
-        src: 'CKg9BSG6OV0',
-        tags: ['early music', 'recorder'],
-        year: 2020,
-        thumbnail: '',
-        visibility: ''
-    },
+let media = [
     {
         title: 'Something\'s Coming',
-        description: 'From West Side Story',
+        description: 'from West Side Story',
         format: 'youtube',
         src: 'JnuDpNuEn3U',
         tags: ['360°', 'musical theatre', 'flute', 'clarinet', 'saxophone', 'recorder', 'world flute'],
         year: 2021,
         thumbnail: '',
-        visibility: ''
+        visibility: 1
     },
     {
         title: 'Be Water, Be Light',
-        description: 'Audio-visual poem, with music by Rachel Beckles-Willson',
+        description: 'Audio-visual poem by Rachel Beckles-Willson',
         format: 'youtube',
         src: '-0PGlubO_uA',
         tags: ['classical music', 'saxophone'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 2
     },
     {
         title: 'Blind Faith',
@@ -37,7 +27,7 @@ export const media = [
         tags: ['musical theatre', 'flute', 'clarinet', 'recorder'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Bring Me Little Water, Silvy',
@@ -47,7 +37,7 @@ export const media = [
         tags: ['world flute'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Hagrid\'s Friendly Bird',
@@ -57,7 +47,7 @@ export const media = [
         tags: ['flute', 'recorder'],
         year: 2020,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 1
     },
     {
         title: 'Hugh Ashton\'s Maske',
@@ -67,7 +57,7 @@ export const media = [
         tags: ['early music', 'recorder'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'If She Loved Me',
@@ -77,17 +67,17 @@ export const media = [
         tags: ['musical theatre', 'clarinet'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Lasciatemi qui solo',
-        description: 'Lux Musicae London',
+        description: 'Lux Musicae London (360° video)',
         format: 'youtube',
         src: 'm6frSMQOVGo',
         tags: ['early music', 'recorder', '360°'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Maestro – Lee Broom',
@@ -97,7 +87,7 @@ export const media = [
         tags: ['film/tv/adverts', 'classical music', 'clarinet'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 2
     },
     {
         title: 'Locked Down with SC and MM',
@@ -107,7 +97,7 @@ export const media = [
         tags: ['classical music', 'clarinet'],
         year: 2020,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 1
     },
     {
         title: 'Lola\'s Lion',
@@ -117,37 +107,37 @@ export const media = [
         tags: ['film/tv/adverts', 'flute', 'clarinet'],
         year: 2020,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 1
     },
     {
         title: 'Opening',
-        description: 'From Kenny Wheeler\'s Sweet Time Suite',
+        description: 'from Kenny Wheeler\'s Sweet Time Suite',
         format: 'youtube',
         src: 'tb_9ZFNBWRE',
         tags: ['jazz', 'saxophone', 'world flute'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 1
     },
     {
         title: 'Suite No. 1 in F Major – ‘Ascendit\'',
-        description: 'For flute, composed by Arnfield Cudal',
+        description: 'for flute, composed by Arnfield Cudal',
         format: 'youtube',
         src: 'UnmfJkwvmjg',
         tags: ['classical music', 'flute'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 2
     },
     {
         title: 'Swive',
-        description: 'Shakespeare\'s Globe – Trailer',
+        description: 'Shakespeare\'s Globe (Trailer)',
         format: 'youtube',
         src: 'MMIhr2qdAlA',
         tags: ['musical theatre', 'clarinet'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 2
     },
     {
         title: 'Take Things Into Our Own Hands',
@@ -157,7 +147,7 @@ export const media = [
         tags: ['musical theatre', 'flute', 'clarinet', 'recorder'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 1
     },
     {
         title: 'The Day Elizabeth Died',
@@ -167,17 +157,17 @@ export const media = [
         tags: ['musical theatre', 'flute', 'clarinet', 'recorder'],
         year: 2020,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 1
     },
     {
         title: 'The Dream Bivouac',
-        description: 'From the operetta "The American Maid" by J. P. Sousa',
+        description: 'from the operetta "The American Maid" by J. P. Sousa',
         format: 'youtube',
         src: '3Dvi8Krj9iA',
         tags: ['flute', 'clarinet', 'recorder', 'saxophone'],
         year: 2020,
         thumbnail: '',
-        visibility: 'low'
+        visibility: 4
     },
     {
         title: 'The Parting Glass',
@@ -187,7 +177,7 @@ export const media = [
         tags: ['world flute'],
         year: 2020,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Too Good For Words',
@@ -197,7 +187,7 @@ export const media = [
         tags: ['musical theatre', 'clarinet'],
         year: 2020,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 1
     },
     {
         title: 'Treason the Musical',
@@ -206,8 +196,8 @@ export const media = [
         src: 'album/49MlrHcUA9ZdrkmLdt1qUP',
         tags: ['musical theatre', 'flute', 'clarinet', 'recorder'],
         year: 2020,
-        thumbnail: '',
-        visibility: ''
+        thumbnail: 'https://i.ytimg.com/vi/nSd_XDd9sEc/hqdefault.jpg',
+        visibility: 3
     },
     {
         title: 'Wings',
@@ -217,7 +207,7 @@ export const media = [
         tags: ['musical theatre', 'clarinet', 'recorder'],
         year: 2020,
         thumbnail: '',
-        visibility: 'low'
+        visibility: 4
     },
     {
         title: 'A la una yo nací',
@@ -227,7 +217,7 @@ export const media = [
         tags: ['early music', 'recorder'],
         year: 2019,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 1
     },
     {
         title: 'Con qué la lavaré',
@@ -237,7 +227,7 @@ export const media = [
         tags: ['early music', 'recorder'],
         year: 2019,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Hanacpachap Cussicuinin',
@@ -247,7 +237,7 @@ export const media = [
         tags: ['early music', 'clarinet', 'flute'],
         year: 2019,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Mild Mabel Kelly',
@@ -257,27 +247,27 @@ export const media = [
         tags: ['early music', 'clarinet', 'flute', 'world flute'],
         year: 2019,
         thumbnail: '',
-        visibility: ''
+        visibility: 2
     },
     {
         title: 'Mimi And The Mountain Dragon',
-        description: 'Children\'s Christmas film recorded with the BBC Philharmonic',
+        description: 'BBC Children\'s Christmas film',
         format: 'youtube',
         src: 'BFC0ZFJFxz4',
         tags: ['film/tv/adverts', 'recorder'],
         year: 2019,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 2
     },
     {
         title: 'Mimi And The Mountain Dragon',
-        description: 'Children\'s Christmas film recorded with the BBC Philharmonic',
+        description: 'BBC Children\'s Christmas film',
         format: 'spotify',
         src: 'album/6oZdww1xzr4kVpLwQTZIdZ',
         tags: ['film/tv/adverts', 'recorder'],
         year: 2019,
-        thumbnail: '',
-        visibility: 'low'
+        thumbnail: 'https://i.ytimg.com/vi/BFC0ZFJFxz4/hqdefault.jpg',
+        visibility: 4
     },
     {
         title: 'Rowan Hudson\'s Passing Ships',
@@ -286,8 +276,8 @@ export const media = [
         src: 'album/4OBEN30PXSDNknXPCvzGO8',
         tags: ['jazz', 'classical music', 'clarinet'],
         year: 2019,
-        thumbnail: '',
-        visibility: ''
+        thumbnail: 'https://i.ytimg.com/vi/f7YBztyMNls/hqdefault.jpg',
+        visibility: 2
     },
     {
         title: 'Susanne un Jour',
@@ -297,17 +287,17 @@ export const media = [
         tags: ['early music', 'recorder'],
         year: 2019,
         thumbnail: '',
-        visibility: ''
+        visibility: 2
     },
     {
         title: 'The Winter\'s Tale',
-        description: 'Shakespeare\'s Globe – Trailer',
+        description: 'Shakespeare\'s Globe (Trailer)',
         format: 'youtube',
         src: '9ayu890NSNY',
         tags: ['musical theatre', 'clarinet'],
         year: 2019,
         thumbnail: '',
-        visibility: ''
+        visibility: 4
     },
     {
         title: 'Un sarao de la chacona',
@@ -317,7 +307,7 @@ export const media = [
         tags: ['early music', 'recorder'],
         year: 2019,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Argos',
@@ -327,7 +317,7 @@ export const media = [
         tags: ['film/tv/adverts', 'clarinet'],
         year: 2018,
         thumbnail: '',
-        visibility: ''
+        visibility: 2
     },
     {
         title: 'Arbos',
@@ -337,18 +327,18 @@ export const media = [
         tags: ['classical music', 'recorder'],
         year: 2017,
         thumbnail: '',
-        visibility: ''
+        visibility: 4
     },
-    {
-        title: 'Bavardage',
-        description: 'Flautadors Recorder Ensemble',
-        format: 'spotify',
-        src: 'album/4GSL9B50kSDnJoKP5wILwW',
-        tags: ['classical music', 'recorder'],
-        year: 2017,
-        thumbnail: '',
-        visibility: ''
-    },
+    // {
+    //     title: 'Bavardage',
+    //     description: 'Flautadors Recorder Ensemble',
+    //     format: 'spotify',
+    //     src: 'album/4GSL9B50kSDnJoKP5wILwW',
+    //     tags: ['classical music', 'recorder'],
+    //     year: 2017,
+    //     thumbnail: 'https://i.ytimg.com/vi/pHGy8sQzP1k/hqdefault.jpg',
+    //     visibility: 4
+    // },
     {
         title: 'In C',
         description: 'Flautadors Recorder Ensemble',
@@ -357,17 +347,17 @@ export const media = [
         tags: ['classical music', 'recorder'],
         year: 2017,
         thumbnail: '',
-        visibility: ''
+        visibility: 4
     },
     {
         title: 'Romantics Anonymous',
-        description: 'Shakespeare’s Globe – Trailer',
+        description: 'Shakespeare’s Globe (Trailer)',
         format: 'youtube',
         src: 'dCp2MDOx2Ms',
         tags: ['musical theatre', 'clarinet', 'recorder'],
         year: 2017,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Automata',
@@ -377,7 +367,7 @@ export const media = [
         tags: ['classical music', 'recorder'],
         year: 2015,
         thumbnail: '',
-        visibility: ''
+        visibility: 3
     },
     {
         title: 'Music by Holborne and Brade',
@@ -387,6 +377,30 @@ export const media = [
         tags: ['early music', 'recorder'],
         year: 2015,
         thumbnail: '',
-        visibility: 'high'
+        visibility: 1
     }
 ];
+
+const sortAll = arr => {
+    arr.sort((a, b) => {
+        if (a.visibility !== b.visibility) return a.visibility - b.visibility;
+        if (a.year !== b.year) return b.year - a.year;
+        if (a.title < b.title) return -1;
+        if (a.title > b.title) return 1;
+        return 0;
+    });
+    return arr;
+}
+
+const sorted = sortAll(media);
+
+sorted.forEach(video => {
+    let extras = '';
+    if (video.thumbnail) {
+        extras += ` data-thumbnail="${video.thumbnail}"`;
+    }
+    if (video.visibility) {
+        extras += ` data-visibility="${video.visibility}"`;
+    }
+    console.log(`<div class="unloaded-thumbnail" data-title="${video.title.replace('\\', '')}" data-description="${video.description}" data-id="${video.src}" data-format="${video.format}" data-tags='["${video.tags.join('", "')}"]' data-year="${video.year}"${extras}><img src="" alt="" loading="lazy"></div>`);
+});

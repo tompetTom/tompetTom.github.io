@@ -12,3 +12,15 @@
         grid-template-columns: 1fr 550px 550px 1fr;
     }
 }
+
+#media-page {
+    .grid-container {
+        @include media-query(tablet-landscape-up) {
+            grid-template-columns: 1px minmax(5rem, 25%) minmax(0, 1fr) 1px;
+        }
+    
+        @include media-query(desktop-up) {
+            grid-template-columns: 1fr 350px 750px 1fr;
+        }
+    }
+}
