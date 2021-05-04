@@ -83,6 +83,16 @@ $(document).ready(() => {
         scrollToElement($(event.currentTarget));
     });
 
+    // control youtube video
+    function youtubeControls(iframe, command) {
+        let func = `${command}Video`;
+        let control = {
+            "event": "command",
+            "func": func
+        };
+        iframe.contentWindow.postMessage(JSON.stringify(control), "*");
+    }
+
     // contact page
     function validateEmail(email) {
         let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,6})+$/;
@@ -455,21 +465,6 @@ $(document).ready(() => {
             showTab(currentTab);
         });
 
-        // Visible checkboxes and activate #nextBtn
-
-        // **** MOVED ****
-        // $('input').change(e => {
-        //     let input = $(e.currentTarget);
-        //     let type = input.attr('type');
-        //     if (type == 'checkbox' || type == 'radio') {
-        //         $('input:checked').parent('label').addClass('checked');
-        //         $('input:not(:checked)').parent('label').removeClass('checked');
-        //         if (input.closest('div').find('input:checked')) {
-        //             $('#nextBtn').removeAttr('disabled');
-        //         }
-        //     }
-        // });
-
         $('.bypass').on('click', event => {
             let label = $(event.currentTarget);
             if (!label.hasClass('checked')) {
@@ -534,7 +529,6 @@ $(document).ready(() => {
                 scrollTo(100);
             }
         });
-
     }
 
     // slick
@@ -544,10 +538,11 @@ $(document).ready(() => {
             autoplaySpeed: 5000,
             dots: false,
             arrows: false,
+            mobileFirst: true,
             speed: 1000
         });
 
-        $(window).on('orientationchange', function() {
+        $(window).on('orientationchange resize', function() {
             $('.slick-quote').slick('resize');
         });
 
@@ -555,7 +550,13 @@ $(document).ready(() => {
             autoplay: false,
             dots: true,
             arrows: true,
-            speed: 900
+            speed: 900,
+            touchThreshold: 7
+        }).on('beforeChange', function(e, slick, currentSlide) {
+            let iframe = $(slick.$slides[currentSlide]).find('iframe').get(0);
+            if (iframe) {
+                youtubeControls(iframe, 'pause');
+            }
         });
     }
 
@@ -592,21 +593,43 @@ $(document).ready(() => {
     setYoutubeThumbnails($('.load-first'));
 
     function showMediaThumbnails() {
-        const videoArr = $('.media-results').children();
-        const filterArr = [];
-        const toDisplay = [];
+        let videoArr = $('.media-results').children();
+        let filterArr = [];
+        let toDisplay = [];
+        let playlist = [];
+        let span = $('#media-filter').find('span');
         $('#media-filter').find('input:checked').each(function() {
-            filterArr.push($(this).attr('id'));
+            let tag = $(this).attr('id').replace('-', ' ').replace('film', 'film/tv/adverts');
+            filterArr.push(tag);
         });
         $(videoArr).each(function() {
-            const tags = $(this).data('tags');
+            let tags = $(this).data('tags');
+            let id = $(this).data('id');
             for (let i = 0; i < filterArr.length; i++) {
                 if (tags.includes(filterArr[i])) {
                     toDisplay.push($(this));
+                    playlist.push(id);
                     break;
                 }
             }
         });
+        if (!filterArr.length) {
+            $(videoArr).show();
+            $(videoArr).each(function() {
+                playlist.push($(this).data('id'));
+            });
+        } else {
+            $(videoArr).hide();
+            toDisplay.forEach(video => {
+                $(video).show();
+            });
+        }
+        $('#all-media').data('playlist', playlist);
+        if (filterArr.length) {
+            span.text(filterArr.join(', '));
+        } else {
+            span.text('all');
+        }
     }
 
     $('#media-filter').find('input').on('change', function() {
@@ -614,25 +637,24 @@ $(document).ready(() => {
     });
 
     function iframeAttributes(div) {
-        let data = {};
+        let data = {
+            'frameborder': '0',
+            'allowfullscreen': '1',
+            'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+            'class': 'youtube'
+        };
         if ($(div).hasClass('facebook-video') || $(div).data('format') === 'facebook') {
-            data = {
-                'src': 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com' + div.dataset.id + '&show_text=false&autoplay=true',
-                'frameborder': '0',
-                'allowfullscreen': '1',
-                'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
-                'class': 'youtube'
-            }
+            data['src'] = 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com' + $(div).data('id') + '&show_text=false&mute=0';
+        } else if ($(div).data('format') === 'spotify') {
+            data['src'] = 'https://open.spotify.com/embed/' + $(div).data('id');
+            data['allowtransparency'] = true;
+            data['class'] = 'spotify';
+            data['allow'] = 'encrypted-media';
+            data['allowfullscreen'] = '';
         } else {
-            data = {
-                'src': 'https://www.youtube.com/embed/' + div.dataset.id + '?autoplay=1&rel=0&enablejsapi=1',
-                'frameborder': '0',
-                'modestbranding': '1',
-                'show-info': '0',
-                'allowfullscreen': '1',
-                'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
-                'class': 'youtube'
-            }
+            data['src'] = 'https://www.youtube.com/embed/' + $(div).data('id') + '?autoplay=1&rel=0&enablejsapi=1';
+            data['modestbranding'] = '1';
+            data['show-info'] = '0';
         }
         return data;
     }
@@ -643,21 +665,54 @@ $(document).ready(() => {
     }
 
     function assignToVideoPlayer(div) {
+        let container = $(div).parent().siblings('.player-container');
+        let iframe = $(container).find('iframe');
+        let details = container.find('.media-details');
+        let tags = $(div).data('tags');
+        let id = $(div).data('id');
+        let format = $(div).data('format');
+        let playerAttrs = iframeAttributes(div);
         $(div).addClass('play');
+        details.find('.video-tags').empty();
+        tags.forEach(tag => {
+            details.find('.video-tags').append(`<span>${tag}</span>`);
+        });
+        details.children('h3').text($(div).data('title'));
+        details.children('p').text($(div).data('description'));
+        for (const [key, value] of Object.entries(playerAttrs)) {
+            $(iframe).attr(key, value);
+        }
+        $('#all-media').data('current', id).data('format', format);
+        scrollTo(0);
+        if (container.is(":hidden")) {
+            container.slideDown();
+        }
     }
 
     $('.youtube-thumbnail-div').one('click', function() {
-        changeToVideoIframe(this);
+        changeToVideoIframe($(this));
     });
 
     $('.media-results').children().on('click', function() {
         $('.media-results').children().removeClass('play');
-        assignToVideoPlayer(this);
+        assignToVideoPlayer($(this));
+    });
+
+    $('#player-close').click(function() {
+        let container = $(this).closest('.player-container');
+        let iframe = $(container).find('iframe').get(0);
+        // youtubeControls(iframe, 'pause');
+        $(container).slideUp();
+        setTimeout(function() {
+            $(iframe).removeAttr('src');
+        }, 500);
+        $('.media-results').children().removeClass('play');
     });
 
     // media
     if ($('body').attr('id') == 'media-page') {
         setYoutubeThumbnails($('.media-results div'));
+        showMediaThumbnails();
     }
 
     // homepage instrument list

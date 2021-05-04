@@ -155,7 +155,7 @@
         }
 
         .player-container {
-            // display: none;
+            display: none;
             margin: 0 auto $margin-top auto;
             max-width: 700px;
 
@@ -203,7 +203,7 @@
                         font-size: .7em;
                         height: 1.2rem;
                         line-height: 1.1rem;
-                        margin: 0;
+                        margin: 0 .3rem 0 0;
                         padding: 0 .5rem;
                     }
                 }
@@ -236,7 +236,8 @@
 
             div:not(.icon) {
                 // background: center/100% no-repeat;
-                // clip-path: url(../../../images/backgrounds/squircle-one-path.svg);
+                // clip-path: url(../../../../images/backgrounds/squircle-one-path.svg);
+                // clip-path: path(M0,100C0,21,21,0,100,0S200,21,200,100,179,200,100,200,0,179,0,100);
                 cursor: pointer;
                 margin: 0;
                 overflow: hidden;
@@ -262,22 +263,10 @@
                     }
 
                     &.spotify {
-                        // margin: 0;
-
                         &::after {
                             content: url(../../../images/icons/social/spotify-block-50.svg);
                         }
                     }
-
-                    // &.youtube {
-                    //     &::after {
-                    //         content: url(../../../images/icons/boxed-icons/media-block.svg);
-                    //         left: 0;
-                    //         position: absolute;
-                    //         top: 0;
-                    //         width: 100%;
-                    //     }
-                    // }
                 }
 
                 .details {
@@ -369,13 +358,30 @@
                 }
 
                 &.play {
-                    // border: 1rem solid $light;
                     box-shadow: 0 0 1.5rem fade-out($black, .7);
                     transform: scale(.9);
 
                     .icon {
                         left: -20%;
                         transition: left $slow-transition-time;
+                    }
+
+                    .details {
+                        opacity: 1;
+                        transform: scale(1);
+
+                        h3 {
+                            bottom: 50%;
+                        }
+
+                        p {
+                            top: 50%;
+                        }
+                    }
+
+                    img {
+                        transform: translate(-50%, -50%) scale(1.15);
+                        filter: brightness(.2);
                     }
                 }
             }
