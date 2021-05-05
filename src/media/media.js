@@ -144,7 +144,7 @@ let media = [
         description: 'Treason the Musical',
         format: 'youtube',
         src: 'ZidQd-4wyDI',
-        tags: ['musical theatre', 'flute', 'clarinet', 'recorder'],
+        tags: ['musical theatre', 'flute', 'recorder'],
         year: 2020,
         thumbnail: '',
         visibility: 1
@@ -161,7 +161,7 @@ let media = [
     },
     {
         title: 'The Dream Bivouac',
-        description: 'from the operetta "The American Maid" by J. P. Sousa',
+        description: 'from the operetta \'The American Maid\' by J. P. Sousa',
         format: 'youtube',
         src: '3Dvi8Krj9iA',
         tags: ['flute', 'clarinet', 'recorder', 'saxophone'],

@@ -5,15 +5,16 @@ $(document).ready(() => {
         $(document).on('scroll', () => {
             if ($(document).scrollTop() > 50) {
                 $('.landing-section').find('.tagline').addClass('fade');
+                $('header').addClass('title-fade');
             };
             if ($(document).scrollTop() > 200) {
                 $('#title').children().addClass('small');
-                $('header').addClass('scroll');
+                $('header').addClass('scroll').removeClass('title-fade');
             };
             // if ($(document).scrollTop() < 50 && $('body').attr('id') !== 'media-page') {
             if ($(document).scrollTop() < 50) {
                 $('#title').children().removeClass('small');
-                $('header').removeClass('scroll');
+                $('header').removeClass('scroll').removeClass('title-fade');
             };
             if ($(document).scrollTop() < 15) {
                 $('.landing-section').find('.tagline').removeClass('fade');
@@ -33,11 +34,36 @@ $(document).ready(() => {
         })
     });
 
+    function isSingleColumn() {
+        let windowWidth = $(window).width();
+        if (windowWidth < 900) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function getHeaderHeight() {
+        let windowWidth = $(window).width();
+        let windowHeight = $(window).height();
+        let headerHeight;
+        if (windowWidth < 600) {
+            headerHeight = 60;
+        } else if (windowWidth < 900 && windowHeight < windowWidth) {
+            headerHeight = 0;
+        } else if (windowWidth >= 600 && windowWidth < 900 && windowHeight > windowWidth) {
+            headerHeight = 55;
+        } else {
+            headerHeight = 67;
+        };
+        return headerHeight;
+    }
+
+    // auto scrolling
     function scrollTo(scrollDistance) {
         $('html, body').animate({scrollTop: scrollDistance}, 500);
     }
 
-    // scroll to element
     function scrollToElement(link) {
         let target;
         let scrollDistance;
@@ -56,25 +82,11 @@ $(document).ready(() => {
             } else if (target == '#process') {
                 $('.process-gear').removeClass('pg-right');
             };
-            let windowWidth = $(window).width();
-            let windowHeight = $(window).height();
-            let headerHeight;
-            if (windowWidth < 600) {
-                headerHeight = 60;
-            } else if (windowWidth < 900 && windowHeight < windowWidth) {
-                headerHeight = 0;
-            } else if (windowWidth >= 600 && windowWidth < 900 && windowHeight > windowWidth) {
-                headerHeight = 55;
-            } else {
-                headerHeight = 67;
-            };
-            scrollDistance = element.offset().top - headerHeight;
+            scrollDistance = $(element).offset().top - getHeaderHeight();
         }
         if (scrollDistance < 50 && $(document).scrollTop() < 50) {
-            // $('html, body').animate({scrollTop: 100}, 500);
             scrollTo(100);
         }
-        // $('html, body').animate({scrollTop: scrollDistance}, 500);
         scrollTo(scrollDistance);
     };
 
@@ -597,7 +609,7 @@ $(document).ready(() => {
         let filterArr = [];
         let toDisplay = [];
         let playlist = [];
-        let span = $('#media-filter').find('span');
+        let span = $('#media-filter').find('.showing');
         $('#media-filter').find('input:checked').each(function() {
             let tag = $(this).attr('id').replace('-', ' ').replace('film', 'film/tv/adverts');
             filterArr.push(tag);
@@ -632,8 +644,40 @@ $(document).ready(() => {
         }
     }
 
+    function getNextVideo(direction) {
+        let nextVideoId;
+        let playlist = $('#all-media').data('playlist');
+        let current = $('#all-media').data('current');
+        let index = playlist.indexOf(current);
+        if (index < 0) {
+            nextVideoId = playlist[0];
+        } else if (direction > 0 && index === (playlist.length - 1)) {
+            nextVideoId = playlist[0];
+        } else if (direction < 0 && index === (playlist[0])) {
+            nextVideoId = playlist.slice(-1);
+        } else {
+            nextVideoId = playlist[index + direction];
+        }
+        return $('.media-results').find(`[data-id='${nextVideoId}']`);
+    }
+
     $('#media-filter').find('input').on('change', function() {
         showMediaThumbnails();
+    });
+
+    $('#media-filter p').click(function() {
+        if (isSingleColumn()) {
+            $('#media-filter .multi-choice').slideToggle().toggleClass('open');
+            $('#media-filter').find('.collapse').toggle();
+        // } else {
+            // $('#media-filter .multi-choice').show().addClass('open');
+        }
+    });
+
+    $('#media-filter').find('.submitBtn').click(function(e) {
+        e.preventDefault();
+        $('#media-filter .multi-choice').slideUp().removeClass('open');
+        $('#media-filter').find('.collapse').show();
     });
 
     function iframeAttributes(div) {
@@ -672,6 +716,7 @@ $(document).ready(() => {
         let id = $(div).data('id');
         let format = $(div).data('format');
         let playerAttrs = iframeAttributes(div);
+        $('.media-results').children().removeClass('play');
         $(div).addClass('play');
         details.find('.video-tags').empty();
         tags.forEach(tag => {
@@ -683,9 +728,17 @@ $(document).ready(() => {
             $(iframe).attr(key, value);
         }
         $('#all-media').data('current', id).data('format', format);
-        scrollTo(0);
-        if (container.is(":hidden")) {
+        let scrollToVideo;
+        if (container.is(':hidden')) {
+            scrollToVideo = $('#all-media');
             container.slideDown();
+        } else {
+            scrollToVideo = iframe;
+        }
+        if (isSingleColumn()) {
+            scrollToElement(scrollToVideo);
+        } else {
+            scrollTo(0);
         }
     }
 
@@ -709,10 +762,20 @@ $(document).ready(() => {
         $('.media-results').children().removeClass('play');
     });
 
+    $('.controls-top .nextprev svg').click(function() {
+        let id = $(this).attr('id');
+        let direction = id === 'next' ? 1 : -1;
+        assignToVideoPlayer(getNextVideo(direction));
+    });
+
     // media
     if ($('body').attr('id') == 'media-page') {
         setYoutubeThumbnails($('.media-results div'));
         showMediaThumbnails();
+        if (isSingleColumn()) {
+            $('#media-filter .multi-choice').hide();
+            $('#media-filter').find('.collapse').show();
+        }
     }
 
     // homepage instrument list

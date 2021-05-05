@@ -4,146 +4,162 @@
         grid-template-rows: minmax(0, auto);
     }
 
-    // .title-filter {
-    //     @include grid-column(left);
+    .first-section {
+        @include grid-column(left);
+        display: block;
+        height: 4rem;
+        margin-bottom: $margin-top;
+        // margin: 0 0 $margin-top 0;
 
-        .first-section {
-            @include grid-column(left);
-            display: block;
-            height: 4rem;
-            margin-bottom: $margin-top;
-
-            @include media-query(tablet-landscape-up) {
-                text-align: center;
-            }
-
-            svg {
-                display: inline-block;
-                left: 0;
-                position: relative;
-                top: .8rem;
-                width: 4rem;
-                z-index: 0;
-            }
-
-            h2 {
-                display: inline-block;
-            }
+        @include media-query(tablet-landscape-up) {
+            text-align: center;
         }
 
-        aside {
-            @include grid-column(left);
-            margin-bottom: $margin-top;
+        h2 {
+            display: inline-block;
+        }
+    }
 
-            @include media-query(tablet-landscape-up) {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 6rem;
+    aside {
+        @include grid-column(left);
+        margin-bottom: $margin-top;
+
+        @include media-query(tablet-landscape-up) {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 6rem;
+        }
+
+        p {
+            border-bottom: 4px solid $primary;
+            font-weight: $thin;
+
+            @include media-query(single-column) {
+                cursor: pointer;
             }
 
-            p {
-                border-bottom: 4px solid $primary;
-                font-weight: $thin;
-
-                span {
-                    font-weight: $semi-bold;
-                }
+            .showing {
+                font-weight: $semi-bold;
             }
 
-            form {
-                display: grid;
-                gap: .5rem;
-                grid-template-columns: repeat(3, 1fr);
-                margin-top: $margin-top;
-            
-                label {
-                    align-items: center;
-                    border: 2px solid $grey;
-                    border-radius: .5rem;
-                    cursor: pointer;
-                    display: flex;
-                    // flex: 1 0 10rem;
-                    justify-content: center;
-                    margin: 0;
-                    min-height: $finger-width;
-                    padding: 0 .5rem;
-                    text-align: center;
-
-                    &::before {
-                        background: fade-out($primary, 1);
-                        border: 2px solid $grey;
-                        border-radius: .3rem;
-                        content: ' ';
-                        display: none;
-                        height: 1rem;
-                        margin-right: .5rem;
-                        position: relative;
-                        transition: background-color $default-transition-time;
-                        width: 1rem;
-                    }
-        
-                    * {
-                        display: contents;
-                    }
-        
-                    &:hover {
-                        border: 2px solid $primary;
-                        transform: $hover-grow;
-                        transition: $default-transition-time;
-
-                        &::before {
-                            border: 2px solid $dark-grey;
-                        }
-                    }
-        
-                    &.checked {
-                        background: fade-out($primary, .5);
-                        border: 2px solid $primary-gradient;
-
-                        &::before {
-                            background: fade-out($primary, .5);
-                            border: 2px solid $primary-gradient;
-                        }
-                    }
-        
-                    input {
-                        margin: 0;
-                        opacity: 1;
-                    }
-                }
-
-                .submitBtn {
-                    background: $primary;
-                    grid-column: 1 / -1;
-                }
+            .collapse {
+                bottom: .15rem;
+                display: none;
+                font-size: .8em;
+                left: .2rem;
+                position: relative;
 
                 @include media-query(tablet-landscape-up) {
-                    grid-template-columns: 1fr;
+                    display: none !important;
+                }
 
-                    label {
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+
+        form {
+            display: grid;
+            gap: .5rem;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: $margin-top;
+
+            @include media-query(tablet-landscape-up) {
+                display: grid !important;
+            }
+            
+            label {
+                align-items: center;
+                border: 2px solid $grey;
+                border-radius: .5rem;
+                cursor: pointer;
+                display: flex;
+                // flex: 1 0 10rem;
+                justify-content: center;
+                margin: 0;
+                min-height: $finger-width;
+                padding: 0 .5rem;
+                text-align: center;
+
+                &::before {
+                    background: fade-out($primary, 1);
+                    border: 2px solid $grey;
+                    border-radius: .3rem;
+                    content: ' ';
+                    display: none;
+                    height: 1rem;
+                    margin-right: .5rem;
+                    position: relative;
+                    transition: background-color $default-transition-time;
+                    width: 1rem;
+                }
+        
+                * {
+                    display: contents;
+                }
+        
+                &:hover {
+                    border: 2px solid $primary;
+                    transform: $hover-grow;
+                    transition: $default-transition-time;
+
+                    &::before {
+                        border: 2px solid $dark-grey;
+                    }
+                }
+        
+                &.checked {
+                    background: fade-out($primary, .5);
+                    border: 2px solid $primary-gradient;
+
+                    &::before {
+                        background: fade-out($primary, .5);
+                        border: 2px solid $primary-gradient;
+                    }
+                }
+        
+                input {
+                    margin: 0;
+                    opacity: 1;
+                }
+            }
+
+            .submitBtn {
+                background: $primary;
+                grid-column: 1 / -1;
+
+                @include media-query(tablet-landscape-up) {
+                    display: none;
+                }
+            }
+
+            @include media-query(tablet-landscape-up) {
+                grid-template-columns: 1fr;
+
+                label {
+                    border: none;
+                    margin: 0;
+                    min-height: 0;
+                    justify-content: end;
+
+                    &::before {
+                        display: inline-block;
+                    }
+
+                    &:hover {
                         border: none;
-                        margin: 0;
-                        min-height: 0;
-                        justify-content: end;
+                        transform: none;
+                    }
 
-                        &::before {
-                            display: inline-block;
-                        }
-
-                        &:hover {
-                            border: none;
-                            transform: none;
-                        }
-
-                        &.checked {
-                            background: none;
-                            border: none;
-                        }
+                    &.checked {
+                        background: none;
+                        border: none;
                     }
                 }
             }
         }
-    // }
+    }
 
     .media-container {
         @include grid-column(right);

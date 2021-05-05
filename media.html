@@ -87,33 +87,30 @@
                 </ul>
             </nav>
         </header>
-        <!-- <div class="title-filter"> -->
-            <div class="first-section">
-                <!-- <div class="content"> -->
-                    <svg class="page-icon" viewBox="0 0 143.07 112.42">
-                        <path class="page-icon-colour" d="M61.64,28C48.29,33.53,47,76.45,57.79,89.14S122,79,122.43,62.34,77.75,21.25,61.64,28Z"/>
-                        <path d="M2.65,11.39c54.61,2.38,116,34.76,115.58,47.79-.19,6.45-13.19,13.13-25,20.66-12,7.62-24.76,12-31.91,7.53-8-5.06-5-20.79-4.46-33.4.76-16.68,2.86-25.6,14.62-31.65,11.49-5.9,46.92-8,60.25,20.31,11.76,25-7.22,56.58-35.92,63.89-26,6.61-48.2-.71-59.18-23.94-15.38-32.53-1.88-77,44.44-79.12"/>
-                    </svg>
-                    <h2>Media</h2>
-                <!-- </div> -->
-                </div>
-            <aside id="media-filter">
-                <!-- <button>Filter</button> -->
-                <p>Showing: <span>all</span></p>
-                <form class="multi-choice">
-                    <label for="musical-theatre">Musical Theatre<input type="checkbox" name="filter" id="musical-theatre"></label>
-                    <label for="early-music">Early Music<input type="checkbox" name="filter" id="early-music"></label>
-                    <label for="classical-music">Classical Music<input type="checkbox" name="filter" id="classical-music"></label>
-                    <label for="film">Film | TV | Adverts<input type="checkbox" name="filter" id="film"></label>
-                    <label for="flute">Flute<input type="checkbox" name="filter" id="flute"></label>
-                    <label for="world-flute">World Flutes<input type="checkbox" name="filter" id="world-flute"></label>
-                    <label for="clarinet">Clarinet<input type="checkbox" name="filter" id="clarinet"></label>
-                    <label for="recorder">Recorder<input type="checkbox" name="filter" id="recorder"></label>
-                    <label for="saxophone">Saxophone<input type="checkbox" name="filter" id="saxophone"></label>
-                    <button class="submitBtn" type="submit">Filter</button>
-                </form>
-            </aside>
-        <!-- </div> -->
+        <div class="first-section">
+            <div class="icon-title">
+                <svg class="page-icon" viewBox="0 0 143.07 112.42">
+                    <path class="page-icon-colour" d="M61.64,28C48.29,33.53,47,76.45,57.79,89.14S122,79,122.43,62.34,77.75,21.25,61.64,28Z"/>
+                    <path d="M2.65,11.39c54.61,2.38,116,34.76,115.58,47.79-.19,6.45-13.19,13.13-25,20.66-12,7.62-24.76,12-31.91,7.53-8-5.06-5-20.79-4.46-33.4.76-16.68,2.86-25.6,14.62-31.65,11.49-5.9,46.92-8,60.25,20.31,11.76,25-7.22,56.58-35.92,63.89-26,6.61-48.2-.71-59.18-23.94-15.38-32.53-1.88-77,44.44-79.12"/>
+                </svg>
+                <h2>Media</h2>
+            </div>
+        </div>
+        <aside id="media-filter">
+            <p>Showing: <span class="showing">all</span> <span class="collapse">[change]</span></p>
+            <form class="multi-choice">
+                <label for="musical-theatre">Musical Theatre<input type="checkbox" name="filter" id="musical-theatre"></label>
+                <label for="early-music">Early Music<input type="checkbox" name="filter" id="early-music"></label>
+                <label for="classical-music">Classical Music<input type="checkbox" name="filter" id="classical-music"></label>
+                <label for="film">Film | TV | Adverts<input type="checkbox" name="filter" id="film"></label>
+                <label for="flute">Flute<input type="checkbox" name="filter" id="flute"></label>
+                <label for="world-flute">World Flutes<input type="checkbox" name="filter" id="world-flute"></label>
+                <label for="clarinet">Clarinet<input type="checkbox" name="filter" id="clarinet"></label>
+                <label for="recorder">Recorder<input type="checkbox" name="filter" id="recorder"></label>
+                <label for="saxophone">Saxophone<input type="checkbox" name="filter" id="saxophone"></label>
+                <button class="submitBtn" type="submit">Finished</button>
+            </form>
+        </aside>
         <section class="media-container" id="all-media">
             <div class="player-container">
                 <div class="controls-top">
@@ -137,18 +134,13 @@
                 </div>
                 <div id="iframe-container">
                     <div class="youtube-aspect-ratio">
-                        <iframe></iframe>
+                        <iframe id="media-iframe"></iframe>
                     </div>
                 </div>
                 <div class="media-details">
-                    <div class="video-tags">
-                        <span>classical music</span>
-                        <span>pop ballad</span>
-                        <span>zurna</span>
-                        <span>freestyle</span>
-                    </div>
-                    <h3>Something's Coming</h3>
-                    <p>from West Side Story</p>
+                    <div class="video-tags"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="media-results">
@@ -157,7 +149,7 @@
                 <div class="unloaded-thumbnail" data-title="Locked Down with SC and MM" data-description="Performed with composer Matthew Malone" data-id="PXn9bOXJOcc" data-format="youtube" data-tags='["classical music", "clarinet"]' data-year="2020" data-visibility="1"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Lola's Lion" data-description="Short film for Samaritan's Purse UK" data-id="sbXtX01VXR4" data-format="youtube" data-tags='["film/tv/adverts", "flute", "clarinet"]' data-year="2020" data-visibility="1"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Opening" data-description="from Kenny Wheeler's Sweet Time Suite" data-id="tb_9ZFNBWRE" data-format="youtube" data-tags='["jazz", "saxophone", "world flute"]' data-year="2020" data-visibility="1"><img src="" alt="" loading="lazy"></div>
-                <div class="unloaded-thumbnail" data-title="Take Things Into Our Own Hands" data-description="Treason the Musical" data-id="ZidQd-4wyDI" data-format="youtube" data-tags='["musical theatre", "flute", "clarinet", "recorder"]' data-year="2020" data-visibility="1"><img src="" alt="" loading="lazy"></div>
+                <div class="unloaded-thumbnail" data-title="Take Things Into Our Own Hands" data-description="Treason the Musical" data-id="ZidQd-4wyDI" data-format="youtube" data-tags='["musical theatre", "flute", "recorder"]' data-year="2020" data-visibility="1"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="The Day Elizabeth Died" data-description="Treason the Musical" data-id="4iFyBRO2vMw" data-format="youtube" data-tags='["musical theatre", "flute", "clarinet", "recorder"]' data-year="2020" data-visibility="1"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Too Good For Words" data-description="Romantics Anonymous" data-id="%2FWiseChildrenCompany%2Fposts%2F2753311544914240" data-format="facebook" data-tags='["musical theatre", "clarinet"]' data-year="2020" data-visibility="1"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="A la una yo nací" data-description="Lux Musicae London" data-id="CKg9BSG6OV0" data-format="youtube" data-tags='["early music", "recorder"]' data-year="2019" data-visibility="1"><img src="" alt="" loading="lazy"></div>
@@ -177,13 +169,13 @@
                 <div class="unloaded-thumbnail" data-title="If She Loved Me" data-description="Romantics Anonymous" data-id="%2Fwatch%2F%3Fv%3D2759878224333995" data-format="facebook" data-tags='["musical theatre", "clarinet"]' data-year="2020" data-visibility="3"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Lasciatemi qui solo" data-description="Lux Musicae London (360° video)" data-id="m6frSMQOVGo" data-format="youtube" data-tags='["early music", "recorder", "360°"]' data-year="2020" data-visibility="3"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="The Parting Glass" data-description="Scottish traditional song performed on bansuris" data-id="6acEwOgnV0E" data-format="youtube" data-tags='["world flute"]' data-year="2020" data-visibility="3"><img src="" alt="" loading="lazy"></div>
-                <div class="unloaded-thumbnail" data-title="Treason the Musical" data-description="Original Cast Recording (EP)" data-id="album/49MlrHcUA9ZdrkmLdt1qUP" data-format="spotify" data-tags='["musical theatre", "flute", "clarinet", "recorder"]' data-year="2020" data-thumbnail="https://i.ytimg.com/vi/nSd_XDd9sEc/hqdefault.jpg" data-visibility="3"><img src="" alt="" loading="lazy"></div>
+                <div class="unloaded-thumbnail" data-title="Treason the Musical" data-description="Original Cast Recording (EP)" data-id="playlist/49MlrHcUA9ZdrkmLdt1qUP" data-format="spotify" data-tags='["musical theatre", "flute", "clarinet", "recorder"]' data-year="2020" data-thumbnail="https://i.ytimg.com/vi/nSd_XDd9sEc/hqdefault.jpg" data-visibility="3"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Con qué la lavaré" data-description="Lux Musicae London" data-id="HpU0bcOKzvA" data-format="youtube" data-tags='["early music", "recorder"]' data-year="2019" data-visibility="3"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Hanacpachap Cussicuinin" data-description="Renaissance Hymn from Peru" data-id="p-CjCnokOzI" data-format="youtube" data-tags='["early music", "clarinet", "flute"]' data-year="2019" data-visibility="3"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Un sarao de la chacona" data-description="Lux Musicae London" data-id="DGb0hFvFn4c" data-format="youtube" data-tags='["early music", "recorder"]' data-year="2019" data-visibility="3"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Romantics Anonymous" data-description="Shakespeare’s Globe (Trailer)" data-id="dCp2MDOx2Ms" data-format="youtube" data-tags='["musical theatre", "clarinet", "recorder"]' data-year="2017" data-visibility="3"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Automata" data-description="Woodwork Recorder Consort" data-id="p7ydL0FCiPQ" data-format="youtube" data-tags='["classical music", "recorder"]' data-year="2015" data-visibility="3"><img src="" alt="" loading="lazy"></div>
-                <div class="unloaded-thumbnail" data-title="The Dream Bivouac" data-description="from the operetta "The American Maid" by J. P. Sousa" data-id="3Dvi8Krj9iA" data-format="youtube" data-tags='["flute", "clarinet", "recorder", "saxophone"]' data-year="2020" data-visibility="4"><img src="" alt="" loading="lazy"></div>
+                <div class="unloaded-thumbnail" data-title="The Dream Bivouac" data-description="from the operetta 'The American Maid' by J. P. Sousa" data-id="3Dvi8Krj9iA" data-format="youtube" data-tags='["flute", "clarinet", "recorder", "saxophone"]' data-year="2020" data-visibility="4"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Wings" data-description="Romantics Anonymous" data-id="%2Fwatch%2F%3Fv%3D976556989485452" data-format="facebook" data-tags='["musical theatre", "clarinet", "recorder"]' data-year="2020" data-visibility="4"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="Mimi And The Mountain Dragon" data-description="BBC Children's Christmas film" data-id="album/6oZdww1xzr4kVpLwQTZIdZ" data-format="spotify" data-tags='["film/tv/adverts", "recorder"]' data-year="2019" data-thumbnail="https://i.ytimg.com/vi/BFC0ZFJFxz4/hqdefault.jpg" data-visibility="4"><img src="" alt="" loading="lazy"></div>
                 <div class="unloaded-thumbnail" data-title="The Winter's Tale" data-description="Shakespeare's Globe (Trailer)" data-id="9ayu890NSNY" data-format="youtube" data-tags='["musical theatre", "clarinet"]' data-year="2019" data-visibility="4"><img src="" alt="" loading="lazy"></div>

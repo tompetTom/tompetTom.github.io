@@ -1,21 +1,10 @@
-// iframe {
-//     // height: 100%;
-//     // width: 100%;
-
-//     // &.youtube {
-//     //     display: block;
-//     //     height: 281.25px;
-//     //     width: 100%;
-//     // }
-// }
-
 .youtube-aspect-ratio {
     margin-top: $margin-top;
     padding-bottom: 56.25%;
     position: relative;
     width: 100%;
 
-    .youtube {
+    .youtube, .spotify {
         position: absolute;
         top: 0;
         left: 0;
@@ -38,7 +27,6 @@
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);
-        // width: 12.5%;
         width: 3.8rem;
     }
 

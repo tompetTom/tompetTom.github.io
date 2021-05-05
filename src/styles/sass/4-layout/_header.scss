@@ -11,11 +11,6 @@ header {
     width: 100%;
     z-index: 20;
 
-    // .buffer {
-    //     border: 1px solid red;
-    //     width: 50%;
-    // }
-
     .home-page & {
         
         @include media-query(single-column) {
@@ -47,7 +42,18 @@ header {
         @include media-query(tablet-portrait-only) {
             background-color: fade-out($white, .04);
             height: 55px;
+            // height: 7rem;
+            // flex-wrap: wrap;
+            flex-wrap: nowrap;
             transition: background-color $default-transition-time;
+        }
+    }
+
+    &.title-fade:not(.scroll) {
+        #title {
+            @include media-query(tablet-portrait-only) {
+                color: fade-out($white, 1);
+            }
         }
     }
 
@@ -84,6 +90,7 @@ header {
     #title {
         margin: 0 $gutter;
         position: relative;
+        transition: color 1.5s;
 
         &:hover {
             color: inherit;
@@ -181,8 +188,8 @@ header {
         @include media-query(mobile) {
             @include grid-column(fill);
             display: block;
-            position: relative;
-            text-align: right;
+            // position: relative;
+            text-align: center;
 
             #title {
                 h1 {
@@ -190,7 +197,10 @@ header {
                 }
 
                 .tagline {
+                    float: none;
                     font-size: 2vmin;
+                    left: 1rem;
+                    text-align: center;
                 }
             }
         }
@@ -201,7 +211,8 @@ header {
     position: absolute;
     right: $gutter;
     top: $gutter;
-    width: 20vw;
+    // width: 20vw;
+    width: 4rem;
     z-index: 100;
 
     @include media-query(tablet-portrait-up) {

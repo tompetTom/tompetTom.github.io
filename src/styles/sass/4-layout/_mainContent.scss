@@ -22,22 +22,26 @@ section {
 }
 
 .first-section {
-    // @include beneath-header;
-    @include media-query(tablet-portrait-up) {
-        @include beneath-header;
+    @include beneath-header(tiny);
+    // @include media-query(tablet-portrait-up) {
+    //     @include beneath-header;
+    // }
+
+    .icon-title {
+        .page-icon {
+            display: inline-block;
+            left: 0;
+            position: relative;
+            top: .8rem;
+            width: 4rem;
+            z-index: 0;
+        }
+
+        h2 {
+            display: inline-block;
+        }
     }
 }
-
-// .page-title {
-//     &::before {
-//         @include media-query(mobile) {
-//             content: url(../../../images/backgrounds/blobs/underline-blob-2.svg);
-//             display: block;
-//             width: 100%;
-//             z-index: -1;
-//         }
-//     }
-// }
 
 .content {
     position: relative;
@@ -120,9 +124,3 @@ section {
         }
     }
 }
-
-// .spotify {
-//     margin-top: $margin-top;
-//     min-height: 250px;
-//     width: 100%;
-// }

@@ -17,11 +17,11 @@
         display: grid;
         gap: $gutter;
         grid-template-columns: 1fr;
-        margin-top: 1rem;
+        // margin-top: 1rem;
 
-        @include media-query(tablet-portrait-up) {
-            margin-top: 25vh;
-        }
+        // @include media-query(tablet-portrait-up) {
+        //     margin-top: 25vh;
+        // }
 
         @include media-query(mobile-landscape-only) {
             margin-top: 5rem;
@@ -30,6 +30,12 @@
         @include media-query(tablet-landscape-up) {
             grid-template-columns: 1fr 1fr;
             margin-top: 7rem;
+        }
+
+        .icon-title {
+            .page-icon {
+                top: 1.5rem;
+            }
         }
 
         .content {
