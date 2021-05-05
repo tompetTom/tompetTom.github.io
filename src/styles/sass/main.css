@@ -1218,6 +1218,18 @@ nav ul li a:active svg .stroke {
           flex-flow: column wrap;
 }
 
+@media (max-width: 899px) and (orientation: landscape) {
+  .nav-mobile ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .nav-mobile ul li {
+    margin-left: .5rem;
+  }
+}
+
 .nav-mobile ul li {
   margin-bottom: .3rem;
 }

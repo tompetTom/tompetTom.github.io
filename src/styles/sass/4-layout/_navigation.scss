@@ -212,6 +212,14 @@ nav {
     ul {
         flex-flow: column wrap;
 
+        @include media-query(mobile-landscape-only) {
+            flex-direction: row;
+
+            li {
+                margin-left: .5rem;
+            }
+        }
+
         li {
             margin-bottom: .3rem;
         }

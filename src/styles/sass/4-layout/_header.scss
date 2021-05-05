@@ -42,8 +42,6 @@ header {
         @include media-query(tablet-portrait-only) {
             background-color: fade-out($white, .04);
             height: 55px;
-            // height: 7rem;
-            // flex-wrap: wrap;
             flex-wrap: nowrap;
             transition: background-color $default-transition-time;
         }
