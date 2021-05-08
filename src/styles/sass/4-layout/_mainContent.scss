@@ -4,6 +4,21 @@
     left: -$gutter;
 }
 
+.page-icon {
+    position: absolute;
+    right: $gutter;
+    top: $gutter;
+    width: 4rem;
+
+    @include media-query(tablet-portrait-up) {
+        display: none;
+    }
+
+    @include media-query(mobile-landscape-only) {
+        display: block;
+    }
+}
+
 section {
     margin: 0;
     position: relative;
@@ -23,18 +38,22 @@ section {
 
 .first-section {
     @include beneath-header(tiny);
-    // @include media-query(tablet-portrait-up) {
-    //     @include beneath-header;
-    // }
 
     .icon-title {
         .page-icon {
-            display: inline-block;
+            display: none;
             left: 0;
             position: relative;
             top: .8rem;
             width: 4rem;
-            z-index: 0;
+
+            @include media-query(tablet-portrait-up) {
+                display: inline-block;
+            }
+
+            @include media-query(mobile-landscape-only) {
+                display: none;
+            }
         }
 
         h2 {
@@ -62,6 +81,13 @@ section {
         padding: $margin-top 0 0 0;
     }
 
+    .recording-quotee, .quotee {
+        line-height: 1em;
+        margin: .7em 2em 0 2em;
+        font-size: 1rem;
+        font-weight: $normal;
+    }
+
     .slick-quote {
         align-items: center;
         display: flex;
@@ -84,12 +110,8 @@ section {
                     margin-top: .7em;
 
                     &.recording-quotee {
-                        line-height: 1em;
-                        margin: .7em 2em 0 2em;
                         max-width: 50%;
                         float: right;
-                        font-size: 1rem;
-                        font-weight: $normal;
                     }
                 }
             }

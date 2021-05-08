@@ -3,8 +3,11 @@ button {
     // background: no-repeat url(../../../images/backgrounds/blobs/button-2-accent.svg);
     cursor: pointer;
     font-size: 1.2rem;
+    font-family: $serif, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, sans-serif;
+    font-weight: $thin;
     margin-top: $margin-top;
     padding: .5em 1em;
+    // text-transform: uppercase;
     transition: $default-transition-time;
     z-index: 10;
 

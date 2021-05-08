@@ -1,27 +1,10 @@
 #recording-page {
-
-    header {
-        // @include media-query(mobile) {
-        //     height: 25vh;
-        // }
-
-        @include media-query(mobile-landscape-only) {
-            height: 8rem;
-            justify-content: flex-end
-        }
-    }
-
     .first-section {
         @include grid-column(fill);
         align-items: start;
         display: grid;
         gap: $gutter;
         grid-template-columns: 1fr;
-        // margin-top: 1rem;
-
-        // @include media-query(tablet-portrait-up) {
-        //     margin-top: 25vh;
-        // }
 
         @include media-query(mobile-landscape-only) {
             margin-top: 5rem;
@@ -34,13 +17,12 @@
 
         .icon-title {
             .page-icon {
+                margin-top: -1.5rem;
                 top: 1.5rem;
             }
         }
 
         .content {
-            // align-self: start;
-
             .ticks {
                 path {
                     stroke: $primary;
@@ -70,11 +52,9 @@
     .recording-instruments-intro {
         @extend section;
         @include grid-column(fill);
-        // background: no-repeat url(../../../images/backgrounds/blobs/blob-5.svg);
         display: grid;
         column-gap: $gutter;
         grid-template-columns: 1fr;
-        // margin-top: $margin-top;
 
         @include media-query(tablet-landscape-up) {
             grid-template-columns: minmax(19rem, 2fr) 3fr;
@@ -493,7 +473,6 @@
 
                 a {
                     @extend h2;
-                    font-weight: $heading-thin;
 
                     &:hover {
                         color: inherit;
@@ -503,10 +482,6 @@
                 &.active {
                     background: no-repeat url(../../../images/backgrounds/blobs/underline-blob-1.svg);
                     color: $black;
-
-                    a {
-                        font-weight: bold;
-                    }
                 }
             }
         }
@@ -592,7 +567,6 @@
             h2 {
                 color: $black;
                 cursor: pointer;
-                font-weight: $semi-bold;
                 text-align: center;
                 transition: $default-transition-time ease-in;
                 width: 100%;
@@ -612,11 +586,9 @@
 
                 &:nth-child(2) {
                     color: $dark-grey;
-                    font-weight: $heading-thin;
 
                     @include media-query(tablet-landscape-up) {
                         color: $black;
-                        font-weight: $semi-bold;
                     }
                 }
             }
@@ -678,12 +650,10 @@
 
                         &:nth-child(1) {
                             color: $dark-grey;
-                            font-weight: $heading-thin;
                         }
 
                         &:nth-child(2) {
                             color: $black;
-                            font-weight: $semi-bold;
                         }
                     }
                 }

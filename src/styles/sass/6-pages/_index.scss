@@ -1,49 +1,33 @@
 .home-page {
-
-    // MOBILE LANDSCAPE HEADER
     header {
+        @include media-query(mobile) {
+            height: 30vh;
+        }
+
         @include media-query(mobile-landscape-only) {
-            // border: 1px solid red;
-            // align-items: center;
-            // display: flex;
-            height: 90vh;
-            // justify-content: center;
-            padding-left: $gutter;
-            position: absolute;
-            width: 50vw;
-    
+            @include grid-column(full-width);
+            height: 30vh;
+            position: static;
+
             &.scroll {
-                background-color: transparent;
+                height: 30vh;
+                padding: 1rem 0;
             }
-    
-            #title {
-                // border: 1px solid red;
-                align-items: flex-end;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                justify-content: center;
-                // text-align: center;
-    
-                h1 {
-                    font-size: 8vw;
-                    // padding-top: 20vh;
-    
-                    &.small {
-                        font-size: 8vw;
+        }
+
+        @include media-query(tablet-portrait-only) {
+            height: 35vh;
+        }
+
+        div {
+            #title {    
+                img {    
+                    @include media-query(mobile) {
+                        max-height: 7rem;
                     }
-                }
-    
-                .tagline {
-                    // border: 1px solid red;
-                    left: 0;
-                    line-height: 1.7em;
-                    // margin-top: 2rem;
-                    margin: 0;
-                    text-align: right;
-    
-                    span {
-                        display: block;
+
+                    @include media-query(mobile-landscape-only) {
+                        max-height: 7rem;
                     }
                 }
             }
@@ -60,11 +44,13 @@
         width: 100%;
 
         @include media-query(mobile-landscape-only) {
-            align-items: flex-start;
-            margin: 0 0 0 47%;
-            padding: 10vh 0 0 0;
-            right: 0;
-            width: 53%;
+            grid-row-start: 2;
+            height: 70vh;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 100%;
         }
 
         @include media-query(tablet-landscape-up) {
@@ -83,13 +69,18 @@
             position: absolute;
             right: 0;
             width: auto;
+
+            @include media-query(mobile-landscape-only) {
+                max-height: none;
+                top: 0;
+                width: 100%;
+            }
         
             @include media-query(tablet-landscape-up) {
                 max-height: 100%;
             }
     
             #colour {
-                
                 path {
                     stroke: none;
     
@@ -165,8 +156,6 @@
         @include grid-column(fill);
         display: grid;
         grid-template-columns: 100%;
-        // margin-top: -6rem;
-        // padding-top: 6rem;
     
         @include media-query(mobile) {
             padding-bottom: 3rem;
@@ -176,11 +165,6 @@
             margin-top: 0;
             padding-top: 1.7rem;
         }
-
-        // @include media-query(mobile-landscape-only) {
-        //     margin-top: -6rem;
-        //     padding-top: 6rem;
-        // }
 
         @include media-query(tablet-landscape-up) {
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -250,25 +234,4 @@
     .teaching-testimonials {
         @include grid-column(right);
     }
-
-    // footer {
-    //     .links {
-    //         .social-icons {
-    //             position: relative;
-    //             top: .5rem;
-            
-    //             a {
-    //                 display: inline-block;
-    //                 position: relative;
-    //                 width: 1.1rem;
-        
-    //                 img {
-    //                     height: 1rem;
-    //                     position: absolute;
-    //                     left: 0;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 }

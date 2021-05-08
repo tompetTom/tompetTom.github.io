@@ -7,10 +7,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
     <link rel="stylesheet" href="./src/styles/sass/main.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Raleway:wght@200;300;400;500;700&family=Lora:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSZSVCR1S4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -25,20 +24,19 @@
     <div class="grid-container">
         <!-- HEADER / HERO / LANDING -->
         <header>
-            <a href="#" id="title">
-                <h1>Sophie Creaner</h1>
-                <h2 class="tagline">Woodwind multi-instrumentalist<span>Recording, theatre and early music</span></h2>
-            </a>
-            <nav class="nav-main">
-                <ul>
-                    <li><a href="#" class="current scroll-link">Home</a></li>
-                    <li><a href="./recording.html">Recording</a></li>
-                    <li><a href="./media.html">Media</a></li>
-                    <li><a href="#lessons" class="scroll-link">Lessons</a></li>
-                    <!-- <li><a href="./about.html">About</a></li> -->
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <div>
+                <a href="#" id="title"><img src="./images/icons/Sophie Creaner Title.svg" alt="Sophie Creaner"></a>
+                <nav class="nav-main">
+                    <ul>
+                        <li><a href="#" class="current scroll-link">Home</a></li>
+                        <li><a href="./recording.html">Recording</a></li>
+                        <li><a href="./media.html">Media</a></li>
+                        <li><a href="#lessons" class="scroll-link">Lessons</a></li>
+                        <!-- <li><a href="./about.html">About</a></li> -->
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <div class="hero-image">
             <svg viewBox="0 0 1223 996.13">
@@ -185,10 +183,10 @@
         <!-- RECORDING -->
         <section class="intro-tryout">
             <div class="desktop-landing-content">
-                <h2>Studio, Theatre, Early Music</h2>
-                <p>Sophie is a woodind multi-instrumentalist based in London, originally from Cork, Ireland. She records for sessions, performs in theatre productions and plays early music.</p>
+                <h2>Studio ~ Theatre ~ Early Music</h2>
+                <p>Sophie is a woodwind multi-instrumentalist based in London, originally from Cork, Ireland. She records for sessions, performs in theatre productions and plays early music.</p>
                 <div id="landing-page-recording">
-                    <h2>Woodwind Remote Recording</h2>
+                    <h2>Remote Recording</h2>
                     <p>Do you need woodwind tracks recorded for your project? Sophie has a wide range of experience in the world of remote recording and can help to bring a unique flair to any project. Get a free consultation with Sophie to see how she could take your music to a new level.</p>
                     <button class="button-primary"><a href="./recording.html">Discuss now</a></button>
                 </div>
@@ -198,11 +196,11 @@
             <div class="content">
                 <div class="youtube-container">
                     <div class="slick-video">
-                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-id="JnuDpNuEn3U"></div></div>
-                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-id="-dU4MBIRKbg"></div></div>
-                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-id="UnmfJkwvmjg"></div></div>
-                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-id="2GYCmwuWBp0"></div></div>
-                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-id="-0PGlubO_uA"></div></div>
+                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-title="Something's Coming" data-id="JnuDpNuEn3U" data-format="youtube"></div></div>
+                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-title="Hagrid's Friendly Bird" data-id="-dU4MBIRKbg" data-format="youtube"></div></div>
+                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-title="Suite No. 1 in F Major" data-id="UnmfJkwvmjg" data-format="youtube"></div></div>
+                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-title="Argos Christmas Advert" data-id="2GYCmwuWBp0" data-format="youtube"></div></div>
+                        <div><div class="youtube-thumbnail-div unloaded-thumbnail" data-title="Be Water, Be Light" data-id="-0PGlubO_uA" data-format="youtube"></div></div>
                     </div>
                 </div>
                 <div>
@@ -329,9 +327,9 @@
             </svg>
             <div class="content">
                 <h2>Performing</h2>
-                <p>Sophie performs primarily as a musician for West End shows, alongside being active in the UK and European early music scenes. The best thing about musical theatre is the variety of instruments and styles that she has to play on a daily basis, all to a high professional standard. Sometimes, her theatre and early music branches collide, as with recent musical Treason. Check out the track below, <em>Take Things Into Our Own Hands</em>, from the cast recording (listen out for the recorder halfway through!).</p>
+                <p>Sophie performs primarily as a musician for West End shows, alongside being active in the UK and European early music scenes. The best thing about musical theatre is the variety of instruments and styles that she has to play on a daily basis, all to a high professional standard. Sometimes, her theatre and early music branches collide, as with recent musical Treason. Check out the track below, <em>The Day Elizabeth Died</em>, from the cast recording (listen out for the recorder!).</p>
                 <!-- <button class="button-secondary"><a href="./about.html">Read more</a></button> -->
-                <div class="youtube-thumbnail-div unloaded-thumbnail" data-id="ZidQd-4wyDI"></div>
+                <div class="youtube-thumbnail-div unloaded-thumbnail" data-title="The Day Elizabeth Died" data-id="4iFyBRO2vMw" data-format="youtube"></div>
                 <svg class="e-flute-divider" viewBox="0 0 963 186.3">
                     <path class="e-flute-colour"
                         d="M672.3,431.1c-22,14.9-27.6,22.2-67.4,23.6-16,.6-51.3-.2-68.5-20-4.7-5.4,6.8-25.6-6.2-29.3s-17.7,19.1-16.8,30.2c1.3,15.2,27.1,32,93,39.2,31.7,3.5,85.4-2.7,87.8-14S684.1,423.2,672.3,431.1Z"
@@ -357,7 +355,7 @@
             <div class="content">
                 <h2>Lux Musicae</h2>
                 <p>Sophie is a founding member of <a href="https://www.luxmusicaelondon.com" target="_blank">Lux Musicae London</a>, a broken consort dedicated to exploring music from the late Renaissance and Early Baroque periods. With instrumental line up featuring recorders, viola da gamba, harp and lute, as well as two singers (soprano and tenor), their programmes seek to recreate musical performances from the 16th and early 17th centuries, while tracing the patterns of musical influences present during this turbulent period of European history.</p>
-                    <div class="youtube-thumbnail-div unloaded-thumbnail" data-id="CKg9BSG6OV0">
+                    <div class="youtube-thumbnail-div unloaded-thumbnail" data-title="A La Una Yo Naci" data-id="CKg9BSG6OV0" data-format="youtube">
             </div>
         </section>
 
@@ -377,11 +375,11 @@
         <section class="teaching-testimonials">
             <div class="testimonial">
                 <div class="slick-quote">
-                        <div class="bq-container"><blockquote>"Sophie is really kind, the lessons are fun and she's so encouraging and patient. I love my clarinet lessons."<span>~Jonas, 11-year-old clarinet student</span></blockquote></div>
-                        <div class="bq-container"><blockquote>“I love listening to and learning new pieces in my recorder lessons. Sophie is a great teacher.”<span>~Katherine, 6-year-old recorder student</span></blockquote></div>
-                        <div class="bq-container"><blockquote>“Sophie is very kind. I look forward to my lessons. I learn so much from her. I even want to have lessons on the school holidays. <3”<span>~Ethan, 7-year-old flute student</span></blockquote></div>
-                        <div class="bq-container"><blockquote>“Sophie is a really good flute teacher. She is patient and smiley and I enjoy my lessons with her every week.”<span>~Eshan, 6-year-old flute student</span></blockquote></div>
-                        <div class="bq-container"><blockquote>“Sophie is an amazing teacher, I love all the lessons - I wouldn't want anyone else to teach me!”<span>~Holly, 13-year-old flute student</span></blockquote></div>
+                        <div class="bq-container"><blockquote>"Sophie is really kind, the lessons are fun and she's so encouraging and patient. I love my clarinet lessons."<span class="quotee">~Jonas, 11-year-old clarinet student</span></blockquote></div>
+                        <div class="bq-container"><blockquote>“I love listening to and learning new pieces in my recorder lessons. Sophie is a great teacher.”<span class="quotee">~Katherine, 6-year-old recorder student</span></blockquote></div>
+                        <div class="bq-container"><blockquote>“Sophie is very kind. I look forward to my lessons. I learn so much from her. I even want to have lessons on the school holidays. <3”<span class="quotee">~Ethan, 7-year-old flute student</span></blockquote></div>
+                        <div class="bq-container"><blockquote>“Sophie is a really good flute teacher. She is patient and smiley and I enjoy my lessons with her every week.”<span class="quotee">~Eshan, 6-year-old flute student</span></blockquote></div>
+                        <div class="bq-container"><blockquote>“Sophie is an amazing teacher, I love all the lessons - I wouldn't want anyone else to teach me!”<span class="quotee">~Holly, 13-year-old flute student</span></blockquote></div>
                 </div>
             </div>
             <svg class="recorder-divider" viewBox="-104.8 0 963 168">
@@ -416,10 +414,10 @@
                         </div>
                         <div class="details-submit">
                             <label for="full-name">Name</label>
-                            <input type="text" name="name" id="full-name" placeholder="Penelope Strawberry" required>
+                            <input type="text" name="name" id="full-name" placeholder="e.g. Penelope Strawberry" required>
                             <input class="honeypot" type="text" name="_gotcha">
                             <label for="email-address">Email Address</label>
-                            <input type="email" name="_replyto" id="email-address" placeholder="penelope@email.com" required>
+                            <input type="email" name="_replyto" id="email-address" placeholder="e.g. penelope@strawbmail.com" required>
                         </div>
                     </fieldset>
                     <button class="button-send" type="submit">Send</button>

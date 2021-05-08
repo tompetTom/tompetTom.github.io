@@ -14,7 +14,6 @@ big-desktop-up
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap");
 html {
   margin: 0 auto;
   overflow-x: hidden;
@@ -33,7 +32,7 @@ html {
           box-sizing: inherit;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, #recording-page .process-gear-mobile-headings ul li a, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, .landing-section .desktop-landing-content, .home-page .recording .instruments-section, #recording-page .recording-instruments-intro, #recording-page .recording-instruments, #recording-page .recording-instrument-infos .recording-instrument-dropdown, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, #recording-page .process-gear-mobile-headings ul li a, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, .home-page .recording .instruments-section, #recording-page .recording-instruments-intro, #recording-page .recording-instruments, #recording-page .recording-instrument-infos .recording-instrument-dropdown, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -64,7 +63,7 @@ button {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, .landing-section .desktop-landing-content, .home-page .recording .instruments-section, #recording-page .recording-instruments-intro, #recording-page .recording-instruments, #recording-page .recording-instrument-infos .recording-instrument-dropdown {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, .home-page .recording .instruments-section, #recording-page .recording-instruments-intro, #recording-page .recording-instruments, #recording-page .recording-instrument-infos .recording-instrument-dropdown {
   display: block;
 }
 
@@ -127,13 +126,14 @@ hr {
 }
 
 h2, #recording-page .process-gear-mobile-headings ul li a, h5, button, #recording-page .recording-instruments .recording-instrument-categories li .caption h3, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-image h4 {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Lora", "Arapey", "Yrsa", Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 body, input, textarea {
-  font-family: "Raleway", serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
   line-height: 1.7em;
 }
 
@@ -157,7 +157,7 @@ h5 {
 }
 
 blockquote {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: 700;
@@ -167,11 +167,14 @@ blockquote {
 
 em {
   font-style: italic;
+  font-weight: 400;
 }
 
 button {
   cursor: pointer;
   font-size: 1.2rem;
+  font-family: "Raleway", sans-serif, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, sans-serif;
+  font-weight: 200;
   margin-top: 1.7rem;
   padding: .5em 1em;
   -webkit-transition: 0.2s;
@@ -603,394 +606,142 @@ a .blob {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
-  height: 15vh;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  gap: 0 3vw;
+  -ms-grid-columns: 1px minmax(0, 1fr) 1px;
+      grid-template-columns: 1px minmax(0, 1fr) 1px;
+  height: 5rem;
+  padding: 1rem 0;
   position: absolute;
-  -webkit-transition: .3s;
-  transition: .3s;
-  -webkit-transition: background-color 0s;
-  transition: background-color 0s;
   width: 100%;
   z-index: 20;
 }
 
-@media (max-width: 899px) {
-  .home-page header {
-    height: 30vh;
-  }
-}
-
-@media (max-width: 599px) {
-  .home-page header {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-}
-
-@media (max-width: 599px) {
-  .home-page header #title h1 {
-    font-size: 15vmin;
-  }
-}
-
-@media (max-width: 599px) {
-  .home-page header #title .tagline {
-    font-size: 4vmin;
-    margin-right: 2rem;
-  }
-}
-
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
-  header.scroll {
-    background-color: rgba(255, 255, 255, 0.96);
-    height: 55px;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-transition: background-color 0.2s;
-    transition: background-color 0.2s;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
-  header.title-fade:not(.scroll) #title {
-    color: rgba(255, 255, 255, 0);
-  }
-}
-
-@media (max-width: 599px) {
-  header {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-}
-
-@media (min-width: 600px) {
   header {
     height: 30vh;
     position: fixed;
-    padding: 1rem 0;
-    width: 100%;
-  }
-}
-
-@media (max-width: 899px) and (orientation: landscape) {
-  header {
-    position: absolute;
   }
 }
 
 @media (min-width: 900px) {
   header {
     background-color: rgba(255, 255, 255, 0.96);
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    -ms-grid-columns: 1px minmax(0, 1fr) minmax(0, 1fr) 1px;
+        grid-template-columns: 1px minmax(0, 1fr) minmax(0, 1fr) 1px;
     height: auto;
-    overflow: visible;
-  }
-  header #title {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-  }
-  header.scroll {
-    height: auto;
-  }
-}
-
-header #title {
-  margin: 0 3vw;
-  position: relative;
-  -webkit-transition: color 1.5s;
-  transition: color 1.5s;
-}
-
-header #title:hover {
-  color: inherit;
-}
-
-header #title:hover .tagline::after {
-  left: -12%;
-  top: -.4rem;
-  width: 55%;
-}
-
-header #title h1 {
-  white-space: nowrap;
-}
-
-@media (min-width: 600px) {
-  header #title h1.small {
-    font-size: .9rem;
-  }
-}
-
-@media (min-width: 900px) {
-  header #title h1.small {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 599px) {
-  header #title h1 {
-    font-size: 10vmin;
-  }
-}
-
-@media (min-width: 900px) and (max-width: 1199px) {
-  header #title h1 {
-    font-size: 3rem;
-  }
-}
-
-@media (min-width: 900px) {
-  header #title h1 {
-    padding-top: 0;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-  }
-}
-
-header #title .tagline {
-  display: block;
-  float: right;
-  font-weight: 200;
-  text-align: right;
-  margin-right: 0;
-  margin-top: -.6rem;
-  position: relative;
-}
-
-header #title .tagline span {
-  display: none;
-}
-
-@media (max-width: 599px) {
-  header #title .tagline {
-    font-size: 3vmin;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
-  header #title .tagline {
-    display: none;
-  }
-}
-
-@media (min-width: 900px) {
-  header #title .tagline {
-    margin-right: 1rem;
-  }
-  header #title .tagline::after {
-    content: url(../../../images/backgrounds/blobs/underline-blob-2.svg);
-    left: -8%;
-    position: absolute;
-    right: 0;
-    top: .1rem;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-    width: 40%;
-    z-index: -1;
-  }
-  header #title .tagline.small {
-    font-size: .5rem;
-    margin-right: .3rem;
-    margin-top: -.3rem;
-  }
-}
-
-@media (min-width: 900px) and (max-width: 1199px) {
-  header #title .tagline {
-    font-size: .85rem;
+    position: fixed;
   }
 }
 
 @media (min-width: 1250px) {
-  header #title .tagline {
-    margin-right: 2rem;
+  header {
+    -ms-grid-columns: 1fr 550px 550px 1fr;
+        grid-template-columns: 1fr 550px 550px 1fr;
   }
 }
 
-@media (max-width: 599px) {
-  .sub-page header {
-    grid-column: 2 / -2;
-    display: block;
-    text-align: center;
-  }
-  .sub-page header #title h1 {
-    font-size: 7vmin;
-  }
-  .sub-page header #title .tagline {
-    float: none;
-    font-size: 2vmin;
-    left: 1rem;
-    text-align: center;
-  }
-}
-
-.page-icon {
-  position: absolute;
-  right: 3vw;
-  top: 3vw;
-  width: 4rem;
-  z-index: 100;
-}
-
-@media (min-width: 600px) {
-  .page-icon {
-    display: none;
-  }
-}
-
-.tagline {
-  font-family: "Raleway", serif;
-  font-size: 1rem;
-  font-weight: #E6B5B5;
-  text-align: center;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.landing-section {
+header div {
   grid-column: 2 / -2;
-  min-height: 100vh;
-  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-@media (max-width: 899px) and (orientation: landscape) {
-  .landing-section {
-    height: 100vh;
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  header div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: wrap-reverse;
+            flex-flow: wrap-reverse;
+  }
+}
+
+header div #title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 18rem;
+          flex: 1 1 18rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+  -webkit-transition: padding 0s;
+  transition: padding 0s;
+}
+
+@media (min-width: 900px) {
+  header div #title {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    padding-right: 3vw;
+  }
+}
+
+header div #title img {
+  max-height: 4rem;
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  header div #title img {
+    max-height: 6rem;
+  }
+}
+
+@media (min-width: 900px) {
+  header div #title img {
+    max-height: 5rem;
+  }
+}
+
+header div nav {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 10 37rem;
+          flex: 0 10 37rem;
+  margin: 0 auto;
+}
+
+header.scroll {
+  height: auto !important;
+  padding: .7rem 0;
+}
+
+@media (min-width: 600px) {
+  header.scroll {
+    background-color: rgba(255, 255, 255, 0.96);
   }
 }
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
-  .landing-section {
-    min-height: 100vh;
+  header.scroll div {
+    -ms-flex-flow: nowrap;
+        flex-flow: nowrap;
+  }
+  header.scroll div #title {
+    padding-right: 3vw;
   }
 }
 
-@media (min-width: 900px) {
-  .landing-section {
-    padding-top: 20vh;
-  }
-}
-
-.landing-section .tagline {
-  -webkit-transition: opacity 2.5s;
-  transition: opacity 2.5s;
-}
-
-.landing-section .tagline.fade {
-  opacity: 0;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-}
-
-@media (min-width: 900px) {
-  .landing-section .tagline {
-    display: none;
-  }
-}
-
-@media (max-width: 899px) and (orientation: landscape) {
-  .landing-section .tagline {
-    display: none;
-  }
-}
-
-.landing-section .desktop-landing-content {
-  display: none;
-  width: 40%;
-}
-
-.landing-section .desktop-landing-content h3 {
-  margin-top: 0;
-}
-
-@media (max-width: 899px) and (orientation: landscape) {
-  .landing-section .desktop-landing-content {
-    display: none;
-  }
-}
-
-@media (min-width: 900px) {
-  .landing-section .desktop-landing-content {
-    display: block;
-  }
-}
-
-.landing-section svg:not(.page-icon) {
-  bottom: 5%;
-  max-height: 70%;
-  position: absolute;
-  right: -3vw;
-  width: 100vw;
-}
-
-@media (max-width: 899px) and (orientation: landscape) {
-  .landing-section svg:not(.page-icon) {
-    right: -3vw;
-    width: 50vw;
-  }
+header.scroll div img {
+  height: 2.5rem;
 }
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
-  .landing-section svg:not(.page-icon) {
-    max-width: 100vw;
+  header.title-fade:not(.scroll) img {
+    opacity: 0;
   }
-}
-
-@media (min-width: 900px) {
-  .landing-section svg:not(.page-icon) {
-    height: 70vh;
-    max-width: 60vw;
-    top: 20%;
-    right: -3vw;
-    width: auto;
-  }
-}
-
-@media (min-width: 1250px) {
-  .landing-section svg:not(.page-icon) {
-    height: auto;
-    max-width: 60vw;
-    top: 7.3rem;
-    right: -4.2vw;
-    width: 100vh;
-  }
-}
-
-.landing-section svg:not(.page-icon) #colour path {
-  stroke: none;
-}
-
-.landing-section svg:not(.page-icon) #colour path.recorder {
-  fill: #E6B5B5;
-}
-
-.landing-section svg:not(.page-icon) #colour path.clarinet {
-  fill: #B99ADB;
-}
-
-.landing-section svg:not(.page-icon) #colour path.flute {
-  fill: #DFDDD5;
-}
-
-.landing-section svg:not(.page-icon) #colour path.e-flute {
-  fill: #97CCC3;
-}
-
-.landing-section svg:not(.page-icon) #colour path.sax {
-  fill: #CFB72F;
 }
 
 nav {
@@ -1003,6 +754,11 @@ nav ul {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
 }
 
 nav ul li {
@@ -1023,6 +779,8 @@ nav ul li .offer:after {
 nav ul li a {
   border: 2px solid rgba(255, 255, 255, 0);
   border-radius: .7em;
+  color: #444;
+  font-weight: 400;
   padding: .5em;
 }
 
@@ -1050,8 +808,6 @@ nav ul li a:active svg .stroke {
 .nav-desktop, .nav-main {
   display: none;
   text-transform: uppercase;
-  margin-left: 3vw;
-  max-width: 650px;
 }
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
@@ -1078,16 +834,6 @@ nav ul li a:active svg .stroke {
   .nav-desktop, .nav-main {
     min-width: 50%;
   }
-}
-
-.nav-desktop ul, .nav-main ul {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.nav-desktop ul li, .nav-main ul li {
-  margin-right: 3vw;
 }
 
 .nav-mobile, .index-nav-mobile {
@@ -1396,20 +1142,39 @@ nav ul li a:active svg .stroke {
   }
 }
 
-section, .landing-section .desktop-landing-content, .home-page .recording .instruments-section, #recording-page .recording-instruments-intro, #recording-page .recording-instruments, #recording-page .recording-instrument-infos .recording-instrument-dropdown {
+.page-icon {
+  position: absolute;
+  right: 3vw;
+  top: 3vw;
+  width: 4rem;
+}
+
+@media (min-width: 600px) {
+  .page-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .page-icon {
+    display: block;
+  }
+}
+
+section, .home-page .recording .instruments-section, #recording-page .recording-instruments-intro, #recording-page .recording-instruments, #recording-page .recording-instrument-infos .recording-instrument-dropdown {
   margin: 0;
   position: relative;
 }
 
-section h2, .landing-section .desktop-landing-content h2, .home-page .recording .instruments-section h2, #recording-page .recording-instruments-intro h2, #recording-page .recording-instruments h2, #recording-page .recording-instrument-infos .recording-instrument-dropdown h2, section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li section a, .landing-section .desktop-landing-content #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .landing-section .desktop-landing-content a, .home-page .recording .instruments-section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .home-page .recording .instruments-section a, #recording-page .recording-instruments-intro .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments-intro a, #recording-page .recording-instruments .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments a, #recording-page .recording-instrument-infos .recording-instrument-dropdown .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instrument-infos .recording-instrument-dropdown a, section p, .landing-section .desktop-landing-content p, .home-page .recording .instruments-section p, #recording-page .recording-instruments-intro p, #recording-page .recording-instruments p, #recording-page .recording-instrument-infos .recording-instrument-dropdown p, section ul, .landing-section .desktop-landing-content ul, .home-page .recording .instruments-section ul, #recording-page .recording-instruments-intro ul, #recording-page .recording-instruments ul, #recording-page .recording-instrument-infos .recording-instrument-dropdown ul, section table, .landing-section .desktop-landing-content table, .home-page .recording .instruments-section table, #recording-page .recording-instruments-intro table, #recording-page .recording-instruments table, #recording-page .recording-instrument-infos .recording-instrument-dropdown table, section .margin-top, .landing-section .desktop-landing-content .margin-top, .home-page .recording .instruments-section .margin-top, #recording-page .recording-instruments-intro .margin-top, #recording-page .recording-instruments .margin-top, #recording-page .recording-instrument-infos .recording-instrument-dropdown .margin-top {
+section h2, .home-page .recording .instruments-section h2, #recording-page .recording-instruments-intro h2, #recording-page .recording-instruments h2, #recording-page .recording-instrument-infos .recording-instrument-dropdown h2, section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li section a, .home-page .recording .instruments-section #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .home-page .recording .instruments-section a, #recording-page .recording-instruments-intro .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments-intro a, #recording-page .recording-instruments .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instruments a, #recording-page .recording-instrument-infos .recording-instrument-dropdown .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .recording-instrument-infos .recording-instrument-dropdown a, section p, .home-page .recording .instruments-section p, #recording-page .recording-instruments-intro p, #recording-page .recording-instruments p, #recording-page .recording-instrument-infos .recording-instrument-dropdown p, section ul, .home-page .recording .instruments-section ul, #recording-page .recording-instruments-intro ul, #recording-page .recording-instruments ul, #recording-page .recording-instrument-infos .recording-instrument-dropdown ul, section table, .home-page .recording .instruments-section table, #recording-page .recording-instruments-intro table, #recording-page .recording-instruments table, #recording-page .recording-instrument-infos .recording-instrument-dropdown table, section .margin-top, .home-page .recording .instruments-section .margin-top, #recording-page .recording-instruments-intro .margin-top, #recording-page .recording-instruments .margin-top, #recording-page .recording-instrument-infos .recording-instrument-dropdown .margin-top {
   margin-top: 1.7rem;
 }
 
-section li, .landing-section .desktop-landing-content li, .home-page .recording .instruments-section li, #recording-page .recording-instruments-intro li, #recording-page .recording-instruments li, #recording-page .recording-instrument-infos .recording-instrument-dropdown li, section svg, .landing-section .desktop-landing-content svg, .home-page .recording .instruments-section svg, #recording-page .recording-instruments-intro svg, #recording-page .recording-instruments svg, #recording-page .recording-instrument-infos .recording-instrument-dropdown svg {
+section li, .home-page .recording .instruments-section li, #recording-page .recording-instruments-intro li, #recording-page .recording-instruments li, #recording-page .recording-instrument-infos .recording-instrument-dropdown li, section svg, .home-page .recording .instruments-section svg, #recording-page .recording-instruments-intro svg, #recording-page .recording-instruments svg, #recording-page .recording-instrument-infos .recording-instrument-dropdown svg {
   margin-top: 0;
 }
 
-section li *, .landing-section .desktop-landing-content li *, .home-page .recording .instruments-section li *, #recording-page .recording-instruments-intro li *, #recording-page .recording-instruments li *, #recording-page .recording-instrument-infos .recording-instrument-dropdown li *, section svg *, .landing-section .desktop-landing-content svg *, .home-page .recording .instruments-section svg *, #recording-page .recording-instruments-intro svg *, #recording-page .recording-instruments svg *, #recording-page .recording-instrument-infos .recording-instrument-dropdown svg * {
+section li *, .home-page .recording .instruments-section li *, #recording-page .recording-instruments-intro li *, #recording-page .recording-instruments li *, #recording-page .recording-instrument-infos .recording-instrument-dropdown li *, section svg *, .home-page .recording .instruments-section svg *, #recording-page .recording-instruments-intro svg *, #recording-page .recording-instruments svg *, #recording-page .recording-instrument-infos .recording-instrument-dropdown svg * {
   margin-top: 0;
 }
 
@@ -1419,23 +1184,34 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
   .first-section {
-    margin-top: 30vh;
+    margin-top: 30vh !important;
   }
 }
 
 @media (min-width: 900px) {
   .first-section {
-    margin-top: 20vh;
+    margin-top: 20vh !important;
   }
 }
 
 .first-section .icon-title .page-icon {
-  display: inline-block;
+  display: none;
   left: 0;
   position: relative;
   top: .8rem;
   width: 4rem;
-  z-index: 0;
+}
+
+@media (min-width: 600px) {
+  .first-section .icon-title .page-icon {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .first-section .icon-title .page-icon {
+    display: none;
+  }
 }
 
 .first-section .icon-title h2, .first-section .icon-title #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .first-section .icon-title a {
@@ -1470,6 +1246,13 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
   }
 }
 
+.testimonial .recording-quotee, .testimonial .quotee {
+  line-height: 1em;
+  margin: .7em 2em 0 2em;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 .testimonial .slick-quote {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1500,12 +1283,8 @@ section li *, .landing-section .desktop-landing-content li *, .home-page .record
 }
 
 .testimonial .slick-quote .bq-container blockquote span.recording-quotee {
-  line-height: 1em;
-  margin: .7em 2em 0 2em;
   max-width: 50%;
   float: right;
-  font-size: 1rem;
-  font-weight: 400;
 }
 
 .youtube-container {
@@ -1713,6 +1492,7 @@ footer .links .centre-links .footer-box-right {
 
 .youtube-thumbnail-div, .youtube-aspect-ratio-slick {
   background: center/100% no-repeat;
+  overflow: hidden;
 }
 
 .slick-video .youtube-thumbnail-div, .slick-video .youtube-aspect-ratio-slick {
@@ -1737,8 +1517,23 @@ footer .links .centre-links .footer-box-right {
   content: url(../../../images/icons/boxed-icons/youtube-blue.svg);
 }
 
-.youtube-thumbnail-div.play::after, .play.youtube-aspect-ratio-slick::after {
+.youtube-thumbnail-div.play img, .play.youtube-aspect-ratio-slick img, .youtube-thumbnail-div.play::after, .play.youtube-aspect-ratio-slick::after {
   display: none;
+}
+
+.youtube-thumbnail-div img, .youtube-aspect-ratio-slick img {
+  left: 50%;
+  margin: 0;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  width: 100%;
 }
 
 .youtube-aspect-ratio-slick {
@@ -2213,46 +2008,39 @@ footer .links .centre-links .footer-box-right {
   height: 160px;
 }
 
+@media (max-width: 599px) {
+  .home-page header {
+    height: 30vh;
+  }
+}
+
 @media (max-width: 899px) and (orientation: landscape) {
   .home-page header {
-    height: 90vh;
-    padding-left: 3vw;
-    position: absolute;
-    width: 50vw;
+    grid-column: 1 / -1;
+    height: 30vh;
+    position: static;
   }
   .home-page header.scroll {
-    background-color: transparent;
+    height: 30vh;
+    padding: 1rem 0;
   }
-  .home-page header #title {
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+}
+
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  .home-page header {
+    height: 35vh;
   }
-  .home-page header #title h1 {
-    font-size: 8vw;
+}
+
+@media (max-width: 599px) {
+  .home-page header div #title img {
+    max-height: 7rem;
   }
-  .home-page header #title h1.small {
-    font-size: 8vw;
-  }
-  .home-page header #title .tagline {
-    left: 0;
-    line-height: 1.7em;
-    margin: 0;
-    text-align: right;
-  }
-  .home-page header #title .tagline span {
-    display: block;
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .home-page header div #title img {
+    max-height: 7rem;
   }
 }
 
@@ -2274,13 +2062,16 @@ footer .links .centre-links .footer-box-right {
 
 @media (max-width: 899px) and (orientation: landscape) {
   .home-page .hero-image {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    margin: 0 0 0 47%;
-    padding: 10vh 0 0 0;
-    right: 0;
-    width: 53%;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    height: 70vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
   }
 }
 
@@ -2304,6 +2095,14 @@ footer .links .centre-links .footer-box-right {
   position: absolute;
   right: 0;
   width: auto;
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .home-page .hero-image svg {
+    max-height: none;
+    top: 0;
+    width: 100%;
+  }
 }
 
 @media (min-width: 900px) {
@@ -2513,15 +2312,6 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
-@media (max-width: 899px) and (orientation: landscape) {
-  #recording-page header {
-    height: 8rem;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-}
-
 #recording-page .first-section {
   grid-column: 2 / -2;
   -webkit-box-align: start;
@@ -2549,6 +2339,7 @@ footer .links .centre-links .footer-box-right {
 }
 
 #recording-page .first-section .icon-title .page-icon {
+  margin-top: -1.5rem;
   top: 1.5rem;
 }
 
@@ -3096,10 +2887,6 @@ footer .links .centre-links .footer-box-right {
   border-right: 1px solid #b3b1aa;
 }
 
-#recording-page .process-gear-mobile-headings ul li a {
-  font-weight: 300;
-}
-
 #recording-page .process-gear-mobile-headings ul li a:hover {
   color: inherit;
 }
@@ -3107,10 +2894,6 @@ footer .links .centre-links .footer-box-right {
 #recording-page .process-gear-mobile-headings ul li.active {
   background: no-repeat url(../../../images/backgrounds/blobs/underline-blob-1.svg);
   color: #140E1B;
-}
-
-#recording-page .process-gear-mobile-headings ul li.active a {
-  font-weight: bold;
 }
 
 #recording-page #tabs-process, #recording-page #tabs-gear {
@@ -3216,7 +2999,6 @@ footer .links .centre-links .footer-box-right {
 #recording-page .process-gear .pg-headings h2, #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a {
   color: #140E1B;
   cursor: pointer;
-  font-weight: 500;
   text-align: center;
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
@@ -3242,13 +3024,11 @@ footer .links .centre-links .footer-box-right {
 
 #recording-page .process-gear .pg-headings h2:nth-child(2), #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a:nth-child(2), #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a:nth-child(2) {
   color: #b3b1aa;
-  font-weight: 300;
 }
 
 @media (min-width: 900px) {
   #recording-page .process-gear .pg-headings h2:nth-child(2), #recording-page .process-gear .pg-headings .process-gear-mobile-headings ul li a:nth-child(2), #recording-page .process-gear-mobile-headings ul li .process-gear .pg-headings a:nth-child(2) {
     color: #140E1B;
-    font-weight: 500;
   }
 }
 
@@ -3310,11 +3090,9 @@ footer .links .centre-links .footer-box-right {
 @media (max-width: 899px) {
   #recording-page .process-gear.pg-right .pg-headings h2:nth-child(1), #recording-page .process-gear.pg-right .pg-headings .process-gear-mobile-headings ul li a:nth-child(1), #recording-page .process-gear-mobile-headings ul li .process-gear.pg-right .pg-headings a:nth-child(1) {
     color: #b3b1aa;
-    font-weight: 300;
   }
   #recording-page .process-gear.pg-right .pg-headings h2:nth-child(2), #recording-page .process-gear.pg-right .pg-headings .process-gear-mobile-headings ul li a:nth-child(2), #recording-page .process-gear-mobile-headings ul li .process-gear.pg-right .pg-headings a:nth-child(2) {
     color: #140E1B;
-    font-weight: 500;
   }
 }
 
@@ -3411,11 +3189,17 @@ footer .links .centre-links .footer-box-right {
   grid-column: 2 / span 1;
   display: block;
   height: 4rem;
-  margin-bottom: 1.7rem;
+}
+
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  #media-page .first-section {
+    margin-bottom: 1.7rem;
+  }
 }
 
 @media (min-width: 900px) {
   #media-page .first-section {
+    margin-bottom: 1.7rem;
     text-align: center;
   }
 }
@@ -3616,13 +3400,13 @@ footer .links .centre-links .footer-box-right {
 
 @media (min-width: 900px) and (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
   #media-page .media-container {
-    margin-top: 30vh;
+    margin-top: 30vh !important;
   }
 }
 
 @media (min-width: 900px) and (min-width: 900px) {
   #media-page .media-container {
-    margin-top: 20vh;
+    margin-top: 20vh !important;
   }
 }
 
@@ -3665,7 +3449,7 @@ footer .links .centre-links .footer-box-right {
   margin: 0;
 }
 
-#media-page .media-container .player-container .media-details * {
+#media-page .media-container .player-container .media-details .video-tags {
   margin-top: .2rem;
 }
 
@@ -3673,36 +3457,38 @@ footer .links .centre-links .footer-box-right {
   background: #DFDDD5;
   border-radius: .6rem;
   display: inline-block;
-  font-family: "Quicksand", sans-serif;
   font-size: .7em;
+  font-weight: 400;
   height: 1.2rem;
-  line-height: 1.1rem;
+  line-height: 1.25rem;
   margin: 0 .3rem 0 0;
   padding: 0 .5rem;
 }
 
 #media-page .media-container .player-container .media-details h3 {
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-family: "Lora", "Arapey", "Yrsa", Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: .3rem;
 }
 
 #media-page .media-container .player-container .media-details p {
   font-size: .9em;
-  font-weight: 200;
+  margin-top: -.2rem;
 }
 
 #media-page .media-container .media-results {
   display: -ms-grid;
   display: grid;
-  gap: 0;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  gap: .9vw;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 @media (min-width: 600px) {
   #media-page .media-container .media-results {
-    gap: .9vw;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -3747,6 +3533,7 @@ footer .links .centre-links .footer-box-right {
 
 #media-page .media-container .media-results div:not(.icon) .details {
   color: #FFF;
+  font-weight: 400;
   opacity: 0;
   position: absolute;
   text-align: center;
@@ -3791,16 +3578,10 @@ footer .links .centre-links .footer-box-right {
 }
 
 #media-page .media-container .media-results div:not(.icon) .details p {
-  font-size: .6em;
+  font-size: .7em;
   line-height: 1.5em;
   top: 40%;
   padding-top: .2rem;
-}
-
-@media (min-width: 600px) {
-  #media-page .media-container .media-results div:not(.icon) .details p {
-    font-size: .7em;
-  }
 }
 
 #media-page .media-container .media-results div:not(.icon) img {
@@ -4012,13 +3793,13 @@ footer .links .centre-links .footer-box-right {
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
   #contact-page main {
-    margin-top: 30vh;
+    margin-top: 30vh !important;
   }
 }
 
 @media (min-width: 900px) {
   #contact-page main {
-    margin-top: 20vh;
+    margin-top: 20vh !important;
   }
 }
 

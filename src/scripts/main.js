@@ -8,17 +8,17 @@ $(document).ready(() => {
                 $('header').addClass('title-fade');
             };
             if ($(document).scrollTop() > 200) {
-                $('#title').children().addClass('small');
+                // $('#title').children().addClass('small');
                 $('header').addClass('scroll').removeClass('title-fade');
             };
             // if ($(document).scrollTop() < 50 && $('body').attr('id') !== 'media-page') {
             if ($(document).scrollTop() < 50) {
-                $('#title').children().removeClass('small');
+                // $('#title').children().removeClass('small');
                 $('header').removeClass('scroll').removeClass('title-fade');
             };
-            if ($(document).scrollTop() < 15) {
-                $('.landing-section').find('.tagline').removeClass('fade');
-            };
+            // if ($(document).scrollTop() < 15) {
+            //     $('.landing-section').find('.tagline').removeClass('fade');
+            // };
         });
     };
 
@@ -589,12 +589,15 @@ $(document).ready(() => {
                     src = video.dataset.thumbnail;
                 }
                 if ($(video).children('img').length) {
+                // if ($(body).attr('id') === 'body') {
                     $('<div/>').appendTo($(video)).addClass('icon').addClass(video.dataset.format);
                     $(video).children('img').attr('src', src).attr('alt', video.dataset.title);
                     $('<div/>').appendTo($(video)).addClass('details').append($(`<h3>${video.dataset.title}</h3>`), $(`<p>${video.dataset.description}</p>`));
                 } else {
-                    let url = 'url(' + src + ')';
-                    $(video).css('background-image', url);
+                    // let url = 'url(' + src + ')';
+                    // $(video).css('background-image', url);
+                    // $(video).children('img').attr('src', src).attr('alt', video.dataset.title);
+                    $('<img/>').appendTo($(video)).attr({src: src, alt: $(video).data('title'), loading: 'lazy'});
                 }
                 $(video).removeClass('unloaded-thumbnail');
             }
@@ -667,10 +670,8 @@ $(document).ready(() => {
 
     $('#media-filter p').click(function() {
         if (isSingleColumn()) {
-            $('#media-filter .multi-choice').slideToggle().toggleClass('open');
+            $('#media-filter .multi-choice').slideToggle(); //.toggleClass('open');
             $('#media-filter').find('.collapse').toggle();
-        // } else {
-            // $('#media-filter .multi-choice').show().addClass('open');
         }
     });
 
@@ -728,15 +729,11 @@ $(document).ready(() => {
             $(iframe).attr(key, value);
         }
         $('#all-media').data('current', id).data('format', format);
-        let scrollToVideo;
         if (container.is(':hidden')) {
-            scrollToVideo = $('#all-media');
             container.slideDown();
-        } else {
-            scrollToVideo = iframe;
         }
         if (isSingleColumn()) {
-            scrollToElement(scrollToVideo);
+            scrollToElement($('#all-media'));
         } else {
             scrollTo(0);
         }

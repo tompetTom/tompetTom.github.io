@@ -1,347 +1,98 @@
 header {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap-reverse;
-    height: 15vh;
-    justify-content: space-around;
-    overflow: hidden;
+    display: grid;
+    gap: 0 $gutter;
+    grid-template-columns: 1px minmax(0, 1fr) 1px;
+    height: 5rem;
+    padding: 1rem 0;
     position: absolute;
-    transition: .3s;
-    transition: background-color 0s;
     width: 100%;
     z-index: 20;
 
-    .home-page & {
-        
-        @include media-query(single-column) {
-            height: 30vh;
-        }
-
-        @include media-query(mobile) {
-            justify-content: space-around;
-        }
-
-        #title {
-
-            h1 {
-                @include media-query(mobile) {
-                    font-size: 15vmin;
-                }
-            }
-
-            .tagline {
-                @include media-query(mobile) {
-                    font-size: 4vmin;
-                    margin-right: 2rem;
-                }
-            }
-        }
-    }
-
-    &.scroll {
-        @include media-query(tablet-portrait-only) {
-            background-color: fade-out($white, .04);
-            height: 55px;
-            flex-wrap: nowrap;
-            transition: background-color $default-transition-time;
-        }
-    }
-
-    &.title-fade:not(.scroll) {
-        #title {
-            @include media-query(tablet-portrait-only) {
-                color: fade-out($white, 1);
-            }
-        }
-    }
-
-    @include media-query(mobile) {
-        justify-content: flex-start;
-    }
-
-    @include media-query(tablet-portrait-up) {
+    @include media-query(tablet-portrait-only) {
         height: 30vh;
         position: fixed;
-        padding: 1rem 0;
-        width: 100%;
-    }
-
-    @include media-query(mobile-landscape-only) {
-        position: absolute;
     }
 
     @include media-query(tablet-landscape-up) {
         background-color: fade-out($white, .04);
-        flex-wrap: nowrap;
+        grid-template-columns: 1px minmax(0, 1fr) minmax(0, 1fr) 1px;
         height: auto;
-        overflow: visible;
-
-        #title {
-            align-self: flex-start;
-        }
-
-        &.scroll {
-            height: auto;
-        }
+        position: fixed;
     }
 
-    #title {
-        margin: 0 $gutter;
-        position: relative;
-        transition: color 1.5s;
+    @include media-query(desktop-up) {
+        grid-template-columns: 1fr 550px 550px 1fr;
+    }
 
-        &:hover {
-            color: inherit;
+    div {
+        @include grid-column(fill);
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
 
-            .tagline {
-                &::after {
-                    left: -12%;
-                    top: -.4rem;
-                    width: 55%;
-                }
-            }
+        @include media-query(tablet-portrait-only) {
+            flex-flow: wrap-reverse;
         }
-    
-        h1 {
-            white-space: nowrap;
 
-            &.small {
-                @include media-query(tablet-portrait-up) {
-                    font-size: .9rem;
+        #title {
+            display: flex;
+            flex: 1 1 18rem;
+            justify-content: center;
+            text-align: left;
+            transition: padding 0s;
+
+            @include media-query(tablet-landscape-up) {
+                justify-content: left;
+                padding-right: $gutter;
+            }
+
+            img {
+                max-height: 4rem;
+                transition: opacity 1.5s;
+
+                @include media-query(tablet-portrait-only) {
+                    max-height: 6rem;
                 }
 
                 @include media-query(tablet-landscape-up) {
-                    font-size: 1.8rem;
+                    max-height: 5rem;
                 }
-            }
-
-            @include media-query(mobile) {
-                font-size: 10vmin;
-            }
-
-            @include media-query(tablet-landscape-only) {
-                font-size: 3rem;
-            }
-
-            @include media-query(tablet-landscape-up) {
-                padding-top: 0;
-                transition: $default-transition-time;
             }
         }
 
-        .tagline {
-            display: block;
-            float: right;
-            font-weight: $thin;
-            text-align: right;
-            margin-right: 0;
-            margin-top: -.6rem;
-            position: relative;
+        nav {
+            flex: 0 10 37rem;
+            margin: 0 auto;
+        }
+    }
 
-            span {
-                display: none;
-            }
+    &.scroll {
+        height: auto !important;
+        padding: .7rem 0;
 
-            @include media-query(mobile) {
-                font-size: 3vmin;
-            }
+        @include media-query(tablet-portrait-up) {
+            background-color: fade-out($white, .04);
+        }
 
+        div {
             @include media-query(tablet-portrait-only) {
-                display: none;
-            }
-    
-            @include media-query(tablet-landscape-up) {
-                margin-right: 1rem;
+                flex-flow: nowrap;
 
-                &::after {
-                    content: url(../../../images/backgrounds/blobs/underline-blob-2.svg);
-                    left: -8%;
-                    position: absolute;
-                    right: 0;
-                    top: .1rem;
-                    transition: $default-transition-time;
-                    width: 40%;
-                    z-index: -1;
-                }
-
-                &.small {
-                    font-size: .5rem;
-                    margin-right: .3rem;
-                    margin-top: -.3rem;
+                #title {
+                    padding-right: $gutter;
                 }
             }
 
-            @include media-query(tablet-landscape-only) {
-                font-size: .85rem;
-                // margin-right: .5rem;
-            }
-
-            @include media-query(desktop-up) {
-                margin-right: 2rem;
+            img {
+                height: 2.5rem;
             }
         }
     }
 
-    .sub-page & {
-        @include media-query(mobile) {
-            @include grid-column(fill);
-            display: block;
-            // position: relative;
-            text-align: center;
-
-            #title {
-                h1 {
-                    font-size: 7vmin;
-                }
-
-                .tagline {
-                    float: none;
-                    font-size: 2vmin;
-                    left: 1rem;
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
-
-.page-icon {
-    position: absolute;
-    right: $gutter;
-    top: $gutter;
-    // width: 20vw;
-    width: 4rem;
-    z-index: 100;
-
-    @include media-query(tablet-portrait-up) {
-        display: none;
-    }
-}
-
-.tagline {
-    font-family: $serif;
-    font-size: 1rem;
-    font-weight: $light;
-    text-align: center;
-    transition: $default-transition-time;
-}
-
-.landing-section {
-    @include grid-column(fill);
-    min-height: 100vh;
-    position: relative;
-
-    @include media-query(mobile-landscape-only) {
-        height: 100vh;
-    }
-
-    // @include media-query(tablet-portrait-up) {
-    //     min-height: 100vh;
-    // }
-
-    @include media-query(tablet-portrait-only) {
-        // border: 1px solid red;
-        min-height: 100vh;
-        // padding-top: 30vh;
-    }
-
-    @include media-query(tablet-landscape-up) {
-        // margin: 0 $gutter;
-        padding-top: 20vh;
-    }
-
-    .tagline {
-        transition: opacity 2.5s;
-
-        &.fade {
-            opacity: 0;
-            transition: opacity $default-transition-time;
-        }
-
-        @include media-query(tablet-landscape-up) {
-            display: none;
-        }
-
-        @include media-query(mobile-landscape-only) {
-            display: none;
-        }
-    }
-
-    .desktop-landing-content {
-        @extend section;
-        display: none;
-        width: 40%;
-
-        h3 {
-            margin-top: 0;
-        }
-
-        @include media-query(mobile-landscape-only) {
-            display: none;
-        }
-
-        @include media-query(tablet-landscape-up) {
-            display: block;
-        }
-    }
-
-    svg:not(.page-icon) {
-        bottom: 5%;
-        max-height: 70%;
-        position: absolute;
-        right: -$gutter;
-        width: 100vw;
-
-        @include media-query(mobile-landscape-only) {
-            right: -$gutter;
-            width: 50vw;
-        }
-
-        @include media-query(tablet-portrait-only) {
-            max-width: 100vw;
-        }
-    
-        @include media-query(tablet-landscape-up) {
-            height: 70vh;
-            max-width: 60vw;
-            top: 20%;
-            right: -$gutter;
-            width: auto;
-        }
-    
-        @include media-query(desktop-up) {
-            height: auto;
-            max-width: 60vw;
-            top: 7.3rem;
-            right: -$gutter * 1.4;
-            width: 100vh;
-        }
-
-        #colour {
-            
-            path {
-                stroke: none;
-                // transition: 5s;
-
-                &.recorder {
-                    fill: $light;
-                }
-
-                &.clarinet {
-                    fill: $secondary;
-                }
-
-                &.flute {
-                    fill: $grey;
-                }
-
-                &.e-flute {
-                    fill: $primary;
-                }
-
-                &.sax {
-                    fill: $accent;
-                }
+    &.title-fade:not(.scroll) {
+        img {
+            @include media-query(tablet-portrait-only) {
+                opacity: 0;
             }
         }
     }

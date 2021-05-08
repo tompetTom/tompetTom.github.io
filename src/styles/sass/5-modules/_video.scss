@@ -16,6 +16,7 @@
 .youtube-thumbnail-div {
     @extend .youtube-aspect-ratio;
     background: center/100% no-repeat;
+    overflow: hidden;
 
     .slick-video & {
         margin: 0;
@@ -39,9 +40,21 @@
     }
 
     &.play {
-        &::after {
+        img, &::after {
             display: none;
         }
+    }
+
+    img {
+        left: 50%;
+        margin: 0;
+        filter: brightness(1);
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: $super-slow-transition;
+        width: 100%;
     }
 }
 

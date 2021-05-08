@@ -70,11 +70,12 @@ big-desktop-up
     }
 
     @include media-query(tablet-portrait-only) {
-        margin-top: 30vh;
+        // margin-top: 25vh !important;
+        margin-top: 30vh !important;
     }
 
     @include media-query(tablet-landscape-up) {
-        margin-top: 20vh;
+        margin-top: 20vh !important;
     }
 }
 
