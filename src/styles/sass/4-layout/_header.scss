@@ -50,6 +50,10 @@ header {
                 max-height: 4rem;
                 transition: opacity 1.5s;
 
+                @include media-query(mobile) {
+                    max-width: 50vw;
+                }
+
                 @include media-query(tablet-portrait-only) {
                     max-height: 6rem;
                 }

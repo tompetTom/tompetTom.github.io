@@ -5,6 +5,7 @@
 }
 
 .page-icon {
+    max-width: 25vw - $gutter * 2;
     position: absolute;
     right: $gutter;
     top: $gutter;
