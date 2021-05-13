@@ -17,7 +17,7 @@ $slick-prev-character: url(../../../images/icons/left-arrow.svg);
 $slick-next-character: url(../../../images/icons/right-arrow.svg);
 $slick-dot-character: "\2022" !default;
 $slick-dot-size: .5rem !default;
-$slick-opacity-default: .9 !default;
+$slick-opacity-default: .6 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
 
@@ -62,29 +62,32 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev,
 .slick-next {
-    border: 3px solid red;
-    position: absolute;
-    display: block;
     // height: 20px;
-    width: 2rem;
-    line-height: 0px;
-    font-size: 0px;
-    cursor: pointer;
     background: transparent;
+    border: none;
     color: transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 0px;
+    line-height: 0px;
+    outline: none;
+    padding: 0;
+    position: absolute;
     top: 40%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-    padding: 0;
-    border: none;
-    outline: none;
+    width: 2rem;
     z-index: 2;
 
     &:hover, &:focus {
         outline: none;
         background: transparent;
         color: transparent;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+
         &:before {
             opacity: $slick-opacity-on-hover;
         }
@@ -170,6 +173,7 @@ $slick-opacity-not-active: 0.25 !default;
             cursor: pointer;
             &:hover, &:focus {
                 outline: none;
+                transform: none !important;
                 &:before {
                     opacity: $slick-opacity-on-hover;
                 }

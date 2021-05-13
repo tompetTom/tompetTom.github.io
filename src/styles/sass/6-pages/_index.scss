@@ -24,7 +24,7 @@
                 img {    
                     @include media-query(mobile) {
                         max-height: 7rem;
-                        max-width: 100vw;
+                        max-width: 100vw - $gutter * 2;
                     }
 
                     @include media-query(mobile-landscape-only) {
@@ -83,33 +83,64 @@
     
             #colour {
                 path {
+                    animation: fadein 1s linear forwards;
                     stroke: none;
     
                     &.recorder {
+                        animation-delay: 2.1s;
                         fill: $light;
+                        opacity: 0;
                     }
     
                     &.clarinet {
+                        animation-delay: 8.4s;
                         fill: $secondary;
+                        opacity: 0;
                     }
     
                     &.flute {
+                        animation-delay: 5.6s;
                         fill: $grey;
+                        opacity: 0;
                     }
     
                     &.e-flute {
+                        animation-delay: 3.9s;
                         fill: $primary;
+                        opacity: 0;
                     }
     
                     &.sax {
+                        animation-delay: 11.9s;
                         fill: $accent;
+                        opacity: 0;
                     }
+
+                    @keyframes fadein {
+                        to {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .line {
+                // animation: draw 20s linear forwards;
+                stroke-width: 1.5;
+            }
+
+            @keyframes draw {
+                to {
+                    stroke-dashoffset: 0;
                 }
             }
         }
     }
 
     .intro-tryout {
+        overflow: hidden;
+        position: relative;
+
         @include grid-column(fill);
         @include media-query(tablet-landscape-up) {
             align-items: center;
@@ -119,7 +150,6 @@
         }
 
         .desktop-landing-content {
-
             @include media-query(mobile) {
                 margin-bottom: $margin-top;
             }
@@ -136,18 +166,16 @@
                 margin-top: 8rem;
             }
 
-            #landing-page-recording {
-                @include media-query(tablet-landscape-up) {
-                    left: -1rem;
-                    margin-top: $margin-top;
-                    padding: 1rem;
-                    position: relative;
-                    width: 110%;
+            .flex-safe-slick {
+                margin-bottom: $margin-top;
+                padding-bottom: 65%;
+                position: relative;
+                width: 100%;
 
-                    h2 {
-                        margin: 0;
-                        padding: 0;
-                    }
+                .youtube-container {
+                    height: 100%;
+                    position: absolute;
+                    width: 100%;
                 }
             }
         }
@@ -156,37 +184,45 @@
     .recording {
         @include grid-column(fill);
         display: grid;
+        column-gap: $gutter;
         grid-template-columns: 100%;
+        margin: 0;
+        padding: 0 !important;
     
         @include media-query(mobile) {
             padding-bottom: 3rem;
         }
 
         @include media-query(tablet-portrait-up) {
-            margin-top: 0;
             padding-top: 1.7rem;
         }
 
         @include media-query(tablet-landscape-up) {
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            
-            .instruments-section {
-                margin-left: $gutter;
-            }
         }
 
-        div {
+        div:not(.boxed) {
             margin-top: 0;
+        }
+
+        &>h2 {
+            @include grid-column(full-width);
+            margin: 0;
+        }
+
+        .boxed {
+            p {
+                margin: 0;
+            }
         }
 
         .instruments-section {
             @extend section;
+            // margin-top: $margin-top;
 
-            margin-top: $margin-top;
-
-            @include media-query(tablet-landscape-up) {
-                margin-top: 0;
-            }
+            // @include media-query(tablet-landscape-up) {
+            //     margin-top: 0;
+            // }
 
             h3 {
                 @include media-query(mobile) {
@@ -202,13 +238,10 @@
 
         #mobile-intro-content {
             margin-bottom: $margin-top;
+
             @include media-query(tablet-landscape-up) {
                 display: none;
             }
-        }
-    
-        #video-1 {
-            margin-top: 1.7rem;
         }
     }
     
@@ -234,5 +267,9 @@
     
     .teaching-testimonials {
         @include grid-column(right);
+    }
+
+    .submitBtn {
+        margin-top: $margin-top;
     }
 }

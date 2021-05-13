@@ -10,6 +10,7 @@
     right: $gutter;
     top: $gutter;
     width: 4rem;
+    z-index: 20;
 
     @include media-query(tablet-portrait-up) {
         display: none;
@@ -121,8 +122,9 @@ section {
 }
 
 .youtube-container {
-    margin: 0 $gutter;
-    max-width: 100%;
+    margin-top: $margin-top;
+    padding: 0 25px;
+    width: 100%;
 }
 
 .short {
@@ -146,4 +148,27 @@ section {
             z-index: 5;
         }
     }
+}
+
+.idea {
+    @extend .content;
+    align-items: start;
+    display: flex;
+    margin-top: $margin-top !important;
+
+    svg {
+        flex-basis: 5rem;
+    }
+
+    p {
+        margin: 0;
+        text-align: left !important;
+    }
+}
+
+.boxed {
+    border: 1px solid $grey;
+    border-radius: 1.2rem;
+    margin: $margin-top / 2 0;
+    padding: $gutter / 2;
 }

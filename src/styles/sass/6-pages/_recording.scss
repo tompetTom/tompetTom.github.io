@@ -422,30 +422,14 @@
             }
         }
     }
-    
-
-    %idea {
-        @extend .content;
-        align-items: start;
-        display: flex;
-        margin-top: $margin-top;
-
-        svg {
-            flex-basis: 5rem;
-        }
-
-        p {
-            text-align: left !important;
-        }
-    }
 
     .idea-1 {
-        @extend %idea;
+        @extend .idea;
         @include grid-column(left);
     }
 
     .idea-2 {
-        @extend %idea;
+        @extend .idea;
         @include grid-column(right);
     }
 
@@ -676,10 +660,11 @@
 
         .clients-container {
             .entry {
-                border: 1px solid $grey;
-                border-radius: 1.2rem;
-                margin: $margin-top/2 0;
-                padding: $gutter/2;
+                @extend .boxed;
+                // border: 1px solid $grey;
+                // border-radius: 1.2rem;
+                // margin: $margin-top / 2 0;
+                // padding: $gutter / 2;
 
                 .info {
                     h3 {
@@ -695,10 +680,11 @@
         @include grid-column(right);
         div {
             p {
-                border: 1px solid $grey;
-                border-radius: 1.2rem;
-                margin: $margin-top/2 0;
-                padding: $gutter/2;
+                @extend .boxed;
+                // border: 1px solid $grey;
+                // border-radius: 1.2rem;
+                // margin: $margin-top/2 0;
+                // padding: $gutter/2;
                 
                 span {
                     display: block;

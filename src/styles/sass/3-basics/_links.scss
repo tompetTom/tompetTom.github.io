@@ -1,20 +1,34 @@
 a {
     cursor: pointer;
+    position: relative;
     transition: $default-transition-time;
 
-    &:hover {
-        color: $light;
-        text-decoration: none;
-
-        &:after {
-            color: $accent;
+    p &, nav & {
+        &::after {
+            background: $primary;
+            bottom: -1px;
+            content: ' ';
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            transition: $default-transition-time;
+            width: 0;
+            z-index: -1;
+        }
+    
+        &:hover {
+            color: $black;
+    
+            &::after {
+                left: 0;
+                width: 100%;
+            }
         }
     }
-}
 
-p {
-    a {
-        text-decoration: underline;
+    p & {
+        font-weight: $semi-bold;
+        z-index: 1;
     }
 }
 

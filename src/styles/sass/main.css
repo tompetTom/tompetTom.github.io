@@ -126,13 +126,13 @@ hr {
 }
 
 h2, #recording-page .process-gear-mobile-headings ul li a, h5, button, #recording-page .recording-instruments .recording-instrument-categories li .caption h3, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-image h4 {
-  font-family: "Lora", "Arapey", "Yrsa", Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
+  font-family: "Lora", "Arapey", "Yrsa", "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Calisto MT", "Times New Roman", serif;
   font-size: 2rem;
   font-weight: 300;
 }
 
 body, input, textarea {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", "Trebuchet MS", "Didot", "Alegreya", sans-serif;
   font-weight: 200;
   line-height: 1.7em;
 }
@@ -157,7 +157,7 @@ h5 {
 }
 
 blockquote {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", "Trebuchet MS", "Didot", "Alegreya", sans-serif;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: 700;
@@ -173,7 +173,7 @@ em {
 button {
   cursor: pointer;
   font-size: 1.2rem;
-  font-family: "Raleway", sans-serif, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, sans-serif;
+  font-family: "Raleway", "Trebuchet MS", "Didot", "Alegreya", sans-serif, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, sans-serif;
   font-weight: 200;
   margin-top: 1.7rem;
   padding: .5em 1em;
@@ -277,6 +277,20 @@ button.show-hide:hover, button.show-more:hover, button.collapse-instrument-dropd
           transform: scale(0.97);
 }
 
+button.square {
+  background: #97CCC3;
+  border-radius: .5rem;
+  width: 100%;
+}
+
+button.square.pink {
+  background: #E6B5B5;
+}
+
+button.square.accent {
+  background: #CFB72F;
+}
+
 button.button-send {
   background: no-repeat url(../../../images/backgrounds/blobs/button-2-pink.svg);
   -webkit-box-shadow: none;
@@ -322,21 +336,36 @@ button.no-style:active, button.mobile-nav:active {
 
 a {
   cursor: pointer;
+  position: relative;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
-a:hover {
-  color: #E6B5B5;
-  text-decoration: none;
+p a::after, nav a::after {
+  background: #97CCC3;
+  bottom: -1px;
+  content: ' ';
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  width: 0;
+  z-index: -1;
 }
 
-a:hover:after {
-  color: #CFB72F;
+p a:hover, nav a:hover {
+  color: #140E1B;
+}
+
+p a:hover::after, nav a:hover::after {
+  left: 0;
+  width: 100%;
 }
 
 p a {
-  text-decoration: underline;
+  font-weight: 500;
+  z-index: 1;
 }
 
 button a:hover {
@@ -406,6 +435,10 @@ form *::placeholder {
   background: #CFB72F;
   border-radius: .5rem;
   width: 100%;
+}
+
+#nextBtn.pink, .nextBtn.pink, .submitBtn.pink {
+  background: #E6B5B5;
 }
 
 #nextBtn:disabled, .nextBtn:disabled, .submitBtn:disabled {
@@ -502,31 +535,6 @@ svg .test {
 
 svg .page-icon-colour {
   fill: #CFB72F;
-  stroke: none;
-}
-
-svg .recorder-colour {
-  fill: none;
-  stroke: none;
-}
-
-svg .clarinet-colour {
-  fill: none;
-  stroke: none;
-}
-
-svg .flute-colour {
-  fill: none;
-  stroke: none;
-}
-
-svg .e-flute-colour {
-  fill: none;
-  stroke: none;
-}
-
-svg .sax-colour {
-  fill: none;
   stroke: none;
 }
 
@@ -719,14 +727,23 @@ header div nav {
   margin: 0 auto;
 }
 
-header.scroll {
-  height: auto !important;
-  padding: .7rem 0;
-}
-
 @media (min-width: 600px) {
   header.scroll {
     background-color: rgba(255, 255, 255, 0.96);
+  }
+}
+
+@media (min-width: 900px) {
+  header.scroll {
+    height: auto !important;
+    padding: .7rem 0;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  header.scroll {
+    height: auto !important;
+    padding: .7rem 0;
   }
 }
 
@@ -740,8 +757,16 @@ header.scroll {
   }
 }
 
-header.scroll div img {
-  height: 2.5rem;
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  header.scroll div img {
+    height: 2.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  header.scroll div img {
+    height: 2.5rem;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
@@ -795,12 +820,14 @@ nav ul li a svg {
   max-height: 50px;
 }
 
-nav ul li a.current {
-  border: 2px solid #E6B5B5;
+nav ul li a.current::after {
+  left: 0;
+  width: 100%;
 }
 
-nav ul li a.current:hover {
-  border: 2px solid rgba(255, 255, 255, 0);
+nav ul li a.current:hover::after {
+  height: 45%;
+  opacity: .5;
 }
 
 nav ul li a:active {
@@ -1159,6 +1186,7 @@ nav ul li a:active svg .stroke {
   right: 3vw;
   top: 3vw;
   width: 4rem;
+  z-index: 20;
 }
 
 @media (min-width: 600px) {
@@ -1230,7 +1258,7 @@ section li *, .home-page .recording .instruments-section li *, #recording-page .
   display: inline-block;
 }
 
-.content, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info, #recording-page .idea-1, #recording-page .idea-2 {
+.content, .idea, #recording-page .idea-1, #recording-page .idea-2, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-info {
   position: relative;
 }
 
@@ -1300,8 +1328,9 @@ section li *, .home-page .recording .instruments-section li *, #recording-page .
 }
 
 .youtube-container {
-  margin: 0 3vw;
-  max-width: 100%;
+  margin-top: 1.7rem;
+  padding: 0 25px;
+  width: 100%;
 }
 
 .short > div {
@@ -1325,6 +1354,33 @@ section li *, .home-page .recording .instruments-section li *, #recording-page .
   position: absolute;
   width: 100%;
   z-index: 5;
+}
+
+.idea, #recording-page .idea-1, #recording-page .idea-2 {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1.7rem !important;
+}
+
+.idea svg, #recording-page .idea-1 svg, #recording-page .idea-2 svg {
+  -ms-flex-preferred-size: 5rem;
+      flex-basis: 5rem;
+}
+
+.idea p, #recording-page .idea-1 p, #recording-page .idea-2 p {
+  margin: 0;
+  text-align: left !important;
+}
+
+.boxed, #recording-page .recording-clients .clients-container .entry, #recording-page .recording-testimonials div p {
+  border: 1px solid #DFDDD5;
+  border-radius: 1.2rem;
+  margin: 0.85rem 0;
+  padding: 1.5vw;
 }
 
 footer {
@@ -1677,21 +1733,20 @@ footer .links .centre-links .footer-box-right {
 /* Arrows */
 .slick-prev,
 .slick-next {
-  border: 3px solid red;
-  position: absolute;
-  display: block;
-  width: 2rem;
-  line-height: 0px;
-  font-size: 0px;
-  cursor: pointer;
   background: transparent;
+  border: none;
   color: transparent;
+  cursor: pointer;
+  display: block;
+  font-size: 0px;
+  line-height: 0px;
+  outline: none;
+  padding: 0;
+  position: absolute;
   top: 40%;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  padding: 0;
-  border: none;
-  outline: none;
+  width: 2rem;
   z-index: 2;
 }
 
@@ -1701,6 +1756,8 @@ footer .links .centre-links .footer-box-right {
   outline: none;
   background: transparent;
   color: transparent;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 .slick-prev:hover:before, .slick-prev:focus:before,
@@ -1720,7 +1777,7 @@ footer .links .centre-links .footer-box-right {
   font-size: 20px;
   line-height: 1;
   color: #140E1B;
-  opacity: 0.9;
+  opacity: 0.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1800,6 +1857,8 @@ footer .links .centre-links .footer-box-right {
 
 .slick-dots li button:hover, .slick-dots li button:focus {
   outline: none;
+  -webkit-transform: none !important;
+          transform: none !important;
 }
 
 .slick-dots li button:hover:before, .slick-dots li button:focus:before {
@@ -1825,7 +1884,7 @@ footer .links .centre-links .footer-box-right {
 
 .slick-dots li.slick-active button:before {
   color: #140E1B;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .box li, .ticks li {
@@ -1943,6 +2002,7 @@ footer .links .centre-links .footer-box-right {
 
 .instrument-list li.active h4 {
   color: #97CCC3;
+  font-weight: 500;
 }
 
 .instrument-list li.active h4:after {
@@ -1954,34 +2014,35 @@ footer .links .centre-links .footer-box-right {
   display: block;
 }
 
-.divider-left, .clarinet-divider, .e-flute-divider, .divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
+.divider, .clarinet-divider, .e-flute-divider, .flute-divider, .saxophone-divider, .recorder-divider {
+  max-width: 30rem;
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 30rem;
 }
 
-.divider-left .line, .clarinet-divider .line, .e-flute-divider .line, .divider-right .line, .flute-divider .line, .saxophone-divider .line, .recorder-divider .line {
+.divider .line, .clarinet-divider .line, .e-flute-divider .line, .flute-divider .line, .saxophone-divider .line, .recorder-divider .line {
   stroke: #DFDDD5;
+  stroke-width: 2;
 }
 
 @media (min-width: 900px) {
-  .divider-left, .clarinet-divider, .e-flute-divider, .divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
+  .divider, .clarinet-divider, .e-flute-divider, .flute-divider, .saxophone-divider, .recorder-divider {
     max-width: 50vw;
   }
 }
 
 @media (min-width: 1250px) {
-  .divider-left, .clarinet-divider, .e-flute-divider, .divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
+  .divider, .clarinet-divider, .e-flute-divider, .flute-divider, .saxophone-divider, .recorder-divider {
     width: 50vw;
   }
 }
 
-.divider-left, .clarinet-divider, .e-flute-divider {
+.clarinet-divider, .e-flute-divider {
   left: -3vw;
 }
 
-.divider-right, .flute-divider, .saxophone-divider, .recorder-divider {
+.flute-divider, .saxophone-divider, .recorder-divider {
   float: right;
   right: -3vw;
 }
@@ -2003,7 +2064,7 @@ footer .links .centre-links .footer-box-right {
 }
 
 .recorder-divider {
-  margin: -2rem 0 -6rem 0;
+  margin: -.5rem 0 -6rem 0;
 }
 
 .soundcloud {
@@ -2047,7 +2108,7 @@ footer .links .centre-links .footer-box-right {
 @media (max-width: 599px) {
   .home-page header div #title img {
     max-height: 7rem;
-    max-width: 100vw;
+    max-width: 94vw;
   }
 }
 
@@ -2125,30 +2186,77 @@ footer .links .centre-links .footer-box-right {
 }
 
 .home-page .hero-image svg #colour path {
+  -webkit-animation: fadein 1s linear forwards;
+          animation: fadein 1s linear forwards;
   stroke: none;
 }
 
 .home-page .hero-image svg #colour path.recorder {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
   fill: #E6B5B5;
+  opacity: 0;
 }
 
 .home-page .hero-image svg #colour path.clarinet {
+  -webkit-animation-delay: 8.4s;
+          animation-delay: 8.4s;
   fill: #B99ADB;
+  opacity: 0;
 }
 
 .home-page .hero-image svg #colour path.flute {
+  -webkit-animation-delay: 5.6s;
+          animation-delay: 5.6s;
   fill: #DFDDD5;
+  opacity: 0;
 }
 
 .home-page .hero-image svg #colour path.e-flute {
+  -webkit-animation-delay: 3.9s;
+          animation-delay: 3.9s;
   fill: #97CCC3;
+  opacity: 0;
 }
 
 .home-page .hero-image svg #colour path.sax {
+  -webkit-animation-delay: 11.9s;
+          animation-delay: 11.9s;
   fill: #CFB72F;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadein {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  to {
+    opacity: 1;
+  }
+}
+
+.home-page .hero-image svg .line {
+  stroke-width: 1.5;
+}
+
+@-webkit-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .home-page .intro-tryout {
+  overflow: hidden;
+  position: relative;
   grid-column: 2 / -2;
 }
 
@@ -2193,26 +2301,29 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
-@media (min-width: 900px) {
-  .home-page .intro-tryout .desktop-landing-content #landing-page-recording {
-    left: -1rem;
-    margin-top: 1.7rem;
-    padding: 1rem;
-    position: relative;
-    width: 110%;
-  }
-  .home-page .intro-tryout .desktop-landing-content #landing-page-recording h2, .home-page .intro-tryout .desktop-landing-content #landing-page-recording #recording-page .process-gear-mobile-headings ul li a, #recording-page .process-gear-mobile-headings ul li .home-page .intro-tryout .desktop-landing-content #landing-page-recording a {
-    margin: 0;
-    padding: 0;
-  }
+.home-page .intro-tryout .desktop-landing-content .flex-safe-slick {
+  margin-bottom: 1.7rem;
+  padding-bottom: 65%;
+  position: relative;
+  width: 100%;
+}
+
+.home-page .intro-tryout .desktop-landing-content .flex-safe-slick .youtube-container {
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .home-page .recording {
   grid-column: 2 / -2;
   display: -ms-grid;
   display: grid;
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
+  margin: 0;
+  padding: 0 !important;
 }
 
 @media (max-width: 599px) {
@@ -2223,7 +2334,6 @@ footer .links .centre-links .footer-box-right {
 
 @media (min-width: 600px) {
   .home-page .recording {
-    margin-top: 0;
     padding-top: 1.7rem;
   }
 }
@@ -2233,23 +2343,19 @@ footer .links .centre-links .footer-box-right {
     -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
-  .home-page .recording .instruments-section {
-    margin-left: 3vw;
-  }
 }
 
-.home-page .recording div {
+.home-page .recording div:not(.boxed) {
   margin-top: 0;
 }
 
-.home-page .recording .instruments-section {
-  margin-top: 1.7rem;
+.home-page .recording > h2, .home-page #recording-page .process-gear-mobile-headings ul li .recording > a, #recording-page .process-gear-mobile-headings ul li .home-page .recording > a {
+  grid-column: 1 / -1;
+  margin: 0;
 }
 
-@media (min-width: 900px) {
-  .home-page .recording .instruments-section {
-    margin-top: 0;
-  }
+.home-page .recording .boxed p, .home-page .recording #recording-page .recording-clients .clients-container .entry p, #recording-page .recording-clients .clients-container .home-page .recording .entry p, .home-page .recording #recording-page .recording-testimonials div p p, #recording-page .recording-testimonials div .home-page .recording p p {
+  margin: 0;
 }
 
 @media (max-width: 599px) {
@@ -2271,10 +2377,6 @@ footer .links .centre-links .footer-box-right {
   .home-page .recording #mobile-intro-content {
     display: none;
   }
-}
-
-.home-page .recording #video-1 {
-  margin-top: 1.7rem;
 }
 
 .home-page .recording-testimonials {
@@ -2325,6 +2427,10 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
+.home-page .submitBtn {
+  margin-top: 1.7rem;
+}
+
 #recording-page .first-section {
   grid-column: 2 / -2;
   -webkit-box-align: start;
@@ -2356,7 +2462,7 @@ footer .links .centre-links .footer-box-right {
   top: 1.5rem;
 }
 
-#recording-page .first-section .content .ticks path, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-info .ticks path, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-info .ticks path, #recording-page .first-section .idea-1 .ticks path, #recording-page .first-section .idea-2 .ticks path {
+#recording-page .first-section .content .ticks path, #recording-page .first-section .idea .ticks path, #recording-page .first-section .idea-1 .ticks path, #recording-page .first-section .idea-2 .ticks path, #recording-page .first-section .recording-instrument-infos .recording-instrument-dropdown .instrument-info .ticks path, #recording-page .recording-instrument-infos .recording-instrument-dropdown .first-section .instrument-info .ticks path {
   stroke: #97CCC3;
 }
 
@@ -2832,25 +2938,6 @@ footer .links .centre-links .footer-box-right {
   }
 }
 
-#recording-page .idea-1, #recording-page .idea-2 {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 1.7rem;
-}
-
-#recording-page .idea-1 svg, #recording-page .idea-2 svg {
-  -ms-flex-preferred-size: 5rem;
-      flex-basis: 5rem;
-}
-
-#recording-page .idea-1 p, #recording-page .idea-2 p {
-  text-align: left !important;
-}
-
 #recording-page .idea-1 {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -3121,13 +3208,6 @@ footer .links .centre-links .footer-box-right {
   grid-column: 2 / span 1;
 }
 
-#recording-page .recording-clients .clients-container .entry {
-  border: 1px solid #DFDDD5;
-  border-radius: 1.2rem;
-  margin: 0.85rem 0;
-  padding: 1.5vw;
-}
-
 #recording-page .recording-clients .clients-container .entry .info h3 {
   border-bottom: 1px solid #DFDDD5;
   font-weight: 500;
@@ -3145,13 +3225,6 @@ footer .links .centre-links .footer-box-right {
     -ms-grid-column-span: 1;
     grid-column: 3 / span 1;
   }
-}
-
-#recording-page .recording-testimonials div p {
-  border: 1px solid #DFDDD5;
-  border-radius: 1.2rem;
-  margin: 0.85rem 0;
-  padding: 1.5vw;
 }
 
 #recording-page .recording-testimonials div p span {
@@ -3479,7 +3552,7 @@ footer .links .centre-links .footer-box-right {
 }
 
 #media-page .media-container .player-container .media-details h3 {
-  font-family: "Lora", "Arapey", "Yrsa", Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
+  font-family: "Lora", "Arapey", "Yrsa", "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Calisto MT", "Times New Roman", serif;
   font-size: 1.6rem;
   font-weight: 500;
   margin-top: .3rem;

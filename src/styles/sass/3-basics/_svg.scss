@@ -79,36 +79,6 @@ svg {
         stroke: none;
     }
 
-    .recorder-colour {
-        // fill: $light;
-        fill: none;
-        stroke: none;
-    }
-
-    .clarinet-colour {
-        // fill: $secondary;
-        fill: none;
-        stroke: none;
-    }
-
-    .flute-colour {
-        // fill: $grey;
-        fill: none;
-        stroke: none;
-    }
-
-    .e-flute-colour {
-        // fill: $primary;
-        fill: none;
-        stroke: none;
-    }
-
-    .sax-colour {
-        // fill: $accent;
-        fill: none;
-        stroke: none;
-    }
-
     .stop-blue {
         stop-color: $primary;
     }
@@ -123,7 +93,6 @@ svg {
 
     .stop-purple {
         stop-color: $secondary-gradient;
-        // stop-color: $light;
     }
 
     .stop-red {

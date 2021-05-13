@@ -109,6 +109,20 @@ button {
         }
     }
 
+    &.square {
+        background: $primary;
+        border-radius: .5rem;
+        width: 100%;
+
+        &.pink {
+            background: $light;
+        }
+
+        &.accent {
+            background: $accent;
+        }
+    }
+
     &.button-send {
         background: no-repeat url(../../../images/backgrounds/blobs/button-2-pink.svg);
         box-shadow: none;

@@ -1,11 +1,12 @@
-%divider {
+.divider {
+    max-width: 30rem;
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 30rem;
 
     .line {
         stroke: $grey;
+        stroke-width: 2;
     }
 
     @include media-query(tablet-landscape-up) {
@@ -17,38 +18,38 @@
     }
 }
 
-.divider-left {
-    @extend %divider;
+%divider-left {
+    @extend .divider;
     left: -$gutter;
 }
 
-.divider-right {
-    @extend %divider;
+%divider-right {
+    @extend .divider;
     float: right;
     right: -$gutter;
 }
 
 .flute-divider {
-    @extend .divider-right;
+    @extend %divider-right;
     margin: 1rem 0 -2rem 0;
 }
 
 .clarinet-divider {
-    @extend .divider-left;
+    @extend %divider-left;
     margin: -4rem 0 -2rem 0;
 }
 
 .saxophone-divider {
-    @extend .divider-right;
+    @extend %divider-right;
     margin: -4rem 0 -4rem 0;
 }
 
 .e-flute-divider {
-    @extend .divider-left;
+    @extend %divider-left;
     margin: -.5rem 0 -3rem 0;
 }
 
 .recorder-divider {
-    @extend .divider-right;
-    margin: -2rem 0 -6rem 0;
+    @extend %divider-right;
+    margin: -.5rem 0 -6rem 0;
 }

@@ -71,11 +71,21 @@ header {
     }
 
     &.scroll {
-        height: auto !important;
-        padding: .7rem 0;
+        // height: auto !important;
+        // padding: .7rem 0;
 
         @include media-query(tablet-portrait-up) {
             background-color: fade-out($white, .04);
+        }
+
+        @include media-query(tablet-landscape-up) {
+            height: auto !important;
+            padding: .7rem 0;
+        }
+
+        @include media-query(tablet-portrait-only) {
+            height: auto !important;
+            padding: .7rem 0;
         }
 
         div {
@@ -88,7 +98,13 @@ header {
             }
 
             img {
-                height: 2.5rem;
+                @include media-query(tablet-portrait-only) {
+                    height: 2.5rem;
+                }
+
+                @include media-query(tablet-landscape-up) {
+                    height: 2.5rem;
+                }
             }
         }
     }

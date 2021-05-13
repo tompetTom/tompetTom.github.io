@@ -1,14 +1,5 @@
 form {
-    // align-content: stretch;
-    // display: grid;
-    // column-gap: $gutter;
-    // grid-template-columns: 100%;
     margin: 0;
-    // padding: $margin-top 0;
-
-    // @include media-query(desktop-up) {
-    //     grid-template-columns: 1fr 1fr;
-    // }
 
     h2 {
         margin: 0 !important;
@@ -17,76 +8,12 @@ form {
     div {
         margin: 0;
         width: 100%;
-
-        // * {
-        //     margin-top: 1rem;
-        // }
     }
 
     label {
         display: inline-block;
         margin-top: 1rem;
-
-        // label {
-        //     border-radius: .5rem;
-
-        //     &.bypass {
-        //         background: none;
-        //         border: 1px solid transparent;
-        //         margin-top: .2rem;
-        //         padding: 0 .5rem;
-
-        //         &.checked {
-        //             background: fade-out($primary, .5);
-        //             border: 1px solid $primary-gradient;
-        //         }
-
-        //         input[type=checkbox] {
-        //             height: .9rem;
-        //             margin-right: .5rem;
-        //         }
-        //     }
-        // }
     }
-
-    // aside & {
-    //     display: grid;
-    //     gap: .5rem;
-    //     grid-template-columns: repeat(3, 1fr);
-
-    //     label {
-    //         align-items: center;
-    //         border: 2px solid $grey;
-    //         border-radius: .5rem;
-    //         display: flex;
-    //         // flex: 1 0 10rem;
-    //         justify-content: center;
-    //         margin: .4rem;
-    //         min-height: $finger-width;
-    //         padding: 0 .5rem;
-    //         text-align: center;
-
-    //         * {
-    //             display: contents;
-    //         }
-
-    //         &:hover {
-    //             border: 2px solid $primary;
-    //             transform: $hover-grow;
-    //             transition: $default-transition-time;
-    //         }
-
-    //         &.checked {
-    //             background: fade-out($primary, .5);
-    //             border: 2px solid $primary-gradient;
-    //         }
-
-    //         input {
-    //             margin: 0;
-    //             opacity: 1;
-    //         }
-    //     }
-    // }
 
     .invalid {
         border: 2px solid red !important;
@@ -122,6 +49,10 @@ form {
     background: $accent;
     border-radius: .5rem;
     width: 100%;
+
+    &.pink {
+        background: $light;
+    }
 
     &:disabled {
         background: none;
