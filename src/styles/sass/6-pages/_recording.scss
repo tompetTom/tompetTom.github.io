@@ -423,13 +423,23 @@
         }
     }
 
-    .idea-1 {
+    .idea-1, .idea-2 {
         @extend .idea;
+        // align-items: start;
+        // display: flex;
+
+        // svg {
+        //     flex-basis: 5rem;
+        //     float: none;
+        //     width: auto;
+        // }
+    }
+
+    .idea-1 {
         @include grid-column(left);
     }
 
     .idea-2 {
-        @extend .idea;
         @include grid-column(right);
     }
 

@@ -323,7 +323,17 @@
                             margin: 0 auto;
                             position: absolute;
                             width: 50%;
+
+                            // @include media-query(mobile) {
+                            //     display: none;
+                            // }
                         }
+
+                        // @include media-query(mobile) {
+                        //     height: fit-content;
+                        //     top: 50%;
+                        //     transform: translateY(-50%);
+                        // }
                     }
 
                     p {
@@ -331,6 +341,10 @@
                         line-height: 1.5em;
                         top: 40%;
                         padding-top: .2rem;
+
+                        // @include media-query(mobile) {
+                        //     display: none;
+                        // }
                     }
                 }
 

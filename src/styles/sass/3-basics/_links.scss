@@ -3,7 +3,7 @@ a {
     position: relative;
     transition: $default-transition-time;
 
-    p &, nav & {
+    p &, .nav-main & {
         &::after {
             background: $primary;
             bottom: -1px;
@@ -29,6 +29,21 @@ a {
     p & {
         font-weight: $semi-bold;
         z-index: 1;
+
+        &::after {
+            height: 2px;
+            left: 0;
+            width: 100%;
+        }
+    
+        &:hover {    
+            &::after {
+                height: 50%;
+                left: -2%;
+                opacity: .5;
+                width: 104%;
+            }
+        }
     }
 }
 

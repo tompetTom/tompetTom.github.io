@@ -48,6 +48,7 @@ form {
 #nextBtn, .nextBtn, .submitBtn {
     background: $accent;
     border-radius: .5rem;
+    white-space: nowrap;
     width: 100%;
 
     &.pink {
@@ -56,8 +57,14 @@ form {
 
     &:disabled {
         background: none;
-        color: $grey;
+        color: transparent;
         cursor: default;
+        height: 0;
+        margin-bottom: 0;
+        margin-left: 40%;
+        overflow: hidden;
+        padding: 0;
+        width: 20%;
 
         &:hover {
             transform: none;

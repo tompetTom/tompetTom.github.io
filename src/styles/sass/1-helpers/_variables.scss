@@ -31,6 +31,7 @@ $alt-grey: #DFDDD5;
 $white: #FFF;
 $black: $purple-black;
 $black-gradient: #07050A;
+$dark-text: #444;
 $dark: $rich-dark-purple;
 $dark-gradient: #231830;
 $primary: #97CCC3;
@@ -80,7 +81,8 @@ $recorders-image-long: center / cover no-repeat url(../../../../images/instrumen
 $world-flutes-image-square: center / cover no-repeat url(../../../images/instruments/world-flute/tepui-four.jpg);
 $world-flutes-image-long: center / cover no-repeat url(../../../images/instruments/world-flute/tepui-seven.jpg);
 $saxophones-image-square: center / cover no-repeat url(../../../../images/instruments/saxophones/lighting-sax.jpg);
-$saxophones-image-long: center / cover no-repeat url(../../../../images/instruments/saxophones/sax-on-black.jpg);
+// $saxophones-image-long: center / cover no-repeat url(../../../../images/instruments/saxophones/sax-on-black.jpg);
+$saxophones-image-long: $saxophones-image-square;
 
 $border-radius-one: 70% 30% 70% 30% / 30% 70% 30% 70%;
 

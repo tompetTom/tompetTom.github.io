@@ -8,7 +8,7 @@
 // "\2022" outputs ascii character "•"
 
 $slick-font-path: "./fonts/" !default;
-$slick-font-family: "slick" !default;
+$slick-font-family: "Arial" !default;
 $slick-loader-path: "../../slick/slick/" !default;
 $slick-arrow-color: $black !default;
 $slick-dot-color: $black !default;
@@ -16,7 +16,7 @@ $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: url(../../../images/icons/left-arrow.svg);
 $slick-next-character: url(../../../images/icons/right-arrow.svg);
 $slick-dot-character: "\2022" !default;
-$slick-dot-size: .5rem !default;
+$slick-dot-size: 1.5rem !default;
 $slick-opacity-default: .6 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
@@ -50,9 +50,9 @@ $slick-opacity-not-active: 0.25 !default;
 /* Icons */
 @if $slick-font-family == "slick" {
     @font-face {
-        font-family: "slick";
-        src: slick-font-url("slick.eot");
-        src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+        font-family: 'Arial';
+        src: local('Arial');
+        // src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
         font-weight: normal;
         font-style: normal;
     }
@@ -96,7 +96,7 @@ $slick-opacity-not-active: 0.25 !default;
         opacity: $slick-opacity-not-active;
     }
     &:before {
-        font-family: $slick-font-family;
+        // font-family: $slick-font-family;
         font-size: 20px;
         line-height: 1;
         color: $slick-arrow-color;

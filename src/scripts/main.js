@@ -30,7 +30,7 @@ $(document).ready(() => {
     }
 
     // SCROLL EVENT HANDLER
-    $(window).on('DOMContentLoaded load resize scroll', function() {
+    function scrollEvent() {
         headerScrolling();
         $('.line').slice(1).each(function() {
             let line = this;
@@ -38,12 +38,16 @@ $(document).ready(() => {
                 drawSvg($(line), 5);
             });
         });
-    });
+    }
+
+    window.addEventListener('scroll', scrollEvent, {passive: true});
 
     // mobile nav
-    $('.hamburger-close').on('click', e => {
-        $(e.currentTarget).closest('nav').toggleClass('closed');
-    });
+    function navToggleListener() {
+        $('.hamburger-close').on('click', e => {
+            $(e.currentTarget).closest('nav').toggleClass('closed');
+        });
+    }
 
     $('.sub-navigation li').on('mouseenter', e => {
         $(e.currentTarget).find('p').addClass('show');
@@ -138,9 +142,12 @@ $(document).ready(() => {
         $('.divider').each(function() {
             setDashOffset($(this).find('.line'));
         });
-        setDashOffset($('.hero-image').find('.line'));
-        drawSvg($('.hero-image').find('.line'), 12);
+        navToggleListener();
+    } else {
+        $('.nav-mobile').load('../../mobile-nav.html #ul', navToggleListener);
     }
+
+    $('footer').load('../../footer.html #footer');
 
     // control youtube video
     function youtubeControls(iframe, command) {

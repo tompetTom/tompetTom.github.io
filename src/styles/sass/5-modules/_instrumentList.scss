@@ -41,7 +41,7 @@
             }
 
             @include media-query(tablet-portrait-up) {
-                border-right: 1px solid $black;
+                border-right: 1px solid $dark-grey;
                 text-align: right;
             }
         }

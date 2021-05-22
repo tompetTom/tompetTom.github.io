@@ -3,7 +3,7 @@ button {
     // background: no-repeat url(../../../images/backgrounds/blobs/button-2-accent.svg);
     cursor: pointer;
     font-size: 1.2rem;
-    font-family: $serif, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, sans-serif;
+    font-family: $serif;
     font-weight: $thin;
     margin-top: $margin-top;
     padding: .5em 1em;
@@ -120,6 +120,12 @@ button {
 
         &.accent {
             background: $accent;
+        }
+
+        &:disabled {
+            background: $grey;
+            margin: 0 auto;
+            width: auto;
         }
     }
 

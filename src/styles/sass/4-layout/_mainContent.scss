@@ -10,7 +10,7 @@
     right: $gutter;
     top: $gutter;
     width: 4rem;
-    z-index: 20;
+    z-index: 2;
 
     @include media-query(tablet-portrait-up) {
         display: none;
@@ -152,17 +152,30 @@ section {
 
 .idea {
     @extend .content;
-    align-items: start;
-    display: flex;
+    // align-items: start;
+    // display: flex;
     margin-top: $margin-top !important;
 
     svg {
-        flex-basis: 5rem;
+        // flex-basis: 5rem;
+        float: left;
+        width: 5rem;
     }
 
     p {
         margin: 0;
         text-align: left !important;
+    }
+
+    @include media-query(tablet-portrait-up) {
+        align-items: start;
+        display: flex;
+
+        svg {
+            flex-basis: 5rem;
+            float: none;
+            width: auto;
+        }
     }
 }
 
@@ -170,5 +183,9 @@ section {
     border: 1px solid $grey;
     border-radius: 1.2rem;
     margin: $margin-top / 2 0;
-    padding: $gutter / 2;
+    padding: $gutter;
+
+    @include media-query(tablet-portrait-up) {
+        padding: $gutter / 2;
+    }
 }

@@ -83,49 +83,36 @@
     
             #colour {
                 path {
-                    animation: fadein 1s linear forwards;
                     stroke: none;
     
                     &.recorder {
                         animation-delay: 2.1s;
                         fill: $light;
-                        opacity: 0;
                     }
     
                     &.clarinet {
                         animation-delay: 8.4s;
                         fill: $secondary;
-                        opacity: 0;
                     }
     
                     &.flute {
                         animation-delay: 5.6s;
                         fill: $grey;
-                        opacity: 0;
                     }
     
                     &.e-flute {
                         animation-delay: 3.9s;
                         fill: $primary;
-                        opacity: 0;
                     }
     
                     &.sax {
                         animation-delay: 11.9s;
                         fill: $accent;
-                        opacity: 0;
-                    }
-
-                    @keyframes fadein {
-                        to {
-                            opacity: 1;
-                        }
                     }
                 }
             }
 
             .line {
-                // animation: draw 20s linear forwards;
                 stroke-width: 1.5;
             }
 
