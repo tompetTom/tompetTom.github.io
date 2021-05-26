@@ -884,6 +884,8 @@ header div nav {
 }
 
 .index-nav-mobile, .nav-mobile {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   z-index: 20;
 }
 
@@ -937,19 +939,10 @@ header div nav {
 
 .index-nav-mobile {
   grid-column: 1 / -1;
-  position: -webkit-sticky;
-  position: sticky;
-  -webkit-transition: top 0.2s;
-  transition: top 0.2s;
-  top: 0;
   background: rgba(255, 255, 255, 0.96);
   height: 5rem;
   padding: 10px;
   width: 100vw;
-}
-
-.index-nav-mobile.dismiss {
-  top: -100%;
 }
 
 .index-nav-mobile ul {
@@ -1017,7 +1010,7 @@ header div nav {
 
 .nav-mobile {
   bottom: 3vw;
-  height: 97vh;
+  height: 90vh;
   position: fixed;
   right: 3vw;
   width: 4rem;
@@ -1140,6 +1133,10 @@ header div nav {
 
 .nav-mobile.closed ul li.hamburger-close .mobile-nav .menu {
   display: block;
+}
+
+.nav-mobile.minimise {
+  opacity: 0;
 }
 
 .page-icon {

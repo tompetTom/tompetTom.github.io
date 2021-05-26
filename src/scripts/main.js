@@ -14,6 +14,14 @@ $(document).ready(() => {
         };
     }
 
+    function minimiseNav() {
+        if ($(document).scrollTop() > ($(window).height() + 100)) {
+            $('.nav-mobile').removeClass('minimise');
+        } else {
+            $('.nav-mobile').addClass('minimise');
+        }
+    }
+
     function isElementInViewport(el) {
         if (typeof jQuery === "function" && el instanceof jQuery) {
             el = el.get(0);
@@ -32,6 +40,7 @@ $(document).ready(() => {
     // SCROLL EVENT HANDLER
     function scrollEvent() {
         headerScrolling();
+        minimiseNav();
         $('.line').slice(1).each(function() {
             let line = this;
             onVisibilityChange(line, function() {
@@ -138,16 +147,17 @@ $(document).ready(() => {
         }
     }
 
+    $('.nav-mobile').load('../../mobile-nav.html #ul', navToggleListener).hide();
+    $('footer').load('../../footer.html #footer');
+
     if ($('body').attr('id') == 'home-page') {
         $('.divider').each(function() {
             setDashOffset($(this).find('.line'));
         });
-        navToggleListener();
+        $('.nav-mobile').addClass('minimise').show();
     } else {
-        $('.nav-mobile').load('../../mobile-nav.html #ul', navToggleListener);
+        $('.nav-mobile').show();
     }
-
-    $('footer').load('../../footer.html #footer');
 
     // control youtube video
     function youtubeControls(iframe, command) {
