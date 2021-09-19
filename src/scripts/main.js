@@ -175,6 +175,47 @@ $(document).ready(() => {
         return regex.test(email);
     }
 
+    function addErrorMessage(input) {
+        let message = ' (please fill out this field)';
+        let label = input.siblings(`label[for=${input.attr('id')}]`);
+        let inputType = label.data('type');
+        if (inputType) {
+            message = ` (please enter a valid ${inputType})`;
+        }
+        input.addClass('invalid');
+        label.find('.form-error').text(message).show();
+    }
+
+    function removeErrorMessage(input) {
+        let label = input.siblings(`label[for=${input.attr('id')}]`);
+        input.removeClass('invalid');
+        label.find('span').hide();
+    }
+
+    let blurTimeout;
+
+    function hideAllErrors(form, nowFocussed) {
+        let inputs = $(form).find('input, textarea').not(':hidden');
+        let focussedOn = $(nowFocussed).prop('nodeName');
+        if (focussedOn === 'INPUT' || focussedOn === 'TEXTAREA') {
+            return;
+        }
+        let empty = true;
+        inputs.each(function() {
+            let value = $(this).val();
+            if (value) {
+                empty = false;
+            }
+        });
+        if (empty) {
+            blurTimeout = setTimeout(function() {
+                inputs.each(function() {
+                    removeErrorMessage($(this));
+                });
+            }, 5000);
+        }
+    }
+
     function validateInput(input) {
         let valid = true;
         let prop = input.prop('type');
@@ -195,17 +236,19 @@ $(document).ready(() => {
         let form, inputs;
         if ($('body').attr('id') !== 'contact-page') {
             form = $(input).closest('form');
-            inputs = $(form).find('input', 'textarea');
+            inputs = $(form).find('input, textarea');
         } else {
             form = $(currentForm).find('.tab');
             inputs = $(form[currentTab]).find('input, textarea');
         }
+        // console.log(inputs);
         $(inputs).each(function() {
             if (!validateInput($(this))) {
                 valid = false;
                 return false;
             }
         });
+        // console.log(valid);
         if (valid) {
             $(form).find('.submitBtn').removeAttr('disabled');
         } else {
@@ -214,18 +257,26 @@ $(document).ready(() => {
         return valid;
     }
 
-    $('input, textarea').blur(e => {
-        let input = $(e.currentTarget)
+    $('input, textarea').focusout(e => {
+        let input = $(e.currentTarget);
+        let nowFocussed = $(e.relatedTarget);
         if (!validateInput(input)) {
-            input.addClass('invalid');
+            addErrorMessage(input);
+        } else {
+            removeErrorMessage(input);
         }
+        hideAllErrors(input.closest('form'), nowFocussed);
+    });
+
+    $('input, textarea').focusin(function() {
+        clearTimeout(blurTimeout);
     });
 
     $('input, textarea').on('change paste keyup', function() {
         let input = $(this);
         if (input.hasClass('invalid')) {
             if (validateInput(input)) {
-                input.removeClass('invalid');
+                removeErrorMessage(input);
             }
         }
         validateForm(input);

@@ -29,8 +29,9 @@ footer {
 
     .links {
         font-size: $small-font;
+        max-width: 100%;
         text-align: center;
-        width: 13rem;
+        // width: 13rem;
 
         p, a {
             display: block;

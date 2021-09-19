@@ -1,20 +1,30 @@
 // @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
 
-%sans-font {
-    font-family: $sans;
+%sans-font, %heading-font {
+    font-family: $josefin-slab;
     font-size: 2rem;
-    // font-weight: $semi-bold;
-    font-weight: $heading-thin;
+    font-weight: $semi-bold;
+    // font-weight: $heading-thin;
 }
 
-%serif-font {
-    font-family: $serif;
+%serif-font, %body-font {
+    font-family: $montserrat;
     font-weight: $thin;
     line-height: 1.7em;
 }
 
+%nav-font {
+    @extend %body-font;
+    font-family: $josefin-sans;
+    font-weight: $heading-thin;
+}
+
+%button-font {
+    @extend %nav-font;
+}
+
 body {
-    @extend %serif-font;
+    @extend %body-font;
     color: $black;
 }
 
@@ -30,17 +40,18 @@ h2 {
 }
 
 h5 {
-    @extend %sans-font;
+    @extend %heading-font;
     font-size: 1.2rem;
     line-height: 1.2em;
 }
 
 input, textarea {
-    @extend %serif-font;
+    @extend %body-font;
 }
 
 blockquote {
-    font-family: $serif;
+    @extend %nav-font;
+    font-family: $trirong;
     font-size: 1.5rem;
     font-style: italic;
     font-weight: $bold;
@@ -51,4 +62,8 @@ blockquote {
 em {
     font-style: italic;
     font-weight: $normal;
+}
+
+b {
+    font-weight: $semi-bold;
 }

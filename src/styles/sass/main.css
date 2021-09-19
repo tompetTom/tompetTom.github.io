@@ -125,16 +125,21 @@ hr {
   width: 100%;
 }
 
-h2, #recording-page .process-gear-mobile-headings ul li a, h5, button, #recording-page .recording-instruments .recording-instrument-categories li .caption h3, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-image h4 {
-  font-family: "Lora", "Arapey", "Yrsa", "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Calisto MT", "Times New Roman", serif;
+h2, #recording-page .process-gear-mobile-headings ul li a, #recording-page .recording-instruments .recording-instrument-categories li .caption h3, #recording-page .recording-instrument-infos .recording-instrument-dropdown .instrument-image h4, h5 {
+  font-family: "Josefin Slab", serif;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
-body, input, textarea {
-  font-family: "Raleway", "Trebuchet MS", "Didot", "Alegreya", sans-serif;
+blockquote, .nav-main, body, input, textarea, button {
+  font-family: "Montserrat", sans-serif;
   font-weight: 200;
   line-height: 1.7em;
+}
+
+blockquote, .nav-main {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
 }
 
 body {
@@ -157,7 +162,7 @@ h5 {
 }
 
 blockquote {
-  font-family: "Raleway", "Trebuchet MS", "Didot", "Alegreya", sans-serif;
+  font-family: "Trirong", serif;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: 700;
@@ -170,11 +175,14 @@ em {
   font-weight: 400;
 }
 
+b {
+  font-weight: 500;
+}
+
 button {
   cursor: pointer;
   font-size: 1.2rem;
-  font-family: "Raleway", "Trebuchet MS", "Didot", "Alegreya", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   margin-top: 1.7rem;
   padding: .5em 1em;
   -webkit-transition: 0.2s;
@@ -863,7 +871,6 @@ header div nav {
 
 .nav-main ul li a {
   color: #444;
-  font-weight: 400;
   padding: .5em;
 }
 
@@ -1393,8 +1400,8 @@ footer .links .social-icons a img {
 
 footer .links {
   font-size: 0.8rem;
+  max-width: 100%;
   text-align: center;
-  width: 13rem;
 }
 
 footer .links p, footer .links a {

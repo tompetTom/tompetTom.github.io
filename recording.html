@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
     <link rel="stylesheet" href="./src/styles/sass/main.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Raleway:wght@200;300;400;500;700&family=Yrsa:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,700&family=Trirong:ital,wght@1,200&display=swap" rel="stylesheet">
     <title>Online Woodwind Recording – Flute, Clarinet, Recorder, World Flute and Saxophone sessions | Sophie Creaner
     </title>
 </head>
@@ -97,14 +97,14 @@
                 <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzbyzzjp" method="post">
                     <fieldset id="fs-frm-inputs">
                         <div class="message">
-                            <label for="message">Your project</label>
+                            <label for="message">Your project<span class="form-error"></span></label>
                             <textarea rows="5" name="message" id="message" placeholder="What are you looking for?" required></textarea>
                             <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
                         </div>
                         <div class="details-submit">
-                            <label for="full-name">Name</label>
+                            <label for="full-name" data-type="name">Name<span class="form-error"></span></label>
                             <input type="text" name="name" id="full-name" placeholder="Penelope Strawberry" required>
-                            <label for="email-address">Email Address</label>
+                            <label for="email-address" data-type="email address">Email Address<span class="form-error"></span></label>
                             <input type="email" name="_replyto" id="email-address" placeholder="penelope@strawbmail.com" required>
                         </div>
                     </fieldset>
