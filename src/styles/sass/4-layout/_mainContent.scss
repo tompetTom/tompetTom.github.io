@@ -84,10 +84,11 @@ section {
     }
 
     .recording-quotee, .quotee {
+        @extend %body-font;
         line-height: 1em;
         margin: .7em 2em 0 2em;
         font-size: 1rem;
-        font-weight: $normal;
+        font-weight: $thin;
     }
 
     .slick-quote {

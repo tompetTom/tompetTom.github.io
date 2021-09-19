@@ -131,7 +131,7 @@ h2, #recording-page .process-gear-mobile-headings ul li a, #recording-page .reco
   font-weight: 500;
 }
 
-blockquote, .nav-main, body, input, textarea, button {
+blockquote, .nav-main, body, input, textarea, button, .testimonial .recording-quotee, .testimonial .quotee {
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
   line-height: 1.7em;
@@ -1256,7 +1256,7 @@ section li *, .home-page .recording .instruments-section li *, #recording-page .
   line-height: 1em;
   margin: .7em 2em 0 2em;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .testimonial .slick-quote {
@@ -1918,8 +1918,10 @@ footer .links .centre-links .footer-box-right {
   z-index: 0;
 }
 
-.instrument-list li h4:hover {
-  color: #b3b1aa;
+@media (min-width: 1250px) {
+  .instrument-list li h4:hover {
+    color: #b3b1aa;
+  }
 }
 
 .instrument-list li h4:after {
@@ -1970,6 +1972,7 @@ footer .links .centre-links .footer-box-right {
 
 @media (max-width: 599px) {
   .instrument-list li ul li {
+    font-style: italic;
     position: relative;
     left: -.5em;
   }

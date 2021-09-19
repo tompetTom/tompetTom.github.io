@@ -15,10 +15,11 @@ $(document).ready(() => {
     }
 
     function minimiseNav() {
-        if ($(document).scrollTop() > ($(window).height() + 100)) {
+        // if ($('body').attr('id') !== 'home-page' && $(document).scrollTop() > ($(window).height() / 4) || $(document).scrollTop() > ($(window).height() + 100)) {
+        if ($('body').attr('id') == 'home-page' && $(document).scrollTop() > ($(window).height() + 100)) {
             $('.nav-mobile').removeClass('minimise');
-        } else {
-            $('.nav-mobile').addClass('minimise');
+        } else if ($('body').attr('id') == 'home-page') {
+            $('.nav-mobile').addClass('minimise closed');
         }
     }
 
@@ -203,7 +204,7 @@ $(document).ready(() => {
         let empty = true;
         inputs.each(function() {
             let value = $(this).val();
-            if (value) {
+            if (value && value !== ' ') {
                 empty = false;
             }
         });
@@ -211,6 +212,7 @@ $(document).ready(() => {
             blurTimeout = setTimeout(function() {
                 inputs.each(function() {
                     removeErrorMessage($(this));
+                    $(this).val('');
                 });
             }, 5000);
         }
@@ -890,7 +892,7 @@ $(document).ready(() => {
     }
 
     // homepage instrument list
-    $('.instrument-list li').on('click', event => {
+    $('.instrument-list>li').on('click', event => {
         $(event.currentTarget).siblings().removeClass('active');
         $(event.currentTarget).toggleClass('active');
     });
@@ -940,12 +942,18 @@ $(document).ready(() => {
         };
     });
 
-    $('.pg-track').on('swipeleft', () => {
-        $('.process-gear').addClass('pg-right');
+    let start;
+    $('.pg-track').on('touchstart', function(e) {
+        start = e.originalEvent.touches[0].clientX;
     });
 
-    $('.pg-track div').on('swiperight', () => {
-        $('.process-gear').removeClass('pg-right');
+    $('.pg-track').on('touchend', function(e) {
+        let end = e.originalEvent.changedTouches[0].clientX;
+        if (start > end + 5) {
+            $('.process-gear').addClass('pg-right');
+        } else {
+            $('.process-gear').removeClass('pg-right');
+        }
     });
 
     // show/hide button
